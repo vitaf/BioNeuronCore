@@ -1,0 +1,15 @@
+{
+  "name": "A2A-рецептор",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 46,
+  "modifiers": [
+    {
+      "id": 46,
+      "name": "A2A-рецептор",
+      "category": "Метаботропные Gs",
+      "description": "Метаботропный аденозиновый рецептор A2A (Gs) — повышает cAMP, пресинаптический",
+      "release": true
+    }
+  ]
+}

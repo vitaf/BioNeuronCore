@@ -1,0 +1,15 @@
+{
+  "name": "NMDA-рецептор",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 9,
+  "modifiers": [
+    {
+      "id": 9,
+      "name": "NMDA-рецептор",
+      "category": "Ионотропные рецепторы",
+      "description": "Ионотропный глутаматный рецептор NMDA — кальциевая проводимость с Mg²⁺-блоком",
+      "release": false
+    }
+  ]
+}

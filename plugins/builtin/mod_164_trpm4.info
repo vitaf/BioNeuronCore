@@ -1,0 +1,23 @@
+{
+  "id": 164,
+  "name": "TRPM4 — Ca²⁺-активируемый неселективный катионный канал",
+  "name_en": "TRPM4 — Ca²⁺-activated nonselective cation channel",
+  "category": "Базовые модификаторы",
+  "category_en": "Basic Modifiers",
+  "family": "TRPM (transient receptor potential melastatin)",
+  "isoforms": [
+    "TRPM4",
+    "TRPM4b"
+  ],
+  "gating": "Ca²⁺-зависимый EC50 0.4 µМ (Po = Ca_uM/(Ca_uM+0.4))",
+  "conductances": {
+    "gamma": "25 пС"
+  },
+  "ions": "Na+/K+ (не Ca)",
+  "pharmacology": "9-phenanthrol 18 µМ (IC50)",
+  "role": "Ca²⁺-активируемый неселективный катионный ток (деполяризация) — усиливает возбудимость.",
+  "bio_ref": "PMID 12015988, 15670874, 23416167",
+  "note": "G (мС/см²) не найдена → density плейсхолдер; Ca²⁺ — активатор, не переносчик.",  "name_zh": "TRPM4 — 钙激活非选择性阳离子通道",
+  "description_en": "Ca²⁺-activated nonselective cation current (depolarization), boosting excitability. EC50 0.4 µM; γ=25 pS; 9-phenanthrol IC50 18 µM.",
+  "description_zh": "钙激活非选择性阳离子电流（去极化），增强兴奋性。EC50 0.4 µM；γ=25 pS；9-phenanthrol IC50 18 µM。"
+}

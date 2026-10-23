@@ -1,0 +1,998 @@
+// Copyright (c) 2026 Фешин Виталий Александрович / Vitaly Alexandrovich Feshin.
+// E-mail: feshin2004@mail.ru, vfeshin@mindcopy.ru. Тел.: +7(918)345-75-18.
+// Краснодар, Россия / Krasnodar, Russia. Все права защищены. All rights reserved.
+
+#include "bion_loader.h"
+#include "daemon_log.h"
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
+#include <ctime>
+#include <new>
+#include <vector>
+
+// Коды ошибок (отрицательные)
+#define BION_ERR_FILE_OPEN    -1
+#define BION_ERR_BAD_MAGIC    -2
+#define BION_ERR_BAD_VERSION  -3
+#define BION_ERR_ZERO_SEGS    -4
+#define BION_ERR_USM_ALLOC    -5
+#define BION_ERR_BAD_CONN     -6
+#define BION_ERR_BAD_SYNAPSE  -7
+#define BION_ERR_BAD_NEURON   -8
+#define BION_ERR_BAD_MODCOUNT -9
+#define BION_ERR_WRITE_FAIL   -10
+#define BION_ERR_BAD_SEGMENT  -11
+
+#if defined(__INTEL_LLVM_COMPILER) || defined(__ADAPTIVECPP__) || defined(__HIPSYCL__)
+
+int bion_load_usm(const char* filename, BionData* data, sycl::queue& q) {
+    memset(data, 0, sizeof(BionData));
+
+    FILE* f = fopen(filename, "rb");
+    if (!f) return BION_ERR_FILE_OPEN;
+
+    // Читаем базовый заголовок (68 байт), для v5 доводим до 84
+    size_t base_hdr_size = BION_HDR_SIZE_V3;   // 68 байт (v3/v4 base)
+    fread(&data->header, base_hdr_size, 1, f);
+    if (data->header.version >= 5) {
+        uint8_t* hdr_end = ((uint8_t*)&data->header) + base_hdr_size;
+        size_t ext_sz = (data->header.version >= 10)
+            ? (BION_HDR_SIZE_V10 - BION_HDR_SIZE_V3)   // 32 байта до v10
+            : (BION_HDR_SIZE_V5 - BION_HDR_SIZE_V3);    // 16 байт до v5
+        fread(hdr_end, ext_sz, 1, f);
+    }
+
+    if (data->header.magic != BION_MAGIC) {
+        DLOG_ERROR("BION:bad magic 0x%08X, expected 0x%08X",
+                data->header.magic, BION_MAGIC);
+        fclose(f);
+        return BION_ERR_BAD_MAGIC;
+    }
+
+    if (data->header.version < BION_VERSION_MIN ||
+        data->header.version > BION_VERSION_MAX) {
+        DLOG_ERROR("BION:unsupported version %u, expected %u",
+                data->header.version, BION_VERSION);
+        fclose(f);
+        return BION_ERR_BAD_VERSION;
+    }
+
+    if (data->header.num_segments == 0) {
+        DLOG_ERROR("BION: network has zero segments");
+        fclose(f);
+        return BION_ERR_ZERO_SEGS;
+    }
+
+    data->num_neurons    = data->header.num_neurons;
+    data->num_segments   = data->header.num_segments;
+    data->num_connections = data->header.num_intra_connections;
+    data->num_synapses   = data->header.num_synapses;
+
+    data->neurons = new (std::nothrow) Neuron[data->num_neurons];
+    data->segments    = (Segment*)sycl::malloc_shared(
+        data->num_segments * sizeof(Segment), q);
+    data->connections = (IntraConnection*)sycl::malloc_shared(
+        data->num_connections * sizeof(IntraConnection), q);
+    data->synapses    = (Synapse*)sycl::malloc_shared(
+        data->num_synapses * sizeof(Synapse), q);
+
+    if ((data->num_neurons > 0 && !data->neurons) ||
+        !data->segments ||
+        (data->num_connections > 0 && !data->connections) ||
+        (data->num_synapses > 0 && !data->synapses)) {
+        bion_unload_usm(data, q);
+        fclose(f);
+        return BION_ERR_USM_ALLOC;
+    }
+
+    if (data->num_neurons > 0)
+        fread(data->neurons, sizeof(Neuron), data->num_neurons, f);
+
+    if (data->header.version >= 7) {
+        if (bion_read_segments(f, data->segments, data->num_segments,
+                               data->header.version, data->header.file_sz_segment)
+                != data->num_segments) {
+            bion_unload_usm(data, q); fclose(f);
+            return BION_ERR_BAD_SEGMENT;
+        }
+    } else if (data->header.version >= 4) {
+        // v4-v6: старый формат с MAX_MODIFIERS=16 (sizeof=988)
+        #pragma pack(push, 1)
+        struct V4Segment {
+            uint32_t id; uint32_t neuron_id;
+            Vec3 position; Vec3 direction;
+            float length; float radius; float V_m;
+            float intra_ions[5]; float extra_ions[5];
+            float intra_nt[14]; float neurotransmitter[14];
+            Modifier modifiers[16];
+            uint8_t modifier_count; uint8_t segment_type; uint8_t _reserved1[2];
+            float ATP_level; float temperature; float I_buffer; float transcription_signal;
+            uint32_t intra_connection_ids[16]; uint8_t intra_connection_count; uint8_t _reserved2[3];
+        };
+        #pragma pack(pop)
+        V4Segment v4seg;
+        for (uint32_t i = 0; i < data->num_segments; i++) {
+            if (fread(&v4seg, sizeof(V4Segment), 1, f) != 1) {
+                bion_unload_usm(data, q); fclose(f);
+                return BION_ERR_BAD_SEGMENT;
+            }
+            Segment* s = &data->segments[i];
+            memset(s, 0, sizeof(Segment));
+            memcpy(s, &v4seg, offsetof(V4Segment, modifiers));
+            s->modifier_count = v4seg.modifier_count;
+            if (s->modifier_count > 16) s->modifier_count = 16;
+            for (int j = 0; j < s->modifier_count; j++)
+                memcpy(&s->modifiers[j], &v4seg.modifiers[j], sizeof(Modifier));
+            s->segment_type = v4seg.segment_type;
+            s->ATP_level = v4seg.ATP_level;
+            s->temperature = v4seg.temperature;
+            s->I_buffer = v4seg.I_buffer;
+            s->transcription_signal = v4seg.transcription_signal;
+            for (int j = 0; j < 16; j++) s->intra_connection_ids[j] = v4seg.intra_connection_ids[j];
+            s->intra_connection_count = v4seg.intra_connection_count;
+        }
+    } else {
+        #pragma pack(push, 1)
+        struct V3Modifier {
+            uint8_t  type;
+            float    density;
+            float    state[8];
+            uint8_t  active_vars;
+            uint8_t  flags;
+            uint8_t  _reserved[2];
+        };
+        struct V3Segment {
+            uint32_t id;
+            uint32_t neuron_id;
+            Vec3     position;
+            float    length;
+            float    radius;
+            float    V_m;
+            float    intra_ions[4];
+            float    extra_ions[4];
+            float    neurotransmitter[12];
+            V3Modifier modifiers[16];
+            uint8_t  modifier_count;
+            uint8_t  _reserved[3];
+            float    ATP_level;
+            float    temperature;
+            float    I_buffer;
+            uint32_t intra_connection_ids[16];
+            uint8_t  intra_connection_count;
+            uint8_t  _reserved2[3];
+        };
+        #pragma pack(pop)
+
+        V3Segment v3seg;
+        for (uint32_t i = 0; i < data->num_segments; i++) {
+            fread(&v3seg, sizeof(V3Segment), 1, f);
+            Segment* s = &data->segments[i];
+            memset(s, 0, sizeof(Segment));
+            s->id = v3seg.id;
+            s->neuron_id = v3seg.neuron_id;
+            s->position = v3seg.position;
+            s->direction = {0, 1, 0};
+            s->length = v3seg.length;
+            s->radius = v3seg.radius;
+            s->V_m = v3seg.V_m;
+            for (int j = 0; j < 4; j++)  s->intra_ions[j] = v3seg.intra_ions[j];
+            for (int j = 0; j < 4; j++)  s->extra_ions[j] = v3seg.extra_ions[j];
+            for (int j = 0; j < 12; j++) s->neurotransmitter[j] = v3seg.neurotransmitter[j];
+            s->modifier_count = v3seg.modifier_count;
+            s->segment_type = 0;
+            s->ATP_level = v3seg.ATP_level;
+            s->temperature = v3seg.temperature;
+            s->I_buffer = v3seg.I_buffer;
+            for (int j = 0; j < 16; j++) s->intra_connection_ids[j] = v3seg.intra_connection_ids[j];
+            s->intra_connection_count = v3seg.intra_connection_count;
+            for (int j = 0; j < s->modifier_count; j++) {
+                s->modifiers[j].type = v3seg.modifiers[j].type;
+                s->modifiers[j].density = v3seg.modifiers[j].density;
+                for (int k = 0; k < 8; k++) s->modifiers[j].state[k] = v3seg.modifiers[j].state[k];
+                s->modifiers[j].active_vars = v3seg.modifiers[j].active_vars;
+                s->modifiers[j].flags = v3seg.modifiers[j].flags;
+            }
+        }
+    }
+
+    if (data->num_connections > 0) {
+        if (data->header.version <= 8) {
+            // v3-v8: IntraConnection 12 байт (без _pad). Читаем и расширяем до 16 байт.
+            struct OldIntraConnection { uint32_t segment_a; uint32_t segment_b; float coupling_resistance; };
+            auto* old_conns = new (std::nothrow) OldIntraConnection[data->num_connections];
+            if (old_conns) {
+                fread(old_conns, sizeof(OldIntraConnection), data->num_connections, f);
+                for (uint32_t i = 0; i < data->num_connections; i++) {
+                    data->connections[i].segment_a = old_conns[i].segment_a;
+                    data->connections[i].segment_b = old_conns[i].segment_b;
+                    data->connections[i].is_intracellular = (old_conns[i].coupling_resistance != 0.0f) ? 1 : 0;
+                    data->connections[i]._pad = 0;
+                }
+                delete[] old_conns;
+            }
+        } else {
+            fread(data->connections, sizeof(IntraConnection), data->num_connections, f);
+        }
+    }
+    if (data->num_synapses > 0) {
+        if (data->header.version <= 6) {
+            struct SynapseV6_G { uint8_t raw[824]; };
+            std::vector<SynapseV6_G> old_syns(data->num_synapses);
+            fread(old_syns.data(), 824, data->num_synapses, f);
+            for (uint32_t i = 0; i < data->num_synapses; i++) {
+                memcpy(&data->synapses[i], &old_syns[i], 824);
+                data->synapses[i].RRP = 10.0f;
+                data->synapses[i].RRP_max = 10.0f;
+                data->synapses[i].RRP_recovery = 0.02f;
+            }
+        } else {
+            // v7-v9: 836 байт (NT=14 + RRP) → remap; v10: file_sz_synapse (836/840/844)
+            bion_read_synapses(f, data->synapses, data->num_synapses,
+                               data->header.version, data->header.file_sz_synapse);
+        }
+    }
+
+    // Ядра (v5+)
+    struct NucleusV5_G { uint32_t id; uint8_t en, cm, _p[2]; uint32_t ci, lc;
+        float ga[20], pl[20]; float ps, pc, er, nf, mt, aa; uint8_t _r[4]; };
+
+    if (data->header.version >= 5 && data->header.num_nuclei > 0) {
+        data->num_nuclei = data->header.num_nuclei;
+        data->nuclei = new (std::nothrow) Nucleus[data->num_nuclei];
+        if (data->nuclei) {
+            if (data->header.version == 5) {
+                NucleusV5_G nv5;
+                for (uint32_t i = 0; i < data->num_nuclei; i++) {
+                    fread(&nv5, sizeof(NucleusV5_G), 1, f);
+                    memset(&data->nuclei[i], 0, sizeof(Nucleus));
+                    data->nuclei[i].neuron_id = nv5.id;
+                    data->nuclei[i].enabled = nv5.en;
+                    data->nuclei[i].consolidation_mode = nv5.cm;
+                    data->nuclei[i].consolidation_interval_ticks = nv5.ci;
+                    data->nuclei[i].last_consolidation_tick = nv5.lc;
+                    for (int g = 0; g < 20; g++) { data->nuclei[i].gene_activity[g] = nv5.ga[g]; data->nuclei[i].protein_level[g] = nv5.pl[g]; }
+                    data->nuclei[i].protein_synthesis_rate = nv5.ps;
+                    data->nuclei[i].pcreb_level = nv5.pc; data->nuclei[i].erk_level = nv5.er;
+                    data->nuclei[i].nfkb_level = nv5.nf; data->nuclei[i].mtorc1_level = nv5.mt;
+                    data->nuclei[i].amino_acid_level = nv5.aa;
+                }
+            } else if (data->header.version == 6) {
+                struct NucleusV6_G { uint8_t raw[332]; };
+                std::vector<NucleusV6_G> old_nuc(data->num_nuclei);
+                fread(old_nuc.data(), 332, data->num_nuclei, f);
+                for (uint32_t i = 0; i < data->num_nuclei; i++) {
+                    memcpy(&data->nuclei[i], &old_nuc[i], 332);
+                    for (int g = 36; g < 46; g++) {
+                        data->nuclei[i].gene_activity[g] = 0.0f;
+                        data->nuclei[i].protein_level[g]  = 0.0f;
+                    }
+                }
+            } else if (data->header.file_sz_nucleus == BION_NUCLEUS_SIZE_V46) {
+                NucleusV46 nv46;
+                for (uint32_t i = 0; i < data->num_nuclei; i++) {
+                    if (fread(&nv46, sizeof(NucleusV46), 1, f) != 1) break;
+                    memset(&data->nuclei[i], 0, sizeof(Nucleus));
+                    bion_migrate_nucleus_v46(&nv46, &data->nuclei[i]);
+                }
+            } else {
+                fread(data->nuclei, sizeof(Nucleus), data->num_nuclei, f);
+            }
+        }
+    } else {
+        data->num_nuclei = data->num_neurons;
+        data->nuclei = new (std::nothrow) Nucleus[data->num_nuclei];
+        if (data->nuclei) {
+            for (uint32_t i = 0; i < data->num_nuclei; i++) {
+                memset(&data->nuclei[i], 0, sizeof(Nucleus));
+                data->nuclei[i].neuron_id = data->neurons[i].id;
+                data->nuclei[i].enabled = 1;
+                data->nuclei[i].consolidation_mode = 3;
+                data->nuclei[i].consolidation_interval_ticks = 0;
+                data->nuclei[i].amino_acid_level = 0.5f;
+            }
+        }
+    }
+
+    fclose(f);
+
+    // Валидация
+    for (uint32_t i = 0; i < data->num_connections; i++) {
+        if (data->connections[i].segment_a >= data->num_segments ||
+            data->connections[i].segment_b >= data->num_segments) {
+            DLOG_ERROR("BION:IntraConnection[%u] out-of-range segment", i);
+            bion_unload_usm(data, q);
+            return BION_ERR_BAD_CONN;
+        }
+    }
+
+    for (uint32_t i = 0; i < data->num_synapses; i++) {
+        if (data->synapses[i].pre_segment >= data->num_segments ||
+            data->synapses[i].post_segment >= data->num_segments) {
+            DLOG_ERROR("BION:Synapse[%u] out-of-range segment", i);
+            bion_unload_usm(data, q);
+            return BION_ERR_BAD_SYNAPSE;
+        }
+        if (data->synapses[i].pre_autoreceptor_count > MAX_PRE_AUTORECEPTORS ||
+            data->synapses[i].post_receptor_count > MAX_POST_RECEPTORS) {
+            DLOG_ERROR("BION:Synapse[%u] too many receptors", i);
+            bion_unload_usm(data, q);
+            return BION_ERR_BAD_MODCOUNT;
+        }
+        if (data->synapses[i].type >= SYNAPSE_TYPE_COUNT) {
+            DLOG_ERROR("BION:Synapse[%u] invalid type %u", i, data->synapses[i].type);
+            bion_unload_usm(data, q);
+            return BION_ERR_BAD_SYNAPSE;
+        }
+    }
+
+    for (uint32_t i = 0; i < data->num_neurons; i++) {
+        uint32_t end = data->neurons[i].segment_start + data->neurons[i].segment_count;
+        if (end > data->num_segments) {
+            DLOG_ERROR("BION:Neuron[%u] segment range exceeds num_segments", i);
+            bion_unload_usm(data, q);
+            return BION_ERR_BAD_NEURON;
+        }
+    }
+
+    for (uint32_t i = 0; i < data->num_segments; i++) {
+        if (data->segments[i].modifier_count > MAX_MODIFIERS_PER_SEGMENT) {
+            DLOG_ERROR("BION:Segment[%u] too many modifiers", i);
+            bion_unload_usm(data, q);
+            return BION_ERR_BAD_MODCOUNT;
+        }
+    }
+
+    // Заполнение intra_connection_ids[]
+    for (uint32_t i = 0; i < data->num_segments; i++) {
+        data->segments[i].intra_connection_count = 0;
+    }
+    for (uint32_t i = 0; i < data->num_connections; i++) {
+        uint32_t a = data->connections[i].segment_a;
+        uint32_t b = data->connections[i].segment_b;
+        if (data->segments[a].intra_connection_count < MAX_INTRACONNECTIONS_PER_SEGMENT) {
+            data->segments[a].intra_connection_ids[
+                data->segments[a].intra_connection_count++] = i;
+        }
+        if (data->segments[b].intra_connection_count < MAX_INTRACONNECTIONS_PER_SEGMENT) {
+            data->segments[b].intra_connection_ids[
+                data->segments[b].intra_connection_count++] = i;
+        }
+    }
+    
+    return 0;
+}
+
+// ── bion_load_into_buffers: загрузка в ПРЕДВЫДЕЛЕННЫЕ GPU-буферы ──────
+// Идентична bion_load_usm(), но НЕ аллоцирует segments/connections/synapses.
+// Указатели должны быть уже установлены в data (через L0PoolManager или
+// capacity-based reuse в Simulation).
+// neurons/nuclei — host-only, аллоцируются через new[] как обычно.
+int bion_load_into_buffers(const char* filename, BionData* data) {
+    // segments/connections/synapses уже установлены вызывающим кодом
+    // neurons/nuclei будут выделены здесь
+    data->neurons = nullptr;
+    data->nuclei = nullptr;
+
+    FILE* f = fopen(filename, "rb");
+    if (!f) return BION_ERR_FILE_OPEN;
+
+    size_t base_hdr_size = BION_HDR_SIZE_V3;   // 68 байт (v3/v4 base)
+    fread(&data->header, base_hdr_size, 1, f);
+    if (data->header.version >= 5) {
+        uint8_t* hdr_end = ((uint8_t*)&data->header) + base_hdr_size;
+        size_t ext_sz = (data->header.version >= 10)
+            ? (BION_HDR_SIZE_V10 - BION_HDR_SIZE_V3)   // 32 байта до v10
+            : (BION_HDR_SIZE_V5 - BION_HDR_SIZE_V3);    // 16 байт до v5
+        fread(hdr_end, ext_sz, 1, f);
+    }
+
+    if (data->header.magic != BION_MAGIC) {
+        DLOG_ERROR("BION:bad magic 0x%08X", data->header.magic);
+        fclose(f); return BION_ERR_BAD_MAGIC;
+    }
+    if (data->header.version < BION_VERSION_MIN ||
+        data->header.version > BION_VERSION_MAX) {
+        DLOG_ERROR("BION:unsupported version %u", data->header.version);
+        fclose(f); return BION_ERR_BAD_VERSION;
+    }
+    if (data->header.num_segments == 0) {
+        DLOG_ERROR("BION: network has zero segments");
+        fclose(f); return BION_ERR_ZERO_SEGS;
+    }
+
+    data->num_neurons     = data->header.num_neurons;
+    data->num_segments    = data->header.num_segments;
+    data->num_connections = data->header.num_intra_connections;
+    data->num_synapses    = data->header.num_synapses;
+
+    // neurons — host-only, всегда через new[]
+    data->neurons = new (std::nothrow) Neuron[data->num_neurons];
+    if (data->num_neurons > 0 && !data->neurons) {
+        fclose(f); return BION_ERR_USM_ALLOC;
+    }
+
+    // segments/connections/synapses — УЖЕ выделены вызывающим кодом,
+    // валидация что указатели не null
+    if (!data->segments ||
+        (data->num_connections > 0 && !data->connections) ||
+        (data->num_synapses > 0 && !data->synapses)) {
+        delete[] data->neurons; data->neurons = nullptr;
+        fclose(f); return BION_ERR_USM_ALLOC;
+    }
+
+    // ── Чтение данных (идентично bion_load_usm) ──────────────────────
+    if (data->num_neurons > 0)
+        fread(data->neurons, sizeof(Neuron), data->num_neurons, f);
+
+    // Segments
+    if (data->header.version >= 7) {
+        if (bion_read_segments(f, data->segments, data->num_segments,
+                               data->header.version, data->header.file_sz_segment)
+                != data->num_segments) {
+            delete[] data->neurons; fclose(f); return BION_ERR_BAD_SEGMENT;
+        }
+    } else if (data->header.version >= 4) {
+        #pragma pack(push, 1)
+        struct V4Segment {
+            uint32_t id; uint32_t neuron_id; Vec3 position; Vec3 direction;
+            float length, radius, V_m; float intra_ions[5], extra_ions[5];
+            float intra_nt[14], neurotransmitter[14];
+            Modifier modifiers[16]; uint8_t modifier_count, segment_type, _r1[2];
+            float ATP_level, temperature, I_buffer, transcription_signal;
+            uint32_t intra_connection_ids[16]; uint8_t intra_connection_count, _r2[3];
+        };
+        #pragma pack(pop)
+        V4Segment v4seg;
+        for (uint32_t i = 0; i < data->num_segments; i++) {
+            if (fread(&v4seg, sizeof(V4Segment), 1, f) != 1) {
+                delete[] data->neurons; fclose(f); return BION_ERR_BAD_SEGMENT;
+            }
+            Segment* s = &data->segments[i]; memset(s, 0, sizeof(Segment));
+            memcpy(s, &v4seg, offsetof(V4Segment, modifiers));
+            s->modifier_count = v4seg.modifier_count;
+            if (s->modifier_count > 16) s->modifier_count = 16;
+            for (int j = 0; j < s->modifier_count; j++)
+                memcpy(&s->modifiers[j], &v4seg.modifiers[j], sizeof(Modifier));
+            s->segment_type = v4seg.segment_type;
+            s->ATP_level = v4seg.ATP_level; s->temperature = v4seg.temperature;
+            s->I_buffer = v4seg.I_buffer; s->transcription_signal = v4seg.transcription_signal;
+            for (int j = 0; j < 16; j++) s->intra_connection_ids[j] = v4seg.intra_connection_ids[j];
+            s->intra_connection_count = v4seg.intra_connection_count;
+        }
+    } else {
+        // v3 migration (same as bion_load_usm)
+        #pragma pack(push, 1)
+        struct V3Modifier { uint8_t type; float density; float state[8]; uint8_t av, fl; uint8_t _r[2]; };
+        struct V3Segment { uint32_t id; uint32_t neuron_id; Vec3 position;
+            float length, radius, V_m; float intra_ions[4], extra_ions[4], nt[12];
+            V3Modifier mods[16]; uint8_t mc, _r1[3];
+            float ATP, temp, Ib; uint32_t ic_ids[16]; uint8_t icc, _r2[3]; };
+        #pragma pack(pop)
+        V3Segment v3;
+        for (uint32_t i = 0; i < data->num_segments; i++) {
+            fread(&v3, sizeof(V3Segment), 1, f);
+            Segment* s = &data->segments[i]; memset(s, 0, sizeof(Segment));
+            s->id = v3.id; s->neuron_id = v3.neuron_id;
+            s->position = v3.position; s->direction = {0,1,0};
+            s->length = v3.length; s->radius = v3.radius; s->V_m = v3.V_m;
+            for (int j=0;j<4;j++){s->intra_ions[j]=v3.intra_ions[j];s->extra_ions[j]=v3.extra_ions[j];}
+            for (int j=0;j<12;j++) s->neurotransmitter[j]=v3.nt[j];
+            s->modifier_count=v3.mc; s->ATP_level=v3.ATP; s->temperature=v3.temp; s->I_buffer=v3.Ib;
+            for (int j=0;j<16;j++) s->intra_connection_ids[j]=v3.ic_ids[j];
+            s->intra_connection_count=v3.icc;
+            for (int j=0;j<s->modifier_count;j++){
+                s->modifiers[j].type=v3.mods[j].type;s->modifiers[j].density=v3.mods[j].density;
+                for (int k=0;k<8;k++)s->modifiers[j].state[k]=v3.mods[j].state[k];
+                s->modifiers[j].active_vars=v3.mods[j].av;s->modifiers[j].flags=v3.mods[j].fl;
+            }
+        }
+    }
+
+    // Connections
+    if (data->num_connections > 0) {
+        if (data->header.version <= 8) {
+            struct O { uint32_t a,b; float r; };
+            auto* oc = new O[data->num_connections];
+            fread(oc, sizeof(O), data->num_connections, f);
+            for (uint32_t i = 0; i < data->num_connections; i++) {
+                data->connections[i].segment_a = oc[i].a;
+                data->connections[i].segment_b = oc[i].b;
+                data->connections[i].is_intracellular = (oc[i].r != 0.0f) ? 1 : 0;
+                data->connections[i]._pad = 0;
+            }
+            delete[] oc;
+        } else {
+            fread(data->connections, sizeof(IntraConnection), data->num_connections, f);
+        }
+    }
+
+    // Synapses
+    if (data->num_synapses > 0) {
+        if (data->header.version <= 6) {
+            struct SV6 { uint8_t raw[824]; };
+            std::vector<SV6> old(data->num_synapses);
+            fread(old.data(), 824, data->num_synapses, f);
+            for (uint32_t i = 0; i < data->num_synapses; i++) {
+                memcpy(&data->synapses[i], &old[i], 824);
+                data->synapses[i].RRP = 10.0f; data->synapses[i].RRP_max = 10.0f;
+                data->synapses[i].RRP_recovery = 0.02f;
+            }
+        } else {
+            // v7-v9: 836 байт (NT=14 + RRP) → remap; v10: file_sz_synapse (836/840/844)
+            bion_read_synapses(f, data->synapses, data->num_synapses,
+                               data->header.version, data->header.file_sz_synapse);
+        }
+    }
+
+    // Nuclei (host-only)
+    struct NV5 { uint32_t id; uint8_t en,cm,_p[2]; uint32_t ci,lc;
+        float ga[20],pl[20]; float ps,pc,er,nf,mt,aa; uint8_t _r[4]; };
+    if (data->header.version >= 5 && data->header.num_nuclei > 0) {
+        data->num_nuclei = data->header.num_nuclei;
+        data->nuclei = new Nucleus[data->num_nuclei];
+        if (data->header.version == 5) {
+            NV5 nv5;
+            for (uint32_t i = 0; i < data->num_nuclei; i++) {
+                fread(&nv5, sizeof(NV5), 1, f);
+                memset(&data->nuclei[i], 0, sizeof(Nucleus));
+                data->nuclei[i].neuron_id = nv5.id; data->nuclei[i].enabled = nv5.en;
+                data->nuclei[i].consolidation_mode = nv5.cm;
+                data->nuclei[i].consolidation_interval_ticks = nv5.ci;
+                data->nuclei[i].last_consolidation_tick = nv5.lc;
+                for (int g=0;g<20;g++){data->nuclei[i].gene_activity[g]=nv5.ga[g];data->nuclei[i].protein_level[g]=nv5.pl[g];}
+                data->nuclei[i].protein_synthesis_rate=nv5.ps;data->nuclei[i].pcreb_level=nv5.pc;
+                data->nuclei[i].erk_level=nv5.er;data->nuclei[i].nfkb_level=nv5.nf;
+                data->nuclei[i].mtorc1_level=nv5.mt;data->nuclei[i].amino_acid_level=nv5.aa;
+            }
+        } else if (data->header.version == 6) {
+            struct NV6 { uint8_t raw[332]; };
+            std::vector<NV6> on(data->num_nuclei);
+            fread(on.data(), 332, data->num_nuclei, f);
+            for (uint32_t i=0;i<data->num_nuclei;i++){
+                memcpy(&data->nuclei[i],&on[i],332);
+                for(int g=36;g<46;g++){data->nuclei[i].gene_activity[g]=0;data->nuclei[i].protein_level[g]=0;}
+            }
+        } else if (data->header.file_sz_nucleus == BION_NUCLEUS_SIZE_V46) {
+            NucleusV46 nv46;
+            for (uint32_t i=0;i<data->num_nuclei;i++){
+                if (fread(&nv46, sizeof(NucleusV46), 1, f) != 1) break;
+                memset(&data->nuclei[i],0,sizeof(Nucleus));
+                bion_migrate_nucleus_v46(&nv46,&data->nuclei[i]);
+            }
+        } else {
+            fread(data->nuclei, sizeof(Nucleus), data->num_nuclei, f);
+        }
+    } else {
+        data->num_nuclei = data->num_neurons;
+        data->nuclei = new Nucleus[data->num_nuclei];
+        for (uint32_t i=0;i<data->num_nuclei;i++){
+            memset(&data->nuclei[i],0,sizeof(Nucleus));
+            data->nuclei[i].neuron_id=data->neurons[i].id;
+            data->nuclei[i].enabled=1;data->nuclei[i].consolidation_mode=3;
+            data->nuclei[i].amino_acid_level=0.5f;
+        }
+    }
+
+    fclose(f);
+
+    // Validation + intra_connection_ids + coupling_resistance
+    // (same as bion_load_usm)
+    for (uint32_t i = 0; i < data->num_connections; i++)
+        if (data->connections[i].segment_a >= data->num_segments ||
+            data->connections[i].segment_b >= data->num_segments) {
+            delete[] data->neurons; delete[] data->nuclei; return BION_ERR_BAD_CONN;
+        }
+    for (uint32_t i = 0; i < data->num_synapses; i++)
+        if (data->synapses[i].pre_segment >= data->num_segments ||
+            data->synapses[i].post_segment >= data->num_segments) {
+            delete[] data->neurons; delete[] data->nuclei; return BION_ERR_BAD_SYNAPSE;
+        }
+    for (uint32_t i = 0; i < data->num_neurons; i++)
+        if (data->neurons[i].segment_start + data->neurons[i].segment_count > data->num_segments) {
+            delete[] data->neurons; delete[] data->nuclei; return BION_ERR_BAD_NEURON;
+        }
+    for (uint32_t i = 0; i < data->num_segments; i++)
+        if (data->segments[i].modifier_count > MAX_MODIFIERS_PER_SEGMENT) {
+            delete[] data->neurons; delete[] data->nuclei; return BION_ERR_BAD_MODCOUNT;
+        }
+
+    for (uint32_t i = 0; i < data->num_segments; i++)
+        data->segments[i].intra_connection_count = 0;
+    for (uint32_t i = 0; i < data->num_connections; i++) {
+        uint32_t a = data->connections[i].segment_a, b = data->connections[i].segment_b;
+        if (data->segments[a].intra_connection_count < MAX_INTRACONNECTIONS_PER_SEGMENT)
+            data->segments[a].intra_connection_ids[data->segments[a].intra_connection_count++] = i;
+        if (data->segments[b].intra_connection_count < MAX_INTRACONNECTIONS_PER_SEGMENT)
+            data->segments[b].intra_connection_ids[data->segments[b].intra_connection_count++] = i;
+    }
+
+    return 0;
+}
+
+void bion_unload_usm(BionData* data, sycl::queue& q) {
+    if (data->neurons)     { delete[] data->neurons;           data->neurons = nullptr; }
+    if (data->segments)    { sycl::free(data->segments, q);    data->segments = nullptr; }
+    if (data->connections) { sycl::free(data->connections, q); data->connections = nullptr; }
+    if (data->synapses)    { sycl::free(data->synapses, q);    data->synapses = nullptr; }
+    if (data->nuclei)      { delete[] data->nuclei;            data->nuclei = nullptr; }
+    data->num_neurons = 0;
+    data->num_segments = 0;
+    data->num_connections = 0;
+    data->num_synapses = 0;
+    data->num_nuclei = 0;
+    memset(&data->header, 0, sizeof(NetworkHeader));
+}
+
+#endif // __INTEL_LLVM_COMPILER || __ADAPTIVECPP__ || __HIPSYCL__
+
+// ── CUDA unified memory (cudaMallocManaged) ───────────────────────────
+
+#if defined(__CUDACC__)
+#include <cuda_runtime.h>
+
+int bion_load_cuda(const char* filename, BionData* data) {
+    memset(data, 0, sizeof(BionData));
+
+    FILE* f = fopen(filename, "rb");
+    if (!f) return BION_ERR_FILE_OPEN;
+
+    size_t base_hdr_size = BION_HDR_SIZE_V3;   // 68 байт (v3/v4 base)
+    fread(&data->header, base_hdr_size, 1, f);
+    if (data->header.version >= 5) {
+        uint8_t* hdr_end = ((uint8_t*)&data->header) + base_hdr_size;
+        size_t ext_sz = (data->header.version >= 10)
+            ? (BION_HDR_SIZE_V10 - BION_HDR_SIZE_V3)   // 32 байта до v10
+            : (BION_HDR_SIZE_V5 - BION_HDR_SIZE_V3);    // 16 байт до v5
+        fread(hdr_end, ext_sz, 1, f);
+    }
+
+    if (data->header.magic != BION_MAGIC) {
+        DLOG_ERROR("BION:bad magic 0x%08X, expected 0x%08X",
+                data->header.magic, BION_MAGIC);
+        fclose(f);
+        return BION_ERR_BAD_MAGIC;
+    }
+
+    if (data->header.version < BION_VERSION_MIN ||
+        data->header.version > BION_VERSION_MAX) {
+        DLOG_ERROR("BION:unsupported version %u, expected %u",
+                data->header.version, BION_VERSION);
+        fclose(f);
+        return BION_ERR_BAD_VERSION;
+    }
+
+    if (data->header.num_segments == 0) {
+        DLOG_ERROR("BION: network has zero segments");
+        fclose(f);
+        return BION_ERR_ZERO_SEGS;
+    }
+
+    data->num_neurons    = data->header.num_neurons;
+    data->num_segments   = data->header.num_segments;
+    data->num_connections = data->header.num_intra_connections;
+    data->num_synapses   = data->header.num_synapses;
+
+    data->neurons = new (std::nothrow) Neuron[data->num_neurons];
+
+    // Синхронизация: предыдущая симуляция (run_tick) может оставить устройство
+    // занятым (err=46 cudaErrorDevicesUnavailable) → cudaMallocManaged падает.
+    cudaDeviceSynchronize();
+    cudaGetLastError();  // очистить возможный sticky error
+
+    // cudaMallocManaged(ptr, 0) возвращает cudaErrorInvalidValue (sticky) → ломает
+    // последующие аллокации. Пропускаем 0-size.
+    data->segments = nullptr;
+    if (data->num_segments > 0) {
+        cudaError_t err = cudaMallocManaged(&data->segments, data->num_segments * sizeof(Segment));
+        if (err != cudaSuccess) { data->segments = nullptr; }
+    }
+    data->connections = nullptr;
+    if (data->num_connections > 0) {
+        cudaError_t err = cudaMallocManaged(&data->connections, data->num_connections * sizeof(IntraConnection));
+        if (err != cudaSuccess) { data->connections = nullptr; }
+    }
+    data->synapses = nullptr;
+    if (data->num_synapses > 0) {
+        cudaError_t err = cudaMallocManaged(&data->synapses, data->num_synapses * sizeof(Synapse));
+        if (err != cudaSuccess) { data->synapses = nullptr; }
+    }
+
+    if ((data->num_neurons > 0 && !data->neurons) ||
+        !data->segments ||
+        (data->num_connections > 0 && !data->connections) ||
+        (data->num_synapses > 0 && !data->synapses)) {
+        bion_unload_cuda(data);
+        fclose(f);
+        return BION_ERR_USM_ALLOC;
+    }
+
+    if (data->num_neurons > 0)
+        fread(data->neurons, sizeof(Neuron), data->num_neurons, f);
+
+    if (data->header.version >= 7) {
+        if (bion_read_segments(f, data->segments, data->num_segments,
+                               data->header.version, data->header.file_sz_segment)
+                != data->num_segments) {
+            bion_unload_cuda(data); fclose(f);
+            return BION_ERR_BAD_SEGMENT;
+        }
+    } else if (data->header.version >= 4) {
+        // v4-v6: старый формат с MAX_MODIFIERS=16 (sizeof=988)
+        #pragma pack(push, 1)
+        struct V4Segment {
+            uint32_t id; uint32_t neuron_id;
+            Vec3 position; Vec3 direction;
+            float length; float radius; float V_m;
+            float intra_ions[5]; float extra_ions[5];
+            float intra_nt[14]; float neurotransmitter[14];
+            Modifier modifiers[16];
+            uint8_t modifier_count; uint8_t segment_type; uint8_t _reserved1[2];
+            float ATP_level; float temperature; float I_buffer; float transcription_signal;
+            uint32_t intra_connection_ids[16]; uint8_t intra_connection_count; uint8_t _reserved2[3];
+        };
+        #pragma pack(pop)
+        V4Segment v4seg;
+        for (uint32_t i = 0; i < data->num_segments; i++) {
+            if (fread(&v4seg, sizeof(V4Segment), 1, f) != 1) {
+                bion_unload_cuda(data); fclose(f);
+                return BION_ERR_BAD_SEGMENT;
+            }
+            Segment* s = &data->segments[i];
+            memset(s, 0, sizeof(Segment));
+            memcpy(s, &v4seg, offsetof(V4Segment, modifiers));
+            s->modifier_count = v4seg.modifier_count;
+            if (s->modifier_count > 16) s->modifier_count = 16;
+            for (int j = 0; j < s->modifier_count; j++)
+                memcpy(&s->modifiers[j], &v4seg.modifiers[j], sizeof(Modifier));
+            s->segment_type = v4seg.segment_type;
+            s->ATP_level = v4seg.ATP_level;
+            s->temperature = v4seg.temperature;
+            s->I_buffer = v4seg.I_buffer;
+            s->transcription_signal = v4seg.transcription_signal;
+            for (int j = 0; j < 16; j++) s->intra_connection_ids[j] = v4seg.intra_connection_ids[j];
+            s->intra_connection_count = v4seg.intra_connection_count;
+        }
+    } else {
+        #pragma pack(push, 1)
+        struct V3Modifier {
+            uint8_t  type;
+            float    density;
+            float    state[8];
+            uint8_t  active_vars;
+            uint8_t  flags;
+            uint8_t  _reserved[2];
+        };
+        struct V3Segment {
+            uint32_t id;
+            uint32_t neuron_id;
+            Vec3     position;
+            float    length;
+            float    radius;
+            float    V_m;
+            float    intra_ions[4];
+            float    extra_ions[4];
+            float    neurotransmitter[12];
+            V3Modifier modifiers[16];
+            uint8_t  modifier_count;
+            uint8_t  _reserved[3];
+            float    ATP_level;
+            float    temperature;
+            float    I_buffer;
+            uint32_t intra_connection_ids[16];
+            uint8_t  intra_connection_count;
+            uint8_t  _reserved2[3];
+        };
+        #pragma pack(pop)
+
+        V3Segment v3seg;
+        for (uint32_t i = 0; i < data->num_segments; i++) {
+            fread(&v3seg, sizeof(V3Segment), 1, f);
+            Segment* s = &data->segments[i];
+            memset(s, 0, sizeof(Segment));
+            s->id = v3seg.id;
+            s->neuron_id = v3seg.neuron_id;
+            s->position = v3seg.position;
+            s->direction = {0, 1, 0};
+            s->length = v3seg.length;
+            s->radius = v3seg.radius;
+            s->V_m = v3seg.V_m;
+            for (int j = 0; j < 4; j++)  s->intra_ions[j] = v3seg.intra_ions[j];
+            for (int j = 0; j < 4; j++)  s->extra_ions[j] = v3seg.extra_ions[j];
+            for (int j = 0; j < 12; j++) s->neurotransmitter[j] = v3seg.neurotransmitter[j];
+            s->modifier_count = v3seg.modifier_count;
+            s->segment_type = 0;
+            s->ATP_level = v3seg.ATP_level;
+            s->temperature = v3seg.temperature;
+            s->I_buffer = v3seg.I_buffer;
+            for (int j = 0; j < 16; j++) s->intra_connection_ids[j] = v3seg.intra_connection_ids[j];
+            s->intra_connection_count = v3seg.intra_connection_count;
+            for (int j = 0; j < s->modifier_count; j++) {
+                s->modifiers[j].type = v3seg.modifiers[j].type;
+                s->modifiers[j].density = v3seg.modifiers[j].density;
+                for (int k = 0; k < 8; k++) s->modifiers[j].state[k] = v3seg.modifiers[j].state[k];
+                s->modifiers[j].active_vars = v3seg.modifiers[j].active_vars;
+                s->modifiers[j].flags = v3seg.modifiers[j].flags;
+            }
+        }
+    }
+
+    if (data->num_connections > 0) {
+        if (data->header.version <= 8) {
+            // v3-v8: IntraConnection 12 байт (без _pad). Читаем и расширяем до 16 байт.
+            struct OldIntraConnection { uint32_t segment_a; uint32_t segment_b; float coupling_resistance; };
+            auto* old_conns = new (std::nothrow) OldIntraConnection[data->num_connections];
+            if (old_conns) {
+                fread(old_conns, sizeof(OldIntraConnection), data->num_connections, f);
+                for (uint32_t i = 0; i < data->num_connections; i++) {
+                    data->connections[i].segment_a = old_conns[i].segment_a;
+                    data->connections[i].segment_b = old_conns[i].segment_b;
+                    data->connections[i].is_intracellular = (old_conns[i].coupling_resistance != 0.0f) ? 1 : 0;
+                    data->connections[i]._pad = 0;
+                }
+                delete[] old_conns;
+            }
+        } else {
+            fread(data->connections, sizeof(IntraConnection), data->num_connections, f);
+        }
+    }
+    if (data->num_synapses > 0) {
+        if (data->header.version <= 6) {
+            struct SynapseV6_CU { uint8_t raw[824]; };
+            std::vector<SynapseV6_CU> old_syns(data->num_synapses);
+            fread(old_syns.data(), 824, data->num_synapses, f);
+            for (uint32_t i = 0; i < data->num_synapses; i++) {
+                memcpy(&data->synapses[i], &old_syns[i], 824);
+                data->synapses[i].RRP = 10.0f;
+                data->synapses[i].RRP_max = 10.0f;
+                data->synapses[i].RRP_recovery = 0.02f;
+            }
+        } else {
+            // v7-v9: 836 байт (NT=14 + RRP) → remap; v10: file_sz_synapse (836/840/844)
+            bion_read_synapses(f, data->synapses, data->num_synapses,
+                               data->header.version, data->header.file_sz_synapse);
+        }
+    }
+
+    struct NucleusV5_CU { uint32_t id; uint8_t en, cm, _p[2]; uint32_t ci, lc;
+        float ga[20], pl[20]; float ps, pc, er, nf, mt, aa; uint8_t _r[4]; };
+
+    if (data->header.version >= 5 && data->header.num_nuclei > 0) {
+        data->num_nuclei = data->header.num_nuclei;
+        data->nuclei = new (std::nothrow) Nucleus[data->num_nuclei];
+        if (data->nuclei) {
+            if (data->header.version == 5) {
+                NucleusV5_CU nv5;
+                for (uint32_t i = 0; i < data->num_nuclei; i++) {
+                    fread(&nv5, sizeof(NucleusV5_CU), 1, f);
+                    memset(&data->nuclei[i], 0, sizeof(Nucleus));
+                    data->nuclei[i].neuron_id = nv5.id;
+                    data->nuclei[i].enabled = nv5.en;
+                    data->nuclei[i].consolidation_mode = nv5.cm;
+                    data->nuclei[i].consolidation_interval_ticks = nv5.ci;
+                    data->nuclei[i].last_consolidation_tick = nv5.lc;
+                    for (int g = 0; g < 20; g++) { data->nuclei[i].gene_activity[g] = nv5.ga[g]; data->nuclei[i].protein_level[g] = nv5.pl[g]; }
+                    data->nuclei[i].protein_synthesis_rate = nv5.ps;
+                    data->nuclei[i].pcreb_level = nv5.pc; data->nuclei[i].erk_level = nv5.er;
+                    data->nuclei[i].nfkb_level = nv5.nf; data->nuclei[i].mtorc1_level = nv5.mt;
+                    data->nuclei[i].amino_acid_level = nv5.aa;
+                }
+            } else if (data->header.version == 6) {
+                struct NucleusV6_CU { uint8_t raw[332]; };
+                std::vector<NucleusV6_CU> old_nuc(data->num_nuclei);
+                fread(old_nuc.data(), 332, data->num_nuclei, f);
+                for (uint32_t i = 0; i < data->num_nuclei; i++) {
+                    memcpy(&data->nuclei[i], &old_nuc[i], 332);
+                    for (int g = 36; g < 46; g++) {
+                        data->nuclei[i].gene_activity[g] = 0.0f;
+                        data->nuclei[i].protein_level[g]  = 0.0f;
+                    }
+                }
+            } else if (data->header.file_sz_nucleus == BION_NUCLEUS_SIZE_V46) {
+                NucleusV46 nv46;
+                for (uint32_t i = 0; i < data->num_nuclei; i++) {
+                    if (fread(&nv46, sizeof(NucleusV46), 1, f) != 1) break;
+                    memset(&data->nuclei[i], 0, sizeof(Nucleus));
+                    bion_migrate_nucleus_v46(&nv46, &data->nuclei[i]);
+                }
+            } else {
+                fread(data->nuclei, sizeof(Nucleus), data->num_nuclei, f);
+            }
+        }
+    } else {
+        data->num_nuclei = data->num_neurons;
+        data->nuclei = new (std::nothrow) Nucleus[data->num_nuclei];
+        if (data->nuclei) {
+            for (uint32_t i = 0; i < data->num_nuclei; i++) {
+                memset(&data->nuclei[i], 0, sizeof(Nucleus));
+                data->nuclei[i].neuron_id = data->neurons[i].id;
+                data->nuclei[i].enabled = 1;
+                data->nuclei[i].consolidation_mode = 3;
+                data->nuclei[i].consolidation_interval_ticks = 0;
+                data->nuclei[i].amino_acid_level = 0.5f;
+            }
+        }
+    }
+
+    fclose(f);
+
+    for (uint32_t i = 0; i < data->num_connections; i++) {
+        if (data->connections[i].segment_a >= data->num_segments ||
+            data->connections[i].segment_b >= data->num_segments) {
+            DLOG_ERROR("BION:IntraConnection[%u] out-of-range segment", i);
+            bion_unload_cuda(data);
+            return BION_ERR_BAD_CONN;
+        }
+    }
+
+    for (uint32_t i = 0; i < data->num_synapses; i++) {
+        if (data->synapses[i].pre_segment >= data->num_segments ||
+            data->synapses[i].post_segment >= data->num_segments) {
+            DLOG_ERROR("BION:Synapse[%u] out-of-range segment", i);
+            bion_unload_cuda(data);
+            return BION_ERR_BAD_SYNAPSE;
+        }
+        if (data->synapses[i].pre_autoreceptor_count > MAX_PRE_AUTORECEPTORS ||
+            data->synapses[i].post_receptor_count > MAX_POST_RECEPTORS) {
+            DLOG_ERROR("BION:Synapse[%u] too many receptors", i);
+            bion_unload_cuda(data);
+            return BION_ERR_BAD_MODCOUNT;
+        }
+        if (data->synapses[i].type >= SYNAPSE_TYPE_COUNT) {
+            DLOG_ERROR("BION:Synapse[%u] invalid type %u", i, data->synapses[i].type);
+            bion_unload_cuda(data);
+            return BION_ERR_BAD_SYNAPSE;
+        }
+    }
+
+    for (uint32_t i = 0; i < data->num_neurons; i++) {
+        uint32_t end = data->neurons[i].segment_start + data->neurons[i].segment_count;
+        if (end > data->num_segments) {
+            DLOG_ERROR("BION:Neuron[%u] segment range exceeds num_segments", i);
+            bion_unload_cuda(data);
+            return BION_ERR_BAD_NEURON;
+        }
+    }
+
+    for (uint32_t i = 0; i < data->num_segments; i++) {
+        if (data->segments[i].modifier_count > MAX_MODIFIERS_PER_SEGMENT) {
+            DLOG_ERROR("BION:Segment[%u] too many modifiers", i);
+            bion_unload_cuda(data);
+            return BION_ERR_BAD_MODCOUNT;
+        }
+    }
+
+    for (uint32_t i = 0; i < data->num_segments; i++) {
+        data->segments[i].intra_connection_count = 0;
+    }
+    for (uint32_t i = 0; i < data->num_connections; i++) {
+        uint32_t a = data->connections[i].segment_a;
+        uint32_t b = data->connections[i].segment_b;
+        if (data->segments[a].intra_connection_count < MAX_INTRACONNECTIONS_PER_SEGMENT) {
+            data->segments[a].intra_connection_ids[
+                data->segments[a].intra_connection_count++] = i;
+        }
+        if (data->segments[b].intra_connection_count < MAX_INTRACONNECTIONS_PER_SEGMENT) {
+            data->segments[b].intra_connection_ids[
+                data->segments[b].intra_connection_count++] = i;
+        }
+    }
+    
+    return 0;
+}
+
+void bion_unload_cuda(BionData* data) {
+    if (data->neurons)     { delete[] data->neurons;           data->neurons = nullptr; }
+    if (data->segments)    { cudaFree(data->segments);         data->segments = nullptr; }
+    if (data->connections) { cudaFree(data->connections);      data->connections = nullptr; }
+    if (data->synapses)    { cudaFree(data->synapses);         data->synapses = nullptr; }
+    if (data->nuclei)      { delete[] data->nuclei;            data->nuclei = nullptr; }
+    data->num_neurons = 0;
+    data->num_segments = 0;
+    data->num_connections = 0;
+    data->num_synapses = 0;
+    data->num_nuclei = 0;
+    memset(&data->header, 0, sizeof(NetworkHeader));
+}
+
+#endif // __CUDACC__

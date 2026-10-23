@@ -1,0 +1,21 @@
+{
+  "id": 127,
+  "name": "IP3R — IP3-управляемый Ca²⁺-канал ЭПР",
+  "name_en": "IP3R — IP3-gated ER Ca²⁺ channel",
+  "category": "Ca²⁺-гомеостаз",
+  "category_en": "Ca²⁺ Homeostasis",
+  "family": "IP3 receptor",
+  "isoforms": [
+    "IP3R1",
+    "IP3R2"
+  ],
+  "function": "Канал ЭПР, открывается при связывании IP3 (продукт mGluR→PLC). Выпускает Ca²⁺ из ЭПР в цитоплазму.",
+  "kinetics": "IP3-зависимая активация (Kd~0.1μM), Ca²⁺-зависимая модуляция (bell-shaped: активация при низком [Ca²⁺], ингибиция при высоком).",
+  "role_in_cpg": "Глутамат→mGluR1→PLC→IP3→IP3R→Ca²⁺ выброс из ЭПР. Усиливает Ca²⁺-сигнал в dIN.",
+  "bio_ref": "Foskett et al. (2007) Physiol Rev 87:593-658. 'Inositol trisphosphate receptor Ca²⁺ release channels.'",
+  "species": "Все эукариоты",
+  "neuron_type": "dIN, cIN (постсинаптически)",
+  "name_zh": "IP3R — IP3门控内质网Ca²⁺通道",
+  "description_en": "IP3-gated ER Ca²⁺ channel opened by IP3 binding (mGluR→PLC product), releasing Ca²⁺ from ER to cytosol. IP3-dependent activation (Kd~0.1 µM) with bell-shaped Ca²⁺ modulation (activation at low [Ca²⁺], inhibition at high); amplifies the Ca²⁺ signal in dIN.",
+  "description_zh": "IP3门控的内质网Ca²⁺通道，由IP3结合（mGluR→PLC产物）打开，将Ca²⁺从内质网释放到胞质。IP3依赖性激活（Kd~0.1 µM），Ca²⁺呈钟形调节（低[Ca²⁺]激活，高[Ca²⁺]抑制）；放大dIN中的Ca²⁺信号。"
+}

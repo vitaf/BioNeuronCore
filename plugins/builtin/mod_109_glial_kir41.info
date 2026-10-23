@@ -1,0 +1,19 @@
+{
+  "type_id": 109,
+  "name": "GLIAL_KIR41 — Глиальный Kir4.1 K⁺-канал внутреннего выпрямления",
+  "version": "1.0.0",
+  "category": "Глия",
+  "mechanism_type": "Ионотропный K⁺ канал (входящее выпрямление)",
+  "signaling": "Сильное входящее выпрямление: большой K⁺-ток ВНУТРЬ клетки при V_m < E_K, маленький ток наружу при V_m > E_K. Обеспечивает пространственную буферизацию K⁺: поглощает избыточный внеклеточный K⁺ в областях нейрональной активности и перераспределяет через глиальный синцитий.",
+  "inputs": "V_m, extra_ions[K⁺], intra_ions[K⁺]",
+  "outputs": "I_Kir — выпрямленный K⁺ ток. GHK-поток K⁺ (селективность >100:1 K⁺:Na⁺). Снижает extra_ions[K⁺] при нейрональной активности, повышает при покое.",
+  "neuron_types": "ИСКЛЮЧИТЕЛЬНО глия: радиальная глия, астроциты (протоплазматические и фиброзные), Müller-глия, Bergmann-глия, энтероцитарная глия, олигодендроциты (низкая экспрессия). НЕ экспрессирован в нейронах.",
+  "subcellular": "Периваскулярные окончания астроцитов (end-feet). Перисинаптические отростки (K⁺-клиренс после спайков). Сома глиальных клеток.",
+  "kinetics": "V_half=-80mV, k=15mV. g_max=20-50 nS/pF (высокая плотность). Входящий ток: I_in=50-100 pA при Δ[K⁺]o=2mM. pH-чувствительность: ингибирование при pH<6.5.",
+  "function": "Ключевой механизм K⁺-гомеостаза. При интенсивном swimming: [K⁺]o растёт с 2.5 до 8-12mM → без глии нейроны деполяризуются и инактивируются. Kir4.1 + Na⁺/K⁺-насос (MOD_GLIAL_NAK_PUMP) возвращают [K⁺]o к норме.",
+  "references": "Kofuji P., Newman E.A. (2004) Potassium buffering in the central nervous system. Neuroscience 129:1045-1056. Olsen M.L., Sontheimer H. (2008) Functional implications for Kir4.1 channels in glial biology. J Neurochemistry 105:1021-1038. Nwaobi S.E. et al. (2016) The role of glial-specific Kir4.1 in normal and pathological states. J Neurochemistry 138:347-362.",
+  "name_en": "GLIAL_KIR41 — glial Kir4.1 inward-rectifier K⁺ channel",
+  "name_zh": "GLIAL_KIR41 — 胶质Kir4.1内向整流K⁺通道",
+  "description_en": "Glial Kir4.1 inward-rectifier K⁺ channel (V_half=−80 mV, k=15 mV, g_max=20–50 nS/pF) that buffers extracellular K⁺ by taking up excess K⁺ during neuronal activity and redistributing it through the glial syncytium. Together with the glial Na⁺/K⁺-ATPase it returns [K⁺]ₒ to normal, preventing activity-dependent depolarization.",
+  "description_zh": "胶质Kir4.1内向整流K⁺通道（V_half=−80 mV，k=15 mV，g_max=20–50 nS/pF），在神经元活动期间摄取过量K⁺并通过胶质合胞体重分布，从而缓冲细胞外K⁺。与胶质Na⁺/K⁺-ATP酶共同使[K⁺]ₒ恢复正常，防止活动依赖性去极化。"
+}

@@ -1,0 +1,19 @@
+{
+  "type_id": 99,
+  "name": "NCX — Na⁺/Ca²⁺ обменник",
+  "version": "1.0.0",
+  "category": "Ca²⁺/K⁺/Cl⁻ гомеостаз",
+  "mechanism_type": "Вторичный активный транспорт (ионный градиент)",
+  "signaling": "Стехиометрия 3Na⁺ внутрь : 1Ca²⁺ наружу (forward mode). Электрогенный: нетто +1 заряд внутрь за цикл → деполяризующий ток. Движим Na⁺-градиентом.",
+  "inputs": "intra_ions[Na⁺], extra_ions[Na⁺], intra_ions[Ca²⁺], extra_ions[Ca²⁺], V_m",
+  "outputs": "I_ncx (деполяризующий). 3 Na⁺ in, 1 Ca²⁺ out. V-зависимая модуляция направления.",
+  "neuron_types": "Все типы нейронов. Особенно важен в аксонах и пресинаптических терминалях (высокий [Na⁺]i после серии спайков).",
+  "subcellular": "Плазматическая мембрана всех компартментов. Обогащён в пресинаптических терминалях.",
+  "kinetics": "v_cyc=2.5 s⁻¹, K_m_Ca_i=1µM (allosteric), K_m_Na_i=15mM, K_m_Na_o=87.5mM, K_m_Ca_o=1.2mM. k_sat=0.27, eta=0.35. V_factor=exp(η×(V-50)×F/(R×T)). allosteric=Ca_i/(Ca_i+k_sat).",
+  "function": "Высокоёмкостное удаление Ca²⁺ при больших Ca²⁺-транзиентах (после серии спайков). Nernst-равновесие: E_NCX = 3E_Na - 2E_Ca. При физиологических градиентах работает в forward mode (Ca²⁺ out). Критичен для восстановления [Ca²⁺]i после CPG-активности.",
+  "references": "Blaustein M.P., Lederer W.J. (1999) Sodium/calcium exchange: its physiological implications. Physiol Rev 79:763-854. DiPolo R., Beauge L. (2006) Sodium/calcium exchanger: influence of metabolic regulation on ion carrier interactions. Physiol Rev 86:155-203.",
+  "name_en": "NCX — Na⁺/Ca²⁺ exchanger",
+  "name_zh": "NCX — Na⁺/Ca²⁺ 交换体",
+  "description_en": "Na⁺/Ca²⁺ exchanger with 3Na⁺:1Ca²⁺ stoichiometry (forward mode), driven by the Na⁺ gradient and producing a depolarizing current. High-capacity Ca²⁺ removal after spike trains.",
+  "description_zh": "Na⁺/Ca²⁺ 交换体，化学计量 3Na⁺:1Ca²⁺（正向模式），由 Na⁺ 梯度驱动，产生去极化电流。在峰电位串后进行高容量 Ca²⁺ 清除。"
+}

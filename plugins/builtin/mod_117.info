@@ -1,0 +1,47 @@
+{
+  "id": 117,
+  "name": "Купула полукружного канала — угловое ускорение",
+  "category": "Сенсорные рецепторы",
+  "description": "Механотрансдукция полукружного канала (горизонтальный/латеральный для головастика). Купула как торсионный маятник: d²θ/dt²+2ζω₀·dθ/dt+ω₀²·θ=γ·α(t). High-pass фильтр: отклонение купулы пропорционально угловой скорости выше ~0.1 Гц. Билатеральный push-pull: левый/правый горизонтальные каналы работают антагонистично. MET-канал (Na⁺ 55%, K⁺ 35%, Ca²⁺ 10%) с фазической Ca²⁺-адаптацией (τ=10ms). BK-каналы для частотного тюнингования. GHK-поток.",
+  "mechanism": "Угловое ускорение → инерция эндолимфы → давление на купулу → отклонение (θ). Торсионный маятник с упругим возвратом (τ≈8s). Отклонение купулы → изгиб стереоцилий волосковых клеток кристы → открытие MET-каналов → катионный вход → деполяризация. Быстрая Ca²⁺-адаптация (τ=10ms) обеспечивает фазический ответ на угловую скорость. Тип I (каликс) и Тип II (бутон) волосковые клетки.",
+  "parameters": [
+    {
+      "name": "state[0]",
+      "desc": "θ — угол отклонения купулы (торсионный маятник, -1..1)"
+    },
+    {
+      "name": "state[1]",
+      "desc": "α(t) — угловое ускорение (нормализованное, -1..1, из среды)"
+    },
+    {
+      "name": "state[2]",
+      "desc": "Ca²⁺-зависимая адаптация волосковой клетки (τ=10ms, фазическая, 0..1)"
+    },
+    {
+      "name": "state[3]",
+      "desc": "ω = dθ/dt — угловая скорость купулы (интегрирование)"
+    },
+    {
+      "name": "state[4]",
+      "desc": "ω₀² override — жёсткость купулы (default=1.0 → τ₀≈6.28s)"
+    },
+    {
+      "name": "state[5]",
+      "desc": "2ζω₀ override — демпфирование (default=0.9)"
+    },
+    {
+      "name": "state[6]",
+      "desc": "canal_id (0=левый, 1=правый) — для push-pull билатеральности"
+    }
+  ],
+  "references": [
+    "Rabbitt et al. (2004) Mechanical amplification by hair cells in the semicircular canals",
+    "Hullar (2006) Semicircular canal geometry, afferent sensitivity, and animal behavior",
+    "Rabbitt (2019) Semicircular canal biomechanics in health and disease",
+    "Goldberg & Fernandez (1971) Physiology of peripheral neurons innervating semicircular canals"
+  ],
+  "name_en": "Semicircular Cupula — angular acceleration",
+  "name_zh": "半规管壶腹帽 — 角加速度",
+  "description_en": "Semicircular-canal mechanotransduction: cupula as a torsional pendulum (d²θ/dt²+2ζω₀·dθ/dt+ω₀²·θ=γ·α(t)), high-pass filtering angular velocity above ~0.1 Hz, with bilateral push-pull and phasic Ca²⁺-adaptation (τ=10 ms). MET channels (Na⁺ 55%/K⁺ 35%/Ca²⁺ 10%).",
+  "description_zh": "半规管机械转导：壶腹帽作为扭转摆（d²θ/dt²+2ζω₀·dθ/dt+ω₀²·θ=γ·α(t)），高通滤波~0.1 Hz以上的角速度，具有双侧推拉和相性Ca²⁺适应（τ=10 ms）。MET通道（Na⁺ 55%/K⁺ 35%/Ca²⁺ 10%）。"
+}

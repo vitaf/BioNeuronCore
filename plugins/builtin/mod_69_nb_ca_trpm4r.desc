@@ -1,0 +1,15 @@
+{
+  "name": "NB_CaTRPM4R",
+  "version": "1.0.0",
+  "author": "BioNeuronCore (Neuroblox.jl)",
+  "type_id": 69,
+  "modifiers": [
+    {
+      "id": 69,
+      "name": "NB_CaTRPM4R",
+      "category": "NB_-Рецепторы",
+      "description": "Ca²⁺-зависимый TRPM4 канал: 2 состояния (can, m), нанодомен Ca²⁺, two-state gate с α(V),β(V), Ca-зависимой α', CCh-модуляция",
+      "release": false
+    }
+  ]
+}

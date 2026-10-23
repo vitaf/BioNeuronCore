@@ -1,0 +1,19 @@
+{
+  "type_id": 46,
+  "name": "A2A",
+  "version": "1.0.0",
+  "category": "Метаботропные Gs",
+  "mechanism_type": "Метаботропный (G-белок Gs/Golf-связанный)",
+  "signaling": "Аденозин → A2A → Gs/Golf → ↑cAMP → PKA. Высокая экспрессия в стриатуме (D2-MSN indirect pathway). Антагонист D2-сигналинга на уровне cAMP.",
+  "inputs": "neurotransmitter[NT_ADENOSINE]",
+  "outputs": "↑cAMP → PKA → фосфорилирование DARPP-32 (Thr34), противодействует D2-сигналингу. Повышение возбудимости D2-MSN.",
+  "neuron_types": "Стриатум (D2-MSN indirect pathway — наивысшая), nucleus accumbens, обонятельный бугорок. Иммунные клетки (противовоспалительное).",
+  "subcellular": "Постсинаптическая мембрана D2-MSN (стриатум). Гетеромеры A2A-D2 (ключевой антагонизм в indirect pathway).",
+  "kinetics": "K_D аденозин ≈ 30-100 nM (lower affinity vs A1). A2A-D2 гетеродимер: A2A активация → ↓D2 аффинность и наоборот. Антагонисты: истрадефиллин (nourianz), SCH-58261, кофеин.",
+  "function": "Антагонист функционального антагонизма D2 в indirect pathway. Паркинсонизм: A2A-антагонисты (истрадефиллин) восстанавливают indirect pathway. Кофеин: неселективный антагонист A1/A2A → бодрствование, психомоторная стимуляция. Нейропротекция (снижение глутаматной эксайтотоксичности).",
+  "references": "Fredholm B.B. et al. (2001), см. A1.",
+  "name_en": "A2A",
+  "name_zh": "A2A",
+  "description_en": "Functional antagonist of D2 signaling in the indirect pathway. Parkinsonism: A2A antagonists restore the indirect pathway; caffeine acts here; neuroprotective.",
+  "description_zh": "间接通路中 D2 信号的功能性拮抗剂。帕金森病：A2A 拮抗剂恢复间接通路；咖啡因在此发挥作用；具有神经保护作用。"
+}

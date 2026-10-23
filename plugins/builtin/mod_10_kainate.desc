@@ -1,0 +1,15 @@
+{
+  "name": "Каинатный рецептор",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 10,
+  "modifiers": [
+    {
+      "id": 10,
+      "name": "Каинатный рецептор",
+      "category": "Ионотропные рецепторы",
+      "description": "Ионотропный глутаматный рецептор каината",
+      "release": false
+    }
+  ]
+}

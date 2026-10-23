@@ -1,0 +1,15 @@
+{
+  "name": "Cav1.3 L-type Ca²⁺ канал",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 1,
+  "modifiers": [
+    {
+      "id": 1,
+      "name": "Cav1.3 L-type Ca²⁺ канал",
+      "category": "Базовые модификаторы",
+      "description": "Пейсмейкерный L-type Ca²⁺ канал (Ca_v1.3, CACNA1D). Активация m² (V½=−35 мВ), медленная инактивация (V½=−52 мВ), слабая Ca²⁺-зависимая инактивация (CDI). GHK-флюкс Ca²⁺ (z=2), честная P-шкала γ=25 пС.",
+      "release": false
+    }
+  ]
+}

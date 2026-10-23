@@ -1,0 +1,19 @@
+{
+  "type_id": 92,
+  "name": "MMP-9 ECM Degradation",
+  "version": "1.0.0",
+  "category": "Консолидация/Реконсолидация",
+  "mechanism_type": "Деградация внеклеточного матрикса: ERK+NF-κB → транскрипция MMP-9 → секреция в синаптическую щель → разрезание ECM (коллаген, ламинин). TIMP — естественный ингибитор. Интегрины — механосенсоры.",
+  "signaling": "MMP-9 — внеклеточные ножницы. При сильном возбуждении нейрон секретирует MMP-9, которая разрезает белки ECM вокруг синапса, освобождая место для роста. Интегрины (IntegrinB3) чувствуют жёсткость ECM и передают сигнал внутрь клетки (Rap1→эндоцитоз AMPAR).",
+  "inputs": "pERK_nuclear (от MOD_MAPK_ERK), pNFkB_nuclear (от MOD_IKK_NFKB) — оба активируют транскрипцию MMP-9",
+  "outputs": "ECM_density (0..1), integrin_activation (0..1). Используются потоком консолидации для synaptogenesis и удаления синапсов.",
+  "neuron_types": "Все нейроны. Внеклеточный матрикс окружает каждый синапс.",
+  "subcellular": "Внеклеточное пространство (синаптическая щель). MMP-9 секретируется, TIMP действует внеклеточно.",
+  "kinetics": "ERK+NF-κB→MMP9: tau=20000ms. TIMP антикоррелирует с MMP9: tau=15000ms. ECM: деградация=MMP9×(1-TIMP)×0.01, синтез=0.005, tau=100000ms. Интегрины: tau=10000ms.",
+  "function": "Расчистка территории для структурной пластичности. Без MMP-9 синапс не может изменить форму — ECM слишком жёсткий. При эпилепсии MMP-9 гиперактивна → патологическая потеря синапсов.",
+  "references": "Huntley G.W. (2012) Synaptic circuit remodelling by matrix metalloproteinases in health and disease. Nat Rev Neurosci 13:743-757. Michaluk P. et al. (2011) Influence of matrix metalloproteinase MMP-9 on dendritic spine morphology.",
+  "name_en": "MMP-9 ECM Degradation",
+  "name_zh": "MMP-9 细胞外基质降解",
+  "description_en": "MMP-9 secretion (ERK+NF-κB-dependent) that degrades extracellular matrix around synapses, with TIMP inhibition and integrin mechanosensing. Clears space for structural plasticity.",
+  "description_zh": "MMP-9 分泌（依赖 ERK+NF-κB），降解突触周围细胞外基质，并受 TIMP 抑制和整合素力学感知调控。为结构可塑性清理空间。"
+}

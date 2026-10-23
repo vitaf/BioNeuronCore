@@ -1,0 +1,15 @@
+{
+  "name": "CB2-рецептор",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 37,
+  "modifiers": [
+    {
+      "id": 37,
+      "name": "CB2-рецептор",
+      "category": "Метаботропные Gi/o",
+      "description": "Метаботропный каннабиноидный рецептор CB2 (Gi/o) — иммунный",
+      "release": false
+    }
+  ]
+}

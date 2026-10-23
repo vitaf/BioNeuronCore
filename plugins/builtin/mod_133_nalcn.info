@@ -1,0 +1,21 @@
+{
+  "id": 133,
+  "name": "NALCN — Na⁺-leak канал (non-selective), покоящаяся Na⁺-проводимость",
+  "name_en": "NALCN — Na⁺ leak channel (non-selective), resting Na⁺ permeability",
+  "category": "Leak (Каналы утечки)",
+  "category_en": "Leak channels",
+  "family": "NALCN (Sodium Leak Channel, Non-selective)",
+  "isoforms": [
+    "NALCN"
+  ],
+  "gating": "Независимый от напряжения — всегда открыт. Нет гейтинга (покоящийся Na⁺-вход).",
+  "conductances": "Неселективный катионный: P_Na:P_K:P_Ca ≈ 1.3:1.3:0.5. Реверс ≈ 0..-20 мВ (non-selective).",
+  "modulation": "GPCR (M3 мускариновый, substance P/neurotensin) — усиление через Gq. Критичен для возбудимости покоя.",
+  "role_in_cpg": "Покоящаяся Na⁺-проводимость: вместе с K2P (K⁺-leak) задаёт потенциал покоя и уравновешивает Na⁺/K⁺-АТФазу → стабильный Na_i≈10-15мМ.",
+  "bio_ref": "Lu et al. (2007) Cell 129:371-383; Ren (2011) Neuron 72:899-911. 'NALCN is the major background Na+ conductance in neurons.'",
+  "species": "Vertebrates (консервативен, включая Xenopus)",
+  "neuron_type": "Все нейроны (фундаментальный покоящийся Na⁺-канал)",
+  "name_zh": "NALCN — Na⁺泄漏通道（非选择性），静息Na⁺通透性",
+  "description_en": "Voltage-independent Na⁺ leak channel (NALCN), always open with non-selective P_Na:P_K:P_Ca≈1.3:1.3:0.5 (reversal ~0 to −20 mV). Provides resting Na⁺ permeability that, with K2P, sets the resting potential and balances the Na⁺/K⁺-ATPase.",
+  "description_zh": "电压无关的Na⁺泄漏通道（NALCN），始终开放，非选择性P_Na:P_K:P_Ca≈1.3:1.3:0.5（反转电位~0至−20 mV）。提供静息Na⁺通透性，与K2P共同设定静息电位并平衡Na⁺/K⁺-ATP酶。"
+}

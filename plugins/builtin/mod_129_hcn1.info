@@ -1,0 +1,21 @@
+{
+  "id": 129,
+  "name": "HCN1 — быстрый Ih (τ~25ms), dIN головастика",
+  "name_en": "HCN1 — fast Ih (τ~25ms), tadpole dIN",
+  "category": "PIR (Постингибирующий отскок)",
+  "category_en": "PIR (Post-Inhibitory Rebound)",
+  "family": "HCN (Hyperpolarization-activated Cyclic Nucleotide-gated)",
+  "isoforms": [
+    "HCN1"
+  ],
+  "gating": "Активируется гиперполяризацией (V_half≈-82mV). Быстрый τ_open~25ms — самая быстрая изоформа HCN.",
+  "conductances": "Неселективный катионный: P_Na:P_K ≈ 0.4:0.6. Результирующий E_rev≈-20mV (из соотношения проницаемостей GHK).",
+  "modulation": "cAMP сдвигает V_half вправо (больше Ih при покое). DA через D1→cAMP↑→усиление Ih.",
+  "role_in_cpg": "PIR: после glycinergic inhibition→гиперполяризация→HCN1 открывается→Na⁺/K⁺ ток→медленная деполяризация→rebound spike.",
+  "bio_ref": "Li, Roberts, Soffe (2010) J. Neurosci 30:16609-16620. 'HCN1 is the dominant isoform in tadpole dIN.'",
+  "species": "Xenopus laevis (hatchling tadpole)",
+  "neuron_type": "dIN (PIR-опосредованный rebound)",
+  "name_zh": "HCN1 — 快速Ih (τ~25ms)，蝌蚪dIN",
+  "description_en": "Fast Ih (HCN1, τ_open~25 ms) activated by hyperpolarization (V_half≈−82 mV), non-selective cation P_Na:P_K≈0.4:0.6 (E_rev≈−20 mV). Mediates PIR: glycinergic inhibition → hyperpolarization → HCN1 opens → slow depolarization → rebound spike; cAMP shifts V_half rightward.",
+  "description_zh": "快速Ih（HCN1，τ_open~25 ms），由超极化激活（V_half≈−82 mV），非选择性阳离子P_Na:P_K≈0.4:0.6（E_rev≈−20 mV）。介导PIR：甘氨酸能抑制→超极化→HCN1开放→缓慢去极化→回弹锋电位；cAMP使V_half右移。"
+}

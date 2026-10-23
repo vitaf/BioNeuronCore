@@ -1,0 +1,15 @@
+{
+  "name": "mGluR7-рецептор",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 33,
+  "modifiers": [
+    {
+      "id": 33,
+      "name": "mGluR7-рецептор",
+      "category": "Метаботропные Gi/o",
+      "description": "Метаботропный глутаматный рецептор mGluR7 (Gi/o)",
+      "release": false
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "type_id": 8,
+  "name": "AMPA",
+  "version": "1.0.0",
+  "category": "Ионотропные рецепторы",
+  "mechanism_type": "Ионотропный (лиганд-зависимый катионный канал)",
+  "signaling": "Глутамат → GluA1-4 (GluR1-4) тетрамер → конформационное изменение → открытие катион-селективной поры → Na⁺/K⁺ поток (некоторые — Ca²⁺).",
+  "inputs": "neurotransmitter[NT_GLUTAMATE] в синаптической щели, V_m, intra/extra Na⁺, K⁺",
+  "outputs": "I_AMPA → I_buffer. Быстрый возбуждающий постсинаптический ток (EPSC).",
+  "neuron_types": "Все глутаматергические синапсы ЦНС. Пирамидные нейроны (кора, гиппокамп), гранулярные клетки (зубчатая извилина, мозжечок), MSN (striatum), таламические нейроны.",
+  "subcellular": "Постсинаптическая мембрана дендритных шипиков (головка шипика). Высокая плотность в гиппокампе (CA1 stratum radiatum), слоях II/III и V коры.",
+  "kinetics": "τ_rise ≈ 0.2-0.5 ms, τ_decay ≈ 1-3 ms (GluA1 flip) — 5-10 ms (GluA2 flip). E_rev ≈ 0 mV. g_max ≈ 5-50 pS. Десенситизация τ ≈ 2-5 ms. Ca²⁺-проводимость: GluA2-содержащие — низкая (Q/R редактирование), GluA2-отсутствующие — высокая.",
+  "function": "Основной медиатор быстрой возбуждающей синаптической передачи в ЦНС. Краткосрочная (STP) и долговременная пластичность (LTP/LTD). В Ca²⁺-проницаемой форме: кальциевая сигнализация, пластичность, эксайтотоксичность.",
+  "references": "Traynelis S.F. et al. (2010) Glutamate receptor ion channels: structure, regulation, and function. Pharmacol Rev 62:405-496.",
+  "name_en": "AMPA",
+  "name_zh": "AMPA",
+  "description_en": "Primary mediator of fast excitatory synaptic transmission in the CNS. Mediates short- and long-term plasticity (LTP/LTD); the Ca²⁺-permeable form supports calcium signaling.",
+  "description_zh": "中枢神经系统快速兴奋性突触传递的主要介导者。介导短时程和长时程可塑性（LTP/LTD）；Ca²⁺ 通透形式支持钙信号传导。"
+}

@@ -1,0 +1,19 @@
+{
+  "type_id": 52,
+  "name": "5-HT2A",
+  "version": "1.0.0",
+  "category": "Метаботропные Gq/11",
+  "mechanism_type": "Метаботропный (G-белок Gq/11-связанный)",
+  "signaling": "Серотонин (5-HT) → 5-HT2A → Gq/11 → PLCβ → IP3/DAG → ↑Ca²⁺ + PKC. Основная мишень психоделиков (LSD, псилоцибин, DMT). На пирамидных нейронах layer V PFC — ключевой для cognition.",
+  "inputs": "neurotransmitter[NT_SEROTONIN]",
+  "outputs": "PLCβ → IP3↑ → Ca²⁺-мобилизация из ER. DAG↑ → PKC. Повышение возбудимости (блок K_v, активация Ca_v), усиление глутаматной передачи.",
+  "neuron_types": "Prefrontal cortex (layer V пирамидные — наивысшая), другие кортикальные области, стриатум, обонятельная луковица, таламус, гипоталамус, тромбоциты (агрегация).",
+  "subcellular": "Постсинаптическая мембрана (апикальные дендриты пирамидных нейронов layer V PFC). Сома глутаматергических нейронов. Пресинаптические (гетерорецепторы на таламо-кортикальных).",
+  "kinetics": "K_D 5-HT ≈ 5-50 nM. Агонисты: DOI, TCB-2, LSD (частичный агонист), псилоцин. Антагонисты: кетансерин, ритансерин, MDL 100907. Атипичные антипсихотики: антагонизм 5-HT2A + D2 (клозапин, рисперидон, оланзапин).",
+  "function": "Когнитивные функции (PFC — ключевой для рабочей памяти). Психоделический эффект (LSD, псилоцибин → 5-HT2A-зависимая десинхронизация коры). Антипсихотическое действие (5-HT2A-блок в PFC снижает глутаматную эксайтотоксичность). Сон: подавление медленного сна. Тромбоцитарная агрегация.",
+  "references": "Nichols D.E. (2016) Psychedelics. Pharmacol Rev 68:264-355. Gonzalez-Maeso J. et al. (2007) Hallucinogens recruit specific cortical 5-HT2A receptor-mediated signaling pathways to affect behavior. Neuron 53:439-452.",
+  "name_en": "5-HT2A",
+  "name_zh": "5-HT2A",
+  "description_en": "Serotonin 5-HT2A receptor coupled to Gq/11, activating PLCβ to raise IP3/DAG, Ca²⁺ and PKC. The primary target of psychedelics (LSD, psilocybin) and key for cortical cognition.",
+  "description_zh": "血清素 5-HT2A 受体，偶联 Gq/11，激活 PLCβ 升高 IP3/DAG、Ca²⁺ 和 PKC。是致幻剂（LSD、裸盖菇素）的主要靶点，对皮层认知至关重要。"
+}

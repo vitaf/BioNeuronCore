@@ -1,0 +1,15 @@
+{
+  "name": "Kv4.3 A-type K",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 202,
+  "modifiers": [
+    {
+      "id": 202,
+      "name": "Kv4.3 (KCND3)",
+      "category": "Ионные каналы",
+      "description": "Kv4.3 A-type K⁺ (γ=4.4 пС, V½_m=−31.7, V½_h=−47.4, N-type инактивация). GHK K⁺, m³h-гейтинг, 4-AP/HpTx3.",
+      "release": false
+    }
+  ]
+}

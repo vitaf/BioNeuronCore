@@ -1,0 +1,15 @@
+{
+  "name": "Calcineurin (PP2B)",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 83,
+  "modifiers": [
+    {
+      "id": 83,
+      "name": "Calcineurin (PP2B)",
+      "category": "STDP Cascade",
+      "description": "Ca2+/calmodulin-dependent phosphatase (PP2B). Very high Ca2+ affinity (Kd=0.05uM). No autophosphorylation — faster deactivation than CaMKII. Key LTD driver.",
+      "release": false
+    }
+  ]
+}

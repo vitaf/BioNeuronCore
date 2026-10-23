@@ -1,0 +1,11 @@
+{
+  "type_id": 152,
+  "name": "CAN (TRPM4/5) Ca²⁺-активируемый Na⁺/K⁺",
+  "name_en": "CAN (TRPM4/5) Ca2+-activated Na+/K+",
+  "name_zh": "CAN 钙激活阳离子通道",
+  "version": "1.0.0",
+  "category": "Ионные каналы",
+  "description": "CAN (TRPM4/TRPM5) Ca²⁺-активируемый неселективный Na⁺/K⁺ канал (не Ca-проводящий): γ=25–35 пС, Ca²⁺-зависимый Po (Kd 0.5 µM). Деполяризующий afterpotential.",
+  "description_en": "CAN (TRPM4/TRPM5) Ca²⁺-activated nonselective Na⁺/K⁺ channel (not Ca-conducting): γ=25–35 pS, Ca²⁺-dependent Po (Kd 0.5 µM). Depolarizing afterpotential.",
+  "description_zh": "CAN（TRPM4/TRPM5）钙激活非选择性Na⁺/K⁺通道（不通导Ca²⁺）：γ=25–35 pS，Ca²⁺依赖性Po（Kd 0.5 µM）。去极化后电位。"
+}

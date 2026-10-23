@@ -1,0 +1,19 @@
+{
+  "type_id": 112,
+  "name": "Kv7 (KCNQ2/3) M-ток — медленный K⁺, PIP2-зав.",
+  "version": "1.0.0",
+  "category": "Ионные каналы",
+  "mechanism_type": "",
+  "signaling": "",
+  "inputs": "",
+  "outputs": "",
+  "neuron_types": "",
+  "subcellular": "",
+  "kinetics": "",
+  "function": "Kv7 (KCNQ2/3) — медленный потенциал-зависимый K⁺ канал.\n\nБиология: KCNQ2/KCNQ3 гены, гетеротетрамер 4×(KCNQ2+KCNQ3). Основной нейрональный M-ток.\n\nКинетика: медленная активация (tau_act~100ms, диапазон 50-200ms), без инактивации. V_half=-38mV, k=10mV. PIP2-зависимость: Gq/11→PLCβ→PIP2 depletion→закрытие.\n\nФизиология: регуляция возбудимости, spike frequency adaptation, подпороговый резонанс, входное сопротивление покоя.\n\nПроводимость: одиночный канал ~7pS, плотность 0.5-2.0 mS/cm².\n\nState[0]=m_val, [1]=V_half(-38mV), [2]=k(10mV), [3]=g_max(0.5nS), [4]=tau_act(100ms), [5]=tau_deact(60ms), [6]=PIP2(1.0).\n\nРеференсы: Brown & Passmore (2009) doi:10.1111/j.1476-5381.2009.00349.x; Wang et al. (1998) Science 282:1890-1893.",
+  "references": "",
+  "name_en": "Kv7 (KCNQ2/3) M-current — slow K⁺, PIP2-dep.",
+  "name_zh": "Kv7 (KCNQ2/3) M-电流 — 慢 K⁺, PIP2-依赖",
+  "description_en": "Kv7 (KCNQ2/3) M-current: slow voltage-gated K⁺ channel (V_half=−38 mV, k=10 mV, tau_act~100 ms, g_max=0.5 nS) inhibited by Gq/11→PLCβ→PIP2 depletion. Regulates excitability, spike-frequency adaptation, and subthreshold resonance.",
+  "description_zh": "Kv7（KCNQ2/3）M电流：慢电压门控K⁺通道（V_half=−38 mV，k=10 mV，tau_act~100 ms，g_max=0.5 nS），被Gq/11→PLCβ→PIP2耗竭所抑制。调节兴奋性、锋电位频率适应和阈下共振。"
+}

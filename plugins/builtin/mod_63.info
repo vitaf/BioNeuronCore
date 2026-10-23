@@ -1,0 +1,19 @@
+{
+  "type_id": 63,
+  "name": "NB_MoradiFullNMDAR",
+  "version": "1.0.0",
+  "category": "NB_-Рецепторы",
+  "mechanism_type": "Ионотропный (лиганд- и потенциал-зависимый, Q10-температурная коррекция)",
+  "signaling": "Глутамат → NMDA с полной кинетикой Moradi: 5 состояний (A,B,C,g,z). Mg²⁺-блок (Boltzmann delta=0.99, K_D=6.92mM при 37C), Q10=3.0-3.5 для деактивации.",
+  "inputs": "neurotransmitter[NT_GLUTAMATE], V_m, Mg²⁺, температура (Q10 2.5-3.5), D1-модулятор (M_NMDA1 — множитель проводимости от NB_D1_Modulator)",
+  "outputs": "I_NMDA_Moradi → I_buffer. Возбуждающий ток с высокой Ca²⁺-компонентой, медленная кинетика (tau_deact ~50-500 ms).",
+  "neuron_types": "Все глутаматергические синапсы (детальная модель vs базовая MOD_NT_RECEPTOR_NMDA). Нейроны с детальной кинетикой и D1-модуляцией.",
+  "subcellular": "Постсинаптическая мембрана дендритных шипиков (головка шипика).",
+  "kinetics": "5 состояний: A(rest)<->B(active1)<->C(active2), g (conductance), z (переменная затухания). 4 подшага Эйлера на dt. Mg²⁺-блок: 1/(1+[Mg²⁺]exp(-delta*z*F*V/(R*T))/K_D). Q10: температура-зависимое ускорение переходов (3-кратное на 10C).",
+  "function": "Детальная модель NMDA-рецептора для точной симуляции Ca²⁺-динамики и синаптической пластичности. Использует 5-стадийную кинетику Moradi с Q10-температурной коррекцией. Mg²⁺-блок критичен для coincidence detection.",
+  "references": "Moradi K. et al. (2012) A kinetic model of N-methyl-D-aspartate (NMDA) receptor subunit. Society for Neuroscience abstract. Адаптировано из Neuroblox.jl (Julia-фреймворк).",
+  "name_en": "NB_MoradiFullNMDAR",
+  "name_zh": "NB_MoradiFullNMDAR",
+  "description_en": "Detailed NMDA receptor with five-state Moradi kinetics (A,B,C,g,z), Mg²⁺ block (K_D=6.92 mM) and Q10 temperature correction. Produces excitatory current with a high Ca²⁺ component for plasticity.",
+  "description_zh": "详细的 NMDA 受体，采用五态 Moradi 动力学（A、B、C、g、z）、Mg²⁺ 阻断（K_D=6.92 mM）和 Q10 温度校正。产生高 Ca²⁺ 成分的兴奋性电流，用于可塑性。"
+}

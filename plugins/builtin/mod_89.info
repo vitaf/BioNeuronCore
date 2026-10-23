@@ -1,0 +1,19 @@
+{
+  "type_id": 89,
+  "name": "mTORC1 Complex",
+  "version": "1.0.0",
+  "category": "Консолидация/Реконсолидация",
+  "mechanism_type": "Двухключевая активация: (1) Аминокислоты→Rag→Rheb-GTP + (2) PI3K/AKT→фосфорилирование TSC→снятие тормоза с Rheb → mTORC1 активен",
+  "signaling": "mTORC1 — главный инженер синтеза белка. Два независимых сигнала должны сойтись: наличие аминокислот (через Rag GTPазы) и факторов роста/активности (через PI3K/AKT). Без mTORC1 даже активированные гены (CREB) не транслируются в белки.",
+  "inputs": "AA_sensor (state[3], выставляется потоком консолидации из Nucleus.amino_acid_level), ATP_level (ингибирует при низкой энергии), AKT_active (от PI3K — ростовые факторы)",
+  "outputs": "mTORC1_active (0..1). Используется MOD_PROTEIN_SYNTH для запуска трансляции.",
+  "neuron_types": "Все нейроны. mTORC1 — мастер-регулятор синтеза белка, связывающий энергетический статус и сигналы роста.",
+  "subcellular": "Поверхность лизосомы. Активация происходит на лизосомальной мембране, где Rheb-GTP физически включает mTORC1.",
+  "kinetics": "AA→Rheb: Михаэлис-Ментен, Kd=0.3, tau=5000ms. PI3K/AKT: tau=8000ms. mTORC1 = Rheb × AKT × ATP_clamp. tau_mTOR=15000ms.",
+  "function": "Переводит электрические сигналы в структурные изменения. mTORC1→S6K1 (рибосомные белки) + mTORC1→4E-BP (освобождение eIF4E→кэп-зависимая трансляция). Без mTORC1 нет синтеза Arc, BDNF, AMPAR.",
+  "references": "Hoeffer C.A., Klann E. (2010) mTOR signaling: at the crossroads of plasticity, memory and disease. Trends Neurosci 33:67-75. Stoica L. et al. (2011) Selective pharmacogenetic inhibition of mTORC1 blocks long-term synaptic plasticity and memory.",
+  "name_en": "mTORC1 Complex",
+  "name_zh": "mTORC1 复合物",
+  "description_en": "Two-key mTORC1 activation requiring amino acids (Rag→Rheb-GTP) and PI3K/AKT (TSC inhibition). Master regulator of protein synthesis on the lysosomal surface.",
+  "description_zh": "mTORC1 的双钥匙激活，需要氨基酸（Rag→Rheb-GTP）和 PI3K/AKT（TSC 抑制）。是溶酶体表面的蛋白质合成主调控因子。"
+}

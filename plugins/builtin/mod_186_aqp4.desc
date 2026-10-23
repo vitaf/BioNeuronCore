@@ -1,0 +1,15 @@
+{
+  "name": "AQP4 аквапорин-4 (водный канал)",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 186,
+  "modifiers": [
+    {
+      "id": 186,
+      "name": "AQP4 аквапорин-4 (водный канал)",
+      "category": "Структурные",
+      "description": "AQP4 аквапорин-4: водный канал (не ионный), осмотический транспорт, P_f=24e-14 см³/с. Yang & Verkman 1997.",
+      "release": false
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "type_id": 83,
+  "name": "Calcineurin",
+  "version": "1.0.0",
+  "category": "STDP Cascade",
+  "mechanism_type": "",
+  "signaling": "",
+  "inputs": "",
+  "outputs": "",
+  "neuron_types": "",
+  "subcellular": "",
+  "kinetics": "",
+  "function": "Ca²⁺/кальмодулин-зависимая фосфатаза PP2B. Более высокое сродство к Ca²⁺ чем CaMKII — активируется при меньших [Ca²⁺]. Дефосфорилирует AMPAR → endocytosis → syn.weight↓. Ключевой драйвер LTD.",
+  "references": "",
+  "name_en": "Calcineurin",
+  "name_zh": "钙调磷酸酶",
+  "description_en": "Ca²⁺/calmodulin-dependent phosphatase PP2B with higher Ca²⁺ affinity than CaMKII. Dephosphorylates AMPARs to reduce synaptic weight; a key driver of LTD.",
+  "description_zh": "Ca²⁺/钙调蛋白依赖性磷酸酶 PP2B，对 Ca²⁺ 的亲和力高于 CaMKII。使 AMPAR 去磷酸化以降低突触权重，是 LTD 的关键驱动因素。"
+}

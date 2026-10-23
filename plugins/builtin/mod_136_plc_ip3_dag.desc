@@ -1,0 +1,15 @@
+{
+  "name": "PLC/IP3/DAG",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 136,
+  "modifiers": [
+    {
+      "id": 136,
+      "name": "PLC/IP3/DAG",
+      "category": "Каскады",
+      "description": "Gq→PLC→IP3+DAG: общий пул IP3/DAG на сегмент",
+      "release": false
+    }
+  ]
+}

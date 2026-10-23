@@ -1,0 +1,42 @@
+{
+  "id": 119,
+  "name": "Магнетитовый механорецептор — Fe₃O₄/компас",
+  "category": "Сенсорные рецепторы",
+  "description": "Магниторецепция через биогенный магнетит (Fe3O4). Цепочки из ~10^6 нанокристаллов (d≈50nm) создают постоянный магнитный диполь m≈10^-15 A*m^2. Внешнее поле Земли (B≈50uT) создаёт крутящий момент tau=m*B≈5*10^-20 N*m, достаточный для открытия механочувствительных ионных каналов (TRP-подобные). Каналы: Na+ 45%, K+ 30%, Ca2+ 25%. Ca2+-адаптация (tau=8s). Чувствительность: 10-100 nT (компасная точность). GHK-поток.",
+  "mechanism": "Магнитный момент цепочки магнетитовых кристаллов (m) взаимодействует с внешним полем (B): tau=m*B*sin(theta). Крутящий момент через цитоскелет передаётся на механочувствительные каналы → открытие → катионный вход (Na+/K+/Ca2+) → деполяризация. P_open пропорционально sin^2(theta)*|B| (энергия активации ~tau^2). Медленная Ca2+-адаптация (tau=8s) фильтрует постоянное геомагнитное поле.",
+  "parameters": [
+    {
+      "name": "state[0]",
+      "desc": "P_open механочувствительных каналов (0..1)"
+    },
+    {
+      "name": "state[1]",
+      "desc": "B_norm — норма магнитного поля (0..1, из среды)"
+    },
+    {
+      "name": "state[2]",
+      "desc": "Ca2+-зависимая адаптация (tau=8s, 0..1)"
+    },
+    {
+      "name": "state[3]",
+      "desc": "cos(theta_B) — угол между цепочкой и полем"
+    },
+    {
+      "name": "state[4]",
+      "desc": "Sensitivity override (k_adapt)"
+    },
+    {
+      "name": "state[5]",
+      "desc": "Предпочтительный угол цепочки theta_anat (радианы)"
+    }
+  ],
+  "references": [
+    "Kirschvink et al. (2001) Magnetite-based magnetoreception",
+    "Walker et al. (1997) Structure and function of the vertebrate magnetic sense",
+    "Johnsen & Lohmann (2005) The physics and neurobiology of magnetoreception"
+  ],
+  "name_en": "Magnetite Mechanoreceptor — Fe₃O₄/compass",
+  "name_zh": "磁铁矿机械感受器 — Fe₃O₄/指南针",
+  "description_en": "Magnetoreception via biogenic magnetite (Fe₃O₄): chains of ~10⁶ nanocrystals (d≈50 nm) form a magnetic dipole m≈10⁻¹⁵ A·m²; the geomagnetic field (B≈50 µT) produces torque τ=m·B≈5·10⁻²⁰ N·m that opens mechanosensitive channels (Na⁺ 45%/K⁺ 30%/Ca²⁺ 25%). Sensitivity 10–100 nT, Ca²⁺-adaptation τ=8 s.",
+  "description_zh": "通过生物磁铁矿（Fe₃O₄）的磁感受：~10⁶个纳米晶（d≈50 nm）链形成磁偶极m≈10⁻¹⁵ A·m²；地磁场（B≈50 µT）产生扭矩τ=m·B≈5·10⁻²⁰ N·m，打开机械敏感通道（Na⁺ 45%/K⁺ 30%/Ca²⁺ 25%）。灵敏度10–100 nT，Ca²⁺适应τ=8 s。"
+}

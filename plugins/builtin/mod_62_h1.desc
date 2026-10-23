@@ -1,0 +1,15 @@
+{
+  "name": "H1-рецептор",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 62,
+  "modifiers": [
+    {
+      "id": 62,
+      "name": "H1-рецептор",
+      "category": "Метаботропные Gq/11",
+      "description": "Метаботропный гистаминовый рецептор H1 (Gq/11) — IP3/DAG, аллергический",
+      "release": false
+    }
+  ]
+}

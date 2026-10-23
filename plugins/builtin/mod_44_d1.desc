@@ -1,0 +1,15 @@
+{
+  "name": "D1-рецептор",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 44,
+  "modifiers": [
+    {
+      "id": 44,
+      "name": "D1-рецептор",
+      "category": "Метаботропные Gs",
+      "description": "Метаботропный дофаминовый рецептор D1 (Gs) — повышает cAMP, возбуждающий",
+      "release": true
+    }
+  ]
+}

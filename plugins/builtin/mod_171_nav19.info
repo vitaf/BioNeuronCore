@@ -1,0 +1,23 @@
+{
+  "type_id": 171,
+  "name": "Nav1.9 персистентный TTX-R Na⁺ канал (SCN11A)",
+  "version": "1.0.0",
+  "category": "Voltage-gated Na",
+  "mechanism_type": "Ионотропный (потенциал-зависимый)",
+  "signaling": "Прямой ионный поток Na⁺ внутрь клетки (GHK, z=1).",
+  "inputs": "V_m, intra_ions[Na⁺], extra_ions[Na⁺]",
+  "outputs": "I_Na → I_buffer. Повышает внутриклеточный Na⁺.",
+  "neuron_types": "Ноцицептивные DRG-нейроны (мелкоклеточные).",
+  "subcellular": "Сома и аксон DRG-нейронов (SCN11A).",
+  "gating": "Активация V½=−47±1 мВ (порог ~−70), k=5–6; инактивация V½=−44±1 мВ (широкое «окно»)",
+  "ions": "Na+",
+  "gamma": "~16 пС (preliminary single-channel)",
+  "pharmacology": "TTX-R (Ki = 39±9 µM)",
+  "kinetics": "τ_акт очень медленная (персистентная); τ_инакт 43±4 мс @ −20 мВ (практически не инактивируется).",
+  "function": "Персистентный/подпороговый Na⁺-канал, активен у покоя (−60…−70 мВ); сам ПД не генерирует, амплифицирует подпороговую деполяризацию.",
+  "references": "PMID 10594087, PMID 9525859",
+  "note": "V½ инактивации почти равен V½ активации → широкое окно персистентного тока.",
+  "name_en": "Nav1.9 persistent TTX-R Na⁺ (SCN11A)",  "name_zh": "Nav1.9 持续性Na⁺通道",
+  "description_en": "Persistent/subthreshold Na⁺ channel, active at rest (−60…−70 mV); does not itself fire action potentials but amplifies subthreshold depolarization. V½_act −47 mV, V½_inact −44 mV; γ~16 pS.",
+  "description_zh": "持续性/阈下Na⁺通道，静息时（−60…−70 mV）即活跃；自身不产生动作电位，但放大阈下去极化。V½激活−47 mV，V½失活−44 mV；γ~16 pS。"
+}

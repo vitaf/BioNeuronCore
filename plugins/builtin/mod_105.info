@@ -1,0 +1,19 @@
+{
+  "type_id": 105,
+  "name": "NaP-канал (Nav1.6) — персистентный Na⁺",
+  "version": "1.0.0",
+  "category": "Ионные каналы ритмогенеза",
+  "mechanism_type": "Ионный канал (V-зависимый, GHK Na⁺)",
+  "signaling": "Прямой GHK-поток Na⁺. Гейтинг: только m-ворота (Больцман), БЕЗ h-инактивации. Подпороговая активация V_half=-52mV.",
+  "inputs": "intra_ions[Na⁺], extra_ions[Na⁺], V_m",
+  "outputs": "I_Na (деполяризующий). Увеличивает intra_ions[Na⁺].",
+  "neuron_types": "dIN — подпороговый ритмогенез CPG. Стволовые нейроны — эндогенный bursting.",
+  "subcellular": "Сома и проксимальные дендриты. Обогащён в аксонном начальном сегменте.",
+  "kinetics": "V_half_m=-52mV, k_m=6mV, g_max=0.08nS, τ_m=5ms. Без инактивации. GHK Na⁺ (z=1).",
+  "function": "Подпороговый деполяризующий драйв. Создаёт «окно возбудимости» между -55 и -40 mV где NaP уже открыт, а NaK inactivation ещё не полная. Критичен для: (1) подпороговых осцилляций, (2) ускорения восстановления после торможения, (3) эндогенного ритма CPG без внешнего драйва.",
+  "references": "Taddese A., Bean B.P. (2002) Subthreshold sodium current from rapidly inactivating sodium channels drives spontaneous firing. Neuron 33:587-600. Kuo J.J. et al. (2006) Persistent Na⁺ current in mammalian neurons. J Physiol 573:107-120.",
+  "name_en": "NaP Channel (Nav1.6) — persistent Na⁺",
+  "name_zh": "NaP 通道 (Nav1.6) — 持久性 Na⁺",
+  "description_en": "Persistent Na⁺ channel (Nav1.6) with only an m-gate (Boltzmann, V_half=−52 mV, k=6 mV, g_max=0.08 nS) and no h-inactivation. Provides subthreshold depolarizing drive and an excitability window between −55 and −40 mV, critical for subthreshold oscillation and endogenous CPG rhythm.",
+  "description_zh": "持久性Na⁺通道（Nav1.6），仅有m门（Boltzmann，V_half=−52 mV，k=6 mV，g_max=0.08 nS），无h失活。提供阈下除极驱动力及−55至−40 mV之间的兴奋窗口，对阈下振荡和内源性CPG节律至关重要。"
+}

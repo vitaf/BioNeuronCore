@@ -1,0 +1,15 @@
+{
+  "name": "Kv2.1 (KCNB1)",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 196,
+  "modifiers": [
+    {
+      "id": 196,
+      "name": "Kv2.1 (KCNB1) медленный delayed rectifier K⁺",
+      "category": "Voltage-gated K",
+      "description": "Kv2.1 (KCNB1) медленный delayed rectifier K⁺ (I_Ks): V½_акт=0, U-type инактивация, TEA IC50=10 мМ, γ=8 пС — single-spike dIN.",
+      "release": false
+    }
+  ]
+}

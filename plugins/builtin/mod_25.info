@@ -1,0 +1,19 @@
+{
+  "type_id": 25,
+  "name": "M2",
+  "version": "1.0.0",
+  "category": "Метаботропные Gi/o",
+  "mechanism_type": "Метаботропный (G-белок Gi/o-связанный)",
+  "signaling": "Ацетилхолин (ACh) → M2 → Gi/o → ↓cAMP, активация GIRK, ингибирование Ca_v. Пресинаптический ауторецептор холинергических нейронов.",
+  "inputs": "neurotransmitter[NT_ACETYLCHOLINE]",
+  "outputs": "↓cAMP, ↑GIRK (K+), ↓Ca_v, ↓выброс ACh (ауторецептор).",
+  "neuron_types": "ЦНС: базальные отделы переднего мозга (nucleus basalis of Meynert), стриатум (холинергические интернейроны), кора, гиппокамп, таламус, мозжечок. Периферия: сердце (SA-узел — брадикардия).",
+  "subcellular": "Пресинаптические терминали (ауторецепторы и гетерорецепторы). Постсинаптические (сердце — атриовентрикулярный узел). Соматодендритные.",
+  "kinetics": "K_D ACh ≈ 0.1-1 μM. Аллостерические модуляторы: gallamine. Антагонисты: AF-DX 116, метоктрамин. Конститутивная активность (Gi/o).",
+  "function": "Ауторегуляция холинергического выброса (negative feedback). Когнитивные функции: блокада M2 → ↑ACh в коре/гиппокампе → улучшение памяти. Периферическая парасимпатическая регуляция (брадикардия).",
+  "references": "Caulfield M.P., Birdsall N.J. (1998) International Union of Pharmacology. XVII. Classification of muscarinic acetylcholine receptors. Pharmacol Rev 50:279-290.",
+  "name_en": "M2",
+  "name_zh": "M2",
+  "description_en": "Auto-regulates cholinergic release (negative feedback). Improves memory when blocked (↑ACh in cortex/hippocampus); mediates peripheral parasympathetic regulation (bradycardia).",
+  "description_zh": "自身调节胆碱能释放（负反馈）。阻断后可改善记忆（皮层/海马 ACh 升高）；介导外周副交感调节（心动过缓）。"
+}

@@ -1,0 +1,15 @@
+{
+  "name": "Na⁺/K⁺-АТФаза α3",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 197,
+  "modifiers": [
+    {
+      "id": 197,
+      "name": "Na⁺/K⁺-АТФаза α3",
+      "category": "Базовые модификаторы",
+      "description": "Динамический Na/K-насос α3 (низкое сродство к Na⁺_i K_m≈25 мМ), генерирует usAHP при залпе; уабаин-чувствительный",
+      "release": false
+    }
+  ]
+}

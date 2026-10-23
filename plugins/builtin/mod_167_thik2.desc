@@ -1,0 +1,15 @@
+{
+  "name": "THIK-2 фоновая K⁺-утечка",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 167,
+  "modifiers": [
+    {
+      "id": 167,
+      "name": "THIK-2 фоновая K⁺-утечка",
+      "category": "Leak K",
+      "description": "THIK-2 (K2P12.1/KCNK12) фоновая K⁺-утечка. ⚠️ Гомомерно НЕфункционален (задержан в ЭПР, Rajan 2001) — γ не измерена, placeholder γ=5 пС, Po=0.5. GHK-флюкс K⁺ (z=1).",
+      "release": false
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "name": "Kv delayed rectifier",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 123,
+  "modifiers": [
+    {
+      "id": 123,
+      "name": "Kv delayed rectifier",
+      "category": "Voltage-gated K",
+      "description": "Kv1.1 (KCNA1) delayed rectifier K⁺: быстрая реполяризация спайка",
+      "release": false
+    }
+  ]
+}

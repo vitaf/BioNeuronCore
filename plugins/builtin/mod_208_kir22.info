@@ -1,0 +1,10 @@
+{
+  "type_id": 208,
+  "name": "Kir2.2 (KCNJ12) — inward rectifier K⁺",
+  "name_en": "Kir2.2 (KCNJ12) — inward rectifier K⁺",
+  "name_zh": "Kir2.2（KCNJ12）— 内向整流K⁺",
+  "category": "Ионные каналы",
+  "description": "Kir2.2 (KCNJ12) inward rectifier K⁺. γ=36 пС (выше Kir2.1 30 пС), конститутивный. Ингибиция: Ba²⁺ 2.8 µM (чувствительнее Kir2.1 16.2 µM). Покойный K⁺-ток.",
+  "description_en": "Kir2.2 (KCNJ12) inward rectifier K⁺. γ=36 pS (higher than Kir2.1 30 pS), constitutive. Pharmacology: Ba²⁺ 2.8 µM (more sensitive than Kir2.1 16.2 µM). Resting K⁺ current.",
+  "description_zh": "Kir2.2（KCNJ12）内向整流K⁺。γ=36 pS（高于Kir2.1 30 pS），组成型。药理：Ba²⁺ 2.8 µM（比Kir2.1 16.2 µM更敏感）。静息K⁺电流。"
+}

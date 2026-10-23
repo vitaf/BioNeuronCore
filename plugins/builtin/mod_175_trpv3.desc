@@ -1,0 +1,15 @@
+{
+  "name": "TRPV3 тепло канал (сенситизация)",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 175,
+  "modifiers": [
+    {
+      "id": 175,
+      "name": "TRPV3 тепло канал (сенситизация)",
+      "category": "TRP channel",
+      "description": "TRPV3 тепловой катионный канал с сенситизацией (БЕЗ десенситизации). Лиганд state[4]=2-APB µM (EC50 ~50 µM), τ_акт 20 мс (только state[0]). γ=185 пС. Ica=P·0.5 (z=2) + Ina=P·0.5 (z=1). GHK-флюкс. Xu 2002.",
+      "release": false
+    }
+  ]
+}

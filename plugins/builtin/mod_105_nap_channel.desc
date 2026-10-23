@@ -1,0 +1,15 @@
+{
+  "name": "NaP персистентный Na⁺",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 105,
+  "modifiers": [
+    {
+      "id": 105,
+      "name": "NaP персистентный Na⁺",
+      "category": "Voltage-gated Na",
+      "description": "NaP (Nav1.6): персистентный Na⁺, без инактивации, подпороговый, GHK",
+      "release": false
+    }
+  ]
+}

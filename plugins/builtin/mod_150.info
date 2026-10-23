@@ -1,0 +1,11 @@
+{
+  "type_id": 150,
+  "name": "Kv3.1 (KCNC1) fast-spiking K⁺",
+  "name_en": "Kv3.1 (KCNC1) fast-spiking K+",
+  "name_zh": "Kv3.1 快速放电钾通道",
+  "version": "1.0.0",
+  "category": "Ионные каналы",
+  "description": "Kv3.1 (KCNC1) fast-spiking K⁺-канал: γ=27 пС, активация >−10 мВ, без инактивации, fast deactivation. Высокочастотная реполяризация. Grissmer 1992; Rudy & McBain 2001.",
+  "description_en": "Kv3.1 (KCNC1) fast-spiking K⁺ channel: γ=27 pS, activation >−10 mV, no inactivation, fast deactivation. High-frequency repolarization. Grissmer 1992; Rudy & McBain 2001.",
+  "description_zh": "Kv3.1（KCNC1）快速放电K⁺通道：γ=27 pS，激活阈>−10 mV，无失活，快速去激活。高频复极化。Grissmer 1992；Rudy & McBain 2001。"
+}

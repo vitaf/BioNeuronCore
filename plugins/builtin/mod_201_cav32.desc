@@ -1,0 +1,15 @@
+{
+  "name": "Cav3.2 T-type Ca",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 201,
+  "modifiers": [
+    {
+      "id": 201,
+      "name": "Cav3.2 (CACNA1H)",
+      "category": "Ионные каналы",
+      "description": "Cav3.2 T-type Ca²⁺ (γ=9 пС, V½_m=−46, V½_h=−72, Ni²⁺ 13 µM — самая Ni-чувствительная из T-type). GHK Ca²⁺ z=2, m³h-гейтинг, window-current для low-threshold burst.",
+      "release": false
+    }
+  ]
+}

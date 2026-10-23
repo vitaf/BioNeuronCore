@@ -1,0 +1,15 @@
+{
+  "name": "TRPC6/7 DAG-гейт канал",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 179,
+  "modifiers": [
+    {
+      "id": 179,
+      "name": "TRPC6/7 DAG-гейт",
+      "category": "TRP channel",
+      "description": "TRPC6/7 — канал фотопроводимости ipRGC, DAG-гейт (state[4], r=lig/(lig+10), τ=50 мс). γ≈35 пС, P_Ca/P_Na≈5 (0.83 Ca²⁺ z=2 / 0.17 Na⁺ z=1). GHK-флюкс. Perez-Leighton 2011.",
+      "release": false
+    }
+  ]
+}

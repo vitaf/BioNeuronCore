@@ -1,0 +1,15 @@
+{
+  "name": "M1-рецептор",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 57,
+  "modifiers": [
+    {
+      "id": 57,
+      "name": "M1-рецептор",
+      "category": "Метаботропные Gq/11",
+      "description": "Метаботропный мускариновый рецептор M1 (Gq/11) — IP3/DAG, когнитивный",
+      "release": false
+    }
+  ]
+}

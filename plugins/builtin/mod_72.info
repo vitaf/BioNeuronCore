@@ -1,0 +1,19 @@
+{
+  "type_id": 72,
+  "name": "NB_NMDA_Destexhe",
+  "version": "1.0.0",
+  "category": "NB_-Destexhe",
+  "mechanism_type": "Ионотропный (лиганд- и потенциал-зависимый, damped oscillator + Mg²⁺)",
+  "signaling": "Глутамат → NMDA-рецептор: damped oscillator кинетика Destexhe (G, z) + Mg²⁺-блок (потенциал-зависимый фактор B(V)). Медленная кинетика vs AMPA.",
+  "inputs": "neurotransmitter[NT_GLUTAMATE], V_m (Mg²⁺-блок), V_pre, extra_ions[Mg²⁺]",
+  "outputs": "I_NMDA_Destexhe → I_buffer. Медленный возбуждающий ток с Mg²⁺-блоком при гиперполяризации.",
+  "neuron_types": "Все глутаматергические синапсы (Destexhe-модель). Гиппокамп, кора, стриатум — синапсы с NMDA-компонентой.",
+  "subcellular": "Постсинаптическая мембрана дендритных шипиков.",
+  "kinetics": "Damped oscillator: tau1=5.0 ms (rise), tau2=150.0 ms (decay) — характерно медленнее AMPA. G_syn=0.2. Mg²⁺-блок: B(V)=1/(1+[Mg²⁺]*exp(-delta*V)/(K_D*...)), delta=0.8. Итоговый ток: I = G * B(V) * (V-E_rev).",
+  "function": "Физиологически точная модель NMDA-рецептора с Destexhe damped oscillator. Медленная кинетика (tau_decay=150ms) важна для временной суммации (temporal summation) и генерации plateau potentials. Mg²⁺-блок обеспечивает coincidence detection.",
+  "references": "Destexhe A. et al. (1998), см. NB_AMPA_Destexhe.",
+  "name_en": "NB_NMDA_Destexhe",
+  "name_zh": "NB_NMDA_Destexhe",
+  "description_en": "NMDA receptor with Destexhe damped-oscillator kinetics plus Mg²⁺ block; slow excitatory current (τ_decay=150 ms) enabling temporal summation and coincidence detection.",
+  "description_zh": "具有 Destexhe 阻尼振荡动力学和 Mg²⁺ 阻断的 NMDA 受体；缓慢兴奋性电流（τ_decay=150 ms），支持时间总和与重合检测。"
+}

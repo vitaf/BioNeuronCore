@@ -1,0 +1,15 @@
+{
+  "name": "CALHM1/3 АТФ-пора",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 180,
+  "modifiers": [
+    {
+      "id": 180,
+      "name": "CALHM1/3 АТФ-пора",
+      "category": "Other",
+      "description": "CALHM1/3 — пора высвобождения АТФ (вкус тип II), V-зависимая. Гейтинг m: m_inf V½=+30.5 мВ k=8, τ=20 мс. γ=20 пС (placeholder — литературная γ не найдена). GHK-флюкс Na⁺ (z=1). Taruno 2013; Ma 2018.",
+      "release": false
+    }
+  ]
+}

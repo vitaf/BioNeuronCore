@@ -1,0 +1,15 @@
+{
+  "type_id": 97,
+  "name": "α7 nAChR — быстрый Ca²⁺-проводящий никотиновый",
+  "name_en": "α7 nAChR — fast Ca²⁺-permeable nicotinic",
+  "name_zh": "α7 nAChR — 快速Ca²⁺通透烟碱受体",
+  "version": "1.0.0",
+  "category": "Ионотропные рецепторы",
+  "mechanism_type": "Ионотропный лиганд-зависимый канал (никотиновый α7, гомомер)",
+  "signaling": "Активируется ацетилхолином/никотином. Высокая Ca²⁺-проницаемость (P_Ca/P_Na≈6-10). Быстрая десенситизация. Деполяризующий катионный ток (Na⁺/Ca²⁺ вход).",
+  "kinetics": "τ_rise ~1-2 мс, τ_desens ~10-100 мс (быстрая десенситизация). P_Ca/P_Na≈6-10.",
+  "function": "Быстрый возбуждающий никотиновый ответ (гомомер α7). Высокий Ca²⁺-вход модулирует Ca²⁺-зависимые процессы (пресинаптическое усиление, пластичность).",
+  "references": "Séguela P. et al. (1993) J Neurosci 13:596. Castro N.G., Albuquerque E.X. (1995) Biophys J 68:516.",
+  "description_en": "Homomeric α7 nicotinic acetylcholine receptor: fast, high Ca²⁺ permeability (P_Ca/P_Na≈6-10), rapid desensitization. Mediates fast excitatory nicotinic transmission.",
+  "description_zh": "同源 α7 烟碱乙酰胆碱受体：快速、高 Ca²⁺ 通透性（P_Ca/P_Na≈6-10）、快速脱敏。介导快速兴奋性烟碱传递。"
+}

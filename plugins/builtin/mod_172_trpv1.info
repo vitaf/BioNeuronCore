@@ -1,0 +1,23 @@
+{
+  "type_id": 172,
+  "name": "TRPV1 тепло/капсаицин канал",
+  "version": "1.0.0",
+  "category": "TRP channel",
+  "mechanism_type": "Ионотропный (тепло-/лиганд-гейт, неселективный катионный)",
+  "signaling": "Прямой неселективный катионный поток (Ca²⁺-предпочтительный, P_Ca/P_Na≈10).",
+  "inputs": "V_m, температура, капсаицин, pH, intra/extra Ca²⁺/Na⁺",
+  "outputs": "I_cation → I_buffer. Повышает внутриклеточный Ca²⁺ и Na⁺.",
+  "neuron_types": "Ноцицептивные сенсорные нейроны (DRG/тригеминальные).",
+  "subcellular": "Периферические терминали ноцицепторов.",
+  "gating": "Тепло >43 °C + капсаицин; pH<6 (порог ↓ до ~30 °C); V½ ~+150 мВ (комн. темп.)",
+  "ions": "Ca2+, Na+",
+  "gamma": "50–100 пС (~90 @ +60 мВ, наружу-выпрямляющий)",
+  "pharmacology": "Капсаицин EC50 ~0.5–1 µM; капсазепин (антагонист)",
+  "kinetics": "Тепло/капсаицин/протоны сдвигают V½ влево; наружу-выпрямляющий I–V. P_Ca/P_Na≈10.",
+  "function": "Молекулярный сенсор тепла и боли; тепло-гейт + капсаицин-активация неселективного катионного тока.",
+  "references": "PMID 9349813, PMC2714404, PMC4764576",
+  "note": "⚠️ Отличие от MOD_NT_RECEPTOR_TRPV1 (16): здесь тепло-гейт + капсаицин, неселективный канал P_Ca/P_Na≈10.",
+  "name_en": "TRPV1 heat/capsaicin channel",  "name_zh": "TRPV1 热/辣椒素通道",
+  "description_en": "Molecular heat and pain sensor; heat-gated + capsaicin-activated nonselective cation current. γ=50–100 pS; capsaicin EC50 ~0.5–1 µM.",
+  "description_zh": "热与痛的分子感受器；热门控+辣椒素激活非选择性阳离子电流。γ=50–100 pS；辣椒素EC50 ~0.5–1 µM。"
+}

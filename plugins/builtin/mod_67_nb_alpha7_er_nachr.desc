@@ -1,0 +1,15 @@
+{
+  "name": "NB_Alpha7ER_nAChR",
+  "version": "1.0.0",
+  "author": "BioNeuronCore (Neuroblox.jl)",
+  "type_id": 67,
+  "modifiers": [
+    {
+      "id": 67,
+      "name": "NB_Alpha7ER_nAChR",
+      "category": "NB_-Рецепторы",
+      "description": "α7 никотиновый рецептор с ER Ca²⁺: 6 состояний (C,O,D,Ca_ER,IP3,h_IP3), Markov C⇄O⇄D, PAM-модуляция, IP3R/RyR/leak/SERCA потоки",
+      "release": false
+    }
+  ]
+}

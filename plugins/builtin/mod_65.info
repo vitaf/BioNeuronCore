@@ -1,0 +1,19 @@
+{
+  "type_id": 65,
+  "name": "NB_D1_Modulator",
+  "version": "1.0.0",
+  "category": "NB_-Рецепторы",
+  "mechanism_type": "Метаботропный (дофаминовый D1-рецептор — модулятор проводимости NMDA)",
+  "signaling": "Дофамин → D1 на MSN → Gs/Golf → ↑cAMP → PKA → DARPP-32 → M_NMDA1 (множитель NMDA-проводимости). Hill occupancy: DA/(DA+K_D1).",
+  "inputs": "neurotransmitter[NT_DOPAMINE], D1_K_D (константа полуактивации)",
+  "outputs": "M_NMDA1 (множитель NMDA-проводимости, пишется в сегмент для NB_MoradiFullNMDAR и NB_MsnNMDAR).",
+  "neuron_types": "Стриатальные MSN (medium spiny neurons) — D1-MSN direct pathway.",
+  "subcellular": "Постсинаптическая мембрана дендритных шипиков D1-MSN.",
+  "kinetics": "Hill occupancy: M_NMDA1 = 1.0 + amp * DA/(DA + K_D1). K_D1 зависит от D1-аффинности (D1: K_D ~1-5muM). Модулирует D1-MSN NMDA-ток (усиливает Ca²⁺-сигнал → пластичность).",
+  "function": "Кросс-модуляторная связь: дофамин (через D1) потенцирует NMDA-токи в D1-MSN direct pathway. Ключевой механизм синаптической пластичности в базальных ганглиях (LTP в direct pathway при rewarding stimuli).",
+  "references": "Адаптировано из Neuroblox.jl (MsnD1Receptor).",
+  "name_en": "NB_D1_Modulator",
+  "name_zh": "NB_D1_Modulator",
+  "description_en": "Dopamine D1 receptor on MSNs coupled to Gs/Golf, raising cAMP→PKA→DARPP-32 to compute an NMDA conductance multiplier (Hill occupancy DA/(DA+K_D)).",
+  "description_zh": "MSN 上的多巴胺 D1 受体，偶联 Gs/Golf，升高 cAMP→PKA→DARPP-32，计算 NMDA 电导乘数（Hill 占据 DA/(DA+K_D)）。"
+}

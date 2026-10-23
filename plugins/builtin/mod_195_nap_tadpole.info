@@ -1,0 +1,10 @@
+{
+  "type_id": 195,
+  "name": "NaP-tadpole (Nav1.2-persistent)",
+  "name_en": "NaP-tadpole (Nav1.2-persistent)",
+  "name_zh": "NaP持续性钠通道（Nav1.2，蝌蚪dIN）",
+  "category": "Voltage-gated Na",
+  "description": "Тадпольный персистентный Na⁺ dIN (Svensson 2017, J Neurophysiol 118:121): активация V½≈−25 мВ (активен выше −40, пик 0 мВ). НЕ Nav1.6 Mes V — dIN экспрессирует Nav1.2. Без инактивации (только m-ворота), Po=0.016. GHK-поток Na⁺. Подпороговый деполяризующий драйв ребаунд-каскада (вместе с Ih и NMDA).",
+  "description_en": "Tadpole persistent Na⁺ dIN (Svensson 2017, J Neurophysiol 118:121): activation V½≈−25 mV (active above −40, peak 0 mV). NOT Nav1.6 Mes V — dIN expresses Nav1.2. No inactivation (m-gate only), Po=0.016. GHK Na⁺ flux. Subthreshold depolarizing drive of rebound cascade (with Ih and NMDA).",
+  "description_zh": "蝌蚪持续性Na⁺ dIN（Svensson 2017, J Neurophysiol 118:121）：激活V½≈−25 mV。非Nav1.6 Mes V——dIN表达Nav1.2。无失活（仅m门），Po=0.016，GHK Na⁺通量。提供反弹级联的阈下去极化驱动（与Ih和NMDA协同）。"
+}

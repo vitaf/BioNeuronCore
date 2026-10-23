@@ -1,0 +1,11 @@
+{
+  "type_id": 158,
+  "name": "Cav2.3 (CACNA1E) R-type Ca²⁺",
+  "name_en": "Cav2.3 (CACNA1E) R-type Ca2+",
+  "name_zh": "Cav2.3 R型钙通道",
+  "version": "1.0.0",
+  "category": "Ионные каналы",
+  "description": "Cav2.3 (CACNA1E) R-type HVA Ca²⁺: γ=14 пС, m² V½ −25, слабая CDI, SNX-482. Randall & Tsien 1995.",
+  "description_en": "Cav2.3 (CACNA1E) R-type HVA Ca²⁺ channel: γ=14 pS, m² V½ −25, weak CDI, SNX-482. Randall & Tsien 1995.",
+  "description_zh": "Cav2.3（CACNA1E）R型高电压激活Ca²⁺通道：γ=14 pS，m² V½ −25，弱CDI，SNX-482。Randall & Tsien 1995。"
+}

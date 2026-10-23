@@ -1,0 +1,31 @@
+{
+  "id": 160,
+  "name": "GIRK (Kir3.x) — Gβγ-активируемый inward-rectifier K⁺",
+  "name_en": "GIRK (Kir3.x) — Gβγ-activated inward-rectifier K⁺",
+  "category": "Базовые модификаторы",
+  "category_en": "Basic Modifiers",
+  "family": "Kir3 (inward rectifier)",
+  "isoforms": [
+    "Kir3.1",
+    "Kir3.2",
+    "Kir3.4",
+    "KCNJ3",
+    "KCNJ6",
+    "KCNJ9"
+  ],
+  "gating": {
+    "mechanism": "Gβγ-зависимый (state[4], 0–1), НЕ V-зависимый",
+    "rectification": "inward-выпрямление через Mg²⁺/полиамин-блок поры"
+  },
+  "conductances": {
+    "gamma": "35 пС (30–40 пС, гетеромер Kir3.1/3.2)"
+  },
+  "ions": "K+",
+  "pharmacology": "tertiapin-Q IC50 8 нМ (state[5], нМ)",
+  "role": "Метаботропная (Gi/o-сопряжённая) гиперполяризация: Gβγ → GIRK → K⁺-эффлюкс → торможение нейрона.",
+  "bio_ref": "PMID 7877685; 8566224; 10572003.",
+  "species": "позвоночные (сердце, мозг — гетеромеры Kir3.1/3.2/3.4)",
+  "note": "⚠️ G (мС/см²) в нативной ткани не найдена → density плейсхолдер (калибровка на этапе 6).",  "name_zh": "GIRK（Kir3.x）— Gβγ激活的内向整流K⁺通道",
+  "description_en": "Metabotropic (Gi/o-coupled) hyperpolarization: Gβγ → GIRK → K⁺ efflux → neuronal inhibition. γ=35 pS; tertiapin-Q IC50 8 nM.",
+  "description_zh": "代谢型（Gi/o偶联）超极化：Gβγ→GIRK→K⁺外流→神经元抑制。γ=35 pS；tertiapin-Q IC50 8 nM。"
+}

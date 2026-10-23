@@ -1,0 +1,15 @@
+{
+  "name": "KCNQ4 (Kv7.4) покойный K⁺ канал",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 176,
+  "modifiers": [
+    {
+      "id": 176,
+      "name": "KCNQ4 (Kv7.4) покойный K⁺",
+      "category": "Voltage-gated K",
+      "description": "KCNQ4 (Kv7.4) медленный потенциал-зависимый K⁺ волосковых клеток, БЕЗ инактивации. Активация m: Boltzmann V½=−78 мВ k=14, τ_акт 212 мс. γ=2.31 пС. GHK-флюкс K⁺ (z=1). Kharkovets 2000.",
+      "release": false
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "id": 147,
+  "name": "GLAST/GLT-1 (EAAT1/2) — глиальный глутаматный транспортер",
+  "name_en": "GLAST/GLT-1 (EAAT1/2) — glial glutamate transporter",
+  "category": "Базовые модификаторы",
+  "category_en": "Basic Modifiers",
+  "family": "EAAT (SLC1)",
+  "isoforms": [
+    "GLAST",
+    "EAAT1",
+    "GLT-1",
+    "EAAT2"
+  ],
+  "transport": {
+    "stoichiometry": "3 Na⁺ + 1 H⁺ + 1 glutamate (inward), 1 K⁺ (outward) — net +2 charge",
+    "kinetics": "Michaelis-Menten, K_m glutamate = 15 µM (10–20 µM)",
+    "turnover": "~16 s⁻¹ (GLAST/EAAT1)"
+  },
+  "role": "Захват глутамата из синаптической щели (глиальный клиренс) — заменяет tau_clearance.",
+  "bio_ref": "Zerangue & Kavanaugh (1996) Nature 383:634 (стехиометрия); Hanson et al. (2015) GLIA (незрелая глия — GLAST, медленный захват).",
+  "species": "позвоночные (астроциты/радиальная глия)",
+  "note": "H⁺ не моделируется отдельно (входит в чистый +2). I_max — калибровка (этап 6).",
+  "name_zh": "GLAST/GLT-1（EAAT1/2）— 胶质谷氨酸转运体",
+  "description_en": "Glial glutamate transporter (GLAST/EAAT1, GLT-1/EAAT2) with stoichiometry 3Na⁺+1H⁺+1 glutamate (in):1K⁺ (out), net +2 charge; Michaelis-Menten K_m(glutamate)=15 µM, turnover ~16 s⁻¹. Mediates synaptic glutamate clearance, replacing tau_clearance.",
+  "description_zh": "胶质谷氨酸转运体（GLAST/EAAT1、GLT-1/EAAT2），化学计量为3Na⁺+1H⁺+1谷氨酸（入）:1K⁺（出），净+2电荷；Michaelis-Menten K_m(谷氨酸)=15 µM，周转~16 s⁻¹。介导突触谷氨酸清除，取代tau_clearance。"
+}

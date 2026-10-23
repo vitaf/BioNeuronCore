@@ -1,0 +1,19 @@
+{
+  "type_id": 45,
+  "name": "D5",
+  "version": "1.0.0",
+  "category": "Метаботропные Gs",
+  "mechanism_type": "Метаботропный (G-белок Gs/Gq-связанный)",
+  "signaling": "Дофамин (DA) → D5 (D1B) → Gs → ↑cAMP. Более высокая аффинность к DA vs D1. Ограниченная экспрессия (гиппокамп, гипоталамус).",
+  "inputs": "neurotransmitter[NT_DOPAMINE]",
+  "outputs": "↑cAMP → PKA. Может также активировать Gq (↑IP3).",
+  "neuron_types": "Гиппокамп (CA1 — пирамидные клетки), гипоталамус (паравентрикулярное ядро), таламус, prefrontal cortex (слой V).",
+  "subcellular": "Постсинаптические (гиппокамп, PFC). Реснички нейронов (primary cilia).",
+  "kinetics": "K_D DA ≈ 0.5-5 nM (в 10-100 раз выше аффинность vs D1). Двойное G-белковое сопряжение: Gs + Gq. Меньше изучен vs D1.",
+  "function": "Гиппокампальная пластичность (LTP). Нейроэндокринная регуляция (гипоталамус). Меньшая роль в базальных ганглиях vs D1.",
+  "references": "Beaulieu J.M., Gainetdinov R.R. (2011), см. D2.",
+  "name_en": "D5",
+  "name_zh": "D5",
+  "description_en": "Hippocampal plasticity (LTP) and neuroendocrine regulation (hypothalamus). Plays a lesser role in basal ganglia than D1.",
+  "description_zh": "海马可塑性（LTP）和神经内分泌调节（下丘脑）。在基底神经节中的作用小于 D1。"
+}

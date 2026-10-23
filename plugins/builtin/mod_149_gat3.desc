@@ -1,0 +1,1 @@
+{"id":149,"name":"GAT3 — глиальный транспортер GABA","category":"Базовые модификаторы","description":"Глиальный транспортер GABA (SLC6A11). 2 Na⁺ + 1 Cl⁻ + GABA внутрь (net +1). Заменяет tau_clearance.","params":{"km_rel":0.5,"imax_ua_cm2":2},"bio_ref":"SLC6A11","bio_role":"Глиальный захват GABA → клиренс синапса"}

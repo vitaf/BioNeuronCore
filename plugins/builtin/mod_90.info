@@ -1,0 +1,19 @@
+{
+  "type_id": 90,
+  "name": "Protein Synthesis",
+  "version": "1.0.0",
+  "category": "Консолидация/Реконсолидация",
+  "mechanism_type": "Инициация трансляции: mTORC1 → S6K1 (фосфорилирование рибосомного белка S6) + mTORC1 → 4E-BP (фосфорилирование → освобождение eIF4E → сборка eIF4F → кэп-зависимая трансляция)",
+  "signaling": "Два параллельных пути от mTORC1: S6K1 разгоняет трансляцию рибосомных белков (увеличивает количество рибосом), 4E-BP снимает блокировку с eIF4E (посадочная площадка для мРНК на рибосоме). Оба пути частично компенсируют друг друга.",
+  "inputs": "mTORC1_active (читается с того же сегмента через MOD_MTORC1)",
+  "outputs": "translation_rate (0..1) — общая скорость синтеза белка, ribosome_occupancy. Потребляет ATP.",
+  "neuron_types": "Все нейроны. Трансляция — универсальный механизм синтеза белка.",
+  "subcellular": "Цитоплазма, рибосомы. eIF4E связывается с 5'-кэпом мРНК, eIF4F собирает рибосому.",
+  "kinetics": "mTORC1→S6K1: tau=10000ms. mTORC1→4E-BP: tau=8000ms. translation_rate = S6K1 × 4EBP. tau_translate=60000ms (синтез белка медленный).",
+  "function": "Конвертирует сигнал mTORC1 в фактический синтез белка. Без этого модификатора активация генов (через CREB) остаётся «бумажным приказом».",
+  "references": "Richter J.D., Klann E. (2009) Making synaptic plasticity and memory last: mechanisms of translational regulation. Genes Dev 23:1-11. Santini E. et al. (2014) Mechanisms of translation control underlying long-lasting synaptic plasticity and memory.",
+  "name_en": "Protein Synthesis",
+  "name_zh": "蛋白质合成",
+  "description_en": "Translation initiation driven by mTORC1 via S6K1 and 4E-BP (releasing eIF4E). Converts mTORC1 signal into actual protein synthesis, consuming ATP.",
+  "description_zh": "由 mTORC1 通过 S6K1 和 4E-BP（释放 eIF4E）驱动的翻译起始。将 mTORC1 信号转化为实际的蛋白质合成，消耗 ATP。"
+}

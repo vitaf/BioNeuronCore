@@ -1,0 +1,19 @@
+{
+  "type_id": 121,
+  "name": "KNa-канал (Slack/Slick) — Na⁺-активируемый K⁺",
+  "version": "1.0.0",
+  "category": "K⁺ каналы",
+  "mechanism_type": "Ионотропный K⁺ канал (Na⁺- и потенциал-зависимый)",
+  "signaling": "Активируется внутриклеточным Na⁺ (EC50~25-60mM при -30mV). Потенциал-зависимость: V_half сдвигается влево при повышении [Na⁺]i. Проводит ТОЛЬКО K⁺ (GHK, E_rev≈E_K). Обеспечивает медленную AHP (sAHP) после burst-активности.",
+  "inputs": "V_m, intra_ions[Na⁺] (state[1]=EC50), state[2]=tau_act, state[3]=V_half_base",
+  "outputs": "I_KNa — гиперполяризующий K⁺ ток. Терминирует burst, предотвращает runaway excitation. Ключевой механизм защиты от Na⁺-перегрузки.",
+  "neuron_types": "dIN (Slack: EC50=25mM, быстрая терминация burst). cIN (умеренная плотность: EC50=40mM). MN (Slick: медленная, тоническая). Гиппокампальные пирамидные CA1-CA3. ГАМКергические интернейроны (Slack, fast).",
+  "subcellular": "Сома и проксимальные дендриты. Колокализация с Na⁺-каналами (Na_v1.x). Плотность коррелирует с частотой burst-активности.",
+  "kinetics": "V_half_base(state[3])=-40mV, k=12mV. EC50_Na(state[1])=25-66mM. Hill_Na=2.5-3.5. tau_act(state[2])=5-15ms (Slack быстрее Slick). V_half_shift: -5mV на 10mM [Na⁺]i. phi (Q10=2.0).",
+  "function": "Две роли: (1) Терминация burst — накопление [Na⁺]i во время спайков → KNa открывается → K⁺ выходит → гиперполяризация → остановка burst. (2) Регуляция возбудимости — базальная активность KNa (~5-10% при [Na⁺]i=5mM) снижает R_in на 10-15%, предотвращая эпилептиформную активность. Мутации KCNT1 (Slack) вызывают тяжёлую детскую эпилепсию.",
+  "references": "Kaczmarek L.K. (2013) Slack, Slick and sodium-activated potassium channels. ISRN Neuroscience 2013:354262. Bhattacharjee A., Kaczmarek L.K. (2005) For K⁺ channels, Na⁺ is the new Ca²⁺. Trends in Neurosciences 28:422-428. Barcia G. et al. (2012) De novo gain-of-function KCNT1 channel mutations cause malignant migrating partial seizures of infancy. Nature Genetics 44:1255-1259.",
+  "name_en": "KNa channel (Slack/Slick) — Na⁺-activated K⁺",
+  "name_zh": "KNa通道 (Slack/Slick) — Na⁺激活K⁺",
+  "description_en": "Na⁺-activated K⁺ channel (Slack/Slick) activated by intracellular Na⁺ (EC50 25–66 mM, Hill 2.5–3.5, V_half_base=−40 mV, k=12 mV). Conducts K⁺ (GHK) to terminate bursts and prevent runaway excitation; basal activity reduces R_in by 10–15%, and KCNT1 mutations cause infantile epilepsy.",
+  "description_zh": "Na⁺激活的K⁺通道（Slack/Slick），由细胞内Na⁺激活（EC50 25–66 mM，Hill 2.5–3.5，V_half_base=−40 mV，k=12 mV）。传导K⁺（GHK）以终止爆发并防止失控性兴奋；基础活性使R_in降低10–15%，KCNT1突变导致婴儿癫痫。"
+}

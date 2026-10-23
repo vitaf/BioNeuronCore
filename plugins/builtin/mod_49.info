@@ -1,0 +1,19 @@
+{
+  "type_id": 49,
+  "name": "β2",
+  "version": "1.0.0",
+  "category": "Метаботропные Gs",
+  "mechanism_type": "Метаботропный (G-белок Gs- и Gi-связанный)",
+  "signaling": "Норадреналин/адреналин → β2 → Gs (↑cAMP) + Gi (при PKA-фосфорилировании — switch). Классический пример biased signalling (β-аррестин-зависимые пути).",
+  "inputs": "neurotransmitter[NT_NORADRENALINE]",
+  "outputs": "↑cAMP (Gs), при PKA-фосфорилировании — switch на Gi → ↓cAMP + MAPK (β-аррестин).",
+  "neuron_types": "ЦНС: кора, гиппокамп, мозжечок (глиальные клетки). Периферия: бронхи (гладкие мышцы — релаксация), сосуды, печень, скелетные мышцы.",
+  "subcellular": "Постсинаптические (ЦНС — нейроны). Глия. Пресинаптические (гетерорецепторы).",
+  "kinetics": "K_D NA ≈ 0.1-10 μM. PKA-фосфорилирование → switch Gs→Gi. β-аррестин: MAPK, ERK1/2 сигналинг (biased agonism). Агонисты: сальбутамол, формотерол (β2-селективные — астма).",
+  "function": "ЦНС: глиально-опосредованная модуляция нейровоспаления. Периферия: бронходилатация (астма), вазодилатация, гликогенолиз. Прототип изучения GPCR biased signalling.",
+  "references": "Lefkowitz R.J. (2004), см. β1.",
+  "name_en": "β2",
+  "name_zh": "β2",
+  "description_en": "CNS: glia-mediated modulation of neuroinflammation. Peripherally mediates bronchodilation (asthma), vasodilation and glycogenolysis; prototype for GPCR biased signaling.",
+  "description_zh": "中枢神经系统：胶质细胞介导的神经炎症调节。外周介导支气管扩张（哮喘）、血管扩张和糖原分解；是 GPCR 偏向性信号研究原型。"
+}

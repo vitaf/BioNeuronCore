@@ -1,0 +1,15 @@
+{
+  "name": "CB1-рецептор",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 36,
+  "modifiers": [
+    {
+      "id": 36,
+      "name": "CB1-рецептор",
+      "category": "Метаботропные Gi/o",
+      "description": "Метаботропный каннабиноидный рецептор CB1 (Gi/o) — пресинаптический модулятор",
+      "release": true
+    }
+  ]
+}

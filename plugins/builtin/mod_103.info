@@ -1,0 +1,19 @@
+{
+  "type_id": 103,
+  "name": "SK-канал (KCa2.x) — Ca²⁺-акт. K⁺ (AHP)",
+  "version": "1.0.0",
+  "category": "Ионные каналы ритмогенеза",
+  "mechanism_type": "Ионный канал (Ca²⁺-зависимый, GHK K⁺)",
+  "signaling": "Прямой GHK-поток K⁺. Гейтинг: чисто Ca²⁺-зависимый, Hill n=4, K_d=400nM. Нет V-зависимости. Медленная асимметричная кинетика.",
+  "inputs": "intra_ions[Ca²⁺], intra_ions[K⁺], extra_ions[K⁺], V_m",
+  "outputs": "I_K (гиперполяризующий). Уменьшает intra_ions[K⁺].",
+  "neuron_types": "dIN, cIN, mn. Все нейроны CPG — обеспечивает AHP для ритмичности.",
+  "subcellular": "Сома и дендриты. Наибольшая плотность — сома.",
+  "kinetics": "Hill n=4, K_d=400nM (0.0004mM). g_max=0.5nS. τ_open=5ms, τ_close=50ms. GHK K⁺ (z=1).",
+  "function": "Послеспайковая гиперполяризация (mAHP). Ограничивает частоту спайков, создаёт рефрактерный период. В CPG: AHP после каждого спайка → окно для контралатерального торможения → чередование.",
+  "references": "Bond C.T. et al. (2004) Small conductance Ca²⁺-activated K⁺ channels: structure and function. Prog Brain Res 124:211-226. Faber E.S.L., Sah P. (2003) Calcium-activated potassium channels: multiple contributions to neuronal function. Neuroscientist 9:181-194.",
+  "name_en": "SK Channel (KCa2.x) — Ca²⁺-act. K⁺ (AHP)",
+  "name_zh": "SK 通道 (KCa2.x) — Ca²⁺-激活 K⁺ (AHP)",
+  "description_en": "Ca²⁺-activated K⁺ channel (KCa2.x) gated by Hill n=4, K_d=400 nM with g_max=0.5 nS, τ_open=5 ms, τ_close=50 ms. Generates the medium after-hyperpolarization (mAHP) that limits firing rate and opens the window for contralateral inhibition during alternation.",
+  "description_zh": "Ca²⁺激活的K⁺通道（KCa2.x），门控为Hill n=4，K_d=400 nM，g_max=0.5 nS，τ_open=5 ms，τ_close=50 ms。产生中时程后超极化（mAHP），限制放电频率并为交替期间的对侧抑制创造窗口。"
+}

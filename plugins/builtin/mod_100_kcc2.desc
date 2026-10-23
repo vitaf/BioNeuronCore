@@ -1,0 +1,15 @@
+{
+  "name": "KCC2 K⁺-Cl⁻ котранспортёр",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 100,
+  "modifiers": [
+    {
+      "id": 100,
+      "name": "KCC2 K⁺-Cl⁻ котранспортёр",
+      "category": "Гомеостаз Cl⁻",
+      "description": "KCC2: K⁺-Cl⁻ котранспортёр, электронейтральный 1K⁺:1Cl⁻ out",
+      "release": false
+    }
+  ]
+}

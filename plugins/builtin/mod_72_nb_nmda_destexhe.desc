@@ -1,0 +1,15 @@
+{
+  "name": "NB_NMDA_Destexhe",
+  "version": "1.0.0",
+  "author": "BioNeuronCore (Destexhe 1998)",
+  "type_id": 72,
+  "modifiers": [
+    {
+      "id": 72,
+      "name": "NB_NMDA_Destexhe",
+      "category": "NB_-Destexhe",
+      "description": "NMDA-рецептор с single-decay кинетикой (Destexhe 1998): 1 состояние (G), τ=80, G_syn=0.2, V_shift=-20, E=0mV",
+      "release": false
+    }
+  ]
+}

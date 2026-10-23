@@ -1,0 +1,22 @@
+{
+  "id": 128,
+  "name": "RyR — рианодиновый рецептор, CICR из ЭПР",
+  "name_en": "RyR — ryanodine receptor, CICR from ER",
+  "category": "Ca²⁺-гомеостаз",
+  "category_en": "Ca²⁺ Homeostasis",
+  "family": "Ryanodine receptor",
+  "isoforms": [
+    "RyR1",
+    "RyR2",
+    "RyR3"
+  ],
+  "function": "Ca²⁺-индуцированный Ca²⁺-выброс (CICR) из ЭПР. Открывается при повышении цитоплазматического [Ca²⁺].",
+  "kinetics": "Быстрый: Ca²⁺-зависимая активация (EC50~0.3μM), кофеин-сенситивный.",
+  "role_in_cpg": "CICR: Ca²⁺-вход через Cav/L-type→RyR→усиленный Ca²⁺ выброс из ЭПР→активация SK/BK→AHP→терминация burst.",
+  "bio_ref": "Fill & Copello (2002) Physiol Rev 82:893-922. 'Ryanodine receptor calcium release channels.'",
+  "species": "Все эукариоты",
+  "neuron_type": "dIN (спайк-индуцированный CICR)",
+  "name_zh": "RyR — 雷诺丁受体，内质网CICR",
+  "description_en": "Ryanodine receptor mediating Ca²⁺-induced Ca²⁺ release (CICR) from the ER, opening on rising cytosolic [Ca²⁺] (EC50~0.3 µM, caffeine-sensitive). In CPG, Ca²⁺ entry through Cav/L-type → RyR → amplified ER Ca²⁺ release → SK/BK activation → AHP → burst termination.",
+  "description_zh": "雷诺丁受体介导内质网的Ca²⁺诱导Ca²⁺释放（CICR），在胞质[Ca²⁺]升高时开放（EC50~0.3 µM，对咖啡因敏感）。在CPG中，Cav/L型Ca²⁺内流→RyR→放大内质网Ca²⁺释放→SK/BK激活→AHP→爆发终止。"
+}

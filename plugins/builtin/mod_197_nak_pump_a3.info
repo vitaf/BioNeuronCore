@@ -1,0 +1,19 @@
+{
+  "type_id": 197,
+  "name": "Na/K насос α3 (динамический, usAHP)",
+  "version": "1.0.0",
+  "category": "Базовые модификаторы",
+  "mechanism_type": "Ферментативный (ATP-зависимый активный транспорт), α3-изоформа",
+  "signaling": "Активный транспорт против градиента: 3 Na⁺ наружу, 2 K⁺ внутрь за 1 ATP. Электрогенный (+1 заряд наружу). НИЗКОЕ сродство к Na⁺_i (K_m≈25 мМ) — тонически почти неактивен на покое, активируется при росте [Na⁺]_i во время залпа спайков → генерирует usAHP (обрыв повторной стрельбы).",
+  "inputs": "intra_ions[Na⁺], extra_ions[K⁺], ATP_level, V_m, state[5] (уабаин, нМ)",
+  "outputs": "Δ intra_ions[Na⁺] −3, Δ extra_ions[Na⁺] +3, Δ intra_ions[K⁺] +2, Δ extra_ions[K⁺] −2, Δ ATP_level −1, I_pump (гиперполяризующий).",
+  "neuron_types": "Возбуждающие CPG-интернейроны головастика (dIN), где нужен single-spike/обрыв повторной стрельбы через usAHP. α3 — нейрональная изоформа с НИЗКИМ сродством к Na⁺.",
+  "subcellular": "Плазматическая мембрана (сома/дендриты). Работает вместе с тоническим α1 (высокое сродство, покой) — α3 рекрутируется только при активности.",
+  "kinetics": "Цикл Поста–Альберса (nak_pump_vnorm): фосфорилирование (Hill-3 Na⁺), электрогенный E1P⇌E2P (V-зависимый), дефосфорилирование (Hill-2 K⁺), E2→E1. K_m_Na(α3)≈25 мМ, K_m_K≈1.5 мМ, K_m_ATP≈0.5 мМ, k_cat=75 с⁻¹. Уабаин IC50≈20 нМ (грызуны).",
+  "function": "Динамический гомеостаз Na⁺ при высокой активности. Генерирует usAHP (ultraslow AHP) — гиперполяризация после залпа спайков, ограничивает повторную стрельбу (single-spike). Маскируется Ih (HCN) в dIN.",
+  "references": "Zahler et al. (1997) Na,K-ATPase α3 низкое сродство к Na⁺ (K0.5≈25–50 мМ). Blanco & Mercer (1998) α3 > α2 > α1 по уабаин-чувствительности. Heitler (2025) usAHP = динамический Na/K-насос. MacFarlane thesis (St Andrews) — α3 в спинальных нейронах Xenopus генерирует usAHP.",
+  "name_en": "Na/K Pump α3 (dynamic, usAHP)",
+  "name_zh": "Na/K 泵 α3（动态，usAHP）",
+  "description_en": "α3 Na/K-ATPase with low Na⁺ affinity (K_m≈25 mM) — recruited by activity-dependent Na⁺ accumulation to generate the usAHP that terminates repetitive firing.",
+  "description_zh": "α3 Na/K-ATPase，对 Na⁺ 亲和力低（K_m≈25 mM）——由活动依赖的 Na⁺ 积累招募，产生终止重复放电的 usAHP。"
+}

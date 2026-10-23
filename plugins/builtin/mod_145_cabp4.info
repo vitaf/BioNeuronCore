@@ -1,0 +1,24 @@
+{
+  "id": 145,
+  "name": "CaBP4 (calcium-binding protein 4) — модулятор Cav1.4",
+  "name_en": "CaBP4 (calcium-binding protein 4) — Cav1.4 modulator",
+  "category": "Базовые модификаторы",
+  "category_en": "Basic Modifiers",
+  "family": "CaBP (neuronal Ca²⁺-sensor)",
+  "isoforms": [
+    "CaBP4",
+    "calcium-binding protein 4"
+  ],
+  "gating": {
+    "binding": "state[0]=bound → насыщается к 1 (белок-белок, τ_bind≈1 мс — оценка)",
+    "no_current": "НЕ канал — мембранного тока нет (return 0)"
+  },
+  "conductances": {},
+  "role": "Связывает IQ-мотив Cav1.4 (C-конец) → снимает ингибицию ICDI/CTM → ΔV½=−10 мВ + Ca²⁺-вход ×5 при −40 мВ.",
+  "bio_ref": "Shaltiel et al. (2012) J Biol Chem 287:36312 (ΔV½=−10 мВ, boost×5, механизм IQ/ICDI); Haeseleer et al. (2004) (essential role in photoreceptor synaptic function).",
+  "species": "позвоночные (синаптические терминали фоторецепторов)",
+  "note": "Эффект на активацию требует экзона 47/CTM Cav1.4. Без CaBP4 → CSNB2-подобный фенотип.",
+  "name_zh": "CaBP4（钙结合蛋白4）— Cav1.4调节蛋白",
+  "description_en": "Calcium-binding protein 4 that binds the IQ motif of Cav1.4, relieving ICDI/CTM inhibition to produce ΔV½=−10 mV and a ×5 Ca²⁺-influx boost at −40 mV. Not a channel (no membrane current); loss of CaBP4 yields a CSNB2-like phenotype.",
+  "description_zh": "钙结合蛋白4，结合Cav1.4的IQ基序，解除ICDI/CTM抑制，产生ΔV½=−10 mV并在−40 mV处Ca²⁺内流增强×5。非通道（无膜电流）；CaBP4缺失导致CSNB2样表型。"
+}

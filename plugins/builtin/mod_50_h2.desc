@@ -1,0 +1,15 @@
+{
+  "name": "H2-рецептор",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 50,
+  "modifiers": [
+    {
+      "id": 50,
+      "name": "H2-рецептор",
+      "category": "Метаботропные Gs",
+      "description": "Метаботропный гистаминовый рецептор H2 (Gs) — желудочный, повышает cAMP",
+      "release": false
+    }
+  ]
+}

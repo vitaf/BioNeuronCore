@@ -1,0 +1,19 @@
+{
+  "type_id": 101,
+  "name": "Ca²⁺ утечка — пассивный вход",
+  "version": "1.0.0",
+  "category": "Ca²⁺/K⁺/Cl⁻ гомеостаз",
+  "mechanism_type": "Пассивный транспорт (GHK-канал)",
+  "signaling": "Пассивный GHK-поток Ca²⁺ (z=2) через неселективные катионные каналы. Без гейтинга. Входящий ток деполяризует.",
+  "inputs": "intra_ions[Ca²⁺], extra_ions[Ca²⁺], V_m",
+  "outputs": "I_Ca (деполяризующий). Увеличивает intra_ions[Ca²⁺].",
+  "neuron_types": "Все типы нейронов. Базальный механизм входа Ca²⁺.",
+  "subcellular": "Плазматическая мембрана всех компартментов.",
+  "kinetics": "P_Ca=0.0015. GHK-поток Ca²⁺ (z=2). Без гейтинга (всегда открыт).",
+  "function": "Обеспечивает базальный вход Ca²⁺ для компенсации экструзии PMCA+NCX. Поддерживает стационарный [Ca²⁺]i ≈ 50-100 nM. Без этого канала [Ca²⁺]i падает до нуля → нарушение Ca²⁺-зависимых процессов (синаптический выброс, ферменты, пластичность).",
+  "references": "Clapham D.E. (2007) Calcium signaling. Cell 131:1047-1058.",
+  "name_en": "Ca²⁺ Leak — passive influx",
+  "name_zh": "Ca²⁺ 泄漏 — 被动内流",
+  "description_en": "Passive GHK Ca²⁺ influx (z=2) through non-selective cation channels with P_Ca=0.0015, always open. Provides basal Ca²⁺ entry to balance PMCA/NCX extrusion and maintain steady-state [Ca²⁺]ᵢ ≈ 50–100 nM.",
+  "description_zh": "通过非选择性阳离子通道的被动GHK Ca²⁺内流（z=2），P_Ca=0.0015，始终开放。提供基础Ca²⁺内流，以平衡PMCA/NCX的外排并维持稳态[Ca²⁺]ᵢ ≈ 50–100 nM。"
+}

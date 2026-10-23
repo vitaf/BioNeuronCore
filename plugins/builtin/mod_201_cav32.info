@@ -1,0 +1,10 @@
+{
+  "type_id": 201,
+  "name": "Cav3.2 (CACNA1H) — T-type Ca²⁺",
+  "name_en": "Cav3.2 (CACNA1H) — T-type Ca²⁺",
+  "name_zh": "Cav3.2（CACNA1H）— T型Ca²⁺",
+  "category": "Ионные каналы",
+  "description": "Cav3.2 (CACNA1H/α1H) T-type Ca²⁺. γ=9 пС (slope conductance). Активация V½=−46 мВ, инактивация V½=−72 мВ (VDI, слабый CDI). Ингибиция: Ni²⁺ 13 µM (самая Ni-чувствительная из T-type; vs Cav3.1 250µM / Cav3.3 ~216µM), mibefradil, TTA-P2, Z944. Low-threshold burst.",
+  "description_en": "Cav3.2 (CACNA1H/α1H) T-type Ca²⁺. γ=9 pS. Activation V½=−46 mV, inactivation V½=−72 mV (VDI, weak CDI). Pharmacology: Ni²⁺ 13 µM (most Ni-sensitive T-type; vs Cav3.1 250µM / Cav3.3 ~216µM), mibefradil, TTA-P2, Z944. Low-threshold burst.",
+  "description_zh": "Cav3.2（CACNA1H/α1H）T型Ca²⁺。γ=9 pS。激活V½=−46 mV，失活V½=−72 mV（VDI，弱CDI）。药理：Ni²⁺ 13 µM（T型中最敏感的Ni；区别于Cav3.1 250µM / Cav3.3 ~216µM）、mibefradil、TTA-P2、Z944。低阈值爆发。"
+}

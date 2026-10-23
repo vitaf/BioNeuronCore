@@ -1,0 +1,10 @@
+{
+  "type_id": 205,
+  "name": "Kv2.2 (KCNB2) — delayed rectifier K⁺",
+  "name_en": "Kv2.2 (KCNB2) — delayed rectifier K⁺",
+  "name_zh": "Kv2.2（KCNB2）— 延迟整流K⁺",
+  "category": "Ионные каналы",
+  "description": "Kv2.2 (KCNB2) медленный delayed rectifier K⁺. γ=14.5 пС. Активация V½=+13.2 мВ, инактивация V½=−16.6 мВ (слабая U-type). Медленнее Kv2.1. Ингибиция: TEA 2.6 мМ, 4-AP 1.5 мМ.",
+  "description_en": "Kv2.2 (KCNB2) slow delayed rectifier K⁺. γ=14.5 pS. Activation V½=+13.2 mV, inactivation V½=−16.6 mV (weak U-type). Slower than Kv2.1. Pharmacology: TEA 2.6 mM, 4-AP 1.5 mM.",
+  "description_zh": "Kv2.2（KCNB2）慢延迟整流K⁺。γ=14.5 pS。激活V½=+13.2 mV，失活V½=−16.6 mV（弱U型）。慢于Kv2.1。药理：TEA 2.6 mM、4-AP 1.5 mM。"
+}

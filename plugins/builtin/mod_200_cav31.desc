@@ -1,0 +1,15 @@
+{
+  "name": "Cav3.1 T-type Ca",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 200,
+  "modifiers": [
+    {
+      "id": 200,
+      "name": "Cav3.1 (CACNA1G)",
+      "category": "Ионные каналы",
+      "description": "Cav3.1 T-type Ca²⁺ (γ=7.5 пС, V½_m=−45, V½_h=−77, Ni²⁺ 250 µM, быстрее Cav3.3). GHK Ca²⁺ z=2, m³h-гейтинг, window-current для low-threshold burst (таламус/TRN).",
+      "release": false
+    }
+  ]
+}

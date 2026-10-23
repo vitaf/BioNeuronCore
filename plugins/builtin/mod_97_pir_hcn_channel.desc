@@ -1,0 +1,15 @@
+{
+  "name": "HCN-канал (Ih) — тоническая акселерация",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 97,
+  "modifiers": [
+    {
+      "id": 97,
+      "name": "HCN-канал (Ih) — тоническая акселерация",
+      "category": "PIR",
+      "description": "HCN1/2/4 каналы. Раздельные GHK-потоки Na⁺(40%)/K⁺(60%). Активация гиперполяризацией, sag-эффект. DA-подавление.",
+      "release": false
+    }
+  ]
+}

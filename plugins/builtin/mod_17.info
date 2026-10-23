@@ -1,0 +1,19 @@
+{
+  "type_id": 17,
+  "name": "GABA-B",
+  "version": "1.0.0",
+  "category": "Метаботропные Gi/o",
+  "mechanism_type": "Метаботропный (G-белок Gi/o-связанный)",
+  "signaling": "GABA → GABA-B (GABAB1/GABAB2 гетеродимер) → Gi/o → ингибирование аденилатциклазы (↓cAMP), активация GIRK-каналов (K+), ингибирование Ca_v каналов. Обязательный гетеродимер (GB1+GB2).",
+  "inputs": "neurotransmitter[NT_GABA]",
+  "outputs": "↓cAMP, ↑GIRK ток, ↓Ca_v. Медленное торможение (IPSP). Пресинаптически: ↓Ca²⁺ → ↓выброс.",
+  "neuron_types": "Все нейроны ЦНС. Гиппокамп (CA1-CA3), кора, таламус, мозжечок, спинной мозг.",
+  "subcellular": "Постсинаптические (сомы, дендриты) — медленный IPSP. Пресинаптические терминали — гетерорецепторы (глутамат, GABA, дофамин). Экстрасинаптические.",
+  "kinetics": "Активация: EC50 GABA ≈ 0.1-1 μM (high affinity). GIRK: τ ≈ 100-500 ms. Gi/o → α-субъединица ингибирует AC, βγ-димер активирует GIRK (Kir3.x). Агонист: баклофен. Антагонист: CGP 55845.",
+  "function": "Основной медиатор медленного синаптического торможения в ЦНС. Пресинаптическая модуляция выброса нейромедиаторов (гетерорецепторы). Мишень спазмолитиков (баклофен при спастичности). Регуляция ритмогенеза (таламус).",
+  "references": "Bowery N.G. et al. (2002) International Union of Pharmacology. XXXIII. Mammalian GABA-B receptors: structure and function. Pharmacol Rev 54:247-264.",
+  "name_en": "GABA-B",
+  "name_zh": "GABA-B",
+  "description_en": "Primary mediator of slow synaptic inhibition in the CNS. Modulates neurotransmitter release presynaptically (heteroreceptors); target of the antispasmodic baclofen.",
+  "description_zh": "中枢神经系统慢速突触抑制的主要介导者。通过突触前异源受体调节神经递质释放；是解痉药巴氯芬的靶点。"
+}

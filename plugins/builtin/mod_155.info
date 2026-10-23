@@ -1,0 +1,11 @@
+{
+  "type_id": 155,
+  "name": "CNG (CNGA2/A4/B1b) цАМФ-зависимый",
+  "name_en": "CNG (CNGA2/A4/B1b) cAMP-gated",
+  "name_zh": "CNG 环核苷酸门控通道",
+  "version": "1.0.0",
+  "category": "Ионные каналы",
+  "description": "CNG циклический нуклеотид-зависимый канал: γ=29(гомомер)/13(гетеромер) пС, лиганд cAMP (Hill 1.5), Na⁺/Ca²⁺. Обоняние/фоторецепция.",
+  "description_en": "CNG cyclic nucleotide-gated channel: γ=29 (homomer)/13 (heteromer) pS, ligand cAMP (Hill 1.5), Na⁺/Ca²⁺. Olfaction/photoreception.",
+  "description_zh": "CNG环核苷酸门控通道：γ=29（同聚体）/13（异聚体）pS，配体cAMP（Hill 1.5），Na⁺/Ca²⁺。嗅觉/光感受。"
+}

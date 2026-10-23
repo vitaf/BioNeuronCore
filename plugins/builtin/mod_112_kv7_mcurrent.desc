@@ -1,0 +1,15 @@
+{
+  "name": "Kv7 M-ток",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 112,
+  "modifiers": [
+    {
+      "id": 112,
+      "name": "Kv7 M-ток",
+      "category": "Voltage-gated K",
+      "description": "Kv7 (KCNQ2/3) M-ток: медленный K⁺, V-зав., без инактивации, PIP2-модуляция, PKC-ингибиция",
+      "release": false
+    }
+  ]
+}

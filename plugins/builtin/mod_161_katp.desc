@@ -1,0 +1,15 @@
+{
+  "name": "KATP ATP-чувствительный K⁺ канал",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 161,
+  "modifiers": [
+    {
+      "id": 161,
+      "name": "KATP ATP-чувствительный K⁺ канал",
+      "category": "Inward-rectifier K",
+      "description": "KATP (Kir6.2/SUR1, KCNJ11/ABCC8) ATP-чувствительный K⁺. Po = 1/(1+[ATP]/15 µМ) (IC50 15 µМ), слабое inward-выпрямление. Глибенкламид (IC50 3 нМ). GHK K⁺ (z=1), γ=75 пС.",
+      "release": false
+    }
+  ]
+}

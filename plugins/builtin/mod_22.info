@@ -1,0 +1,19 @@
+{
+  "type_id": 22,
+  "name": "D2",
+  "version": "1.0.0",
+  "category": "Метаботропные Gi/o",
+  "mechanism_type": "Метаботропный (G-белок Gi/o-связанный)",
+  "signaling": "Дофамин (DA) → D2 (D2S/D2L изоформы) → Gi/o → ↓cAMP, активация GIRK, ингибирование Ca_v. Ауторецептор (D2S) и постсинаптический (D2L).",
+  "inputs": "neurotransmitter[NT_DOPAMINE]",
+  "outputs": "↓cAMP, ↑GIRK, ↓Ca_v. Ингибиторный. Пресинаптически: ↓выброс DA (ауторецептор).",
+  "neuron_types": "Стриатум (MSN indirect pathway — энкефалин+), nucleus accumbens (shell/core), VTA/SNc (ауторецепторы на DA-нейронах), гипофиз (лактотрофы), prefrontal cortex.",
+  "subcellular": "Пресинаптические: DA-терминали (ауторецепторы, D2S). Постсинаптические: дендритные шипики MSN (D2L). Соматодендритные (VTA/SNc).",
+  "kinetics": "K_D DA ≈ 10-100 nM (high-affinity state, D2_high). Альтернативный сплайсинг: D2S (пре-) vs D2L (пост-). Агонисты: квинпирол, бромокриптин. Антагонисты: галоперидол, раклоприд, рисперидон.",
+  "function": "Ключевой рецептор indirect pathway базальных ганглиев (D2-MSN → GPe → STN → GPi/SNr). Ауторегуляция дофаминового выброса. Мишень антипсихотиков (блок D2 в striatum/PFC). Пролактин-ингибирующий фактор (гипофиз). Паркинсонизм: D2-агонисты.",
+  "references": "Beaulieu J.M., Gainetdinov R.R. (2011) The physiology, signaling, and pharmacology of dopamine receptors. Pharmacol Rev 63:182-217.",
+  "name_en": "D2",
+  "name_zh": "D2",
+  "description_en": "Key receptor of the indirect basal ganglia pathway (D2-MSN). Auto-regulates dopamine release; target of antipsychotics. Parkinsonism: D2 agonists.",
+  "description_zh": "基底神经节间接通路的关键受体（D2-MSN）。自身调节多巴胺释放；是抗精神病药的靶点。帕金森病：D2 激动剂。"
+}

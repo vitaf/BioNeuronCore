@@ -1,0 +1,19 @@
+{
+  "type_id": 35,
+  "name": "α2",
+  "version": "1.0.0",
+  "category": "Метаботропные Gi/o",
+  "mechanism_type": "Метаботропный (G-белок Gi/o-связанный)",
+  "signaling": "Норадреналин/адреналин → α2A/α2B/α2C → Gi/o → ↓cAMP, активация GIRK, ингибирование Ca_v. Ауторецептор норадренергических нейронов (locus coeruleus).",
+  "inputs": "neurotransmitter[NT_NORADRENALINE]",
+  "outputs": "↓cAMP, ↑GIRK, ↓Ca_v → ингибирование. Пресинаптически: ↓выброс NA (ауторецептор).",
+  "neuron_types": "Locus coeruleus (ауторецепторы — α2A), prefrontal cortex (α2A — рабочая память), гиппокамп, amygdala, hypothalamus, спинной мозг (α2A — анальгезия). Периферия: симпатические терминали (α2A/α2C — гипотензия).",
+  "subcellular": "Пресинаптические (ауторецепторы LC, гетерорецепторы). Постсинаптические (PFC — пирамидные нейроны). Соматодендритные (LC).",
+  "kinetics": "α2A: K_D NA ≈ 10-100 nM. α2B: K_D NA ≈ 100-500 nM. Агонисты: клонидин, дексмедетомидин, бримонидин. Антагонисты: йохимбин, атипамезол, идазоксан.",
+  "function": "Центральное снижение симпатического тонуса (клонидин → гипотензия). Седация и анальгезия (дексмедетомидин в анестезиологии). Улучшение рабочей памяти в PFC (гуанфацин — ADHD). Антидепрессантное действие (миртазапин — α2-антагонист).",
+  "references": "MacDonald E. et al. (1997) Gene targeting — homing in on α2-adrenoceptor-subtype function. Trends Pharmacol Sci 18:211-219.",
+  "name_en": "α2",
+  "name_zh": "α2",
+  "description_en": "Centrally reduces sympathetic tone (clonidine → hypotension). Sedation/analgesia (dexmedetomidine), improves working memory (guanfacine in ADHD) and has antidepressant action (mirtazapine).",
+  "description_zh": "中枢性降低交感张力（可乐定 → 低血压）。镇静/镇痛（右美托咪定）、改善工作记忆（胍法辛用于 ADHD）并具有抗抑郁作用（米氮平）。"
+}

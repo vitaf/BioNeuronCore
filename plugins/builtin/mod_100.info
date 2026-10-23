@@ -1,0 +1,19 @@
+{
+  "type_id": 100,
+  "name": "KCC2 — K⁺-Cl⁻ котранспортёр",
+  "version": "1.0.0",
+  "category": "Ca²⁺/K⁺/Cl⁻ гомеостаз",
+  "mechanism_type": "Вторичный активный транспорт (электронейтральный)",
+  "signaling": "Электронейтральный симпорт 1K⁺:1Cl⁻ из клетки наружу. Движим градиентом K⁺ (создаваемым Na⁺/K⁺-АТФазой). Не создаёт электрического тока.",
+  "inputs": "intra_ions[K⁺], intra_ions[Cl⁻], extra_ions[K⁺]",
+  "outputs": "I=0 (электронейтральный). Уменьшает intra_ions[K⁺] и intra_ions[Cl⁻], увеличивает extra_ions[K⁺] и extra_ions[Cl⁻].",
+  "neuron_types": "Все зрелые нейроны ЦНС. Экспрессия нарастает в онтогенезе (KCC2 up, NKCC1 down). Критичен для dIN, cIN — мишеней глицинового торможения.",
+  "subcellular": "Плазматическая мембрана сомы и дендритов. Исключён из аксонного начального сегмента.",
+  "kinetics": "v_max=0.0008 mM/ms/cm². K_m_K_i=6.5mM, K_m_Cl_i=6.5mM. K_m_K_o=0.5mM (транс-ингибирование внешним K⁺).",
+  "function": "Поддержание низкого внутриклеточного [Cl⁻] (~5 mM). Обеспечивает гиперполяризующий E_Cl (~ -80 mV), необходимый для глицинового и GABA-A торможения. Без KCC2 Cl⁻ накапливается → E_Cl сдвигается к -30 mV → торможение становится возбуждением → CPG не работает.",
+  "references": "Rivera C. et al. (1999) The K⁺/Cl⁻ co-transporter KCC2 renders GABA hyperpolarizing during neuronal maturation. Nature 397:251-255. Blaesse P. et al. (2009) Cation-chloride cotransporters and neuronal function. Neuron 61:820-838.",
+  "name_en": "KCC2 — K⁺-Cl⁻ cotransporter",
+  "name_zh": "KCC2 — K⁺-Cl⁻ 共转运体",
+  "description_en": "Maintains low intracellular [Cl⁻] (~5 mM), producing a hyperpolarizing E_Cl (~−80 mV) required for glycinergic and GABA-A inhibition. Electroneutral 1K⁺:1Cl⁻ symport with v_max=0.0008 mM/ms/cm², K_m(Kᵢ)=K_m(Clᵢ)=6.5 mM; without KCC2, Cl⁻ accumulation shifts E_Cl toward −30 mV and turns inhibition into excitation.",
+  "description_zh": "维持低细胞内[Cl⁻]（~5 mM），产生超极化的E_Cl（~−80 mV），是甘氨酸能和GABA-A抑制所必需的。电中性1K⁺:1Cl⁻同向转运，v_max=0.0008 mM/ms/cm²，K_m(Kᵢ)=K_m(Clᵢ)=6.5 mM；缺乏KCC2时，Cl⁻蓄积使E_Cl移向−30 mV，抑制变为兴奋。"
+}

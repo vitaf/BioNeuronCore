@@ -1,0 +1,15 @@
+{
+  "name": "Метаботропный",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 3,
+  "modifiers": [
+    {
+      "id": 3,
+      "name": "Метаботропный",
+      "category": "Базовые модификаторы",
+      "description": "Метаботропный рецептор (G-белковый каскад)",
+      "release": false
+    }
+  ]
+}

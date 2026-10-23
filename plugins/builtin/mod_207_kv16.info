@@ -1,0 +1,10 @@
+{
+  "type_id": 207,
+  "name": "Kv1.6 (KCNA6) — delayed rectifier K⁺",
+  "name_en": "Kv1.6 (KCNA6) — delayed rectifier K⁺",
+  "name_zh": "Kv1.6（KCNA6）— 延迟整流K⁺",
+  "category": "Ионные каналы",
+  "description": "Kv1.6 (KCNA6) delayed rectifier K⁺. γ=8.2 пС. Активация V½=−8.1 мВ, non-inactivating (NIP-домен). Ингибиция: TEA 1.7 мМ, 4-AP 0.3 мМ, α-DTX 25 нМ.",
+  "description_en": "Kv1.6 (KCNA6) delayed rectifier K⁺. γ=8.2 pS. Activation V½=−8.1 mV, non-inactivating (NIP domain). Pharmacology: TEA 1.7 mM, 4-AP 0.3 mM, α-DTX 25 nM.",
+  "description_zh": "Kv1.6（KCNA6）延迟整流K⁺。γ=8.2 pS。激活V½=−8.1 mV，非失活（NIP域）。药理：TEA 1.7 mM、4-AP 0.3 mM、α-DTX 25 nM。"
+}

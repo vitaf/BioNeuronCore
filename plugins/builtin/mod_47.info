@@ -1,0 +1,19 @@
+{
+  "type_id": 47,
+  "name": "A2B",
+  "version": "1.0.0",
+  "category": "Метаботропные Gs",
+  "mechanism_type": "Метаботропный (G-белок Gs/Gq-связанный)",
+  "signaling": "Аденозин → A2B → Gs (↑cAMP) + Gq/11 (↑IP3). Низкоаффинный рецептор аденозина. Периферическая и глиальная экспрессия.",
+  "inputs": "neurotransmitter[NT_ADENOSINE]",
+  "outputs": "↑cAMP (Gs) + ↑IP3/DAG (Gq/11). Противовоспалительное в тучных клетках.",
+  "neuron_types": "ЦНС: низкая экспрессия (астроциты, микроглия). Периферия: тучные клетки, гладкие мышцы (бронхи, сосуды), кишечник.",
+  "subcellular": "Глия (астроциты, микроглия). Гладкомышечные клетки сосудов и бронхов.",
+  "kinetics": "K_D аденозин ≈ 1-10 μM (самый низкоаффинный из аденозиновых рецепторов — активируется только при патологическом стрессе). Антагонисты: MRS-1754, PSB-603.",
+  "function": "Воспаление и иммунный ответ. Бронхоконстрикция/дилатация (астма). В ЦНС: глиальный компонент нейровоспаления.",
+  "references": "Fredholm B.B. et al. (2001), см. A1.",
+  "name_en": "A2B",
+  "name_zh": "A2B",
+  "description_en": "Inflammation and immune response; bronchoconstriction/dilation (asthma); glial component of neuroinflammation in the CNS.",
+  "description_zh": "炎症和免疫反应；支气管收缩/扩张（哮喘）；中枢神经系统神经炎症的胶质细胞成分。"
+}

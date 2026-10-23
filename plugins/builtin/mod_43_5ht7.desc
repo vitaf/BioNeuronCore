@@ -1,0 +1,15 @@
+{
+  "name": "5-HT7-рецептор",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 43,
+  "modifiers": [
+    {
+      "id": 43,
+      "name": "5-HT7-рецептор",
+      "category": "Метаботропные Gs",
+      "description": "Метаботропный серотониновый рецептор 5-HT7 (Gs) — повышает cAMP",
+      "release": false
+    }
+  ]
+}

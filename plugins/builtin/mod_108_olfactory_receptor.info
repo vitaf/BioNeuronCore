@@ -1,0 +1,19 @@
+{
+  "type_id": 108,
+  "name": "Обонятельный рецептор (GPCR Gs) — лиганд=глутамат",
+  "version": "1.0.0",
+  "category": "Сенсоры",
+  "mechanism_type": "G-белок-связанный рецептор (Gs/Golf → cAMP → CNG-канал)",
+  "signaling": "Связывает одорант (state[0]) → Golf-белок → аденилатциклаза III → ↑cAMP → открытие CNG-канала (Ca²⁺/Na⁺ вход) → деполяризация. Адаптация: Ca²⁺/CaM → PDE1C → ↓cAMP (state[1]=адаптация). Cl⁻-усиление через Ano2.",
+  "inputs": "state[0]=одорант_концентрация, state[1]=адаптация, state[2]=cAMP_базальный, state[3]=Ano2_модуляция",
+  "outputs": "I_odor — деполяризующий ток через CNG-каналы. I_Ano2 — Cl⁻-выброс (усиление сигнала). Модулирует V_m → частота спайков → информация о запахе.",
+  "neuron_types": "ORN (olfactory receptor neurons, tadpole). Обонятельные рецепторные нейроны (human). Periglomerular cells (обонятельная луковица).",
+  "subcellular": "Цилии обонятельных рецепторных нейронов (основной сайт трансдукции). Рецепторные белки транспортируются в цилии через IFT.",
+  "kinetics": "K_d одоранта: 1-100μM (state[0]). CNG-проводимость: ~50pS. Каскад усиления: 1 одорант → 1000 CNG-каналов. Адаптация: tau~200-500ms. Ano2-усиление: ×3-5 по току.",
+  "function": "Первичная трансдукция запаха. Активирует пищепоисковое поведение через ORN → cIN → SER. Взаимодействует с голодовым сенсором (HUNGER_SENSOR) через гипоталамические orexin-нейроны.",
+  "references": "Firestein S. (2001) How the olfactory system makes sense of scents. Nature 413:211-218. Takeuchi H., Kurahashi T. (2005) Mechanism of signal transduction in olfactory neurons. J Physiol 566:87-98. DeMaria S., Ngai J. (2010) The cell biology of smell. J Cell Biol 191:443-452.",
+  "name_en": "Olfactory Receptor (GPCR Gs) — ligand=glutamate",
+  "name_zh": "嗅觉受体 (GPCR Gs) — 配体=谷氨酸",
+  "description_en": "GPCR (Gs/Golf) olfactory receptor: odorant binding → Golf → adenylyl cyclase III → cAMP ↑ → CNG channel opening (Ca²⁺/Na⁺ influx), with Ca²⁺/CaM→PDE1C adaptation and Ano2 Cl⁻ amplification. Primary odor transduction with K_d=1–100 µM and CNG conductance ~50 pS.",
+  "description_zh": "GPCR（Gs/Golf）嗅觉受体：气味分子结合→Golf→腺苷酸环化酶III→cAMP↑→CNG通道开放（Ca²⁺/Na⁺内流），伴Ca²⁺/CaM→PDE1C适应和Ano2 Cl⁻放大。初级嗅觉转导，K_d=1–100 µM，CNG电导~50 pS。"
+}

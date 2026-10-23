@@ -1,0 +1,15 @@
+{
+  "name": "NB_MuscarinicR",
+  "version": "1.0.0",
+  "author": "BioNeuronCore (Neuroblox.jl)",
+  "type_id": 70,
+  "modifiers": [
+    {
+      "id": 70,
+      "name": "NB_MuscarinicR",
+      "category": "NB_-Рецепторы",
+      "description": "Мускариновый рецептор: 3 состояния (Ca_pool, φ_M, m), low-pass Ca→открытие→two-state gate, Na/K apportionment в intra_ions",
+      "release": false
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "type_id": 69,
+  "name": "NB_Ca_TRPM4R",
+  "version": "1.0.0",
+  "category": "NB_-Рецепторы",
+  "mechanism_type": "Ионотропный (Ca²⁺-зависимый канал, неселективный катионный — NSC)",
+  "signaling": "Внутриклеточный Ca²⁺ → Ca_nano (нанодомен) активирует TRPM4 — неселективный катионный канал → I_CAN (Ca²⁺-активируемый неселективный катионный ток).",
+  "inputs": "intra_ions[Ca²⁺] (нанодоменовая концентрация: Ca_nano), V_m",
+  "outputs": "I_CAN (= I_TRPM4) → I_buffer. Деполяризующий неселективный катионный ток.",
+  "neuron_types": "Нейроны с TRPM4-экспрессией: гиппокампальные пирамидные нейроны, дофаминовые нейроны VTA/SNc, спинальные мотонейроны.",
+  "subcellular": "Плазматическая мембрана (сомы и дендриты). Co-локализация с Ca_v2.x. Нанодоменовая Ca²⁺-динамика — Ca_nano как прокси для локальной [Ca²⁺] у канала.",
+  "kinetics": "Ca_nano: dCa_nano/dt = (Ca_free - Ca_nano)/tau + J_Ca_influx (вход Ca через NMDA, Ca_v). TRPM4 активация: Hill-зависимость от Ca_nano. Неселективный катионный ток: E_rev ≈ 0 mV (Na+/K+).",
+  "function": "Ca²⁺-активируемый катионный ток (I_CAN) — генерация after-depolarization (ADP) и bursting в нейронах. Ca_nano-моделирование обеспечивает более быструю динамику, чем глобальная Ca_free (связь через tau ~10-50 ms).",
+  "references": "Адаптировано из Neuroblox.jl (CaTRPM4R).",
+  "name_en": "NB_Ca_TRPM4R",
+  "name_zh": "NB_Ca_TRPM4R",
+  "description_en": "Ca²⁺-activated non-selective cation channel TRPM4 driven by a nanodomain Ca²⁺ concentration (Ca_nano). Generates I_CAN that produces after-depolarization and bursting.",
+  "description_zh": "由纳米域 Ca²⁺ 浓度（Ca_nano）驱动的 Ca²⁺ 激活非选择性阳离子通道 TRPM4。产生 I_CAN，引起后去极化和爆发。"
+}

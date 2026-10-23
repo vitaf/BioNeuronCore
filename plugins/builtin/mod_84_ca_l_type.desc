@@ -1,0 +1,15 @@
+{
+  "name": "Cav1.x L-type Ca2+",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 84,
+  "modifiers": [
+    {
+      "id": 84,
+      "name": "Cav1.x L-type Ca2+",
+      "category": "STDP Cascade",
+      "description": "High-voltage-activated (HVA) L-type Ca2+ channel (Cav1.2/Cav1.3). Activation >-25mV. Ca2+-dependent inactivation (CDI). GHK flux for Ca2+ (z=2). Critical for STDP post-spike Ca2+ entry.",
+      "release": false
+    }
+  ]
+}

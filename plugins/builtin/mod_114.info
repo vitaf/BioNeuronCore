@@ -1,0 +1,19 @@
+{
+  "type_id": 114,
+  "name": "Cx36 — синтез/сборка/фосфор./деград. gap junction",
+  "version": "1.0.0",
+  "category": "Синаптическая биология",
+  "mechanism_type": "",
+  "signaling": "",
+  "inputs": "",
+  "outputs": "",
+  "neuron_types": "",
+  "subcellular": "",
+  "kinetics": "",
+  "function": "Cx36 (connexin-36) — основной нейрональный коннексин щелевых контактов. Биология: синтез в ER → сборка коннексона (6×Cx36 → гексамер) → везикулярный транспорт (кинезин) → встраивание в мембрану → латеральная диффузия к щелевому контакту. Полужизнь 1-3 часа. Регуляция: CaMKII-фосфорилирование → снижение P_open; PKA(cAMP)-фосфорилирование → повышение P_open; pH<6.8 → закрытие канала. State[0]=connexon_count, [1]=p_Cx36, [2]=synthesis_rate, [3]=degradation_rate, [4]=P_open_single, [5]=pH, [6]=cAMP. Интегрирован: g_eff *= Cx36_pre_factor * Cx36_post_factor. Референсы: Söhl et al. (2005) doi:10.1016/j.bbamem.2004.09.013; Palacios-Prado et al. (2013) doi:10.1007/s00424-012-1193-9.",
+  "references": "",
+  "name_en": "Cx36 — synthesis/assembly/phos./degrad. gap junction",
+  "name_zh": "Cx36 — 合成/组装/磷酸化/降解 缝隙连接",
+  "description_en": "Connexin-36 (Cx36) gap-junction lifecycle: ER synthesis → connexon assembly (6×Cx36) → transport → membrane insertion → lateral diffusion, with a 1–3 h half-life. Regulation: CaMKII phosphorylation lowers P_open, PKA(cAMP) raises P_open, pH<6.8 closes the channel; g_eff scales with Cx36 pre/post factors.",
+  "description_zh": "连接蛋白-36（Cx36）缝隙连接生命周期：内质网合成→连接子组装（6×Cx36）→运输→膜插入→侧向扩散，半衰期1–3小时。调节：CaMKII磷酸化降低P_open，PKA(cAMP)提高P_open，pH<6.8关闭通道；g_eff按Cx36前/后因子缩放。"
+}

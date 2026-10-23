@@ -1,0 +1,10 @@
+{
+  "type_id": 186,
+  "name": "AQP4 аквапорин-4 (водный канал)",
+  "name_en": "AQP4 aquaporin-4 (water channel)",
+  "name_zh": "AQP4 水通道蛋白-4",
+  "version": "1.0.0",
+  "category": "Структурные",  "description": "AQP4 аквапорин-4: водный канал (не ионный), осмотический транспорт, P_f=24e-14 см³/с. Yang & Verkman 1997.",
+  "description_en": "AQP4 aquaporin-4: water channel (non-ionic), osmotic transport, P_f=24e-14 cm³/s. Yang & Verkman 1997.",
+  "description_zh": "AQP4水通道蛋白-4：水通道（非离子型），渗透性转运，P_f=24e-14 cm³/s。Yang & Verkman 1997。"
+}

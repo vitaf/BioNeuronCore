@@ -1,0 +1,10 @@
+{
+  "type_id": 183,
+  "name": "EAAT3 (SLC1A1) глутаматный транспортер",
+  "name_en": "EAAT3 (SLC1A1) glutamate transporter",
+  "name_zh": "EAAT3 谷氨酸转运体",
+  "version": "1.0.0",
+  "category": "Транспортеры",  "description": "EAAT3/EAAC1 (SLC1A1) нейрональный глутаматный транспортер: 3Na⁺+Glu внутрь / 1K⁺ наружу, net +2 заряда.",
+  "description_en": "EAAT3/EAAC1 (SLC1A1) neuronal glutamate transporter: 3Na⁺+Glu inward / 1K⁺ outward, net +2 charge.",
+  "description_zh": "EAAT3/EAAC1（SLC1A1）神经元谷氨酸转运体：3Na⁺+Glu向内/1K⁺向外，净+2电荷。"
+}

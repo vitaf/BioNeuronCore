@@ -1,0 +1,20 @@
+{
+  "id": 132,
+  "name": "HCN4 — медленный Ih (τ~250ms), пейсмейкер",
+  "name_en": "HCN4 — slow Ih (τ~250ms), pacemaker",
+  "category": "PIR (Постингибирующий отскок)",
+  "category_en": "PIR (Post-Inhibitory Rebound)",
+  "family": "HCN (Hyperpolarization-activated Cyclic Nucleotide-gated)",
+  "isoforms": [
+    "HCN4"
+  ],
+  "gating": "Медленная кинетика τ_open~250ms — самая медленная изоформа. Сильная cAMP-модуляция.",
+  "conductances": "Неселективный катионный: P_Na:P_K ≈ 0.4:0.6.",
+  "role_in_cpg": "Пейсмейкерная изоформа (синусный узел сердца). Слишком медленная для CPG головастика (10-25 Hz требует HCN1).",
+  "bio_ref": "Biel et al. (2009) Physiol Rev 89:847-885. 'Hyperpolarization-activated cation channels.'",
+  "species": "Универсальная",
+  "neuron_type": "Синусный узел сердца, таламус",
+  "name_zh": "HCN4 — 慢速Ih (τ~250ms)，起搏器",
+  "description_en": "Slow Ih (HCN4, τ_open~250 ms), the pacemaker isoform (cardiac sinus node) with strong cAMP modulation; too slow for tadpole CPG (10–25 Hz requires HCN1).",
+  "description_zh": "慢速Ih（HCN4，τ_open~250 ms），起搏亚型（心脏窦房结），cAMP调节强；对蜻蚪CPG（10–25 Hz需要HCN1）而言过慢。"
+}

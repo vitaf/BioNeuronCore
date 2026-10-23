@@ -1,0 +1,15 @@
+{
+  "name": "cAMP/PKA каскад",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 135,
+  "modifiers": [
+    {
+      "id": 135,
+      "name": "cAMP/PKA каскад (Gs→AC→cAMP→PKA)",
+      "category": "Сигнальные каскады",
+      "description": "Общий пул cAMP/PKA на сегмент. Gs-рецепторы → Gαs → AC → cAMP; PDE → 5'-AMP; PKA = Hill(cAMP). HCN читает [cAMP] → сдвиг V½; L-type Ca²⁺ читает PKA → буст Cav1.2 (Ser1928). state[0]=[cAMP]µM, [1]=PKA, [2]=desens, [3..6]=overrides.",
+      "release": false
+    }
+  ]
+}

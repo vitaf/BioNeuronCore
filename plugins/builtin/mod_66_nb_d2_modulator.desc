@@ -1,0 +1,15 @@
+{
+  "name": "NB_D2_Modulator",
+  "version": "1.0.0",
+  "author": "BioNeuronCore (Neuroblox.jl)",
+  "type_id": 66,
+  "modifiers": [
+    {
+      "id": 66,
+      "name": "NB_D2_Modulator",
+      "category": "NB_-Рецепторы",
+      "description": "Модулятор D2: Hill-occupancy дофамин→D2 (K_D2=0.3, n=1, τ=100ms), пишет M_AMPA2=1-β2·φ2 в state[1], возвращает 0 тока",
+      "release": false
+    }
+  ]
+}

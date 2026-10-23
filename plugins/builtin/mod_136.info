@@ -1,0 +1,19 @@
+{
+  "type_id": 136,
+  "name": "PLC→IP3+DAG — Gq-каскад (общий пул IP3/DAG)",
+  "version": "1.0.0",
+  "category": "Сигнальные каскады",
+  "mechanism_type": "вторичный мессенджер (сигнальный, без тока)",
+  "signaling": "Gq→PLC→PIP2→IP3+DAG (1:1); IP3-5-фосфатаза и DAG-киназа деградация; GRK/β-аррестин десенситизация",
+  "inputs": "Gαq-активация от Gq-рецепторов (5-HT2A/2B/2C, α1A/α1B, M1/M3/M5, mGluR1/5, H1)",
+  "outputs": "IP3 (state[0], мМ), DAG (state[1], норм.)",
+  "neuron_types": "кортикальные/стриатальные нейроны (мускариновая/серотониновая/глутаматная модуляция)",
+  "subcellular": "плазмалемма (PLC) + цитозоль (IP3) + мембрана (DAG)",
+  "kinetics": "PLC гидролиз PIP2 → IP3+DAG 1:1; IP3 τ~1с (IP3-5-фосфатаза); DAG τ~2с (DAG-киназа)",
+  "function": "Общий пул IP3+DAG. IP3 диффундирует к IP3R (Li-Rinzel) → выброс Ca²⁺ из ЭПР. DAG активирует PKC (C1-домен).",
+  "references": "Berridge 1993 (IP3/DAG); Rebecchi & Pentyala 2000 (PLC); IP3R Li & Rinzel 1994",
+  "name_en": "PLC→IP3+DAG — Gq cascade (shared IP3/DAG pool)",
+  "name_zh": "PLC→IP3+DAG — Gq级联（共享IP3/DAG池）",
+  "description_en": "Gq signaling cascade: Gq→PLC hydrolyzes PIP2 into IP3+DAG (1:1), with IP3 τ~1 s (IP3-5-phosphatase) and DAG τ~2 s (DAG kinase). IP3 diffuses to IP3R (Li-Rinzel) for ER Ca²⁺ release; DAG activates PKC (C1 domain).",
+  "description_zh": "Gq信号级联：Gq→PLC将PIP2水解为IP3+DAG（1:1），IP3 τ~1 s（IP3-5-磷酸酶），DAG τ~2 s（DAG激酶）。IP3扩散至IP3R（Li-Rinzel）触发内质网Ca²⁺释放；DAG激活PKC（C1结构域）。"
+}

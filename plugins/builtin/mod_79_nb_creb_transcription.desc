@@ -1,0 +1,15 @@
+{
+  "name": "NB_CREB_Transcription",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 79,
+  "modifiers": [
+    {
+      "id": 79,
+      "name": "NB_CREB_Transcription",
+      "category": "Сома-модификаторы",
+      "description": "CREB-транскрипционный каскад: Ca²⁺→CaMK (Hill n=2, K=0.5mM)→pCREB (τ=5000ms)→late genes (τ=30000ms)→structural plasticity (τ=300000ms), пишет transcription_signal",
+      "release": false
+    }
+  ]
+}

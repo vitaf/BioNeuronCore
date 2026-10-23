@@ -1,0 +1,15 @@
+{
+  "name": "Родопсин фотокаскад",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 192,
+  "modifiers": [
+    {
+      "id": 192,
+      "name": "Родопсин фотокаскад (палочка)",
+      "category": "Сенсор",
+      "description": "Полный фотокаскад палочки: свет(state[4])→R*→Gt→PDE6→cGMP↓→CNG закрытие. CNG открыт в темноте (тёмный ток Na/K/Ca), закрыт на свету (гиперполяр.). Leskov 2000; Yau & Nakatani 1985.",
+      "release": false
+    }
+  ]
+}

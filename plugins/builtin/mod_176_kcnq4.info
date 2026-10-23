@@ -1,0 +1,23 @@
+{
+  "type_id": 176,
+  "name": "KCNQ4 (Kv7.4) K⁺ канал",
+  "version": "1.0.0",
+  "category": "Voltage-gated K",
+  "mechanism_type": "Ионотропный (потенциал-зависимый)",
+  "signaling": "Прямой ионный поток K⁺ наружу (GHK, z=1).",
+  "inputs": "V_m, intra_ions[K⁺], extra_ions[K⁺]",
+  "outputs": "I_K → I_buffer. Снижает внутриклеточный K⁺.",
+  "neuron_types": "Волосковые клетки улитки (OHC, IHC).",
+  "subcellular": "Базолатеральная мембрана волосковых клеток (KCNQ4).",
+  "gating": "Активация V½=−17…−28 мВ (гетерол.) / −78…−80 мВ (натив. I_K,n), k=14–15 мВ",
+  "ions": "K+",
+  "gamma": "2.31 пС (inside-out, HEK293)",
+  "pharmacology": "Линопирдин (Kv7-блокатор); TEA слабо",
+  "kinetics": "τ_акт 212±37 мс @ 0 мВ; деактивация 130±11 мс @ −20 мВ. NPo покоя: Po≈0.87 (V½=−78) / Po≈0.16 (V½=−25).",
+  "function": "Задаёт потенциал покоя волосковых клеток (OHC −70, IHC −72 мВ); ток I_K,n / gK,L.",
+  "references": "PMID 10760300, PMID 15660259, PMID 10545133, PMID 25941381",
+  "note": "⚠️ Гетерологичный KCNQ4 (V½≈−20) почти закрыт при покое. Для честного I_K,n нужен нативный сдвиг V½ к −78…−80 (PKA+PIP2+престин).",
+  "name_en": "KCNQ4 (Kv7.4) K⁺ channel",  "name_zh": "KCNQ4 Kv7.4 K⁺通道",
+  "description_en": "Sets the resting potential of hair cells (OHC −70, IHC −72 mV); I_K,n / gK,L current. γ=2.31 pS; native V½ −78…−80 mV.",
+  "description_zh": "设定毛细胞静息电位（OHC −70，IHC −72 mV）；I_K,n / gK,L电流。γ=2.31 pS；天然V½ −78…−80 mV。"
+}

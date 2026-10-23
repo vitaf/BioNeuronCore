@@ -1,0 +1,15 @@
+{
+  "name": "OTOP1 протонный канал",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 181,
+  "modifiers": [
+    {
+      "id": 181,
+      "name": "OTOP1 протонный канал",
+      "category": "Other",
+      "description": "OTOP1 — протонный канал (кислый вкус тип III), H⁺-селективный. pH-гейт (state[4], pH<6, τ=10 мс). γ=20 пС (placeholder — литературная γ не найдена). GHK-флюкс H⁺ (intra 0.0001 / extra 0.00004), без ионной консервации. Tu 2018.",
+      "release": false
+    }
+  ]
+}

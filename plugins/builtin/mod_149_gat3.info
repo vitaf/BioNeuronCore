@@ -1,0 +1,23 @@
+{
+  "id": 149,
+  "name": "GAT3 (SLC6A11) — глиальный транспортер GABA",
+  "name_en": "GAT3 (SLC6A11) — glial GABA transporter",
+  "category": "Базовые модификаторы",
+  "category_en": "Basic Modifiers",
+  "family": "SLC6 (Na⁺/Cl⁻-зависимые)",
+  "isoforms": [
+    "GAT3",
+    "SLC6A11"
+  ],
+  "transport": {
+    "stoichiometry": "1 GABA : 2 Na⁺ : 1 Cl⁻ (inward), net +1",
+    "kinetics": "GABA K_m ≈ 0.8 µM (высокое сродство)"
+  },
+  "role": "Глиальный захват GABA (клиренс GABAергических синапсов) — заменяет tau_clearance.",
+  "bio_ref": "SLC6A11/SLC1A3 литература; GAT3 астроцитарный.",
+  "species": "позвоночные (астроциты)",
+  "note": "K_m в отн.ед. — калибровка. Нейрональный GAT1 (SLC6A1) — отдельно.",
+  "name_zh": "GAT3（SLC6A11）— 胶质GABA转运体",
+  "description_en": "Glial GABA transporter (GAT3/SLC6A11) with stoichiometry 1 GABA:2Na⁺:1Cl⁻ (in), net +1; GABA K_m≈0.8 µM (high affinity). Mediates GABAergic-synapse GABA clearance, replacing tau_clearance.",
+  "description_zh": "胶质GABA转运体（GAT3/SLC6A11），化学计量为1 GABA:2Na⁺:1Cl⁻（入），净+1；GABA K_m≈0.8 µM（高亲和力）。介导GABA能突触的GABA清除，取代tau_clearance。"
+}

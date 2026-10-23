@@ -1,0 +1,10 @@
+{
+  "type_id": 185,
+  "name": "GAT1 (SLC6A1) GABA транспортер",
+  "name_en": "GAT1 (SLC6A1) GABA transporter",
+  "name_zh": "GAT1 GABA转运体",
+  "version": "1.0.0",
+  "category": "Транспортеры",  "description": "GAT1 (SLC6A1) нейрональный транспортер GABA: 3Na⁺+1Cl⁻+GABA внутрь, net +2. Willford 2015.",
+  "description_en": "GAT1 (SLC6A1) neuronal GABA transporter: 3Na⁺+1Cl⁻+GABA inward, net +2. Willford 2015.",
+  "description_zh": "GAT1（SLC6A1）神经元GABA转运体：3Na⁺+1Cl⁻+GABA向内，净+2。Willford 2015。"
+}

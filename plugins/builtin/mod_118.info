@@ -1,0 +1,42 @@
+{
+  "id": 118,
+  "name": "Ампулярный электрорецептор — E-поле/Лоренцини",
+  "category": "Сенсорные рецепторы",
+  "description": "Электрорецепция через ампулы Лоренцини. Поры на коже → гель-заполненный канал (low-pass фильтр, tau=100ms, f_c≈1.6Hz) → ампула → сенсорный эпителий с волосковыми клетками. Внешнее E-поле создаёт трансэпителиальный потенциал V=E*L*cos(theta). MET-каналы: неселективные катионные (Na+ 50%, K+ 35%, Ca2+ 15%). Тоническая активность ~15% в покое. Ca2+-зависимая адаптация (tau=5s) снижает чувствительность к DC-полю. Направленное тюнингование. Чувствительность: ~5 nV/cm. GHK-поток.",
+  "mechanism": "Внешнее электрическое поле → разность потенциалов на стенке ампулы (V=E*L*cos(theta)). Гель-заполненный канал действует как RC low-pass фильтр (C_wall≈0.1uF, R_gel≈10kOhm, tau≈100ms). Отфильтрованное напряжение модулирует P_open MET-каналов на апикальной мембране волосковых клеток. Ca2+ вход → адаптация (tau=5s). Базальные BK-каналы для реполяризации.",
+  "parameters": [
+    {
+      "name": "state[0]",
+      "desc": "P_open MET-каналов (тонический ~0.15, модулируется E-полем)"
+    },
+    {
+      "name": "state[1]",
+      "desc": "V_ext — внешнее напряжение на коже (нормированное, -1..1)"
+    },
+    {
+      "name": "state[2]",
+      "desc": "Ca2+-зависимая адаптация (tau=5s, 0..1)"
+    },
+    {
+      "name": "state[3]",
+      "desc": "V_canal — low-pass фильтрованное напряжение (tau=100ms)"
+    },
+    {
+      "name": "state[4]",
+      "desc": "Sensitivity gain override"
+    },
+    {
+      "name": "state[5]",
+      "desc": "cos(theta_pref) — направленное тюнингование"
+    }
+  ],
+  "references": [
+    "Murray (1962) The response of the ampullae of Lorenzini of elasmobranchs to electrical stimulation",
+    "Kalmijn (1974) The detection of electric fields from inanimate and animate sources",
+    "Bodznick & Montgomery (2005) The physiology of low-frequency electrosensory systems"
+  ],
+  "name_en": "Ampullary Electroreceptor — E-field/Lorenzini",
+  "name_zh": "壶腹电感受器 — 电场/洛伦齐尼",
+  "description_en": "Electroreception via ampullae of Lorenzini: skin pores → gel-filled canal (low-pass filter, tau=100 ms, f_c≈1.6 Hz) → ampulla; external E-field creates a transepithelial potential V=E·L·cos(θ). MET channels (Na⁺ 50%/K⁺ 35%/Ca²⁺ 15%) with ~15% tonic activity, Ca²⁺-adaptation (τ=5 s), sensitivity ~5 nV/cm.",
+  "description_zh": "通过洛伦齐尼壶腹的电感受：皮肤孔→凝胶填充管（低通滤波，tau=100 ms，f_c≈1.6 Hz）→壶腹；外部电场产生跨上皮电位V=E·L·cos(θ)。MET通道（Na⁺ 50%/K⁺ 35%/Ca²⁺ 15%），~15%紧张性活动，Ca²⁺适应（τ=5 s），灵敏度~5 nV/cm。"
+}

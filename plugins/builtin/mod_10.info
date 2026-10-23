@@ -1,0 +1,19 @@
+{
+  "type_id": 10,
+  "name": "Каинатный",
+  "version": "1.0.0",
+  "category": "Ионотропные рецепторы",
+  "mechanism_type": "Ионотропный (лиганд-зависимый катионный канал)",
+  "signaling": "Глутамат → GluK1-5 → Na⁺/K⁺ (Ca²⁺ — GluK1/GluK2 unedited) поток. Медленнее AMPA. Может участвовать в метаботропной сигнализации через GluK4/5.",
+  "inputs": "neurotransmitter[NT_GLUTAMATE], V_m",
+  "outputs": "I_Kainate → I_buffer. Медленный возбуждающий ток.",
+  "neuron_types": "Гиппокамп (CA3 мшистые волокна — высокая экспрессия), кора, стриатум, мозжечок, сетчатка. Пресинаптически на глутаматергических и GABA-ергических терминалях.",
+  "subcellular": "Постсинаптическая мембрана (GluK2/3). Пресинаптические терминали (GluK1 — ауторецепторы на глутаматергических, гетерорецепторы на GABA-ергических).",
+  "kinetics": "τ_rise ≈ 1-3 ms, τ_decay ≈ 10-50 ms. E_rev ≈ 0 mV. Десенситизация: сильная (GluK1) — слабая (GluK2). GluK4/5 — high-affinity subunits, не формируют функциональные гомомеры.",
+  "function": "Медленная возбуждающая передача. Пресинаптическая модуляция выброса глутамата и GABA (бинаправленная регуляция). Вклад в синаптическую пластичность и эпилептогенез (kainate-индуцированные судороги — модель эпилепсии).",
+  "references": "Contractor A. et al. (2011) Kainate receptors coming of age: milestones of two decades of research. Prog Neurobiol 94:197-217.",
+  "name_en": "Kainate",
+  "name_zh": "红藻氨酸",
+  "description_en": "Mediates slow excitatory transmission and presynaptic modulation of glutamate and GABA release (bidirectional regulation). Contributes to synaptic plasticity and epileptogenesis.",
+  "description_zh": "介导慢速兴奋性传递，并对谷氨酸和 GABA 释放进行突触前调节（双向调节）。参与突触可塑性和癫痫发生。"
+}

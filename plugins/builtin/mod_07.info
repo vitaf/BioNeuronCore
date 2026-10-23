@@ -1,0 +1,19 @@
+{
+  "type_id": 7,
+  "name": "Na/K насос",
+  "version": "1.0.0",
+  "category": "Базовые модификаторы",
+  "mechanism_type": "Ферментативный (ATP-зависимый активный транспорт)",
+  "signaling": "Активный транспорт против градиента: 3 Na⁺ наружу, 2 K⁺ внутрь за 1 молекулу ATP. Электрогенный — создаёт net outward current (гиперполяризующий).",
+  "inputs": "intra_ions[Na⁺], extra_ions[K⁺], ATP_level (s->ATP_level), V_m",
+  "outputs": "Δ intra_ions[Na⁺] −3, Δ extra_ions[Na⁺] +3, Δ intra_ions[K⁺] +2, Δ extra_ions[K⁺] −2, Δ ATP_level −1, I_pump (гиперполяризующий).",
+  "neuron_types": "Все нейроны без исключения. Убиквитарный мембранный белок плазматической мембраны.",
+  "subcellular": "Повсеместно на плазматической мембране: сома, дендриты, аксон, шипики. Особенно высокая плотность в аксоне и перехватах Ранвье.",
+  "kinetics": "Активность: pump_rate = max_rate * [Na⁺]ᵢ/([Na⁺]ᵢ+K_m_Na) * [K⁺]ₑ/([K⁺]ₑ+K_m_K) * ATP/(ATP+K_m_ATP). max_rate ≈ 100 μM/ms при 37°C. K_m_Na ≈ 10 mM, K_m_K ≈ 1.5 mM, K_m_ATP ≈ 0.5 mM.",
+  "function": "Поддержание ионных градиентов Na⁺/K⁺ — основа потенциала покоя и возбудимости. Противодействует ионному дрейфу после потенциалов действия. Потребляет ~50% всей энергии нейрона (основной потребитель ATP в мозге).",
+  "references": "Skou J.C. (1957) The influence of some cations on an adenosine triphosphatase from peripheral nerves. Biochim Biophys Acta 23:394-401. Нобелевская премия по химии 1997.",
+  "name_en": "Na/K Pump",
+  "name_zh": "Na/K 泵",
+  "description_en": "Maintains Na⁺/K⁺ ion gradients — the basis of resting potential and excitability. Counteracts ion drift after action potentials, consuming ~50% of neuronal ATP.",
+  "description_zh": "维持 Na⁺/K⁺ 离子梯度——静息电位和兴奋性的基础。抵消动作电位后的离子漂移，消耗约 50% 的神经元 ATP。"
+}

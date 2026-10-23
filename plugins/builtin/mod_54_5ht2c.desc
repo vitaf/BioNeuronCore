@@ -1,0 +1,15 @@
+{
+  "name": "5-HT2C-рецептор",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 54,
+  "modifiers": [
+    {
+      "id": 54,
+      "name": "5-HT2C-рецептор",
+      "category": "Метаботропные Gq/11",
+      "description": "Метаботропный серотониновый рецептор 5-HT2C (Gq/11)",
+      "release": false
+    }
+  ]
+}

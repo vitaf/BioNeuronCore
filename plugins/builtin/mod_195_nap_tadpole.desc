@@ -1,0 +1,15 @@
+{
+  "name": "NaP канал dIN (Nav1.2-persistent)",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 195,
+  "modifiers": [
+    {
+      "id": 195,
+      "name": "NaP-tadpole — персистентный Na⁺ dIN (Nav1.2)",
+      "category": "Ионные каналы ритмогенеза",
+      "description": "Тадпольный персистентный Na⁺ dIN (Svensson 2017, J Neurophysiol 118:121): активация V½≈−25 мВ (активен выше −40, пик 0 мВ). НЕ Nav1.6 Mes V — dIN экспрессирует Nav1.2. Без инактивации (только m-ворота), Po=0.016. GHK-поток Na⁺. Подпороговый деполяризующий драйв ребаунд-каскада (вместе с Ih и NMDA).",
+      "release": false
+    }
+  ]
+}

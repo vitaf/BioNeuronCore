@@ -1,0 +1,1 @@
+{"id":145,"name":"CaBP4 — модулятор Cav1.4","category":"Базовые модификаторы","description":"Ca²⁺-binding protein 4. Связывает IQ-мотив Cav1.4, снимает ингибицию ICDI/CTM → ΔV½=−10 мВ + доступность ×5. НЕ канал (ток=0).","params":{"tau_bind":1},"bio_ref":"Shaltiel 2012 J Biol Chem 287:36312","bio_role":"Модулятор Cav1.4 → тонический Ca²⁺-вход фоторецептора"}

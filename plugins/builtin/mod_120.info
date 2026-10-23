@@ -1,0 +1,38 @@
+{
+  "id": 120,
+  "name": "Криптохром Cry4 — радикальные пары/магнитный компас",
+  "category": "Сенсорные рецепторы",
+  "description": "Химический магниторецептор через криптохром Cry4. Синий свет (lambda=400-500nm) возбуждает флавин-аденин-динуклеотид (FAD) → электронный перенос от триптофана (Trp) → радикальная пара [FAD*- + Trp*+]. Магнитное поле модулирует соотношение синглет/триплет продуктов через сверхтонкое взаимодействие. Выход реакции пропорционален sin^2(theta) относительно вектора поля. МОДУЛЯТОР: не генерирует собственный ток, а модулирует проводимость MOD_LIGHT_SENSOR на том же сегменте. Экспрессируется в фоторецепторах (PINEAL).",
+  "mechanism": "Синий свет (400-500nm) → FAD → FAD* (возбуждённый синглет) → электронный перенос Trp → [FAD*- + Trp*+] радикальная пара в синглетном состоянии. Сверхтонкое взаимодействие с ядерными спинами (14N в FAD, 1H в Trp) → синглет-триплетная интерконверсия. Внешнее магнитное поле (~50uT) изменяет скорость интерконверсии → различный выход синглетных и триплетных продуктов. Сигнальное состояние Cry4 модулирует cGMP-каскад фототрансдукции → изменяет проводимость CNG-каналов (через MOD_LIGHT_SENSOR).",
+  "parameters": [
+    {
+      "name": "state[0]",
+      "desc": "RP_yield — выход радикальной пары (0..1, зависит от B)"
+    },
+    {
+      "name": "state[1]",
+      "desc": "Light intensity — интенсивность синего света (0..1, из среды)"
+    },
+    {
+      "name": "state[2]",
+      "desc": "B_angle_factor = sin^2(theta) — угловая зависимость"
+    },
+    {
+      "name": "state[4]",
+      "desc": "Sensitivity override"
+    },
+    {
+      "name": "state[5]",
+      "desc": "Wavelength factor (1.0=blue, <0.1=red)"
+    }
+  ],
+  "references": [
+    "Ritz et al. (2000) A model for photoreceptor-based magnetoreception in birds",
+    "Hore & Mouritsen (2016) The radical-pair mechanism of magnetoreception",
+    "Wiltschko & Wiltschko (2019) Magnetoreception in birds"
+  ],
+  "name_en": "Cryptochrome Cry4 — radical pairs/magnetic compass",
+  "name_zh": "隐花色素 Cry4 — 自由基对/磁罗盘",
+  "description_en": "Chemical magnetoreceptor via cryptochrome Cry4: blue light (400–500 nm) excites FAD → electron transfer from Trp → radical pair [FAD•⁻ + Trp•⁺]; the magnetic field modulates singlet/triplet product yield via hyperfine coupling (∝ sin²θ). A modulator that alters MOD_LIGHT_SENSOR conductance rather than generating its own current.",
+  "description_zh": "通过隐花色素Cry4的化学磁感受：蓝光（400–500 nm）激发FAD→从Trp电子转移→自由基对[FAD•⁻ + Trp•⁺]；磁场通过超精细耦合调节单线态/三线态产物产率（∝ sin²θ）。为调节器：改变MOD_LIGHT_SENSOR电导而非产生自身电流。"
+}

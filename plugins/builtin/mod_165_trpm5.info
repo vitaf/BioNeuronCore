@@ -1,0 +1,27 @@
+{
+  "id": 165,
+  "name": "TRPM5 — Ca²⁺-активируемый неселективный катионный канал",
+  "name_en": "TRPM5 — Ca²⁺-activated nonselective cation channel",
+  "category": "Ca-activated nonselective",
+  "category_en": "Ca-activated nonselective",
+  "family": "TRPM",
+  "isoforms": [
+    "TRPM5",
+    "LTRPC5",
+    "MTR1"
+  ],
+  "gating": {
+    "ca_gate": "Ca²⁺-зависимый, Hill n=2.4, EC50=0.7 µМ: Po = Ca^n/(EC50^n + Ca^n)",
+    "voltage": "Voltage-НЕзависимый воротный механизм (активация только Ca²⁺; V влияет через GHK-выпрямление)"
+  },
+  "ions": "Na⁺/K⁺ (моновалентный неселективный; Ca²⁺ — активатор, НЕ переносчик)",
+  "conductances": {
+    "gamma": "25 пС"
+  },
+  "role": "Ca²⁺-активируемый деполяризующий Na⁺-вход (вкусовые рецепторные клетки, β-клетки поджелудочной железы).",
+  "bio_ref": "PMID 14634208; PMID 15670874; DOI 10.1073/pnas.2334159100. ⚠️ G (проводимость) в литературе не найдена → density плейсхолдер.",
+  "species": "позвоночные (вкусовые клетки, β-клетки pancreas)",
+  "note": "Гомолог TRPM4 (164): оба Ca²⁺-активируемые моновалентные (Na⁺/K⁺), НЕ Ca²⁺-проводящие. Отличие: TRPM5 EC50 0.7 µМ Hill 2.4 vs TRPM4 EC50 0.4 µМ Hill 2.0.",  "name_zh": "TRPM5 — 钙激活非选择性阳离子通道",
+  "description_en": "Ca²⁺-activated depolarizing Na⁺ influx (taste receptor cells, pancreatic β-cells). EC50 0.7 µM, Hill 2.4; γ=25 pS.",
+  "description_zh": "钙激活去极化Na⁺内流（味觉受体细胞、胰岛β细胞）。EC50 0.7 µM，Hill 2.4；γ=25 pS。"
+}

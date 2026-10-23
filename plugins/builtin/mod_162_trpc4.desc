@@ -1,0 +1,15 @@
+{
+  "name": "TRPC4 неселективный катионный канал",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 162,
+  "modifiers": [
+    {
+      "id": 162,
+      "name": "TRPC4 неселективный катионный канал",
+      "category": "TRP Cation",
+      "description": "TRPC4 неселективный катионный (Na⁺/Ca²⁺, PCa/PNa≈4). Gq/PLC-зависимый (Po=state[4] 0–1). ML204-блок (IC50 2 µМ). γ=40 пС. GHK Na⁺ (z=1) + Ca²⁺ (z=2, ×4).",
+      "release": false
+    }
+  ]
+}

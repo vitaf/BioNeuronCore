@@ -1,0 +1,15 @@
+{
+  "name": "NB_MsnNMDAR",
+  "version": "1.0.0",
+  "author": "BioNeuronCore (Neuroblox.jl)",
+  "type_id": 75,
+  "modifiers": [
+    {
+      "id": 75,
+      "name": "NB_MsnNMDAR",
+      "category": "NB_-Destexhe",
+      "description": "MsnNMDAR: MoradiNMDAR (5 состояний A,B,g,z,M_state) + сканирует сегмент на D1-модулятор для M_NMDA1. Без D1: M_NMDA1=1.0",
+      "release": false
+    }
+  ]
+}

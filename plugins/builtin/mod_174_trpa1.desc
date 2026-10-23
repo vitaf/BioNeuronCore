@@ -1,0 +1,15 @@
+{
+  "name": "TRPA1 ирритант канал",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 174,
+  "modifiers": [
+    {
+      "id": 174,
+      "name": "TRPA1 ирритант канал",
+      "category": "TRP channel",
+      "description": "TRPA1 ирритантный (AITC) катионный канал. Лиганд state[4]=AITC µM (EC50 ~30 µM), Ca²⁺-десенситизация (Kd 0.5 µM, τ 300 мс). γ=90 пС. Ica=P·0.46 (z=2) + Ina=P·0.54 (z=1). GHK-флюкс. Story 2003.",
+      "release": false
+    }
+  ]
+}

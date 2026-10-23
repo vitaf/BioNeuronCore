@@ -1,0 +1,18 @@
+{
+  "type_id": 191,
+  "name": "Cav3.3 (CACNA1I) T-type Ca²⁺ канал",
+  "version": "1.0.0",
+  "category": "Ионные каналы",
+  "mechanism_type": "Низкопороговый (LVA) потенциал-зависимый Ca²⁺ канал",
+  "signaling": "Деполяризация → m-активация (V½_m=−43.8) + h-деинактивация (V½_h=−72.5) → window-current → Ca²⁺-вход (GHK, z=2).",
+  "inputs": "V_m; intra/extra_ions[Ca²⁺].",
+  "outputs": "I_Ca → I_buffer. Деполяризует (low-threshold burst / rebound).",
+  "neuron_types": "Таламокортикальный, таламический ретикулярный, inferior olive, DCN — low-threshold burst нейроны.",
+  "subcellular": "Сома-дендрит.",
+  "kinetics": "Самая медленная T-Ca: τ_m≈22 мс, τ_h деполяр. 97 мс / гиперполяр. 300 мс. γ=11 пС.",
+  "function": "Low-threshold Ca²⁺-спайк и rebound bursting (T-type, самая медленная изоформа, большой window-current).",
+  "references": "Perez-Reyes 2003 Physiol Rev (PMID 12506128); Klöckner 1999 Eur J Neurosci (PMID 10594642); Monteil 2000 JBC (PMID 10749850); Kozlov 1999.",
+  "name_en": "Cav3.3 (CACNA1I) T-type Ca channel",  "name_zh": "Cav3.3 (CACNA1I) T型钙通道",
+  "description_en": "Low-threshold Ca²⁺ spike and rebound bursting (T-type, the slowest isoform, large window-current). V½_m −43.8 mV, V½_h −72.5 mV; γ=11 pS.",
+  "description_zh": "低阈值Ca²⁺尖峰和回弹爆发（T型，最慢亚型，大窗口电流）。V½_m −43.8 mV，V½_h −72.5 mV；γ=11 pS。"
+}

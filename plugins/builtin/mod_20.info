@@ -1,0 +1,19 @@
+{
+  "type_id": 20,
+  "name": "5-HT1D",
+  "version": "1.0.0",
+  "category": "Метаботропные Gi/o",
+  "mechanism_type": "Метаботропный (G-белок Gi/o-связанный)",
+  "signaling": "Серотонин (5-HT) → 5-HT1D → Gi/o → ↓cAMP, ингибирование Ca_v. Преимущественно пресинаптический. Сходен с 5-HT1B (видоспецифичный гомолог).",
+  "inputs": "neurotransmitter[NT_SEROTONIN]",
+  "outputs": "↓cAMP, ↓Ca_v → ↓выброс нейромедиатора.",
+  "neuron_types": "ЦНС: кора, гиппокамп, стриатум, базальные ганглии. Периферия: тригеминальный нерв (сосудистая иннервация).",
+  "subcellular": "Пресинаптические терминали (ауто- и гетерорецепторы). Тригеминальные афференты (периваскулярные окончания).",
+  "kinetics": "K_D 5-HT ≈ 1-5 nM. Высокая гомология с 5-HT1B (~60%). Агонисты: суматриптан, ризатриптан. Антагонист: BRL-15572.",
+  "function": "Совместно с 5-HT1B: мишень триптанов при мигрени (блок выброса CGRP). Регуляция церебральной вазоконстрикции.",
+  "references": "Hamel E. (2007) Serotonin and migraine: biology and clinical implications. Cephalalgia 27:1293-1300.",
+  "name_en": "5-HT1D",
+  "name_zh": "5-HT1D",
+  "description_en": "Together with 5-HT1B, the target of triptans in migraine (blocks CGRP release). Regulates cerebral vasoconstriction.",
+  "description_zh": "与 5-HT1B 共同作为偏头痛中曲坦类药物的靶点（阻断 CGRP 释放）。调节脑血管收缩。"
+}

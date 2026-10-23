@@ -1,0 +1,19 @@
+{
+  "type_id": 56,
+  "name": "α1B",
+  "version": "1.0.0",
+  "category": "Метаботропные Gq/11",
+  "mechanism_type": "Метаботропный (G-белок Gq/11-связанный)",
+  "signaling": "Норадреналин/адреналин → α1B → Gq/11 → PLCβ → IP3/DAG → ↑Ca²⁺. Основной подтип α1 в сосудах (вазоконстрикция).",
+  "inputs": "neurotransmitter[NT_NORADRENALINE]",
+  "outputs": "PLCβ → ↑IP3/DAG → ↑Ca²⁺ → вазоконстрикция (артерии/артериолы), ↑периферическое сопротивление.",
+  "neuron_types": "ЦНС: кора, таламус, ствол мозга. Периферия: артерии и артериолы (гладкие мышцы — вазоконстрикция), печень, почки, сердце.",
+  "subcellular": "Гладкомышечные клетки сосудов. Постсинаптические (ЦНС).",
+  "kinetics": "K_D NA ≈ 0.1-10 μM. Отвечает за фенилэфрин-индуцированную вазоконстрикцию. Нокаут α1B → гипотензия (в отличие от α1A).",
+  "function": "Регуляция артериального давления (основной вазоконстрикторный подтип α1). Симпатическая регуляция кровотока.",
+  "references": "Michelotti G.A. et al. (2000), см. α1A.",
+  "name_en": "α1B",
+  "name_zh": "α1B",
+  "description_en": "α1B-adrenergic receptor coupled to Gq/11, activating PLCβ to raise Ca²⁺. The main α1 subtype mediating vascular vasoconstriction and blood pressure regulation.",
+  "description_zh": "α1B 肾上腺素能受体，偶联 Gq/11，激活 PLCβ 升高 Ca²⁺。是介导血管收缩和血压调节的主要 α1 亚型。"
+}

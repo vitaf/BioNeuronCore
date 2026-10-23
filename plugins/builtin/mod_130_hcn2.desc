@@ -1,0 +1,1 @@
+{"id":130,"name":"HCN2 — средний Ih (τ~100ms)","category":"PIR","description":"Intermediate Ih. HCN2 изоформа. τ_open~100ms. Сильная cAMP-модуляция. Основная изоформа в сердце и мозге.","params":{"tau_open":100,"V_half":-82},"bio_ref":"Biel et al. 2009 — Physiol Rev 89:847","bio_role":"Альтернативная изоформа для более медленного PIR."}

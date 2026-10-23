@@ -1,0 +1,19 @@
+{
+  "type_id": 13,
+  "name": "Никотиновый",
+  "version": "1.0.0",
+  "category": "Ионотропные рецепторы",
+  "mechanism_type": "Ионотропный (лиганд-зависимый катионный канал)",
+  "signaling": "Ацетилхолин → α/β субъединицы (α4β2, α7) → Na⁺/Ca²⁺/K⁺ поток. Пентамерная структура Cys-loop family.",
+  "inputs": "neurotransmitter[NT_ACETYLCHOLINE], V_m",
+  "outputs": "I_nAChR → I_buffer. Быстрый возбуждающий ток.",
+  "neuron_types": "ЦНС: кора, гиппокамп, таламус, VTA (дофаминовые нейроны), стриатум (интернейроны), habenula, IPN. ПНС: нервно-мышечный синапс (NMJ, α1β1δγ/ε). Вегетативная НС: ганглии (α3β4).",
+  "subcellular": "α4β2 (high-affinity): постсинаптическая мембрана ЦНС, пресинаптические терминали (гетерорецепторы на дофаминовых, GABA, глутаматных). α7 (low-affinity, high Ca²⁺): постсинаптические, пресинаптические, перисинаптические.",
+  "kinetics": "α4β2: EC₅₀ ACh ≈ 1 μM, медленная десенситизация (τ ≈ 1-5 s). α7: EC₅₀ ACh ≈ 100 μM, быстрая десенситизация (τ ≈ 10-100 ms), P_Ca/P_Na ≈ 10-20. Агонисты: никотин, эпибатидин, цитизин, варениклин.",
+  "function": "Быстрая холинергическая передача в ЦНС и ПНС. Внимание, бдительность, память, обучение (α4β2, α7). Reward/зависимость (никотин → α4β2 в VTA → выброс дофамина). Когнитивные функции (α7 — сенсорный гейтинг).",
+  "references": "Dani J.A., Bertrand D. (2007) Nicotinic acetylcholine receptors and nicotinic cholinergic mechanisms of the central nervous system. Annu Rev Pharmacol Toxicol 47:699-729.",
+  "name_en": "Nicotinic",
+  "name_zh": "烟碱型",
+  "description_en": "Fast cholinergic transmission in the CNS and PNS. Underlies attention, arousal, memory and learning (α4β2, α7), and reward/addiction via dopamine release in the VTA.",
+  "description_zh": "中枢和外周神经系统的快速胆碱能传递。构成注意力、警觉、记忆和学习（α4β2、α7）以及通过 VTA 多巴胺释放实现奖赏/成瘾的基础。"
+}

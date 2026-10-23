@@ -1,0 +1,19 @@
+{
+  "type_id": 71,
+  "name": "NB_AMPA_Destexhe",
+  "version": "1.0.0",
+  "category": "NB_-Destexhe",
+  "mechanism_type": "Ионотропный (лиганд-зависимый, damped oscillator кинетика Destexhe 1998)",
+  "signaling": "Глутамат → AMPA-рецептор с damped oscillator кинетикой: 2 состояния (G — conductance, z — производная). dG/dt = -G/tau2 + z, dz/dt = -z/tau1 + G_syn * sigmoid(V_pre).",
+  "inputs": "neurotransmitter[NT_GLUTAMATE], V_pre (детектор спайка через сигмоид)",
+  "outputs": "I_AMPA_Destexhe → I_buffer. Быстрый возбуждающий ток.",
+  "neuron_types": "Все глутаматергические синапсы (Destexhe-модель vs классическая 2-стадийная). Модели с детальной синаптической кинетикой.",
+  "subcellular": "Постсинаптическая мембрана дендритных шипиков.",
+  "kinetics": "Damped oscillator: dG/dt = -G/tau2 + z, dz/dt = -z/tau1 + G_syn * sigmoid((V_pre-V_shift)/V_range). tau1=0.1 ms (rise), tau2=5.0 ms (decay). G_syn=3.0. V_shift=10 mV, V_range=35 mV. Более физиологичная форма постсинаптического тока vs простая экспонента.",
+  "function": "Физиологически точная модель AMPA-рецептора с damped oscillator кинетикой по Destexhe (1998). Используется когда важна форма постсинаптического тока (не просто экспоненциальное затухание, а рост+спад).",
+  "references": "Destexhe A. et al. (1998) Kinetic models of synaptic transmission. In: Methods in Neuronal Modeling (2nd ed), MIT Press, pp. 1-25.",
+  "name_en": "NB_AMPA_Destexhe",
+  "name_zh": "NB_AMPA_Destexhe",
+  "description_en": "AMPA receptor with Destexhe damped-oscillator kinetics (G, z); fast excitatory current (τ_rise=0.1 ms, τ_decay=5 ms) with a physiologically accurate synaptic waveform.",
+  "description_zh": "具有 Destexhe 阻尼振荡动力学（G、z）的 AMPA 受体；快速兴奋性电流（τ_rise=0.1 ms，τ_decay=5 ms），具有生理准确的突触波形。"
+}

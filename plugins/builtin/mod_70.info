@@ -1,0 +1,19 @@
+{
+  "type_id": 70,
+  "name": "NB_MuscarinicR",
+  "version": "1.0.0",
+  "category": "NB_-Рецепторы",
+  "mechanism_type": "Метаботропный (Gq/11-связанный, неселективный катионный ток)",
+  "signaling": "Ацетилхолин → мускариновый рецептор (M1/M3-подобный) → Gq/11 → PLCβ → IP3/DAG → I_NCM (неселективный катионный ток) с Na+/K+-аппорцией. Активация Gi/o компонента (Na+-селективная компонента I_NCM).",
+  "inputs": "neurotransmitter[NT_ACETYLCHOLINE], D1-модулятор, D2-модулятор",
+  "outputs": "I_NCM → I_buffer. Медленно активирующийся катионный ток (I_NCM = I_NCM_Na + I_NCM_K). G-белковая активация: G_Gq (tau ~50-200ms) и G_Gi (ингибиторный).",
+  "neuron_types": "Холинергические синапсы: стриатум (холинергические интернейроны → MSN), кора, гиппокамп, таламус.",
+  "subcellular": "Постсинаптическая мембрана (MSN, пирамидные нейроны).",
+  "kinetics": "Мускариновая активация: binding (ACh) → G_Gq активация (Hill occupancy) → I_NCM с Na/K-аппорцией. SEP (slow excitatory postsynaptic potential). I_Na/K через неселективные катионные каналы (TRPC).",
+  "function": "Медленная холинергическая передача. Генерация slow EPSP (100ms-1s). Модуляция возбудимости нейронов. Холинергическая анти-паркинсоническая стратегия (M1/M3-агонисты → компенсация потери DA).",
+  "references": "Адаптировано из Neuroblox.jl (MuscarinicR).",
+  "name_en": "NB_MuscarinicR",
+  "name_zh": "NB_MuscarinicR",
+  "description_en": "Muscarinic receptor (M1/M3-like) coupled to Gq/11 and Gi/o, generating a slow non-selective cation current (I_NCM). Produces slow EPSPs (100 ms–1 s).",
+  "description_zh": "毒蕈碱受体（M1/M3 样），偶联 Gq/11 和 Gi/o，产生缓慢的非选择性阳离子电流（I_NCM）。产生慢 EPSP（100 ms–1 s）。"
+}

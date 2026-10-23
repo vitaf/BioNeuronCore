@@ -1,0 +1,23 @@
+{
+  "type_id": 168,
+  "name": "Cav2.2 N-type Ca²⁺ канал",
+  "version": "1.0.0",
+  "category": "Voltage-gated Ca",
+  "mechanism_type": "Ионотропный (потенциал-зависимый)",
+  "signaling": "Прямой ионный поток Ca²⁺ внутрь клетки (GHK, z=2).",
+  "inputs": "V_m, intra_ions[Ca²⁺], extra_ions[Ca²⁺], state[5] (ω-GVIA, нМ)",
+  "outputs": "I_Ca → I_buffer. Повышает внутриклеточный Ca²⁺.",
+  "neuron_types": "Пресинаптические терминали (N-type триггер выброса), соматодендритные N-type.",
+  "subcellular": "Пресинаптический и соматодендритный (Cav2.2, CACNA1B).",
+  "gating": "HVA m² V½ −20 + h β-зависимая",
+  "ions": "Ca2+",
+  "gamma": "2.76 пС (Ca2+)/16.4 (Ba2+)",
+  "pharmacology": "ω-conotoxin GVIA 0.5 нМ",
+  "kinetics": "Активация m² (V½=−20 мВ, k=6, tau_m=1.7 мс), инактивация h (V½=−60 мВ, k=6, tau_h=150 мс, β-зависимая ~116–174 мс). ω-GVIA: open_prob/=(1+gvia/0.5 нМ). GHK Ca²⁺ (z=2). Ионный перенос: intra/extra Ca²⁺ через F·vol.",
+  "function": "Неконкурентный Ca²⁺-вход для пресинаптического выброса и соматодендритной пластичности; ω-GVIA-чувствительная N-type компонента.",
+  "references": "PMC3982139, PMID 23651160, PMID 30020842",
+  "note": "⚠️ Литературная G (мС/см²) не найдена — density плейсхолдер (=1). γ=2.76 пС для Ca²⁺ (16.4 пС для Ba²⁺).",
+  "name_en": "Cav2.2 N-type Ca²⁺",  "name_zh": "Cav2.2 N型Ca²⁺",
+  "description_en": "N-type Ca²⁺ influx for presynaptic release and somatodendritic plasticity; ω-GVIA-sensitive component. γ=2.76 pS; ω-GVIA IC50 0.5 nM.",
+  "description_zh": "N型Ca²⁺内流，介导突触前释放和体树突可塑性；ω-GVIA敏感组分。γ=2.76 pS；ω-GVIA IC50 0.5 nM。"
+}

@@ -1,0 +1,19 @@
+{
+  "type_id": 59,
+  "name": "M5",
+  "version": "1.0.0",
+  "category": "Метаботропные Gq/11",
+  "mechanism_type": "Метаботропный (G-белок Gq/11-связанный)",
+  "signaling": "Ацетилхолин (ACh) → M5 → Gq/11 → PLCβ → IP3/DAG → ↑Ca²⁺. Экспрессия преимущественно в дофаминовых нейронах VTA/SNc. Модулирует дофаминовый выброс и reward.",
+  "inputs": "neurotransmitter[NT_ACETYLCHOLINE]",
+  "outputs": "PLCβ → ↑IP3/DAG → ↑Ca²⁺. Усиление дофаминового выброса в NAc. Расширение церебральных артерий (эндотелий-зависимая вазодилатация через NO).",
+  "neuron_types": "VTA и substantia nigra pars compacta (DA-нейроны — наивысшая), гиппокамп, striatum, церебральные сосуды (эндотелий).",
+  "subcellular": "Соматодендритные (VTA/SNc DA-нейроны). Цереброваскулярный эндотелий (вазодилатация).",
+  "kinetics": "K_D ACh ≈ 0.1-1 μM. Единственный мускариновый рецептор, облегчающий дофаминовый выброс (все остальные M2/M4 — ингибируют). Нокаут M5 → снижение DA-выброса в NAc и reward-поведения.",
+  "function": "Усиление дофаминовой нейротрансмиссии (единственный из mAChR — ↗DA, не ↘). Drug reward: M5 KO → снижение self-administration опиатов и кокаина. Цереброваскулярная регуляция (вазодилатация — ацетилхолин).",
+  "references": "Wess J. et al. (2007), см. M2.",
+  "name_en": "M5",
+  "name_zh": "M5",
+  "description_en": "Muscarinic M5 receptor coupled to Gq/11, expressed mainly in VTA/SNc dopamine neurons. The only mAChR that facilitates dopamine release, and it mediates cerebral vasodilation.",
+  "description_zh": "毒蕈碱 M5 受体，偶联 Gq/11，主要表达于 VTA/SNc 多巴胺神经元。是唯一促进多巴胺释放的 mAChR，并介导脑血管舒张。"
+}

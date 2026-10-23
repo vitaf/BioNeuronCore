@@ -1,0 +1,18 @@
+{
+  "type_id": 188,
+  "name": "Mrgpr (рецептор зуда, GPCR)",
+  "version": "1.0.0",
+  "category": "Метаботропные Gq/11",
+  "mechanism_type": "Метаботропный GPCR (Gαq/11 и/или Gβγ)",
+  "signaling": "Лиганд (хлороквин/BAM8-22) → Mrgpr (GPCR) → Gαq/11 → PLCβ → IP₃/DAG; или Gβγ напрямую (MrgprA3). IP₃ → IP₃R → Ca²⁺(ЭПР) → активация TRPA1 (анкириновые повторы).",
+  "inputs": "state[4] — лиганд (хлороквин/BAM8-22, µM). Gαq-активация state[0] → общий пул IP3/DAG сегмента (MOD_PLC_IP3_DAG).",
+  "outputs": "Gαq-активация state[0] (сигнальный, собственного ионного тока нет). Нижестоящий: Ca²⁺ → TRPA1.",
+  "neuron_types": "Непептидергические (IB4⁺) C-волокна DRG (~4-5%, «линия зуда»), периферические терминали эпидермиса.",
+  "subcellular": "Сома DRG + периферическая терминаль.",
+  "kinetics": "Gαq: GDP→GTP (τ_act ~GQ_TAU_ACT_MS), десенситизация GRK/β-аррестин (τ ~GQ_TAU_DESENS_MS). EC50 хлороквин 28 µM.",
+  "function": "Рецептор зуда/хемоноцицепции: хлороквин/BAM8-22 → деполяризация ноцицептора через TRPA1.",
+  "references": "Liu 2009 Cell 139:1353 (PMID 20004959); Wilson 2011 Nat Neurosci 14:595 (doi 10.1038/nn.2789); Han 2013 Nat Neurosci 16:174 (PMID 23263443).",
+  "name_en": "Mrgpr (itch GPCR)",  "name_zh": "Mrgpr (瘙痒 GPCR)",
+  "description_en": "Itch/chemonociception receptor: chloroquine/BAM8-22 → nociceptor depolarization via TRPA1. Chloroquine EC50 28 µM.",
+  "description_zh": "瘙痒/化学伤害感受受体：氯喹/BAM8-22→通过TRPA1去极化伤害感受器。氯喹EC50 28 µM。"
+}

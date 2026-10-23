@@ -1,0 +1,47 @@
+{
+  "id": 116,
+  "name": "Волосковая клетка отолита — MET/гравитация",
+  "category": "Сенсорные рецепторы",
+  "description": "Механотрансдукция отолитов (утрикулюс/саккулюс). Сдвиг отолитовой мембраны → изгиб стереоцилий → открытие MET-каналов (TRP-подобный: Na⁺ 60%, K⁺ 30%, Ca²⁺ 10%). Направленное (cosine) тюнингование: hair cell отвечает только на сдвиг в preferred direction. Ca²⁺-зависимая медленная адаптация миозиновых моторов (τ=30ms). Тоническая активность ~15% в покое — детекция направления гравитации. В эндолимфе [K⁺]_ext≈150mM → K⁺-вход = деполяризация. GHK-поток.",
+  "mechanism": "Сдвиг отолитовой мембраны (CaCO₃ отоконии) → изгиб стереоцилий → натяжение tip links → открытие MET-каналов → катионный вход (K⁺ доминирует в эндолимфе) → деполяризация. Ca²⁺ вход → активация миозиновых моторов → slippage адаптация. BK-каналы (KCa1.1) на базолатеральной мембране: Ca²⁺→K⁺→реполяризация.",
+  "parameters": [
+    {
+      "name": "state[0]",
+      "desc": "MET P_open (тонический ~0.15 в покое, до 1.0 при сдвиге)"
+    },
+    {
+      "name": "state[1]",
+      "desc": "Shear force / linear acceleration (0..1, выставляется средой)"
+    },
+    {
+      "name": "state[2]",
+      "desc": "Ca²⁺-зависимая адаптация миозиновых моторов (τ=30ms, 0..1)"
+    },
+    {
+      "name": "state[3]",
+      "desc": "(не используется)"
+    },
+    {
+      "name": "state[4]",
+      "desc": "Sensitivity gain override (default=5.0)"
+    },
+    {
+      "name": "state[5]",
+      "desc": "cos(preferred_angle) — направленное тюнингование (default=1.0)"
+    },
+    {
+      "name": "state[6]",
+      "desc": "(не используется)"
+    }
+  ],
+  "references": [
+    "Corey & Hudspeth (1979) Kinetics of the receptor current in bullfrog saccular hair cells",
+    "Gillespie & Walker (2001) Molecular basis of mechanosensory transduction",
+    "Eatock & Lysakowski (2006) Mammalian vestibular hair cells",
+    "Hudspeth (2014) Integrating the active process of hair cells with cochlear function"
+  ],
+  "name_en": "Otolith Hair Cell — MET/gravity",
+  "name_zh": "耳石毛细胞 — MET/重力",
+  "description_en": "Otolith mechanotransduction (utricle/saccule): otolithic membrane shear → stereocilia bending → MET-channel opening (TRP-like, Na⁺ 60%/K⁺ 30%/Ca²⁺ 10%) with cosine directional tuning and myosin-motor Ca²⁺-dependent slow adaptation (τ=30 ms). Tonic ~15% activity encodes gravity direction; in endolymph [K⁺]ₑ≈150 mM drives depolarizing K⁺ influx.",
+  "description_zh": "耳石机械转导（椭圆囊/球囊）：耳石膜剪切→静纤毛弯曲→MET通道开放（TRP样，Na⁺ 60%/K⁺ 30%/Ca²⁺ 10%），具有余弦方向调谐和肌球蛋白马达Ca²⁺依赖性慢适应（τ=30 ms）。~15%紧张性活动编码重力方向；内淋巴[K⁺]ₑ≈150 mM驱动去极化K⁺内流。"
+}

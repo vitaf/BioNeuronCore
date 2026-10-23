@@ -1,0 +1,1 @@
+{"id":127,"name":"IP3R — IP3-управляемый Ca²⁺-канал ЭПР","category":"Ca²⁺-гомеостаз","description":"Открывается при связывании IP3 (продукт mGluR→PLC). Выпускает Ca²⁺ из ЭПР в цитоплазму. Ca²⁺-зависимая модуляция.","params":{},"bio_ref":"Foskett et al. 2007 — Physiol Rev 87:593","bio_role":"Глутамат→mGluR1→PLC→IP3→IP3R→Ca²⁺ выброс. Усиливает Ca²⁺-сигнал."}

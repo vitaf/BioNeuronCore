@@ -1,0 +1,23 @@
+{
+  "type_id": 169,
+  "name": "Nav1.7 TTX-S Na⁺ канал (SCN9A)",
+  "version": "1.0.0",
+  "category": "Voltage-gated Na",
+  "mechanism_type": "Ионотропный (потенциал-зависимый)",
+  "signaling": "Прямой ионный поток Na⁺ внутрь клетки (GHK, z=1).",
+  "inputs": "V_m, intra_ions[Na⁺], extra_ions[Na⁺]",
+  "outputs": "I_Na → I_buffer. Повышает внутриклеточный Na⁺.",
+  "neuron_types": "Ноцицептивные DRG-нейроны, сенсорные волокна.",
+  "subcellular": "Аксон и сома ноцицепторов (SCN9A).",
+  "gating": "Активация m³ V½=−24 мВ, k=5–7; инактивация h V½=−71…−72 мВ, k=6",
+  "ions": "Na+",
+  "gamma": "не найдено (whole-cell only)",
+  "pharmacology": "TTX-S (чувствителен к тетродотоксину)",
+  "kinetics": "τ_акт ~0.5 мс; τ_инакт 0.67 мс @ −20 мВ (1.7 мс @ −25 мВ). Медленная closed-state инактивация → персистентный/ramp-ток.",
+  "function": "Низкопороговый TTX-S Na⁺-канал ноцицепторов; генерирует ПД и подпороговые ramp-токи.",
+  "references": "PMID 9822722, PMID 12843211, PMID 7720699, PMID 9208861",
+  "note": "γ не найдена (нужен Klugbauer 1995 полный текст). V½ зависит от β-субъединиц.",
+  "name_en": "Nav1.7 TTX-S Na⁺ (SCN9A)",  "name_zh": "Nav1.7 TTX-S Na⁺通道",
+  "description_en": "Low-threshold TTX-S Na⁺ channel of nociceptors; generates action potentials and subthreshold ramp currents. Activation V½ −24 mV.",
+  "description_zh": "伤害感受器低阈值TTX-S Na⁺通道；产生动作电位和阈下ramp电流。激活V½ −24 mV。"
+}

@@ -1,0 +1,15 @@
+{
+  "name": "Kir7.1 (KCNJ13) фоновый K⁺ канал",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 178,
+  "modifiers": [
+    {
+      "id": 178,
+      "name": "Kir7.1 (KCNJ13) фоновый K⁺",
+      "category": "Inward-rectifier K",
+      "description": "Kir7.1 (KCNJ13) фоновый K⁺-канал хориоидного сплетения. Time-independent утечка (open=1.0, нет инактивации). γ=0.05 пС. GHK-флюкс K⁺ (z=1). Krapivinsky 1998.",
+      "release": false
+    }
+  ]
+}

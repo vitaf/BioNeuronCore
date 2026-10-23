@@ -1,0 +1,10 @@
+{
+  "type_id": 206,
+  "name": "Kv1.4 (KCNA4) — A-type K⁺",
+  "name_en": "Kv1.4 (KCNA4) — A-type K⁺",
+  "name_zh": "Kv1.4（KCNA4）— A型K⁺",
+  "category": "Ионные каналы",
+  "description": "Kv1.4 (KCNA4) A-type K⁺. γ=9.3 пС. Активация V½=−21.7 мВ, инактивация V½=−51.8 мВ (N-type, N-концевой ball). Ингибиция: 4-AP ~13 µM, TEA >100 мМ (нечувствителен). Transient outward (I_to,s).",
+  "description_en": "Kv1.4 (KCNA4) A-type K⁺. γ=9.3 pS. Activation V½=−21.7 mV, inactivation V½=−51.8 mV (N-type, N-terminal ball). Pharmacology: 4-AP ~13 µM, TEA >100 mM (insensitive). Transient outward (I_to,s).",
+  "description_zh": "Kv1.4（KCNA4）A型K⁺。γ=9.3 pS。激活V½=−21.7 mV，失活V½=−51.8 mV（N型，N端球）。药理：4-AP ~13 µM、TEA >100 mM（不敏感）。瞬时外向（I_to,s）。"
+}

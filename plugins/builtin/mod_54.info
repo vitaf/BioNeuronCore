@@ -1,0 +1,19 @@
+{
+  "type_id": 54,
+  "name": "5-HT2C",
+  "version": "1.0.0",
+  "category": "Метаботропные Gq/11",
+  "mechanism_type": "Метаботропный (G-белок Gq/11-связанный)",
+  "signaling": "Серотонин (5-HT) → 5-HT2C → Gq/11 → PLCβ → IP3/DAG → ↑Ca²⁺. Единственный GPCR с RNA editing (5 сайтов A→I в C-терминале). Ключевой регулятор аппетита (POMC нейроны гипоталамуса).",
+  "inputs": "neurotransmitter[NT_SEROTONIN]",
+  "outputs": "PLCβ → ↑IP3/DAG → ↑Ca²⁺. RNA editing снижает конститутивную активность и G-белковое сопряжение. Подавление аппетита.",
+  "neuron_types": "Гипоталамус (ARC — POMC нейроны), гиппокамп, amygdala, prefrontal cortex, choroid plexus (эпендимные клетки).",
+  "subcellular": "Постсинаптические (POMC нейроны ARC — контроль аппетита). Хороидное сплетение (регуляция состава ликвора).",
+  "kinetics": "K_D 5-HT ≈ 1-5 nM. 5 сайтов RNA editing (A→I через ADAR1/2) → 24 изоформы. Конститутивная активность (агонист-независимая). Агонист: лоркасерин (Belviq — аноректик, отозван). Антагонист: SB-242084.",
+  "function": "Регуляция аппетита (5-HT2C → POMC → α-MSH → MC4R → насыщение). Лоркасерин: селективный 5-HT2C агонист для похудения. Антипсихотический эффект (5-HT2C блокада — оланзапин/клозапин → снижение дофамина в NAc).",
+  "references": "Hewitt K.N. et al. (2009) Serotonin 2C receptor: an important target in the treatment of psychiatric disorders. Expert Opin Ther Targets 13:1289-1301.",
+  "name_en": "5-HT2C",
+  "name_zh": "5-HT2C",
+  "description_en": "Serotonin 5-HT2C receptor coupled to Gq/11, the only GPCR with RNA editing (A→I). A key appetite regulator via POMC neurons and target of the anorectic lorcaserin.",
+  "description_zh": "血清素 5-HT2C 受体，偶联 Gq/11，是唯一发生 RNA 编辑（A→I）的 GPCR。通过 POMC 神经元调节食欲，是减肥药氯卡色林的靶点。"
+}

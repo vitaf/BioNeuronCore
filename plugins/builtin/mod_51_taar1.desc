@@ -1,0 +1,15 @@
+{
+  "name": "TAAR1-рецептор",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 51,
+  "modifiers": [
+    {
+      "id": 51,
+      "name": "TAAR1-рецептор",
+      "category": "Метаботропные Gs",
+      "description": "Метаботропный следовой аминовый рецептор TAAR1 (Gs)",
+      "release": false
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "id": 188,
+  "name": "Mrgpr (рецептор зуда, GPCR)",
+  "category": "Метаботропные Gq/11",
+  "description": "Mrgpr (Mas-related GPCR): метаботропный рецептор зуда/хемоноцицепции. Gαq/Gβγ → Ca²⁺ → TRPA1. Лиганд: хлороквин EC50 28 µM (Liu 2009)/BAM8-22 (Wilson 2011).",
+  "release": false
+}

@@ -1,0 +1,11 @@
+{
+  "type_id": 156,
+  "name": "Kv1.1 (KCNA1) delayed-rectifier K⁺",
+  "name_en": "Kv1.1 (KCNA1) delayed-rectifier K+",
+  "name_zh": "Kv1.1 延迟整流钾通道",
+  "version": "1.0.0",
+  "category": "Ионные каналы",
+  "description": "Kv1.1 (KCNA1) delayed-rectifier K⁺: γ=9–14 пС, V½ −30 мВ, m⁴+C-type (τ~3 с), α-DTX/TEA. Grissmer 1994.",
+  "description_en": "Kv1.1 (KCNA1) delayed-rectifier K⁺ channel: γ=9–14 pS, V½ −30 mV, m⁴+C-type (τ~3 s), α-DTX/TEA. Grissmer 1994.",
+  "description_zh": "Kv1.1（KCNA1）延迟整流K⁺通道：γ=9–14 pS，V½ −30 mV，m⁴+C型（τ~3 s），α-DTX/TEA。Grissmer 1994。"
+}

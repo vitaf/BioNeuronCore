@@ -1,0 +1,19 @@
+{
+  "type_id": 48,
+  "name": "β1",
+  "version": "1.0.0",
+  "category": "Метаботропные Gs",
+  "mechanism_type": "Метаботропный (G-белок Gs-связанный)",
+  "signaling": "Норадреналин/адреналин → β1 → Gs → ↑cAMP → PKA. Основной адренорецептор сердца (инотропия, хронотропия). В ЦНС: кора, гиппокамп.",
+  "inputs": "neurotransmitter[NT_NORADRENALINE]",
+  "outputs": "↑cAMP → PKA → фосфорилирование Ca_v, тропонина I, фосфоламбана. В ЦНС: повышение возбудимости, модуляция пластичности.",
+  "neuron_types": "ЦНС: кора, гиппокамп, стриатум, гипоталамус, миндалина. Периферия: сердце (SA-узел, миокард — наивысшая экспрессия), почки (юкстагломерулярные клетки).",
+  "subcellular": "Постсинаптическая мембрана (ЦНС). Кардиомиоциты. Пресинаптические (limited).",
+  "kinetics": "K_D NA ≈ 0.5-5 μM (low-affinity). Ключевой медиатор sympathetic fight-or-flight. Антагонисты: метопролол, атенолол, бисопролол (β1-селективные β-блокаторы).",
+  "function": "ЦНС: модуляция бодрствования, внимания, памяти. Периферия: регуляция сердечного выброса и АД. Мишень β-блокаторов — наиболее назначаемый класс сердечно-сосудистых препаратов.",
+  "references": "Lefkowitz R.J. (2004) Historical review: a brief history and personal retrospective of seven-transmembrane receptors. Trends Pharmacol Sci 25:413-422.",
+  "name_en": "β1",
+  "name_zh": "β1",
+  "description_en": "CNS: modulates arousal, attention and memory. Peripherally regulates cardiac output and blood pressure; target of β-blockers.",
+  "description_zh": "中枢神经系统：调节觉醒、注意力和记忆。外周调节心输出量和血压；是 β 受体阻滞剂的靶点。"
+}

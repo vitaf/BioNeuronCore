@@ -1,0 +1,23 @@
+{
+  "type_id": 173,
+  "name": "TRPM8 холод/ментол канал",
+  "version": "1.0.0",
+  "category": "TRP channel",
+  "mechanism_type": "Ионотропный (холод-/лиганд-гейт, неселективный катионный)",
+  "signaling": "Прямой неселективный катионный поток (P_Ca/P_Na ~1–3).",
+  "inputs": "V_m, температура, ментол/ицилин, PI(4,5)P₂, intra/extra Ca²⁺/Na⁺",
+  "outputs": "I_cation → I_buffer. Повышает внутриклеточный Ca²⁺ и Na⁺.",
+  "neuron_types": "Холодовые сенсорные нейроны (DRG/тригеминальные).",
+  "subcellular": "Периферические терминали холодовых нейронов.",
+  "gating": "Холод <25 °C + ментол/ицилин; PI(4,5)P₂; V½ +162 мВ (30°C) → +116 (20°C) → +53 (100 µM ментол)",
+  "ions": "Ca2+, Na+",
+  "gamma": "~63 пС (рекомб.) / 40–80 пС натив.",
+  "pharmacology": "Ментол EC50 4–85 µM; ицилин EC50 0.06–0.4 µM",
+  "kinetics": "V½ сдвигается влево холодом и ментолом; наружу-выпрямляющий I–V. P_Ca/P_Na ~1–3.",
+  "function": "Молекулярный сенсор холода; холод-гейт + ментол-активация неселективного катионного тока.",
+  "references": "PMID 11882855, PMID 11893340, PMID 15492228",
+  "note": "Активация холодом усиливается PI(4,5)P₂-зависимой десенситизацией/сенситизацией.",
+  "name_en": "TRPM8 cold/menthol channel",  "name_zh": "TRPM8 冷/薄荷醇通道",
+  "description_en": "Molecular cold sensor; cold-gated + menthol-activated nonselective cation current. γ~63 pS; menthol EC50 4–85 µM.",
+  "description_zh": "冷的分子感受器；冷门控+薄荷醇激活非选择性阳离子电流。γ~63 pS；薄荷醇EC50 4–85 µM。"
+}

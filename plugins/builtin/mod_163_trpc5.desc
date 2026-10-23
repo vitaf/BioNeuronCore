@@ -1,0 +1,15 @@
+{
+  "name": "TRPC5 неселективный катионный канал (Gq+Ca²⁺)",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 163,
+  "modifiers": [
+    {
+      "id": 163,
+      "name": "TRPC5 неселективный катионный канал (Gq+Ca²⁺)",
+      "category": "Nonselective cation (Gq+Ca2+)",
+      "description": "TRPC5 неселективный катионный канал. γ=50 пС (41–66). Gq-зависимый (state[4]) + Ca²⁺-зависимый (EC50 0.5 µМ). Na⁺/Ca²⁺ (PCa/PNa≈5). HC-070 IC50 9.3 нМ (state[5], нМ). Mixed GHK Na (z=1) + Ca (z=2).",
+      "release": false
+    }
+  ]
+}

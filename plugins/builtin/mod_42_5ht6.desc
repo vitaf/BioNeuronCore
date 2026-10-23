@@ -1,0 +1,15 @@
+{
+  "name": "5-HT6-рецептор",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 42,
+  "modifiers": [
+    {
+      "id": 42,
+      "name": "5-HT6-рецептор",
+      "category": "Метаботропные Gs",
+      "description": "Метаботропный серотониновый рецептор 5-HT6 (Gs) — повышает cAMP",
+      "release": false
+    }
+  ]
+}

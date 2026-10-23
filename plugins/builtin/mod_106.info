@@ -1,0 +1,19 @@
+{
+  "type_id": 106,
+  "name": "Kir-канал (Kir2.x) — входящий выпрямитель K⁺",
+  "version": "1.0.0",
+  "category": "Ионные каналы ритмогенеза",
+  "mechanism_type": "Ионный канал (V-зависимый + rectification, GHK K⁺)",
+  "signaling": "Прямой GHK-поток K⁺ × Больцман-активация × rectification factor. Гейтинг: активация гиперполяризацией (V_half=-80mV). Rectification: Больцман-блок при деполяризации (V-E_K+100).",
+  "inputs": "intra_ions[K⁺], extra_ions[K⁺], V_m",
+  "outputs": "I_K (стабилизирующий RMP). При V<E_K — входящий K⁺ (деполяризует). При V>E_K — выходящий подавлен rectification.",
+  "neuron_types": "Все нейроны CPG (dIN, cIN, mn, aIN). Критичен для быстрого восстановления RMP после спайка.",
+  "subcellular": "Сома и дендриты. Высокая плотность в перикарионе.",
+  "kinetics": "V_half=-80mV, k=8mV, g_max=1.0nS, τ=10ms. Rectification: 1/(1+exp((V-E_K+100)/15)). GHK K⁺ (z=1).",
+  "function": "Стабилизация потенциала покоя вблизи E_K (~ -80 mV). Быстрое восстановление после спайка: при V>E_K выходящий ток подавлен, при V<E_K входящий ток ускоряет реполяризацию к RMP. Обеспечивает резкий возврат к потенциалу покоя, необходимый для деинактивации T-type Ca h-ворот. Ключевой для PIR.",
+  "references": "Nichols C.G., Lopatin A.N. (1997) Inward rectifier potassium channels. Annu Rev Physiol 59:171-191. Hibino H. et al. (2010) Inwardly rectifying potassium channels: their structure, function, and physiological roles. Physiol Rev 90:291-366.",
+  "name_en": "Kir Channel (Kir2.x) — inward rectifier K⁺",
+  "name_zh": "Kir 通道 (Kir2.x) — 内向整流 K⁺",
+  "description_en": "Inward-rectifier K⁺ channel (Kir2.x) activated by hyperpolarization (V_half=−80 mV, k=8 mV, g_max=1.0 nS, τ=10 ms) with Boltzmann rectification block. Stabilizes resting potential near E_K and accelerates repolarization to RMP, enabling T-type Ca²⁺ h-gate de-inactivation and PIR.",
+  "description_zh": "内向整流K⁺通道（Kir2.x），由超极化激活（V_half=−80 mV，k=8 mV，g_max=1.0 nS，τ=10 ms），带Boltzmann整流阻滞。将静息电位稳定在E_K附近并加速复极至RMP，使T型Ca²⁺ h门去失活并支持PIR。"
+}

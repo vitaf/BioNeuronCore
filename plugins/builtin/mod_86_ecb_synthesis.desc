@@ -1,0 +1,15 @@
+{
+  "name": "eCB Synthesis (2-AG)",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 86,
+  "modifiers": [
+    {
+      "id": 86,
+      "name": "eCB Synthesis (2-AG)",
+      "category": "STDP Cascade",
+      "description": "Endocannabinoid synthesis (2-AG). Ca2+-dependent (Hill n=2) via PLCbeta/DAGLalpha. 2-AG released retrogradely into synaptic cleft. Degradation by MAGL.",
+      "release": false
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "name": "β1-адренорецептор",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 48,
+  "modifiers": [
+    {
+      "id": 48,
+      "name": "β1-адренорецептор",
+      "category": "Метаботропные Gs",
+      "description": "Метаботропный адренорецептор β1 (Gs) — кардиальный, повышает cAMP",
+      "release": false
+    }
+  ]
+}

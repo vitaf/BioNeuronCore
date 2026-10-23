@@ -1,0 +1,15 @@
+{
+  "name": "5-HT1A-рецептор",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 18,
+  "modifiers": [
+    {
+      "id": 18,
+      "name": "5-HT1A-рецептор",
+      "category": "Метаботропные Gi/o",
+      "description": "Метаботропный серотониновый рецептор 5-HT1A (Gi/o) — ауторецептор, снижает cAMP",
+      "release": true
+    }
+  ]
+}

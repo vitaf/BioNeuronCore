@@ -1,0 +1,15 @@
+{
+  "name": "Nav1.7 (SCN9A) TTX-S Na⁺ канал",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 169,
+  "modifiers": [
+    {
+      "id": 169,
+      "name": "Nav1.7 (SCN9A) TTX-S Na⁺",
+      "category": "Voltage-gated Na",
+      "description": "Nav1.7 (SCN9A) TTX-чувствительный ноцицепторный Na⁺. Гейтинг m³h: m_inf V½=−24 мВ k=5 (τ_m=0.5 мс), h_inf V½=−71 мВ k=6 (τ_h=1.2 мс). TTX-ингибиция (state[5] нМ, IC50 ~10 нМ). γ=20 пС. GHK-флюкс Na⁺ (z=1). Cummins 1998.",
+      "release": false
+    }
+  ]
+}

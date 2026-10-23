@@ -1,0 +1,21 @@
+{
+  "id": 167,
+  "name": "THIK-2 — фоновая K⁺-утечка (K2P12.1/KCNK12)",
+  "name_en": "THIK-2 — background K⁺ leak (K2P12.1/KCNK12)",
+  "category": "K⁺ каналы (K2P)",
+  "category_en": "K⁺ channels (K2P)",
+  "family": "K2P (two-pore domain K⁺ channel)",
+  "isoforms": [
+    "THIK-2",
+    "K2P12.1",
+    "KCNK12"
+  ],
+  "gating": "фоновая (placeholder)",
+  "gamma": "5 пС placeholder (нефункционален)",
+  "ions": "K+",
+  "description": "THIK-2 (K2P12.1, KCNK12) — двухпоровый K⁺-канал подсемейства THIK. ⚠️ Гомомерно НЕфункционален: задержан в эндоплазматическом ретикулуме (ЭПР) и не достигает плазматической мембраны (Rajan 2001). Единичная проводимость γ НЕ измерена — используется placeholder γ=5 пС, Po=0.5. GHK-флюкс K⁺ (z=1).",
+  "bio_ref": "Rajan S., Wischmeyer E., Xin Liu G., Preisig-Müller R., Daut J., Karschin A., Derst C. (2001) THIK-1 and THIK-2, a novel subfamily of tandem pore domain K⁺ channels. J Biol Chem 276:7302-7311. PMID 11060316.",
+  "note": "γ не измерена (гомомер задержан в ЭПР) — placeholder γ=5 пС. Гетеромеры THIK-1/THIK-2 функциональны, гомомерный THIK-2 — нет.",  "name_zh": "THIK-2 — 背景K⁺泄漏 (K2P12.1/KCNK12)",
+  "description_en": "THIK-2 (K2P12.1, KCNK12) — two-pore K⁺ channel of the THIK subfamily. Homomer is non-functional: retained in the ER and does not reach the plasma membrane (Rajan 2001). Single-channel γ not measured — placeholder γ=5 pS, Po=0.5. GHK K⁺ flux (z=1).",
+  "description_zh": "THIK-2（K2P12.1，KCNK12）——THIK亚家族双孔K⁺通道。同聚体无功能：滞留于内质网（ER）且无法到达质膜（Rajan 2001）。单通道γ未测得——使用占位值γ=5 pS，Po=0.5。GHK K⁺通量（z=1）。"
+}

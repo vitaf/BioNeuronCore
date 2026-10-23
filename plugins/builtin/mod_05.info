@@ -1,0 +1,19 @@
+{
+  "type_id": 5,
+  "name": "Синаптический выброс",
+  "version": "1.0.0",
+  "category": "Базовые модификаторы",
+  "mechanism_type": "Пресинаптический механизм (вероятностный)",
+  "signaling": "Вероятностный выброс нейромедиатора при спайке пресинаптического сегмента. Модулируется ауторецепторами, фасилитацией и депрессией.",
+  "inputs": "V_m (детекция спайка: V_m > −40mV), release_probability, facilitation, depression, ауторецепторы (pre_autoreceptors)",
+  "outputs": "cleft_neurotransmitter[] (выброс Glu/GABA/DA/5-HT/... в синаптическую щель), facilitation (+0.1 при выбросе), depression (*0.9 при выбросе), refractory=2",
+  "neuron_types": "Все нейроны с химическими синапсами. Пресинаптические терминали.",
+  "subcellular": "Пресинаптическая терминаль (bouton, варикозность). Аксонная терминаль.",
+  "kinetics": "Ca²⁺-сенсор Hill=2 (K_d=0.5μM): ca_sensor = [Ca]²/([Ca]²+K_d²). Три гейта: state[0]=Ca_sensor (tau=1ms), state[1]=facilitation (tau=100ms), state[2]=depression (tau=500ms). open_prob = state[1]/(1+state[2]). SK K⁺ ток: I = -g_SK × (V_m - E_K). Параметры: state[3]=g_SK (0.5), state[4]=fac_tau (100ms), state[5]=dep_tau (500ms).",
+  "function": "Преобразование электрического сигнала (пресинаптический спайк) в химический (выброс нейромедиатора в синаптическую щель). Краткосрочная пластичность: facilitation (накопление остаточного Ca²⁺) и depression (истощение пула везикул).",
+  "references": "Zucker R.S., Regehr W.G. (2002) Short-term synaptic plasticity. Annu Rev Physiol 64:355-405.",
+  "name_en": "Synaptic Release",
+  "name_zh": "突触释放",
+  "description_en": "Converts the electrical signal (presynaptic spike) into a chemical one (neurotransmitter release into the synaptic cleft). Implements short-term plasticity via facilitation and depression.",
+  "description_zh": "将电信号（突触前动作电位）转化为化学信号（神经递质释放到突触间隙）。通过易化和压抑实现短时程可塑性。"
+}

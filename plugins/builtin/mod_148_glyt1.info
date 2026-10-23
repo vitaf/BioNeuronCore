@@ -1,0 +1,23 @@
+{
+  "id": 148,
+  "name": "GlyT1 (SLC6A9) — глиальный транспортер глицина",
+  "name_en": "GlyT1 (SLC6A9) — glial glycine transporter",
+  "category": "Базовые модификаторы",
+  "category_en": "Basic Modifiers",
+  "family": "SLC6 (Na⁺/Cl⁻-зависимые)",
+  "isoforms": [
+    "GlyT1",
+    "SLC6A9"
+  ],
+  "transport": {
+    "stoichiometry": "2 Na⁺ + 1 Cl⁻ + glycine (inward), net +1",
+    "kinetics": "glycine EC50 ≈ 44.7 µM (Erdem 2019)"
+  },
+  "role": "Глиальный захват глицина (клиренс глицинергических синапсов) — заменяет tau_clearance.",
+  "bio_ref": "Erdem et al. (2019) J Gen Physiol 151:1035-1050.",
+  "species": "позвоночные (астроциты)",
+  "note": "K_m в отн.ед. — калибровка (задача #20). Нейрональный GlyT2 (SLC6A5) — отдельно.",
+  "name_zh": "GlyT1（SLC6A9）— 胶质甘氨酸转运体",
+  "description_en": "Glial glycine transporter (GlyT1/SLC6A9) with stoichiometry 2Na⁺+1Cl⁻+glycine (in), net +1; glycine EC50≈44.7 µM. Mediates glycinergic-synapse glycine clearance, replacing tau_clearance.",
+  "description_zh": "胶质甘氨酸转运体（GlyT1/SLC6A9），化学计量为2Na⁺+1Cl⁻+甘氨酸（入），净+1；甘氨酸EC50≈44.7 µM。介导甘氨酸能突触的甘氨酸清除，取代tau_clearance。"
+}

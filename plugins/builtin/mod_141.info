@@ -1,0 +1,10 @@
+{
+  "type_id": 141,
+  "name": "Nav1.6 (SCN8A) — аксональный transient Na⁺",
+  "name_en": "Nav1.6 (SCN8A) — axonal transient Na⁺",
+  "name_zh": "Nav1.6（SCN8A）— 轴突瞬时Na⁺",
+  "category": "Базовые модификаторы",
+  "description": "Nav1.6 (SCN8A) — аксональный transient Na⁺",
+  "description_en": "Nav1.6 (SCN8A) axonal transient Na⁺ channel.",
+  "description_zh": "Nav1.6（SCN8A）轴突瞬时Na⁺通道。"
+}

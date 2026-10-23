@@ -1,0 +1,15 @@
+{
+  "name": "Kv1.6 delayed rectifier K",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 207,
+  "modifiers": [
+    {
+      "id": 207,
+      "name": "Kv1.6 (KCNA6)",
+      "category": "Ионные каналы",
+      "description": "Kv1.6 delayed rectifier K⁺ (γ=8.2 пС, V½_m=−8.1, non-inactivating, NIP-домен). GHK K⁺, m³-гейтинг, TEA/4-AP.",
+      "release": false
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "name": "5-HT1B-рецептор",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 19,
+  "modifiers": [
+    {
+      "id": 19,
+      "name": "5-HT1B-рецептор",
+      "category": "Метаботропные Gi/o",
+      "description": "Метаботропный серотониновый рецептор 5-HT1B (Gi/o) — пресинаптический модулятор выброса",
+      "release": true
+    }
+  ]
+}

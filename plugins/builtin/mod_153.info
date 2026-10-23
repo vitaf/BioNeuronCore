@@ -1,0 +1,11 @@
+{
+  "type_id": 153,
+  "name": "PKD2L1 (TRPP3) Ca²⁺-механосенсор CSF",
+  "name_en": "PKD2L1 (TRPP3) Ca2+ mechanosensor CSF",
+  "name_zh": "PKD2L1 钙机械感受通道",
+  "version": "1.0.0",
+  "category": "Ионные каналы",
+  "description": "PKD2L1 (TRPP3) Ca²⁺-предпочитающий механосенсор CSF: γ=120–200 пС, PCa/PNa≈4–6, Po=state[4] (поток). Одиночное открытие 26 пА → ПД. Sternberg 2018.",
+  "description_en": "PKD2L1 (TRPP3) Ca²⁺-preferring CSF mechanosensor: γ=120–200 pS, PCa/PNa≈4–6, Po=state[4] (flow). Single-channel opening 26 pA → action potential. Sternberg 2018.",
+  "description_zh": "PKD2L1（TRPP3）偏好Ca²⁺的脑脊液机械感受通道：γ=120–200 pS，PCa/PNa≈4–6，Po=state[4]（流量）。单通道开放26 pA→动作电位。Sternberg 2018。"
+}

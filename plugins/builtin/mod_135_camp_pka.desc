@@ -1,0 +1,15 @@
+{
+  "name": "cAMP/PKA каскад",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 135,
+  "modifiers": [
+    {
+      "id": 135,
+      "name": "cAMP/PKA каскад",
+      "category": "Каскады",
+      "description": "cAMP/PKA каскад: Gs/Gi→AC→cAMP→PKA (общий пул на сегмент)",
+      "release": false
+    }
+  ]
+}

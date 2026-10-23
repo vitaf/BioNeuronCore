@@ -1,0 +1,10 @@
+{
+  "type_id": 203,
+  "name": "Kv3.2 (KCNC2) — high-threshold K⁺",
+  "name_en": "Kv3.2 (KCNC2) — high-threshold K⁺",
+  "name_zh": "Kv3.2（KCNC2）— 高阈值K⁺",
+  "category": "Ионные каналы",
+  "description": "Kv3.2 (KCNC2) high-threshold K⁺. γ=15 пС. Активация V½=+10 мВ, non-inactivating (в отличие от Kv3.1). Ингибиция: TEA ~63 µM, 4-AP ~25 µM. Fast-spiking delayed rectifier.",
+  "description_en": "Kv3.2 (KCNC2) high-threshold K⁺. γ=15 pS. Activation V½=+10 mV, non-inactivating (unlike Kv3.1). Pharmacology: TEA ~63 µM, 4-AP ~25 µM. Fast-spiking delayed rectifier.",
+  "description_zh": "Kv3.2（KCNC2）高阈值K⁺。γ=15 pS。激活V½=+10 mV，非失活（不同于Kv3.1）。药理：TEA ~63 µM、4-AP ~25 µM。快放电延迟整流器。"
+}

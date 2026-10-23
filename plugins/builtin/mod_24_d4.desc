@@ -1,0 +1,15 @@
+{
+  "name": "D4-рецептор",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 24,
+  "modifiers": [
+    {
+      "id": 24,
+      "name": "D4-рецептор",
+      "category": "Метаботропные Gi/o",
+      "description": "Метаботропный дофаминовый рецептор D4 (Gi/o)",
+      "release": false
+    }
+  ]
+}

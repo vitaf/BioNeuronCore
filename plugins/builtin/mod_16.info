@@ -1,0 +1,19 @@
+{
+  "type_id": 16,
+  "name": "TRPV1",
+  "version": "1.0.0",
+  "category": "Ионотропные рецепторы",
+  "mechanism_type": "Ионотропный (лиганд- и температура-зависимый катионный канал)",
+  "signaling": "Капсаицин, H⁺ (pH<5.9), тепло >43°C, эндованилоиды (анандамид) → TRPV1 → Na⁺/Ca²⁺ поток. Неселективный катионный канал TRP-семейства.",
+  "inputs": "Температура (>43°C), pH (<5.9), капсаицин, эндованилоиды, V_m",
+  "outputs": "I_TRPV1 → I_buffer. Возбуждающий ток с большой Ca²⁺-компонентой.",
+  "neuron_types": "Сенсорные нейроны: DRG (dorsal root ganglia), тригеминальный ганглий (TG), nodosus ганглий. Преимущественно ноцицептивные C-волокна и Aδ-волокна.",
+  "subcellular": "Периферические окончания ноцицепторов (кожа, слизистые, суставы, мышцы). Центральные терминали в заднем роге спинного мозга (lamina I, II).",
+  "kinetics": "Активация: T > 43°C, pH < 5.9. Сенситизация: PKA/PKC фосфорилирование снижает порог активации до температуры тела (воспалительная гипералгезия). P_Ca/P_Na ≈ 9.6 (высокая Ca²⁺-проводимость). Десенситизация: Ca²⁺-зависимая.",
+  "function": "Детекция повреждающей температуры (ноцицепция) и кислой среды (воспаление, ишемия). Интегратор множества болезненных стимулов. Воспалительная боль, гипералгезия, аллодиния. Мишень для анальгетиков (капсаицин, антагонисты).",
+  "references": "Caterina M.J. et al. (1997) The capsaicin receptor: a heat-activated ion channel in the pain pathway. Nature 389:816-824.",
+  "name_en": "TRPV1",
+  "name_zh": "TRPV1",
+  "description_en": "Detects noxious heat (nociception) and acidic environments (inflammation, ischemia). Integrates multiple painful stimuli; underlies inflammatory pain, hyperalgesia and allodynia.",
+  "description_zh": "检测伤害性热（伤害感受）和酸性环境（炎症、缺血）。整合多种疼痛刺激；构成炎性疼痛、痛觉过敏和异常性疼痛的基础。"
+}

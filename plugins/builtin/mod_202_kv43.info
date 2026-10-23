@@ -1,0 +1,10 @@
+{
+  "type_id": 202,
+  "name": "Kv4.3 (KCND3) — A-type K⁺",
+  "name_en": "Kv4.3 (KCND3) — A-type K⁺",
+  "name_zh": "Kv4.3（KCND3）— A型K⁺",
+  "category": "Ионные каналы",
+  "description": "Kv4.3 (KCND3) A-type K⁺. γ=4.4 пС. Активация V½=−31.7 мВ, инактивация V½=−47.4 мВ (быстрая N-type). Ингибиция: 4-AP 488 µM, HpTx3 81 нМ. Транзиентный outward K⁺-ток (I_to/I_A).",
+  "description_en": "Kv4.3 (KCND3) A-type K⁺. γ=4.4 pS. Activation V½=−31.7 mV, inactivation V½=−47.4 mV (fast N-type). Pharmacology: 4-AP 488 µM, HpTx3 81 nM. Transient outward K⁺ current (I_to/I_A).",
+  "description_zh": "Kv4.3（KCND3）A型K⁺。γ=4.4 pS。激活V½=−31.7 mV，失活V½=−47.4 mV（快速N型）。药理：4-AP 488 µM、HpTx3 81 nM。瞬时外向K⁺电流（I_to/I_A）。"
+}

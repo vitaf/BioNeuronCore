@@ -1,0 +1,15 @@
+{
+  "name": "M5-рецептор",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 59,
+  "modifiers": [
+    {
+      "id": 59,
+      "name": "M5-рецептор",
+      "category": "Метаботропные Gq/11",
+      "description": "Метаботропный мускариновый рецептор M5 (Gq/11)",
+      "release": false
+    }
+  ]
+}

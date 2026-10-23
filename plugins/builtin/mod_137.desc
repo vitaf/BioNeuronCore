@@ -1,0 +1,15 @@
+{
+  "name": "PKC киназа",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 137,
+  "modifiers": [
+    {
+      "id": 137,
+      "name": "PKC (DAG+Ca²⁺)",
+      "category": "Сигнальные каскады",
+      "description": "Классическая PKC (α/β/γ): DAG (C1-домен) + Ca²⁺ (C2-домен) → активность. Фосфорилирует Kv7/KCNQ → подавление M-тока. state[0]=активность.",
+      "release": false
+    }
+  ]
+}

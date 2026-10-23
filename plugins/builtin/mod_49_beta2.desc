@@ -1,0 +1,15 @@
+{
+  "name": "β2-адренорецептор",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 49,
+  "modifiers": [
+    {
+      "id": 49,
+      "name": "β2-адренорецептор",
+      "category": "Метаботропные Gs",
+      "description": "Метаботропный адренорецептор β2 (Gs) — бронхиальный, повышает cAMP",
+      "release": false
+    }
+  ]
+}

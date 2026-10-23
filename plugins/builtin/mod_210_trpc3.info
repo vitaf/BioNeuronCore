@@ -1,0 +1,10 @@
+{
+  "type_id": 210,
+  "name": "TRPC3 — неселективный катионный канал",
+  "name_en": "TRPC3 — nonselective cation channel",
+  "name_zh": "TRPC3 — 非选择性阳离子通道",
+  "category": "Ионные каналы",
+  "description": "TRPC3 неселективный катионный. γ=60 пС. P_Ca:P_Na=1.62. DAG-активируемый (рецептор-управляемый). Ингибиция: Pyr3 0.7 µM.",
+  "description_en": "TRPC3 nonselective cation channel. γ=60 pS. P_Ca:P_Na=1.62. DAG-activated (receptor-operated). Pharmacology: Pyr3 0.7 µM.",
+  "description_zh": "TRPC3非选择性阳离子通道。γ=60 pS。P_Ca:P_Na=1.62。DAG激活（受体操控）。药理：Pyr3 0.7 µM。"
+}

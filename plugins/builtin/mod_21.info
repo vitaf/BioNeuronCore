@@ -1,0 +1,19 @@
+{
+  "type_id": 21,
+  "name": "5-HT1F",
+  "version": "1.0.0",
+  "category": "Метаботропные Gi/o",
+  "mechanism_type": "Метаботропный (G-белок Gi/o-связанный)",
+  "signaling": "Серотонин (5-HT) → 5-HT1F → Gi/o → ↓cAMP. Экспрессируется в ЦНС и тригеминальной системе.",
+  "inputs": "neurotransmitter[NT_SEROTONIN]",
+  "outputs": "↓cAMP, ↓выброс CGRP (тригеминальные терминали).",
+  "neuron_types": "ЦНС: кора, гиппокамп, таламус, trigeminal nucleus caudalis. Слабая экспрессия в периферических сосудах (в отличие от 5-HT1B).",
+  "subcellular": "Центральные тригеминальные окончания. Пресинаптические терминали ЦНС.",
+  "kinetics": "K_D 5-HT ≈ 5-10 nM. Агонисты: ласмидитан (селективный, не вызывает вазоконстрикцию). Не активирует 5-HT1B/1D → отсутствие сосудистых побочных эффектов.",
+  "function": "Новая мишень для антимигренозной терапии без вазоконстрикции. Центральный механизм: блокада CGRP-выброса в тригеминальной системе.",
+  "references": "Nelson D.L. et al. (2018) Preclinical pharmacological profile of the selective 5-HT1F receptor agonist lasmiditan. Cephalalgia 38:270-284.",
+  "name_en": "5-HT1F",
+  "name_zh": "5-HT1F",
+  "description_en": "New target for migraine therapy without vasoconstriction. Central mechanism: blockade of CGRP release in the trigeminal system.",
+  "description_zh": "无血管收缩作用的偏头痛治疗新靶点。中枢机制：阻断三叉神经系统中 CGRP 的释放。"
+}

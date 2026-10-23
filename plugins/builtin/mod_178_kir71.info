@@ -1,0 +1,23 @@
+{
+  "type_id": 178,
+  "name": "Kir7.1 фоновый K⁺ канал (KCNJ13)",
+  "version": "1.0.0",
+  "category": "Voltage-gated K",
+  "mechanism_type": "Ионотропный (фоновый inward-rectifier)",
+  "signaling": "Прямой ионный поток K⁺ (слабое внутреннее выпрямление).",
+  "inputs": "V_m, intra_ions[K⁺], extra_ions[K⁺]",
+  "outputs": "I_K → I_buffer. Снижает внутриклеточный K⁺.",
+  "neuron_types": "Эпителий хориоидного сплетения, пигментный эпителий сетчатки.",
+  "subcellular": "Апикальная мембрана эпителия (ко-локализован с Na/K-АТФазой).",
+  "gating": "Слабая ненасыщающаяся зависимость от V; НЕ Mg²⁺-зависимое (time-independent, без инактивации)",
+  "ions": "K+",
+  "gamma": "~0.05 пС (50 фС) — аномально малая",
+  "pharmacology": "Ba²⁺ IC50 ~0.63 мМ (слабый); pHi-бифазный (pK1 8.2, pK2 6.6)",
+  "kinetics": "Time-independent, нет инактивации. Слабое inward-rectification.",
+  "function": "Апикальный фоновый K⁺-ток, задаёт потенциал покоя эпителия хориоидного сплетения.",
+  "references": "PMID 9620703, PMID 18094146",
+  "note": "Аномально малая проводимость одиночного канала (~50 фС).",
+  "name_en": "Kir7.1 background K⁺ (KCNJ13)",  "name_zh": "Kir7.1 K⁺通道",
+  "description_en": "Apical background K⁺ current, sets the resting potential of choroid plexus epithelium. γ~0.05 pS; Ba²⁺ IC50 ~0.63 mM.",
+  "description_zh": "顶端背景K⁺电流，设定脉络丛上皮的静息电位。γ~0.05 pS；Ba²⁺ IC50 ~0.63 mM。"
+}

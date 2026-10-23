@@ -1,0 +1,25 @@
+{
+  "id": 166,
+  "name": "THIK-1 (K2P13.1/KCNK13) — фоновая K⁺-утечка",
+  "name_en": "THIK-1 (K2P13.1/KCNK13) — background K⁺ leak",
+  "category": "Базовые модификаторы",
+  "category_en": "Basic Modifiers",
+  "family": "K2P (two-pore domain K⁺, THIK)",
+  "isoforms": [
+    "THIK-1",
+    "K2P13.1",
+    "KCNK13"
+  ],
+  "gating": "фоновая утечка (Po константа)",
+  "conductances": {
+    "gamma": "5 пС",
+    "Po": "0.5 (константа, ⚠️ не опубликована)"
+  },
+  "ions": "K+",
+  "pharmacology": "галотан 2.8 мМ (IC50, THIK-1)",
+  "role": "Фоновая K⁺-утечка — поддерживает потенциал покоя, шунтирует деполяризацию.",
+  "bio_ref": "PMID 24081450, 11060316",
+  "note": "Po не опубликована (константа 0.5); G (мС/см²) не найдена.",  "name_zh": "THIK-1 (K2P13.1/KCNK13) — 背景K⁺泄漏",
+  "description_en": "Background K⁺ leak — maintains resting potential, shunts depolarization. γ=5 pS; halothane IC50 2.8 mM.",
+  "description_zh": "背景K⁺泄漏——维持静息电位，分流去极化。γ=5 pS；氟烷IC50 2.8 mM。"
+}

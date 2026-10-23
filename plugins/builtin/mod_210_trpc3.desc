@@ -1,0 +1,15 @@
+{
+  "name": "TRPC3 nonselective cation",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 210,
+  "modifiers": [
+    {
+      "id": 210,
+      "name": "TRPC3",
+      "category": "Ионные каналы",
+      "description": "TRPC3 неселективный катионный (γ=60 пС, P_Ca:P_Na=1.62, DAG-активируемый). GHK Na+Ca, Pyr3 0.7 µM.",
+      "release": false
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "type_id": 23,
+  "name": "D3",
+  "version": "1.0.0",
+  "category": "Метаботропные Gi/o",
+  "mechanism_type": "Метаботропный (G-белок Gi/o-связанный)",
+  "signaling": "Дофамин (DA) → D3 → Gi/o → ↓cAMP. Высокая аффинность к DA. Преимущественно лимбическая локализация (nucleus accumbens).",
+  "inputs": "neurotransmitter[NT_DOPAMINE]",
+  "outputs": "↓cAMP, модуляция Ca_v. Пресинаптический ауторецептор.",
+  "neuron_types": "Nucleus accumbens (shell — наивысшая экспрессия), olfactory tubercle, островки Calleja, гиппокамп, VTA (низкая), prefrontal cortex.",
+  "subcellular": "Пресинаптические DA-терминали (ауторецепторы). Постсинаптические (limited).",
+  "kinetics": "K_D DA ≈ 0.2-5 nM (самая высокая DA-аффинность среди D2-подобных). Агонисты: 7-OH-DPAT, прамипексол. Антагонисты: SB-277011A, U99194.",
+  "function": "Регуляция reward/мотивации (nucleus accumbens). Лекарственная зависимость (D3-антагонисты снижают self-administration). Эмоции, настроение. Мишень для терапии аддикций и депрессии.",
+  "references": "Sokoloff P. et al. (2006) The dopamine D3 receptor: a therapeutic target for the treatment of neuropsychiatric disorders. CNS Neurol Disord Drug Targets 5:25-43.",
+  "name_en": "D3",
+  "name_zh": "D3",
+  "description_en": "Regulates reward/motivation (nucleus accumbens). Involved in drug addiction, emotion and mood; target for addiction and depression therapy.",
+  "description_zh": "调节奖赏/动机（伏隔核）。参与药物成瘾、情绪和心境；是成瘾和抑郁症治疗的靶点。"
+}

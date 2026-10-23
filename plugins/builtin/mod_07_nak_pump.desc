@@ -1,0 +1,15 @@
+{
+  "name": "Na⁺/K⁺-АТФаза",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 7,
+  "modifiers": [
+    {
+      "id": 7,
+      "name": "Na⁺/K⁺-АТФаза",
+      "category": "Базовые модификаторы",
+      "description": "Электрогенный натрий-калиевый насос (3 Na⁺ наружу, 2 K⁺ внутрь), ATP-зависимый",
+      "release": false
+    }
+  ]
+}

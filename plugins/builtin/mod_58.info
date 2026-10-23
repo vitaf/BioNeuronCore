@@ -1,0 +1,19 @@
+{
+  "type_id": 58,
+  "name": "M3",
+  "version": "1.0.0",
+  "category": "Метаботропные Gq/11",
+  "mechanism_type": "Метаботропный (G-белок Gq/11-связанный)",
+  "signaling": "Ацетилхолин (ACh) → M3 → Gq/11 → PLCβ → IP3/DAG → ↑Ca²⁺. Периферическая и ЦНС-экспрессия. В ЦНС регулирует пищевое поведение.",
+  "inputs": "neurotransmitter[NT_ACETYLCHOLINE]",
+  "outputs": "PLCβ → ↑IP3/DAG → ↑Ca²⁺. Сокращение гладких мышц, секреция желёз.",
+  "neuron_types": "ЦНС: гипоталамус (ARC, LH — feeding), гиппокамп, стриатум, кора. Периферия: гладкие мышцы (бронхи, кишечник, мочевой пузырь, зрачок — miosis), железы (слюнные, потовые).",
+  "subcellular": "Постсинаптические (ЦНС). Гладкомышечные клетки. Железистые клетки.",
+  "kinetics": "K_D ACh ≈ 0.1-1 μM. Периферический холинергический эффект: слюноотделение, бронхоконстрикция, сокращение мочевого пузыря (детрузор). Антагонисты: дарифенацин, солифенацин (M3-селективные — гиперактивный мочевой пузырь).",
+  "function": "ЦНС: регуляция аппетита и пищевого поведения (гипоталамус). Периферия: парасимпатическая регуляция (слюна, бронхи, ЖКТ, мочеиспускание).",
+  "references": "Wess J. et al. (2007), см. M2.",
+  "name_en": "M3",
+  "name_zh": "M3",
+  "description_en": "Muscarinic M3 receptor coupled to Gq/11, activating PLCβ to raise Ca²⁺. In the CNS it regulates appetite, while peripherally it drives smooth muscle contraction and glandular secretion.",
+  "description_zh": "毒蕈碱 M3 受体，偶联 Gq/11，激活 PLCβ 升高 Ca²⁺。在中枢调节食欲，在外周驱动平滑肌收缩和腺体分泌。"
+}

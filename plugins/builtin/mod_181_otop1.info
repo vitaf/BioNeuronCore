@@ -1,0 +1,23 @@
+{
+  "type_id": 181,
+  "name": "OTOP1 протонный канал кислого вкуса (тип III)",
+  "version": "1.0.0",
+  "category": "Other",
+  "mechanism_type": "Ионотропный (pH-гейт, H⁺-селективный)",
+  "signaling": "Прямой протонный поток (высокоселективен к H⁺, ~10⁶×).",
+  "inputs": "Внеклеточный pH, V_m",
+  "outputs": "I_H → I_buffer. Деполяризация при кислом pH₀.",
+  "neuron_types": "Вкусовые клетки тип III (кислый вкус).",
+  "subcellular": "Плазматическая мембрана вкусовых клеток (OTOP1).",
+  "gating": "pH-гейт: активация при pH₀ < 6.0 (pH50 не подтверждён); I–V линейна",
+  "ions": "H+",
+  "gamma": "не найдено",
+  "pharmacology": "Zn²⁺ (IC50 ~200 мкМ), Cu²⁺/Ni²⁺",
+  "kinetics": "Линейная I–V; pH-зависимая активация при pH₀ < 6.0.",
+  "function": "Рецептор кислого вкуса: протонный ток при закислении внеклеточной среды.",
+  "references": "PMID 29371428, PMID 31543453, PMID 31160780",
+  "note": "Высокоселективен к H⁺ (~10⁶×); γ не найдена.",
+  "name_en": "OTOP1 proton channel",  "name_zh": "OTOP1 质子通道",
+  "description_en": "Sour-taste receptor: proton current upon extracellular acidification. Zn²⁺ IC50 ~200 µM.",
+  "description_zh": "酸味受体：细胞外酸化时产生质子电流。Zn²⁺ IC50 ~200 µM。"
+}

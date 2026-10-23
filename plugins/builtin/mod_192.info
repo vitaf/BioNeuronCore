@@ -1,0 +1,10 @@
+{
+  "type_id": 192,
+  "name": "Родопсин фотокаскад (палочка)",
+  "name_en": "Rhodopsin phototransduction (rod)",
+  "name_zh": "视紫红质光转导级联",
+  "version": "1.0.0",
+  "category": "Сенсоры",  "description": "Полный фотокаскад палочки: свет→R*→трансдуцин(Gt)→PDE6→cGMP↓→CNG закрытие. CNG открыт в темноте, закрыт на свету (гиперполяр.). Leskov 2000; Yau & Nakatani 1985.",
+  "description_en": "Full rod phototransduction cascade: light→R*→transducin(Gt)→PDE6→cGMP↓→CNG closure. CNG open in dark, closed in light (hyperpolarizing). Leskov 2000; Yau & Nakatani 1985.",
+  "description_zh": "完整的视杆细胞光转导级联：光→R*→转导蛋白(Gt)→PDE6→cGMP↓→CNG关闭。CNG暗处开放，光下关闭（超极化）。Leskov 2000；Yau & Nakatani 1985。"
+}

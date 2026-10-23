@@ -1,0 +1,15 @@
+{
+  "name": "Kv2.2 delayed rectifier K",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 205,
+  "modifiers": [
+    {
+      "id": 205,
+      "name": "Kv2.2 (KCNB2)",
+      "category": "Ионные каналы",
+      "description": "Kv2.2 медленный delayed rectifier K⁺ (γ=14.5 пС, V½_m=+13.2, V½_h=−16.6, медленнее Kv2.1). GHK K⁺, m³h-гейтинг, TEA/4-AP.",
+      "release": false
+    }
+  ]
+}

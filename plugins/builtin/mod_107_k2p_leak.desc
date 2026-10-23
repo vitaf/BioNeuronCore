@@ -1,0 +1,15 @@
+{
+  "name": "K2P пассивная K⁺ утечка",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 107,
+  "modifiers": [
+    {
+      "id": 107,
+      "name": "K2P пассивная K⁺ утечка",
+      "category": "Leak K",
+      "description": "K2P (TREK/TRAAK): пассивная K⁺ утечка, всегда открыт, GHK",
+      "release": false
+    }
+  ]
+}

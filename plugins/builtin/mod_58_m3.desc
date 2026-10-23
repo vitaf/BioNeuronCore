@@ -1,0 +1,15 @@
+{
+  "name": "M3-рецептор",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 58,
+  "modifiers": [
+    {
+      "id": 58,
+      "name": "M3-рецептор",
+      "category": "Метаботропные Gq/11",
+      "description": "Метаботропный мускариновый рецептор M3 (Gq/11) — гладкомышечный",
+      "release": false
+    }
+  ]
+}

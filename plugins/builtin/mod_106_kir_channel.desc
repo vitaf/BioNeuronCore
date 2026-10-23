@@ -1,0 +1,15 @@
+{
+  "name": "Kir входящий выпрямитель K⁺",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 106,
+  "modifiers": [
+    {
+      "id": 106,
+      "name": "Kir входящий выпрямитель K⁺",
+      "category": "Inward rectifier K",
+      "description": "Kir (Kir2.x): входящий выпрямитель K⁺, Больцман×rectification, GHK",
+      "release": false
+    }
+  ]
+}

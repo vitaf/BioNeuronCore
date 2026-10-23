@@ -1,0 +1,19 @@
+{
+  "type_id": 30,
+  "name": "mGluR3",
+  "version": "1.0.0",
+  "category": "Метаботропные Gi/o",
+  "mechanism_type": "Метаботропный (G-белок Gi/o-связанный)",
+  "signaling": "Глутамат → mGluR3 (Group II) → Gi/o → ↓cAMP. Экспрессируется в нейронах и астроцитах. Нейропротективный.",
+  "inputs": "neurotransmitter[NT_GLUTAMATE]",
+  "outputs": "↓cAMP, нейропротективная сигнализация (астроциты: высвобождение TGF-β, GDNF).",
+  "neuron_types": "Кора, гиппокамп, стриатум, таламус. Астроциты (высокая экспрессия).",
+  "subcellular": "Пресинаптические (ауторецепторы). Постсинаптические. Глия (астроциты).",
+  "kinetics": "EC50 глутамат ≈ 10-100 μM (сходен с mGluR2). Димер с mGluR2. Селективный NAM: ML289. mGluR3-специфические функции vs mGluR2: нейропротекция.",
+  "function": "Нейропротекция (астроциты: высвобождение факторов роста). Совместно с mGluR2: регуляция глутаматного выброса. Шизофрения, депрессия.",
+  "references": "Niswender C.M., Conn P.J. (2010), см. mGluR2.",
+  "name_en": "mGluR3",
+  "name_zh": "mGluR3",
+  "description_en": "Neuroprotection via astrocytic release of growth factors. Together with mGluR2 regulates glutamate release; implicated in schizophrenia and depression.",
+  "description_zh": "通过星形胶质细胞释放生长因子实现神经保护。与 mGluR2 共同调节谷氨酸释放；与精神分裂症和抑郁症相关。"
+}

@@ -1,0 +1,21 @@
+{
+  "id": 130,
+  "name": "HCN2 — средний Ih (τ~100ms), сердце/мозг",
+  "name_en": "HCN2 — intermediate Ih (τ~100ms), heart/brain",
+  "category": "PIR (Постингибирующий отскок)",
+  "category_en": "PIR (Post-Inhibitory Rebound)",
+  "family": "HCN (Hyperpolarization-activated Cyclic Nucleotide-gated)",
+  "isoforms": [
+    "HCN2"
+  ],
+  "gating": "Активируется гиперполяризацией. Умеренный τ_open~100ms — основная изоформа в сердце и мозге.",
+  "conductances": "Неселективный катионный: P_Na:P_K ≈ 0.4:0.6.",
+  "modulation": "Сильно модулируется cAMP (сильнее чем HCN1).",
+  "role_in_cpg": "Альтернативная изоформа для dIN если нужен более медленный PIR.",
+  "bio_ref": "Biel et al. (2009) Physiol Rev 89:847-885. 'Hyperpolarization-activated cation channels.'",
+  "species": "Универсальная",
+  "neuron_type": "Сердце, мозг, таламус",
+  "name_zh": "HCN2 — 中速Ih (τ~100ms)，心脏/大脑",
+  "description_en": "Intermediate Ih (HCN2, τ_open~100 ms), the main isoform in heart and brain, strongly cAMP-modulated. Alternative PIR isoform for dIN when a slower rebound is required.",
+  "description_zh": "中速Ih（HCN2，τ_open~100 ms），心脏和大脑中的主要亚型，受cAMP强烈调节。当需要更慢回弹时作为dIN的替代PIR亚型。"
+}

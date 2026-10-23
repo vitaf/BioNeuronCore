@@ -1,0 +1,15 @@
+{
+  "name": "NCX Na⁺/Ca²⁺ обменник",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 99,
+  "modifiers": [
+    {
+      "id": 99,
+      "name": "NCX Na⁺/Ca²⁺ обменник",
+      "category": "Гомеостаз Ca²⁺",
+      "description": "NCX: Na⁺/Ca²⁺ обменник, 3Na⁺ in : 1Ca²⁺ out, V-зависимый",
+      "release": false
+    }
+  ]
+}

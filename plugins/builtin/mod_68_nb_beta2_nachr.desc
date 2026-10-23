@@ -1,0 +1,15 @@
+{
+  "name": "NB_Beta2_nAChR",
+  "version": "1.0.0",
+  "author": "BioNeuronCore (Neuroblox.jl)",
+  "type_id": 68,
+  "modifiers": [
+    {
+      "id": 68,
+      "name": "NB_Beta2_nAChR",
+      "category": "NB_-Рецепторы",
+      "description": "β2 никотиновый рецептор: 2 состояния (ACh_act, ACh_des), Hill-активация агонистом=ACh+w*Nic, nicotine-зависимая десенситизация",
+      "release": false
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "type_id": 55,
+  "name": "α1A",
+  "version": "1.0.0",
+  "category": "Метаботропные Gq/11",
+  "mechanism_type": "Метаботропный (G-белок Gq/11-связанный)",
+  "signaling": "Норадреналин/адреналин → α1A → Gq/11 → PLCβ → IP3/DAG → ↑Ca²⁺. Основной подтип α1 в ЦНС и гладких мышцах мочеполовой системы.",
+  "inputs": "neurotransmitter[NT_NORADRENALINE]",
+  "outputs": "PLCβ → ↑IP3/DAG → ↑Ca²⁺ → сокращение гладких мышц, повышение нейрональной возбудимости.",
+  "neuron_types": "ЦНС: кора, гиппокамп, таламус, гипоталамус, ствол мозга (LC). Периферия: гладкие мышцы (простата, уретра, сосуды).",
+  "subcellular": "Постсинаптические (ЦНС). Гладкомышечные клетки сосудов, простаты.",
+  "kinetics": "K_D NA ≈ 0.1-10 μM. Антагонисты: тамсулозин (α1A-селективный — BPH). Вазопрессорный эффект (периферическая вазоконстрикция).",
+  "function": "ЦНС: модуляция внимания, бодрствования. Периферия: регуляция тонуса гладких мышц (простата, сосуды). Мишень тамсулозина (доброкачественная гиперплазия простаты).",
+  "references": "Michelotti G.A. et al. (2000) Alpha1-adrenergic receptor regulation: basic science and clinical implications. Pharmacol Ther 88:281-309.",
+  "name_en": "α1A",
+  "name_zh": "α1A",
+  "description_en": "α1A-adrenergic receptor coupled to Gq/11, activating PLCβ to raise Ca²⁺. Main α1 subtype in the CNS and in genitourinary smooth muscle (target of tamsulosin).",
+  "description_zh": "α1A 肾上腺素能受体，偶联 Gq/11，激活 PLCβ 升高 Ca²⁺。是中枢神经系统和泌尿生殖平滑肌中的主要 α1 亚型（坦索罗辛的靶点）。"
+}

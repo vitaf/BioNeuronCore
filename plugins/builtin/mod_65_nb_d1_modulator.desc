@@ -1,0 +1,15 @@
+{
+  "name": "NB_D1_Modulator",
+  "version": "1.0.0",
+  "author": "BioNeuronCore (Neuroblox.jl)",
+  "type_id": 65,
+  "modifiers": [
+    {
+      "id": 65,
+      "name": "NB_D1_Modulator",
+      "category": "NB_-Рецепторы",
+      "description": "Модулятор D1: Hill-occupancy дофамин→D1 (K_D1=0.3, n=1, τ=100ms), пишет M_NMDA1=1+β1·φ1 в state[1], возвращает 0 тока",
+      "release": false
+    }
+  ]
+}

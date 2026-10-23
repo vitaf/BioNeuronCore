@@ -1,0 +1,19 @@
+{
+  "type_id": 36,
+  "name": "CB1",
+  "version": "1.0.0",
+  "category": "Метаботропные Gi/o",
+  "mechanism_type": "Метаботропный (G-белок Gi/o-связанный)",
+  "signaling": "Эндоканнабиноиды (анандамид, 2-AG) → CB1 → Gi/o → ↓cAMP, ↓Ca_v, активация GIRK. Самый распространённый GPCR в ЦНС. Ретроградный мессенджер (деполяризация-индуцированное подавление — DSI/DSE).",
+  "inputs": "Эндоканнабиноиды (2-AG, анандамид). Не классический NT — синтезируются on-demand из фосфолипидов мембраны постсинаптическим нейроном.",
+  "outputs": "↓cAMP, ↓Ca_v (пресинаптически → ↓выброс нейромедиатора), ↑GIRK. Ретроградная сигнализация: пост → пре.",
+  "neuron_types": "Кора, гиппокамп (CA1 — высокая экспрессия), мозжечок (параллельные волокна), стриатум, базальные ганглии, amygdala, prefrontal cortex, гипоталамус. Самый высокоэкспрессируемый GPCR ЦНС.",
+  "subcellular": "Пресинаптические терминали (основная локализация). Глутаматергические, GABA-ергические, холинергические терминали. Постсинаптические (низкая). Митохондриальные мембраны (mtCB1).",
+  "kinetics": "EC50 2-AG ≈ 0.1-1 μM. Ретроградная сигнализация: Ca²⁺-зависимый синтез 2-AG в посте → диффузия к пре → CB1 активация → ↓Ca²⁺/↑K⁺ → DSI/DSE. Агонисты: THC, WIN 55,212-2, CP 55,940. Антагонист: римонабант (SR141716A).",
+  "function": "Ретроградное подавление синаптической передачи (DSI — depolarization-induced suppression of inhibition; DSE — excitation). Краткосрочная и долговременная пластичность (eCB-LTD). Регуляция аппетита (гипоталамус), боли, памяти.",
+  "references": "Kano M. et al. (2009) Endocannabinoid-mediated control of synaptic transmission. Physiol Rev 89:309-380.",
+  "name_en": "CB1",
+  "name_zh": "CB1",
+  "description_en": "Mediates retrograde suppression of synaptic transmission (DSI/DSE) and short/long-term plasticity (eCB-LTD). Regulates appetite, pain and memory.",
+  "description_zh": "介导突触传递的逆行性抑制（DSI/DSE）和短时/长时程可塑性（eCB-LTD）。调节食欲、疼痛和记忆。"
+}

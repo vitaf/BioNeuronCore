@@ -1,0 +1,19 @@
+{
+  "type_id": 53,
+  "name": "5-HT2B",
+  "version": "1.0.0",
+  "category": "Метаботропные Gq/11",
+  "mechanism_type": "Метаботропный (G-белок Gq/11-связанный)",
+  "signaling": "Серотонин (5-HT) → 5-HT2B → Gq/11 → PLCβ → IP3/DAG → ↑Ca²⁺. Низкая экспрессия в ЦНС. Основное значение: сердце (валвулопатия).",
+  "inputs": "neurotransmitter[NT_SEROTONIN]",
+  "outputs": "PLCβ → ↑IP3/DAG → ↑Ca²⁺. Пролиферация фибробластов клапанов сердца.",
+  "neuron_types": "Мозг: низкая экспрессия (мозжечок, гипоталамус, миндалина). Периферия: сердце (клапаны — фибробласты), желудок, печень.",
+  "subcellular": "Клапаны сердца (мезенхимные клетки). Гладкая мускулатура сосудов.",
+  "kinetics": "K_D 5-HT ≈ 1-10 nM. Фенфлурамин (аноректик) — агонист 5-HT2B → валвулопатия (отозван с рынка). Не должен быть мишенью для ЦНС-препаратов.",
+  "function": "Регуляция развития сердца (эмбриональное). Валвулопатия при активации (фенфлураминовая трагедия). В ЦНС: минорная роль.",
+  "references": "Roth B.L. (2007) Drugs and valvular heart disease. N Engl J Med 356:6-9.",
+  "name_en": "5-HT2B",
+  "name_zh": "5-HT2B",
+  "description_en": "Serotonin 5-HT2B receptor coupled to Gq/11; weakly expressed in the CNS. Its activation in cardiac valves causes valvulopathy (e.g. fenfluramine).",
+  "description_zh": "血清素 5-HT2B 受体，偶联 Gq/11，在中枢神经系统表达低。其在心脏瓣膜的激活可导致瓣膜病（如芬氟拉明）。"
+}

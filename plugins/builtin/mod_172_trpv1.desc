@@ -1,0 +1,15 @@
+{
+  "name": "TRPV1 тепло/капсаицин канал",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 172,
+  "modifiers": [
+    {
+      "id": 172,
+      "name": "TRPV1 тепло/капсаицин канал",
+      "category": "TRP channel",
+      "description": "TRPV1 неселективный катионный канал (тепло/капсаицин), P_Ca/P_Na≈10. Лиганд state[4]=капсаицин µM (EC50 0.7 µM), Ca²⁺-десенситизация (Kd 0.5 µM, τ 150 мс). γ=70 пС. Ica=P·0.91 (z=2) + Ina=P·0.09 (z=1). GHK-флюкс. Caterina 1997.",
+      "release": false
+    }
+  ]
+}

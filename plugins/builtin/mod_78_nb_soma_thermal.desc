@@ -1,0 +1,15 @@
+{
+  "name": "NB_SomaThermal",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 78,
+  "modifiers": [
+    {
+      "id": 78,
+      "name": "NB_SomaThermal",
+      "category": "Сома-модификаторы",
+      "description": "Термальный гомеостаз 37°C в соме: τ=5000ms, накопление heat stress выше порога 39°C, охлаждение/нагрев к целевой температуре",
+      "release": false
+    }
+  ]
+}

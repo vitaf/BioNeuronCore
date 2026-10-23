@@ -1,0 +1,15 @@
+{
+  "name": "Ca²⁺ буфер",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 102,
+  "modifiers": [
+    {
+      "id": 102,
+      "name": "Ca²⁺ буфер",
+      "category": "Гомеостаз Ca²⁺",
+      "description": "Ca²⁺ буфер: парвальбумин-подобный, быстрая кинетика on/off",
+      "release": false
+    }
+  ]
+}

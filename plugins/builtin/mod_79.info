@@ -1,0 +1,19 @@
+{
+  "type_id": 79,
+  "name": "NB_CREB_Transcription",
+  "version": "1.0.0",
+  "category": "Сома-модификаторы",
+  "mechanism_type": "Ферментативный (сигнальный каскад: Ca²⁺ → CaMK → pCREB → транскрипция генов → структурная пластичность)",
+  "signaling": "CREB-транскрипционный каскад: ядерный Ca²⁺ → CaMK (Hill n=2, K=0.5mM Ca²⁺) → pCREB (tau=5000ms) → late genes (tau=30000ms) → structural plasticity (tau=300000ms). Результат каскада пишется в transcription_signal.",
+  "inputs": "intra_ions[Ca²⁺] (ядерный/цитоплазматический), активация через CaMK (Ca²⁺/кальмодулин-зависимая киназа II)",
+  "outputs": "pCREB (фосфорилированный CREB), late_genes (активация транскрипции), structural_plasticity (структурные изменения — рост/ретракция шипиков), пишет s->transcription_signal.",
+  "neuron_types": "Все нейроны (ядерная транскрипция). CREB — универсальный фактор транскрипции для нейрональной пластичности и выживания.",
+  "subcellular": "Ядро (nucleus). Ca²⁺-сигнал передаётся от дендритных шипиков (через кальмодулин → CaMK translocation в ядро).",
+  "kinetics": "CaMK активация: active_CaMK = Ca²⁺^2/(Ca²⁺^2 + K_CaMK^2), Hill n=2, K=0.5mM. dpCREB/dt = (active_CaMK - pCREB)/tau_pCREB, tau_pCREB=5000ms. dLateGenes/dt = (pCREB - LateGenes) / tau_genes, tau_genes=30000ms. dStructuralPlast/dt = (LateGenes - StructPlast) / tau_struct, tau_struct=300000ms (~5 min). transcription_signal = StructuralPlast (0-1).",
+  "function": "Долговременная синаптическая пластичность: превращение Ca²⁺-сигнала в активацию генов и структурные изменения. L-LTP (late-phase LTP) требует транскрипции и синтеза новых белков (через CREB). Ключевой механизм долговременной памяти и нейронального развития.",
+  "references": "BioNeuronCore: ядерный транскрипционный каскад. Kandel E.R. (2012) The molecular biology of memory: cAMP, PKA, CRE, CREB-1, CREB-2, and CPEB. Mol Brain 5:14. Lisman J. et al. (2012) The molecular basis of CaMKII function in synaptic and behavioural memory. Nat Rev Neurosci 3:175-190.",
+  "name_en": "NB_CREB_Transcription",
+  "name_zh": "NB_CREB_Transcription",
+  "description_en": "CREB transcriptional cascade: Ca²⁺→CaMK→pCREB→late genes→structural plasticity (τ ≈ 5 s, 30 s, 5 min). Converts Ca²⁺ signals into gene expression for long-term memory.",
+  "description_zh": "CREB 转录级联：Ca²⁺→CaMK→pCREB→晚期基因→结构可塑性（τ ≈ 5 s、30 s、5 min）。将 Ca²⁺ 信号转化为基因表达，用于长期记忆。"
+}

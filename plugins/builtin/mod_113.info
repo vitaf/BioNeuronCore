@@ -1,0 +1,19 @@
+{
+  "type_id": 113,
+  "name": "PP1/Inh-1/DARPP-32 — D1→PKA→inhibit PP1→LTP↑",
+  "version": "1.0.0",
+  "category": "Сигнальные каскады пластичности",
+  "mechanism_type": "",
+  "signaling": "",
+  "inputs": "",
+  "outputs": "",
+  "neuron_types": "",
+  "subcellular": "",
+  "kinetics": "",
+  "function": "PP1/Inhibitor-1/DARPP-32: D1→Gs→cAMP→PKA→p-DARPP32(Thr34)+p-Inhibitor1(Thr35)→inhibit PP1. PP1 дефосфорилирует CaMKII-мишени (AMPAR, etc.)→oppose LTP. Когда D1 активен→cAMP высокий→PKA фосфорилирует DARPP-32/Inhibitor-1→PP1 подавлен→LTD ослаблен→LTP облегчён. Ключевой механизм дофаминовой модуляции пластичности в стриатуме и коре. State[0]=p_DARPP32, [1]=p_Inhibitor1, [2]=cAMP_level, [3]=PP1_active(output), [4]=tau_phospho(5000ms), [5]=basal_PP1(0.5), [6]=PKA_active. Референсы: Greengard (2001) Science 294:1024-1030; Svenningsson et al. (2004) Annu Rev Pharmacol Toxicol 44:269-296.",
+  "references": "",
+  "name_en": "PP1/Inh-1/DARPP-32 — D1→PKA→inhibit PP1→LTP↑",
+  "name_zh": "PP1/Inh-1/DARPP-32 — D1→PKA→抑制 PP1→LTP↑",
+  "description_en": "Dopamine signaling cascade: D1→Gs→cAMP→PKA phosphorylates DARPP-32(Thr34) and Inhibitor-1(Thr35), inhibiting PP1 which otherwise dephosphorylates CaMKII targets and opposes LTP. When D1 is active, PP1 is suppressed, LTD is weakened and LTP is facilitated.",
+  "description_zh": "多巴胺信号级联：D1→Gs→cAMP→PKA磷酸化DARPP-32(Thr34)和抑制蛋白-1(Thr35)，抑制PP1（否则PP1会使CaMKII靶点去磷酸化并拮抗LTP）。当D1激活时，PP1受抑制，LTD减弱，LTP增强。"
+}

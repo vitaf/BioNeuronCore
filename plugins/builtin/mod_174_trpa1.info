@@ -1,0 +1,23 @@
+{
+  "type_id": 174,
+  "name": "TRPA1 ирритант канал",
+  "version": "1.0.0",
+  "category": "TRP channel",
+  "mechanism_type": "Ионотропный (лиганд-гейт, неселективный катионный)",
+  "signaling": "Прямой неселективный катионный поток (P_Ca/P_Na ≈ 0.84).",
+  "inputs": "V_m, ирританты (AITC), внутриклеточный Ca²⁺, intra/extra Ca²⁺/Na⁺",
+  "outputs": "I_cation → I_buffer. Повышает внутриклеточный Ca²⁺ и Na⁺.",
+  "neuron_types": "Ноцицептивные сенсорные нейроны (DRG/тригеминальные).",
+  "subcellular": "Периферические терминали ноцицепторов.",
+  "gating": "Ирританты (AITC, ковалентно) + внутриклеточный Ca²⁺; холод <17 °C (спорно)",
+  "ions": "Ca2+, Na+",
+  "gamma": "87–100 пС",
+  "pharmacology": "AITC EC50 11–64 µM; циннамальдегид ~63 µM",
+  "kinetics": "Ca²⁺-проницаемость: Ca²⁺ 5.1 > Ba²⁺ 3.5 > Na⁺ 1.0. Активация ковалентной модификацией цистеинов AITC.",
+  "function": "Хемосенсор ирритантов и воспалительных медиаторов; Ca²⁺-зависимая активация.",
+  "references": "PMID 12654248, PMC5650668",
+  "note": "⚠️ «Холодовая» активация нативной ткани спорна — опираться на химическую (AITC) + Ca²⁺-зависимую.",
+  "name_en": "TRPA1 irritant channel",  "name_zh": "TRPA1 刺激通道",
+  "description_en": "Chemosensor of irritants and inflammatory mediators; Ca²⁺-dependent activation. γ=87–100 pS; AITC EC50 11–64 µM.",
+  "description_zh": "刺激物和炎症介质的化学感受器；Ca²⁺依赖性激活。γ=87–100 pS；AITC EC50 11–64 µM。"
+}

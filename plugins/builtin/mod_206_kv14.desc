@@ -1,0 +1,15 @@
+{
+  "name": "Kv1.4 A-type K",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 206,
+  "modifiers": [
+    {
+      "id": 206,
+      "name": "Kv1.4 (KCNA4)",
+      "category": "Ионные каналы",
+      "description": "Kv1.4 A-type K⁺ (γ=9.3 пС, V½_m=−21.7, V½_h=−51.8, N-type N-ball). GHK K⁺, m³h-гейтинг, 4-AP (TEA нечувствителен).",
+      "release": false
+    }
+  ]
+}

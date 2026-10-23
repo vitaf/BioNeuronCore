@@ -1,0 +1,15 @@
+{
+  "name": "mTORC1",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 89,
+  "modifiers": [
+    {
+      "id": 89,
+      "name": "mTORC1",
+      "category": "Consolidation/Reconsolidation",
+      "description": "mTORC1 — translation regulator. Two-key activation: (1) AA->Rag->Rheb-GTP, (2) PI3K/AKT->TSC inhibition. ATP-dependent inhibition via AMPK. Master switch for protein synthesis and synaptic plasticity.",
+      "release": false
+    }
+  ]
+}

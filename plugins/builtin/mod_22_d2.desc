@@ -1,0 +1,15 @@
+{
+  "name": "D2-рецептор",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 22,
+  "modifiers": [
+    {
+      "id": 22,
+      "name": "D2-рецептор",
+      "category": "Метаботропные Gi/o",
+      "description": "Метаботропный дофаминовый рецептор D2 (Gi/o) — ингибиторный, снижает cAMP",
+      "release": true
+    }
+  ]
+}

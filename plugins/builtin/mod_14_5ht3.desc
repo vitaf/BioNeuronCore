@@ -1,0 +1,15 @@
+{
+  "name": "5-HT3-рецептор",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 14,
+  "modifiers": [
+    {
+      "id": 14,
+      "name": "5-HT3-рецептор",
+      "category": "Ионотропные рецепторы",
+      "description": "Ионотропный серотониновый рецептор 5-HT3 — катионная проводимость",
+      "release": false
+    }
+  ]
+}

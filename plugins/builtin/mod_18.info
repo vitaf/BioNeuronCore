@@ -1,0 +1,19 @@
+{
+  "type_id": 18,
+  "name": "5-HT1A",
+  "version": "1.0.0",
+  "category": "Метаботропные Gi/o",
+  "mechanism_type": "Метаботропный (G-белок Gi/o-связанный)",
+  "signaling": "Серотонин (5-HT) → 5-HT1A → Gi/o → ↓cAMP, активация GIRK (K+), ингибирование Ca_v. Соматодендритный ауторецептор ядер шва (raphe) и постсинаптический.",
+  "inputs": "neurotransmitter[NT_SEROTONIN]",
+  "outputs": "↓cAMP, ↑GIRK, ↓Ca_v. Гиперполяризация (ингибирование).",
+  "neuron_types": "Ядра шва (dorsal/median raphe — ауторецепторы), гиппокамп (CA1 пирамидные, DG гранулярные), кора (layer II/III, V), amygdala, septum, гипоталамус.",
+  "subcellular": "Соматодендритные (ауторецепторы raphe — подавление firing). Постсинаптические (гиппокамп, amygdala — гиперполяризация). Аксонный холмик.",
+  "kinetics": "High-affinity: K_D 5-HT ≈ 0.5-5 nM. GIRK-опосредованная гиперполяризация τ ≈ 100-500 ms. Агонисты: 8-OH-DPAT, буспирон. Антагонист: WAY-100635. Десенситизация: β-аррестин-зависимая интернализация.",
+  "function": "Регуляция настроения (депрессия — снижение 5-HT1A ауторецепторов). Анксиолитическое действие (буспирон). Регуляция серотонинергического тонуса (ауторецепторы raphe). Терморегуляция, аппетит, агрессия.",
+  "references": "Barnes N.M., Sharp T. (1999) A review of central 5-HT receptors and their function. Neuropharmacology 38:1083-1152.",
+  "name_en": "5-HT1A",
+  "name_zh": "5-HT1A",
+  "description_en": "Regulates mood (antidepressant/anxiolytic), serotonergic tone (raphe autoreceptors), thermoregulation, appetite and aggression.",
+  "description_zh": "调节情绪（抗抑郁/抗焦虑）、血清素能张力（中缝核自身受体）、体温调节、食欲和攻击行为。"
+}

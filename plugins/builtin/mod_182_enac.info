@@ -1,0 +1,23 @@
+{
+  "type_id": 182,
+  "name": "ENaC эпителиальный Na⁺ канал (солёный вкус тип I)",
+  "version": "1.0.0",
+  "category": "Other",
+  "mechanism_type": "Ионотропный (конститутивно открытый, Na⁺-селективный)",
+  "signaling": "Прямой Na⁺-селективный поток (Li⁺>Na⁺≫K⁺, 2:1:0.14).",
+  "inputs": "V_m, intra_ions[Na⁺], extra_ions[Na⁺]",
+  "outputs": "I_Na → I_buffer. Повышает внутриклеточный Na⁺.",
+  "neuron_types": "Вкусовые клетки тип I (солёный вкус), эпителий.",
+  "subcellular": "Апикальная мембрана эпителия/вкусовых клеток (αβγ-канал).",
+  "gating": "Конститутивно открыт (нет V½); Po ~0.5 (0.04–0.6)",
+  "ions": "Na+",
+  "gamma": "4–5 пС (Na⁺), 8 пС (Li⁺); канон. αβγ 4–7 пС",
+  "pharmacology": "Амилорид IC50 ~100 нМ",
+  "kinetics": "Na⁺-селективный, конститутивно открытый; селективность Li⁺>Na⁺≫K⁺ (2:1:0.14).",
+  "function": "Солёный вкус + эпителиальный транспорт Na⁺; амилорид-чувствительный Na⁺-ток.",
+  "references": "PMID 12087134, PMID 8760127",
+  "note": "⚠️ Осмосенсор SFO/OVLT — это Naₓ (SCN7A), НЕ ENaC. ENaC — солёный вкус + эпителиальный транспорт Na⁺.",
+  "name_en": "ENaC epithelial Na⁺ channel",  "name_zh": "ENaC Na⁺通道",
+  "description_en": "Salty taste + epithelial Na⁺ transport; amiloride-sensitive Na⁺ current. γ=4–5 pS; amiloride IC50 ~100 nM.",
+  "description_zh": "咸味+上皮Na⁺转运；阿米洛利敏感性Na⁺电流。γ=4–5 pS；阿米洛利IC50 ~100 nM。"
+}

@@ -1,0 +1,15 @@
+{
+  "name": "α1B-адренорецептор",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 56,
+  "modifiers": [
+    {
+      "id": 56,
+      "name": "α1B-адренорецептор",
+      "category": "Метаботропные Gq/11",
+      "description": "Метаботропный адренорецептор α1B (Gq/11)",
+      "release": false
+    }
+  ]
+}

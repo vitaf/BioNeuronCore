@@ -1,0 +1,10 @@
+{
+  "type_id": 200,
+  "name": "Cav3.1 (CACNA1G) — T-type Ca²⁺",
+  "name_en": "Cav3.1 (CACNA1G) — T-type Ca²⁺",
+  "name_zh": "Cav3.1（CACNA1G）— T型Ca²⁺",
+  "category": "Ионные каналы",
+  "description": "Cav3.1 (CACNA1G/α1G) T-type Ca²⁺. γ=7.5 пС (slope conductance). Активация V½=−45 мВ, инактивация V½=−77 мВ (VDI, слабый CDI). Ингибиция: Ni²⁺ 250 µM (отличает от Cav3.2 ~13µM / Cav3.3 ~216µM), mibefradil, TTA-P2, Z944. Low-threshold burst (таламус/TRN).",
+  "description_en": "Cav3.1 (CACNA1G/α1G) T-type Ca²⁺. γ=7.5 pS. Activation V½=−45 mV, inactivation V½=−77 mV (VDI, weak CDI). Pharmacology: Ni²⁺ 250 µM (vs Cav3.2 ~13µM / Cav3.3 ~216µM), mibefradil, TTA-P2, Z944. Low-threshold burst (thalamus/TRN).",
+  "description_zh": "Cav3.1（CACNA1G/α1G）T型Ca²⁺。γ=7.5 pS。激活V½=−45 mV，失活V½=−77 mV（VDI，弱CDI）。药理：Ni²⁺ 250 µM（区别于Cav3.2 ~13µM / Cav3.3 ~216µM）、mibefradil、TTA-P2、Z944。低阈值爆发（丘脑/TRN）。"
+}

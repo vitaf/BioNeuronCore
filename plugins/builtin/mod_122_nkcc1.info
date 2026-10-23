@@ -1,0 +1,61 @@
+{
+  "id": 122,
+  "name": "NKCC1 — Na-K-2Cl котранспортёр",
+  "full_name": "Na-K-2Cl Cotransporter 1 (SLC12A2)",
+  "category": "Cl/K/Na homeostasis",
+  "description": "Электронейтральный Na-K-2Cl котранспортёр. Импортирует Cl⁻ используя Na⁺ градиент (создаваемый Na/K-АТФазой). Функциональный антагонист KCC2. Ключевой механизм онтогенетического Cl⁻ переключателя в развивающемся Xenopus: на ранних стадиях (22-31) NKCC1↑ [Cl⁻]i~25mM → GABA/глицин деполяризующие; на зрелых (33+) KCC2↑ [Cl⁻]i~5mM → гиперполяризующие.",
+  "electrogenic": false,
+  "ions": [
+    "Na+",
+    "K+",
+    "Cl-"
+  ],
+  "state_vars": [
+    {
+      "index": 0,
+      "name": "v_max",
+      "default": 0.001,
+      "unit": "mol/s/m²",
+      "description": "Максимальная скорость транспорта"
+    },
+    {
+      "index": 1,
+      "name": "Km_Na_i",
+      "default": 10.0,
+      "unit": "mM",
+      "description": "Константа Михаэлиса для внутриклеточного Na⁺"
+    },
+    {
+      "index": 2,
+      "name": "Km_K_i",
+      "default": 15.0,
+      "unit": "mM",
+      "description": "Константа Михаэлиса для внутриклеточного K⁺"
+    },
+    {
+      "index": 3,
+      "name": "Km_Cl_i",
+      "default": 50.0,
+      "unit": "mM",
+      "description": "Константа Михаэлиса для внутриклеточного Cl⁻"
+    },
+    {
+      "index": 4,
+      "name": "Km_Na_o",
+      "default": 0.5,
+      "unit": "mM",
+      "description": "Транс-стимуляция внеклеточным Na⁺"
+    },
+    {
+      "index": 5,
+      "name": "Km_K_o",
+      "default": 0.2,
+      "unit": "mM",
+      "description": "Транс-ингибирование внеклеточным K⁺"
+    }
+  ],
+  "name_en": "NKCC1 — Na-K-2Cl cotransporter",
+  "name_zh": "NKCC1 — Na-K-2Cl共转运体",
+  "description_en": "Electroneutral Na-K-2Cl cotransporter importing Cl⁻ using the Na⁺ gradient; functional antagonist of KCC2. Key to the ontogenetic Cl⁻ switch in Xenopus: early stages NKCC1↑ [Cl⁻]ᵢ~25 mM (GABA/glycine depolarizing), mature stages KCC2↑ [Cl⁻]ᵢ~5 mM (hyperpolarizing).",
+  "description_zh": "电中性Na-K-2Cl共转运体，利用Na⁺梯度摄取Cl⁻；KCC2的功能性拮抗剂。是Xenopus个体发育中Cl⁻转换的关键：早期NKCC1↑ [Cl⁻]ᵢ~25 mM（GABA/甘氨酸去极化），成熟期KCC2↑ [Cl⁻]ᵢ~5 mM（超极化）。"
+}

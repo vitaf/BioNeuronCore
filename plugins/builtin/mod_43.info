@@ -1,0 +1,19 @@
+{
+  "type_id": 43,
+  "name": "5-HT7",
+  "version": "1.0.0",
+  "category": "Метаботропные Gs",
+  "mechanism_type": "Метаботропный (G-белок Gs-связанный)",
+  "signaling": "Серотонин (5-HT) → 5-HT7 → Gs → ↑cAMP. Несколько сплайс-вариантов (a-d). Важен для циркадных ритмов, терморегуляции.",
+  "inputs": "neurotransmitter[NT_SEROTONIN]",
+  "outputs": "↑cAMP → PKA. Может также активировать Gα12 (RhoA).",
+  "neuron_types": "SCN (супрахиазматическое ядро — циркадные ритмы), таламус, гиппокамп, кора, amygdala, дорсальное ядро шва (DRN), гипоталамус.",
+  "subcellular": "Постсинаптические (SCN, гиппокампальные пирамидные нейроны). Пресинаптические (DRN).",
+  "kinetics": "K_D 5-HT ≈ 0.5-5 nM (высокая аффинность). Сплайс-варианты: 5-HT7(a-d). Агонисты: AS-19, LP-12. Антагонисты: SB-269970, JNJ-18038683. Атипичный антипсихотик арипипразол — частичный агонист 5-HT7.",
+  "function": "Регуляция циркадных ритмов (SCN — фазовый сдвиг). Терморегуляция (5-HT7 → снижение температуры тела). Настроение (5-HT7 блок → антидепрессантный эффект). Мишень для терапии депрессии и шизофрении.",
+  "references": "Hedlund P.B., Sutcliffe J.G. (2004) Functional, molecular and pharmacological advances in 5-HT7 receptor research. Trends Pharmacol Sci 25:481-486.",
+  "name_en": "5-HT7",
+  "name_zh": "5-HT7",
+  "description_en": "Regulates circadian rhythms (SCN phase-shift), thermoregulation and mood (5-HT7 block → antidepressant). Target for depression and schizophrenia.",
+  "description_zh": "调节昼夜节律（视交叉上核相位偏移）、体温调节和情绪（阻断 5-HT7 → 抗抑郁）。是抑郁症和精神分裂症的靶点。"
+}

@@ -1,0 +1,19 @@
+{
+  "type_id": 60,
+  "name": "mGluR1",
+  "version": "1.0.0",
+  "category": "Метаботропные Gq/11",
+  "mechanism_type": "Метаботропный (G-белок Gq/11-связанный)",
+  "signaling": "Глутамат → mGluR1 (Group I) → Gq/11 → PLCβ → IP3/DAG → ↑Ca²⁺ + PKC. Основной постсинаптический mGluR (вместе с mGluR5). Мозжечок: LTD в клетках Пуркинье.",
+  "inputs": "neurotransmitter[NT_GLUTAMATE]",
+  "outputs": "PLCβ → ↑IP3 (Ca²⁺-мобилизация) + ↑DAG (PKC). Мозжечок: PKCα-зависимое LTD в параллельных волокнах → клетках Пуркинье.",
+  "neuron_types": "Мозжечок (клетки Пуркинье — наивысшая), обонятельная луковица, таламус, гиппокамп (CA3 — limited), стриатум.",
+  "subcellular": "Постсинаптическая мембрана (перисинаптическая локализация). Дендриты клеток Пуркинье (параллельные волокна — синапсы).",
+  "kinetics": "EC50 глутамат ≈ 10-100 μM. Group I mGluR (с mGluR5). Конститутивные димеры (дисульфидная связь). PAM: Ro 67-7476. NAM: JNJ16259685, LY367385.",
+  "function": "Мозжечковая LTD (параллельные волокна → клетки Пуркинье) — моторное обучение. Синаптическая пластичность в ЦНС. Модуляция возбудимости. Мишень для терапии атаксий, боли, эпилепсии.",
+  "references": "Niswender C.M., Conn P.J. (2010), см. mGluR2.",
+  "name_en": "mGluR1",
+  "name_zh": "mGluR1",
+  "description_en": "Group I metabotropic glutamate receptor mGluR1 coupled to Gq/11, activating PLCβ to raise Ca²⁺ and PKC. Mediates cerebellar LTD at parallel fiber–Purkinje cell synapses.",
+  "description_zh": "I 组代谢型谷氨酸受体 mGluR1，偶联 Gq/11，激活 PLCβ 升高 Ca²⁺ 和 PKC。在小脑平行纤维–浦肯野细胞突触介导 LTD。"
+}

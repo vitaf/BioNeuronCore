@@ -1,0 +1,19 @@
+{
+  "type_id": 28,
+  "name": "A3",
+  "version": "1.0.0",
+  "category": "Метаботропные Gi/o",
+  "mechanism_type": "Метаботропный (G-белок Gi/o- и Gq/11-связанный)",
+  "signaling": "Аденозин → A3 → Gi/o (↓cAMP) + Gq/11 (↑IP3/DAG). Низкая аффинность к аденозину (high-K_m). Активируется при патологических концентрациях.",
+  "inputs": "neurotransmitter[NT_ADENOSINE]",
+  "outputs": "↓cAMP (Gi/o), ↑IP3/DAG (Gq/11), ↑Ca²⁺-мобилизация.",
+  "neuron_types": "Мозг: низкая экспрессия (гиппокамп, кора, таламус). Периферия: тучные клетки, эозинофилы, нейтрофилы (иммуномодуляция). Сердце, лёгкие.",
+  "subcellular": "Пре- и постсинаптические. Периферические иммунные клетки.",
+  "kinetics": "K_D аденозин ≈ 1 μM (low-affinity). Активируется при ишемии/воспалении (высокие концентрации аденозина). Агонисты: IB-MECA, Cl-IB-MECA.",
+  "function": "Противовоспалительное действие (тучные клетки). Кардиопротекция. Нейропротекция при ишемии. Потенциальная мишень для противораковой терапии.",
+  "references": "Borea P.A. et al. (2015) The A3 adenosine receptor: history and perspectives. Pharmacol Rev 67:74-102.",
+  "name_en": "A3",
+  "name_zh": "A3",
+  "description_en": "Anti-inflammatory action (mast cells), cardioprotection and neuroprotection in ischemia. Potential target for anticancer therapy.",
+  "description_zh": "抗炎作用（肥大细胞）、心脏保护和缺血时的神经保护。是抗癌治疗的潜在靶点。"
+}

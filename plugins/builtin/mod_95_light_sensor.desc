@@ -1,0 +1,15 @@
+{
+  "name": "Фоторецептор (pineal/eye spot)",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 95,
+  "modifiers": [
+    {
+      "id": 95,
+      "name": "Фоторецептор (pineal/eye spot)",
+      "category": "Сенсоры",
+      "description": "Фоторецептор головастика: фототрансдукционный каскад с CNG-каналом и адаптацией. Размещается на пинеальных фоторецепторах / глазных пятнах.",
+      "release": false
+    }
+  ]
+}

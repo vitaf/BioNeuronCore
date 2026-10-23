@@ -1,0 +1,19 @@
+{
+  "type_id": 88,
+  "name": "IKK/NF-kB Pathway",
+  "version": "1.0.0",
+  "category": "Консолидация/Реконсолидация",
+  "mechanism_type": "Сигнальный каскад реконсолидации: Ca²⁺ → IKK → фосфорилирование IkB → деградация IkB → NF-κB высвобождается → ядро → Zif268",
+  "signaling": "IKK/NF-κB — параллельный путь реконсолидации, отличный от MAPK/ERK. NMDA→Ca²⁺→IKK→фосфорилирование IkB→убиквитинирование→протеасомная деградация. NF-κB (p65/p50) высвобождается из цитоплазматического комплекса и транслоцируется в ядро, где активирует Zif268 (Egr1).",
+  "inputs": "intra_ions[Ca²⁺] (через NMDA-рецепторы, более низкий порог чем MAPK: Kd=0.3μM)",
+  "outputs": "pNFkB_nuclear — ядерный NF-κB (0..1). Используется потоком консолидации для активации Zif268 (НЕ c-Fos!).",
+  "neuron_types": "Все нейроны. NF-κB классически связан с иммунным ответом, но в нейронах играет ключевую роль в реконсолидации памяти.",
+  "subcellular": "Цитоплазма → ядро. В покое NF-κB заякорен на IkB в цитоплазме. При активации IKK фосфорилирует IkB → деградация → NF-κB свободен.",
+  "kinetics": "Ca²⁺→IKK: Михаэлис-Ментен, Kd=0.3μM, tau=2000ms. IKK→IkB деградация: tau=5000ms, минимальный IkB=0.1. NF-κB высвобождение: tau=10000ms. Ядерная транслокация: tau=20000ms.",
+  "function": "Реконсолидация — обновление существующей памяти. Классическая двойная диссоциация: консолидация=ERK→CREB, реконсолидация=IKK→NF-κB→Zif268. Блокировка IKK предотвращает обновление памяти, но не влияет на первичную консолидацию.",
+  "references": "Lee J.L. et al. (2013) Double dissociation of the requirement for ERK and IKK in consolidation vs reconsolidation of contextual fear memory. J Neurosci. Alberini C.M. (2009) Transcription factors in long-term memory and synaptic plasticity. Physiol Rev 89:121-145.",
+  "name_en": "IKK/NF-kB Pathway",
+  "name_zh": "IKK/NF-kB 通路",
+  "description_en": "IKK/NF-κB pathway for memory reconsolidation: Ca²⁺→IKK→IκB degradation→NF-κB nuclear translocation→Zif268. Distinct from ERK-mediated consolidation.",
+  "description_zh": "记忆再巩固的 IKK/NF-κB 通路：Ca²⁺→IKK→IκB 降解→NF-κB 核转位→Zif268。不同于 ERK 介导的巩固。"
+}

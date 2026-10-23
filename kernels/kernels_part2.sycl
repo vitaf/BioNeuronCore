@@ -1,0 +1,185 @@
+#include <sycl/sycl.hpp>
+#include "types.h"
+#include "kernel_dispatch.h"
+#include "run_tick_common.h"
+#include "modifier_helpers.h"
+#include "delay_buffer.h"
+
+// Xorshift32 RNG для вероятностного выброса (device-совместимый, без состояния)
+static inline float xorshift32_rnd(uint32_t seed) {
+    uint32_t x = seed;
+    x ^= x << 13;
+    x ^= x >> 17;
+    x ^= x << 5;
+    return (float)(x & 0x7FFFFFFFu) / (float)0x7FFFFFFFu;
+}
+
+// Ядро 4: синаптические токи — выброс, модуляция, постсинаптический ответ, клиренс
+void compute_synaptic_currents(sycl::queue& q, Segment* segs, Synapse* syns,
+                                uint32_t K, uint32_t num_segs, uint8_t mode, uint64_t tick, float dt,
+                                DelayedRelease* delay_buffer,
+                                uint32_t* glial_indices, uint32_t glial_count) {
+    q.parallel_for(sycl::range<1>(K), [=](sycl::id<1> i) {
+        Synapse* syn = &syns[i];
+        if (syn->pre_segment >= num_segs || syn->post_segment >= num_segs) return;  // bounds check
+        Segment* pre = &segs[syn->pre_segment];
+        Segment* post = &segs[syn->post_segment];
+
+        // Электрический синапс (gap junction): быстрый Vj-гейт + медленный Ca²⁺/CaM-гейт
+        if (syn->type != SYNAPSE_TYPE_CHEMICAL) {
+            float Vj = pre->V_m - post->V_m;
+
+            // Медленный Ca²⁺/CaM-гейт (single-source: gap_junction_cam_update)
+            float m_slow = gap_junction_cam_update(syn->depression,
+                                                   pre->intra_ions[ION_CA], post->intra_ions[ION_CA], dt);
+            syn->depression = m_slow;
+
+            // Эффективная проводимость (single-source: gap_junction_g_eff)
+            float g_eff = gap_junction_g_eff(pre, post, m_slow, Vj);
+            float I_gap_raw = g_eff * Vj;
+
+            // Gap junction delay (RC-фильтр первого порядка, tau=delay_ms)
+            float I_gap = I_gap_raw;
+            if (syn->delay > 0.001f) {
+                I_gap = syn->cleft_neurotransmitter[0];
+                I_gap += (I_gap_raw - I_gap) * dt / syn->delay;
+                syn->cleft_neurotransmitter[0] = I_gap;
+            }
+
+            sycl::atomic_ref<double, sycl::memory_order::relaxed,
+                              sycl::memory_scope::device> pre_ref(pre->I_buffer);
+            sycl::atomic_ref<double, sycl::memory_order::relaxed,
+                              sycl::memory_scope::device> post_ref(post->I_buffer);
+            if (I_gap == I_gap) {  // NaN guard: Vj*g_eff may be NaN if Vj corrupted
+                pre_ref.fetch_add(-I_gap);
+                post_ref.fetch_add(I_gap);
+            }
+            return;
+        }
+
+        // ── Обработка задержанных выбросов (до проверки pre-spike) ──
+        if (syn->delay > 0.0f && delay_buffer) {
+            DelayedRelease* slots = &delay_buffer[i * MAX_DELAY_SLOTS];
+            process_delayed_releases(slots, MAX_DELAY_SLOTS, tick, syn->cleft_neurotransmitter);
+        }
+
+        // ── RRP recovery (везикулярная динамика, BION v7) ──────────
+        rrp_do_recovery(syn, pre, dt);
+
+        // ── Пресинаптический микродомен Ca²⁺ (бутон, single-source) ──
+        bouton_ca_step(pre, syn, dt);
+
+        // Ca²⁺-зависимый выброс (синаптотагмин, Hill n=4) — по bouton_Ca, НЕ V_m-порог
+        if (syn->refractory == 0) {
+            float Ca_uM = syn->bouton_Ca * MM_TO_UM;
+            float ca_act = sycl::pow(Ca_uM, SYT_HILL) /
+                           (sycl::pow(Ca_uM, SYT_HILL) + sycl::pow(SYT_KD_UM, SYT_HILL));
+            float p = syn->release_probability * ca_act;  // БЕЗ (1+fac)/(1+dep) — поля хранят BCM-пластичность (паритет CPU:422)
+
+            // Применение пресинаптических модуляторов (авторецепторов)
+            for (int j = 0; j < syn->pre_autoreceptor_count; j++) {
+                Modifier* ar = &syn->pre_autoreceptors[j];
+                ar->state[7] = syn->pre_area;
+                float mod = dispatch_release_modulator(mode, ar->type, ar,
+                                                        syn->cleft_neurotransmitter, dt);
+                p *= mod;
+            }
+
+            // Вероятностный выброс: xorshift32 с seed = id ^ tick ^ V_m
+            uint32_t seed = syn->id ^ ((uint32_t)tick) ^ ((uint32_t)(pre->V_m * 1000.0f));
+            if (xorshift32_rnd(seed) < p) {
+                // Определяем нейромедиатор по типу рецептора
+                uint8_t nt_type = NT_GLUTAMATE;
+                if (syn->post_receptor_count > 0) {
+                    uint8_t rt = syn->post_receptors[0].type;
+                    if (rt == MOD_NT_RECEPTOR_GABAA || rt == MOD_NT_RECEPTOR_GABAB)
+                        nt_type = NT_GABA;
+                    else if (rt == MOD_NT_RECEPTOR_GLYCINE)
+                        nt_type = NT_GLYCINE;
+                    else if (rt == MOD_NT_RECEPTOR_5HT3)
+                        nt_type = NT_SEROTONIN;
+                    else if (rt == MOD_NT_RECEPTOR_NICOTINIC)
+                        nt_type = NT_ACETYLCHOLINE;
+                }
+                float release_amt = rrp_do_release(syn, syn->release_amount, p);
+                uint64_t delay_ticks = delay_ms_to_ticks(syn->delay, dt);
+                if (delay_ticks > 0 && delay_buffer) {
+                    DelayedRelease* slots = &delay_buffer[i * MAX_DELAY_SLOTS];
+                    enqueue_delayed_release(slots, MAX_DELAY_SLOTS,
+                                            tick + delay_ticks, release_amt, nt_type);
+                } else {
+                    syn->cleft_neurotransmitter[nt_type] += release_amt;
+                }
+                syn->refractory = (uint32_t)(20.0f / dt + 0.5f);  // 20 мс рефрактерность в тиках (dt-инвариантно, паритет CPU:452)
+            }
+        }
+
+        // Перенос нейромедиатора из щели на постсегмент (атомарное накопление)
+        for (int n = 0; n < NT_COUNT; n++) {
+            float val = syn->cleft_neurotransmitter[n];
+            if (val == val && val >= 0.0f) {  // NaN guard + negative clamp
+                sycl::atomic_ref<float, sycl::memory_order::relaxed,
+                                  sycl::memory_scope::device> nt_ref(post->neurotransmitter[n]);
+                nt_ref.fetch_add(val);
+            }
+        }
+
+        // ── Глиальный захват NT (посегментная связь, паритет с CPU step 3) ──
+        // Глутамат/глицин/GABA из щели → ближайшая глиальная клетка (по position.z),
+        // где их утилизируют GLAST/GlyT1/GAT3 (шаг 1). Заменяет tau_clearance.
+        if (glial_count > 0) {
+            for (int k = 0; k < 3; k++) {
+                int n = (k == 0) ? NT_GLUTAMATE : (k == 1) ? NT_GLYCINE : NT_GABA;
+                float nt_val = syn->cleft_neurotransmitter[n];
+                if (nt_val <= 0.0f) continue;
+                float best_dz = 1e30f;
+                uint32_t best_g = glial_indices[0];
+                for (uint32_t gi = 0; gi < glial_count; gi++) {
+                    float dz = sycl::fabs(segs[glial_indices[gi]].position.z - post->position.z);
+                    if (dz < best_dz) { best_dz = dz; best_g = glial_indices[gi]; }
+                }
+                // rate-limited захват (паритет CPU:477): capture = cleft × (1−e^(−dt/τ)), НЕ мгновенный cleft=0
+                float tau = (syn->tau_clearance > 0.0f) ? syn->tau_clearance : 5.0f;
+                float capture = nt_val * (1.0f - sycl::exp(-dt / tau));
+                sycl::atomic_ref<float, sycl::memory_order::relaxed,
+                                  sycl::memory_scope::device> gl_ref(segs[best_g].neurotransmitter[n]);
+                gl_ref.fetch_add(capture);
+                syn->cleft_neurotransmitter[n] = nt_val - capture;
+            }
+        }
+
+        // Вычисление постсинаптических токов через рецепторы
+        bool myelinated_post = segment_has_myelin(post);
+        double I_syn = 0.0;
+        for (int j = 0; j < syn->post_receptor_count; j++) {
+            uint8_t rtype = syn->post_receptors[j].type;
+            if (myelinated_post && is_ionotropic_type(rtype))
+                continue;
+            syn->post_receptors[j].state[7] = syn->post_area;
+            I_syn += dispatch_modifier_current(mode, rtype,
+                                                &syn->post_receptors[j], post, dt);
+        }
+
+        // Атомарное накопление тока в I_buffer постсегмента
+        if (I_syn == I_syn) {  // NaN guard: dispatch_modifier_current may return NaN
+            sycl::atomic_ref<double, sycl::memory_order::relaxed,
+                              sycl::memory_scope::device> ref(post->I_buffer);
+            ref.fetch_add(I_syn);
+        }
+
+        spine_ca_step(syn, I_syn, dt);  // Ca²⁺ шипика из постсинаптического тока (локально)
+
+        // Клиренс нейромедиатора из щели (экспоненциальный спад)
+        // Глутамат/глицин/GABA — НЕ через tau_clearance, ЕСЛИ есть глия (забраны выше).
+        for (int n = 0; n < NT_COUNT; n++) {
+            if ((n == NT_GLUTAMATE || n == NT_GLYCINE || n == NT_GABA) && glial_count > 0) continue;
+            syn->cleft_neurotransmitter[n] *= sycl::exp(-dt / syn->tau_clearance);
+            if (syn->cleft_neurotransmitter[n] < 0.0f) syn->cleft_neurotransmitter[n] = 0.0f;
+        }
+
+        // Рефрактерный период
+        if (syn->refractory > 0) {
+            syn->refractory--;
+        }
+    });
+}

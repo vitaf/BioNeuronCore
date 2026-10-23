@@ -1,0 +1,19 @@
+{
+  "type_id": 40,
+  "name": "MT2",
+  "version": "1.0.0",
+  "category": "Метаботропные Gi/o",
+  "mechanism_type": "Метаботропный (G-белок Gi/o-связанный)",
+  "signaling": "Мелатонин → MT2 → Gi/o (↓cAMP) + Gq/11 (↑IP3/DAG). Рецептор мелатонина с двойным G-белковым сопряжением.",
+  "inputs": "Мелатонин (гормон эпифиза)",
+  "outputs": "↓cAMP (Gi/o), ↑IP3/DAG (Gq/11), модуляция фазы циркадных ритмов.",
+  "neuron_types": "SCN (супрахиазматическое ядро), сетчатка (горизонтальные, амакриновые клетки), гиппокамп, мозжечок, сосуды (эндотелий).",
+  "subcellular": "SCN нейроны. Сосудистый эндотелий (вазодилатация через NO).",
+  "kinetics": "K_D мелатонин ≈ 0.1-0.5 nM. Двойное G-белковое сопряжение: Gi/o и Gq/11. Регуляция фазового сдвига циркадных ритмов (phase-shift).",
+  "function": "Фазовый сдвиг циркадных ритмов (ре-синхронизация при jet lag). Регуляция dopamine release в сетчатке. Вазодилатация (эндотелий-зависимая). Сезонная репродукция.",
+  "references": "Dubocovich M.L. (2007) Melatonin receptors: role on sleep and circadian rhythm regulation. Sleep Med 8(Suppl 3):34-42.",
+  "name_en": "MT2",
+  "name_zh": "MT2",
+  "description_en": "Mediates phase-shift of circadian rhythms (re-synchronization in jet lag), regulates dopamine release in the retina and vasodilation.",
+  "description_zh": "介导昼夜节律的相位偏移（时差中的再同步）、调节视网膜多巴胺释放和血管扩张。"
+}

@@ -1,0 +1,23 @@
+{
+  "type_id": 179,
+  "name": "TRPC6/7 канал фотопроводимости ipRGC",
+  "version": "1.0.0",
+  "category": "TRP channel",
+  "mechanism_type": "Ионотропный (DAG-гейт, неселективный катионный)",
+  "signaling": "Прямой неселективный катионный поток (P_Ca/P_Na ≈5–5.4).",
+  "inputs": "V_m, DAG (Gq/PLC), intra/extra Ca²⁺/Na⁺",
+  "outputs": "I_cation → I_buffer. Повышает внутриклеточный Ca²⁺ и Na⁺.",
+  "neuron_types": "Интринсически фоточувствительные ганглиозные клетки сетчатки (ipRGC).",
+  "subcellular": "Сома/дендриты ipRGC (гетеромерный TRPC6-содержащий комплекс).",
+  "gating": "DAG напрямую (Gq/PLC-связь); слабое выпрямление",
+  "ions": "Ca2+, Na+",
+  "gamma": "TRPC6 ~35 пС (28–37); TRPC7 25–75 пС",
+  "pharmacology": "SKF96365",
+  "kinetics": "P_Ca/P_Na: TRPC6 ≈5, TRPC7 2–5.4. Слабое выпрямление, DAG-активация.",
+  "function": "Канал фотопроводимости ipRGC; DAG-опосредованная деполяризация при свете.",
+  "references": "PMID 21261756",
+  "note": "⚠️ ipRGC-ответ НЕ гомомер TRPC6/7 — гетеромерный TRPC6-содержащий комплекс. Субтипы: M1=TRPC6/7, M2=TRPC+T-type, M4=закрытие K-утечки.",
+  "name_en": "TRPC6/7 ipRGC phototransduction channel",  "name_zh": "TRPC6/7 通道",
+  "description_en": "ipRGC phototransduction channel; DAG-mediated depolarization upon light. TRPC6 γ~35 pS.",
+  "description_zh": "ipRGC光转导通道；光照时DAG介导的去极化。TRPC6 γ~35 pS。"
+}

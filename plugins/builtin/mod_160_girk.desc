@@ -1,0 +1,15 @@
+{
+  "name": "GIRK (Kir3.x) — Gβγ-активируемый inward-rectifier K⁺",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 160,
+  "modifiers": [
+    {
+      "id": 160,
+      "name": "GIRK (Kir3.x) — Gβγ-активируемый inward-rectifier K⁺",
+      "category": "Базовые модификаторы",
+      "description": "GIRK (Kir3.1/3.2/3.4, KCNJ3/6/9) Gβγ-зависимый inward-rectifier K⁺. γ=35 пС (30–40 пС), НЕ V-зависимый. GHK K⁺ (z=1). tertiapin-Q IC50 8 нМ.",
+      "release": false
+    }
+  ]
+}

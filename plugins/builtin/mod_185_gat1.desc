@@ -1,0 +1,1 @@
+{"id":185,"name":"GAT1 — нейрональный транспортер GABA","category":"Базовые модификаторы","description":"Нейрональный транспортер GABA (SLC6A1). 2 Na⁺ + 1 Cl⁻ + GABA внутрь (net +1). Michaelis-Menten K_m≈7 µM. Пресинаптический reuptake GABA-ергических нейронов.","params":{"km_rel":4.7,"imax_ua_cm2":2},"bio_ref":"SLC6A1","bio_role":"Нейрональный захват GABA → клиренс синапса"}

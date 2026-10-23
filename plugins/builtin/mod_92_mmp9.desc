@@ -1,0 +1,15 @@
+{
+  "name": "MMP-9 (ECM Remodeling)",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 92,
+  "modifiers": [
+    {
+      "id": 92,
+      "name": "MMP-9 (ECM Remodeling)",
+      "category": "Consolidation/Reconsolidation",
+      "description": "MMP-9 — matrix metalloproteinase, ECM remodeling. ERK+NF-kB->MMP-9 transcription->ECM degradation. TIMP inhibits. Integrins sense ECM stiffness. Clears territory for structural plasticity.",
+      "release": false
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "name": "TRPM7 chanzyme",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 211,
+  "modifiers": [
+    {
+      "id": 211,
+      "name": "TRPM7",
+      "category": "Ионные каналы",
+      "description": "TRPM7 chanzyme (γ=40 пС, P_Ca/P_Na=0.34, Mg²⁺-ингибируемый). GHK Na+Ca, NS8593 1.6 µM.",
+      "release": false
+    }
+  ]
+}

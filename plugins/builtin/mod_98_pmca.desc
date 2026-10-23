@@ -1,0 +1,15 @@
+{
+  "name": "PMCA Ca²⁺-АТФаза",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 98,
+  "modifiers": [
+    {
+      "id": 98,
+      "name": "PMCA Ca²⁺-АТФаза",
+      "category": "Гомеостаз Ca²⁺",
+      "description": "PMCA: Ca²⁺-АТФаза плазмалеммы, ATP-зависимый выброс 1 Ca²⁺",
+      "release": false
+    }
+  ]
+}

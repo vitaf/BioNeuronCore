@@ -1,0 +1,11 @@
+{
+  "type_id": 154,
+  "name": "Kv1.3 (KCNA3) delayed-rectifier K⁺",
+  "name_en": "Kv1.3 (KCNA3) delayed-rectifier K+",
+  "name_zh": "Kv1.3 延迟整流钾通道",
+  "version": "1.0.0",
+  "category": "Ионные каналы",
+  "description": "Kv1.3 (KCNA3) delayed-rectifier K⁺: γ=14–24 пС, V½≈−30 мВ, m⁴, GHK K⁺. Fadool 2011.",
+  "description_en": "Kv1.3 (KCNA3) delayed-rectifier K⁺ channel: γ=14–24 pS, V½≈−30 mV, m⁴, GHK K⁺. Fadool 2011.",
+  "description_zh": "Kv1.3（KCNA3）延迟整流K⁺通道：γ=14–24 pS，V½≈−30 mV，m⁴，GHK K⁺。Fadool 2011。"
+}

@@ -1,0 +1,19 @@
+{
+  "type_id": 4,
+  "name": "Миелинизация",
+  "version": "1.0.0",
+  "category": "Базовые модификаторы",
+  "mechanism_type": "Структурный (не генерирует ток)",
+  "signaling": "Блокирует ионотропные модификаторы на сегменте. Снижает эффективную ёмкость мембраны в 100× (C_m = C_m / 100). Проверка: is_ionotropic_type() && segment_has_myelin() → skip.",
+  "inputs": "Тип модификатора (проверка через segment_has_myelin() в цикле симуляции)",
+  "outputs": "Блокирует Na⁺, K⁺, Ca²⁺, Cl⁻ каналы и ионотропные рецепторы. Снижает C_m. Исключение: MOD_MYELIN сам не блокируется.",
+  "neuron_types": "Все миелинизированные нейроны. ЦНС: олигодендроциты. ПНС: шванновские клетки.",
+  "subcellular": "Аксон (междоузлия, internodes). Отсутствует в перехватах Ранвье (nodes of Ranvier), соме и дендритах. Длина междоузлия пропорциональна диаметру аксона.",
+  "kinetics": "Не содержит кинетических уравнений. Флаговая проверка в цикле симуляции. Модификатор-маркер: наличие MOD_MYELIN на сегменте = миелинизирован.",
+  "function": "Электрическая изоляция аксона. Обеспечивает сальтаторную проводимость: потенциал действия «перескакивает» между перехватами Ранвье (скорость до 150 м/с). Критичен для быстрой передачи сигналов в ЦНС и ПНС.",
+  "references": "Hartline D.K., Colman D.R. (2007) Rapid conduction and the evolution of giant axons and myelinated fibers. Curr Biol 17:R29-R35.",
+  "name_en": "Myelination",
+  "name_zh": "髓鞘化",
+  "description_en": "Electrically insulates the axon and enables saltatory conduction: the action potential jumps between nodes of Ranvier (up to 150 m/s). Critical for fast signaling in the CNS and PNS.",
+  "description_zh": "对轴突进行电绝缘并实现跳跃式传导：动作电位在郎飞结之间跳跃（速度可达 150 m/s）。对中枢和外周神经系统的快速信号传递至关重要。"
+}

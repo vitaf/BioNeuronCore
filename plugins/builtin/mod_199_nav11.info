@@ -1,0 +1,10 @@
+{
+  "type_id": 199,
+  "name": "Nav1.1 (SCN1A) — transient Na⁺ (repetitive)",
+  "name_en": "Nav1.1 (SCN1A) — transient Na⁺ (repetitive)",
+  "name_zh": "Nav1.1（SCN1A）— 瞬时Na⁺（重复放电）",
+  "category": "Voltage-gated Na",
+  "description": "Nav1.1 (SCN1A) — млекопитающий transient Na⁺, repetitive. Для fast-spiking PV⁺-интернейронов, проприоцепторов (статика), тригеминального ганглия (Xenopus TG — только scn1a, Armisén 2002), таламуса. m³h: активация V½=−30 мВ, инактивация V½=−65 мВ. Быстрый однофазный recovery (repetitive). γ=17 пС (Vanoye 2006).",
+  "description_en": "Nav1.1 (SCN1A) — mammalian transient Na⁺, repetitive. For fast-spiking PV⁺ interneurons, proprioceptors (static), trigeminal ganglion (Xenopus TG — scn1a only, Armisén 2002), thalamus. m³h: activation V½=−30 mV, inactivation V½=−65 mV. Fast monophasic recovery (repetitive). γ=17 pS (Vanoye 2006).",
+  "description_zh": "Nav1.1（SCN1A）— 哺乳动物瞬时Na⁺，重复放电。用于快放电PV⁺中间神经元、本体感受器（静态）、三叉神经节（爪蟾TG仅scn1a，Armisén 2002）、丘脑。m³h：激活V½=−30 mV，失活V½=−65 mV。快速单相恢复（重复放电）。γ=17 pS（Vanoye 2006）。"
+}

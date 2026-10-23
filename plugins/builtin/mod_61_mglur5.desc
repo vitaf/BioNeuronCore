@@ -1,0 +1,15 @@
+{
+  "name": "mGluR5-рецептор",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 61,
+  "modifiers": [
+    {
+      "id": 61,
+      "name": "mGluR5-рецептор",
+      "category": "Метаботропные Gq/11",
+      "description": "Метаботропный глутаматный рецептор mGluR5 (Gq/11) — IP3/DAG, постсинаптический",
+      "release": false
+    }
+  ]
+}

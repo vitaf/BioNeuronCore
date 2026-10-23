@@ -1,0 +1,19 @@
+{
+  "type_id": 96,
+  "name": "T-type Ca²⁺ (Cav3) — фазический отскок",
+  "version": "1.0.0",
+  "category": "PIR / CPG ритмогенез",
+  "mechanism_type": "Ионотропный Ca²⁺ канал (низкопороговый, потенциал-зависимый)",
+  "signaling": "Деинактивируется гиперполяризацией ниже -75 mV. При реполяризации открывается на 50-150 ms, создавая деполяризующий Ca²⁺ ток (E_Ca=+120 mV). Инактивируется при V_m > -40 mV. Кальций-зависимая инактивация (CDI).",
+  "inputs": "V_m, intra_ions[Ca²⁺] (CDI), extra_ions[Ca²⁺]",
+  "outputs": "I_CaT — деполяризующий Ca²⁺ ток. Увеличивает intra_ions[Ca²⁺]. GHK-поток Ca²⁺ с селективностью P_Ca/P_Na=1000:1.",
+  "neuron_types": "dIN (сильная экспрессия: Cav3.2, плотность 0.7-0.8). cIN (умеренная: Cav3.1, 0.2-0.3). Таламические релейные нейроны (Cav3.3, burst firing). dlc_MHR (Cav3.2, rebound bursting).",
+  "subcellular": "Сома и проксимальные дендриты. Высокая плотность в AIS (аксонный начальный сегмент) для rebound-спайков.",
+  "kinetics": "V_half_act=-45mV, k_act=5mV. V_half_inact=-70mV, k_inact=-7mV. tau_act=2-5ms, tau_deinact=50-80ms, tau_inact=15-30ms. phi (Q10=2.5). CDI: K_d=0.0005mM.",
+  "function": "Совместно с HCN/Ih (97) создаёт постингибирующий отскок (PIR). T-Ca обеспечивает быстрый Ca²⁺-спайк, HCN — медленную деполяризацию. Без T-Ca PIR амплитуда недостаточна для достижения порога Na⁺-спайка.",
+  "references": "Perez-Reyes E. (2003) Molecular physiology of low-voltage-activated T-type calcium channels. Physiological Reviews 83:117-161. Picton L.D. et al. (2018) Current Biology 28(24):3911-3923. Cueni L. et al. (2008) T-type Ca²⁺ channels, SK2 channels and SERCAs gate sleep-related oscillations in thalamic dendrites. Nature Neuroscience 11:683-692.",
+  "name_en": "T-type Ca²⁺ (Cav3) — phasic rebound",
+  "name_zh": "T型 Ca²⁺ (Cav3) — 相位反弹",
+  "description_en": "Low-threshold T-type Ca²⁺ channel (Cav3) that deinactivates below −75 mV and opens on repolarization to drive rebound spikes. Together with HCN generates post-inhibitory rebound.",
+  "description_zh": "低阈值 T 型 Ca²⁺ 通道（Cav3），在 −75 mV 以下去失活，复极化时开放以驱动反弹峰电位。与 HCN 一起产生抑制后反弹。"
+}

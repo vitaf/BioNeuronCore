@@ -1,0 +1,15 @@
+{
+  "name": "SK Ca²⁺-активируемый K⁺",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 103,
+  "modifiers": [
+    {
+      "id": 103,
+      "name": "SK Ca²⁺-активируемый K⁺",
+      "category": "Ca-activated K",
+      "description": "SK (KCa2.x): Ca²⁺-активируемый K⁺, AHP, Hill n=4, GHK",
+      "release": false
+    }
+  ]
+}

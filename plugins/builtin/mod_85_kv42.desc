@@ -1,0 +1,15 @@
+{
+  "name": "Kv4.2 A-type K+",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 85,
+  "modifiers": [
+    {
+      "id": 85,
+      "name": "Kv4.2 A-type K+",
+      "category": "STDP Cascade",
+      "description": "A-type K+ channel (Kv4.2). Activation m³ (V½=−10 мВ), fast N-type inactivation (V½=−65 мВ). γ=5 пС. CaMKII phosphorylation reduces conductance (0-70%). GHK flux for K+ (z=1). Reduces dendritic excitability; LTP-support via CaMKII modulation.",
+      "release": false
+    }
+  ]
+}

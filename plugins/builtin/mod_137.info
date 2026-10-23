@@ -1,0 +1,19 @@
+{
+  "type_id": 137,
+  "name": "PKC — протеинкиназа C (DAG+Ca²⁺)",
+  "version": "1.0.0",
+  "category": "Сигнальные каскады",
+  "mechanism_type": "киназа (сигнальный, без тока)",
+  "signaling": "DAG (C1-домен) + Ca²⁺ (C2-домен) → конформационная активация → фосфорилирование Ser/Thr мишеней",
+  "inputs": "DAG (из MOD_PLC_IP3_DAG), цитозольный Ca²⁺",
+  "outputs": "PKC-активность (state[0], 0-1)",
+  "neuron_types": "широко (кортикальные, стриатальные, гиппокампальные)",
+  "subcellular": "плазмалемма (транслокация из цитозоля)",
+  "kinetics": "PKC = DAG/(DAG+K_d_DAG) × Ca²⁺/(Ca²⁺+K_d_Ca²⁺) — мультипликативно, классическая PKC (нужны оба)",
+  "function": "Активируется DAG + Ca²⁺. Фосфорилирует Kv7/KCNQ (M-ток) → подавление проводимости → повышение возбудимости (классический Gq-эффект).",
+  "references": "Nishizuka 1984 (PKC); Newton 2018 (PKC домены C1/C2); Chen-Goodspeed 2005 (Gq→PLC)",
+  "name_en": "PKC — protein kinase C (DAG+Ca²⁺)",
+  "name_zh": "PKC — 蛋白激酶C（DAG+Ca²⁺）",
+  "description_en": "Protein kinase C activated multiplicatively by DAG (C1 domain) and Ca²⁺ (C2 domain): PKC = DAG/(DAG+K_d_DAG) × Ca²⁺/(Ca²⁺+K_d_Ca²⁺). Phosphorylates Kv7/KCNQ (M-current) to suppress conductance and increase excitability.",
+  "description_zh": "蛋白激酶C，由DAG（C1结构域）和Ca²⁺（C2结构域）相乘激活：PKC = DAG/(DAG+K_d_DAG) × Ca²⁺/(Ca²⁺+K_d_Ca²⁺)。磷酸化Kv7/KCNQ（M电流）以抑制电导并提高兴奋性。"
+}

@@ -1,0 +1,15 @@
+{
+  "name": "NB_GABAB_Destexhe",
+  "version": "1.0.0",
+  "author": "BioNeuronCore (Destexhe 1998)",
+  "type_id": 74,
+  "modifiers": [
+    {
+      "id": 74,
+      "name": "NB_GABAB_Destexhe",
+      "category": "NB_-Destexhe",
+      "description": "GABA-B-рецептор с damped oscillator кинетикой (Destexhe 1998): 2 состояния (G,z), τ₁=200.1, τ₂=200.0, G_syn=0.007, E=-75mV",
+      "release": false
+    }
+  ]
+}

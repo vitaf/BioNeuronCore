@@ -1,0 +1,19 @@
+{
+  "type_id": 1,
+  "name": "Cav1.3 L-type Ca²⁺",
+  "version": "1.0.0",
+  "category": "Базовые модификаторы",
+  "mechanism_type": "Ионотропный (потенциал-зависимый)",
+  "signaling": "Прямой ионный поток Ca²⁺ внутрь клетки (GHK, z=2).",
+  "inputs": "V_m, intra_ions[Ca²⁺], extra_ions[Ca²⁺]",
+  "outputs": "I_Ca → I_buffer. Повышает внутриклеточный Ca²⁺.",
+  "neuron_types": "Пейсмейкерные нейроны (CPG dIN/cIN, SAN, дофаминовые SNc).",
+  "subcellular": "Соматодендритный L-type (Ca_v1.3).",
+  "kinetics": "Активация m² (V½=−35 мВ, k=7, tau_m=2 мс), инактивация h (V½=−52 мВ, k=8, tau_h=100 мс) + слабая CDI (Kd=3 µM). GHK для Ca²⁺ (z=2), P = γ·RT/(4F²·c_ref) = 25 пС · 6.93e-18. Ионный перенос: intra/extra Ca²⁺ через 2F·vol.",
+  "function": "Поддерживает плато-потенциалы и пейсмейкерную активность CPG; Ca²⁺-вход для SK/BK, пластичности, транскрипции.",
+  "references": "Xu & Lipscombe (2001) J Neurosci 21:5944; Koschak et al. (2001) J Biol Chem 276:22100.",
+  "name_en": "Cav1.3 L-type Ca²⁺",
+  "name_zh": "Cav1.3 L-type Ca²⁺",
+  "description_en": "Sustains plateau potentials and CPG pacemaker activity; provides Ca²⁺ entry for SK/BK channels, plasticity and transcription. L-type channel with activation V½=−35 mV and inactivation V½=−52 mV.",
+  "description_zh": "维持平台电位和 CPG 起搏活动；为 SK/BK 通道、可塑性和转录提供 Ca²⁺ 内流。L 型通道，激活 V½=−35 mV，失活 V½=−52 mV。"
+}

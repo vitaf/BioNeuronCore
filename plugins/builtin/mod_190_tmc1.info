@@ -1,0 +1,18 @@
+{
+  "type_id": 190,
+  "name": "TMC1/TMC2 (MET канал стереоцилий)",
+  "version": "1.0.0",
+  "category": "Ионные каналы",
+  "mechanism_type": "Механочувствительный ионный канал (mechanoelectrical transduction)",
+  "signaling": "Сдвиг пучка стереоцилий → натяжение tip-link → Po (базальная 10% + Hill). GHK: Ca²⁺>Na⁺ (P_Ca/P_Na≈3.8, γ=80 пС).",
+  "inputs": "state[4] — сдвиг пучка (0..1, VirtualBody-мост). intra/extra_ions[Ca²⁺,Na⁺].",
+  "outputs": "I_Ca + I_Na → I_buffer. Деполяризует волосковую клетку (Ca²⁺-зависимая адаптация).",
+  "neuron_types": "Волосковые клетки (inner/outer hair cells), стереоцилии.",
+  "subcellular": "Стереоцилии (верхушки).",
+  "kinetics": "Активация суб-мс (τ_act 30–400 µs), fast адаптация Ca²⁺-зависимая τ~2 мс, slow (myosin) τ 10–30 мс.",
+  "function": "Механотрансдукция слуха/равновесия: сдвиг пучка → деполяризация → выброс глутамата.",
+  "references": "Pan 2013 Neuron 79:504 (PMID 23871232); Beurg 2015 (PMID 25389310); Ricci 2002 (PMID 11929895).",
+  "name_en": "TMC1/TMC2 (MET channel)",  "name_zh": "TMC1/TMC2 (机械电转导通道)",
+  "description_en": "Mechanotransduction of hearing/balance: bundle deflection → depolarization → glutamate release. P_Ca/P_Na≈3.8; γ=80 pS.",
+  "description_zh": "听觉/平衡的机械转导：纤毛束偏转→去极化→谷氨酸释放。P_Ca/P_Na≈3.8；γ=80 pS。"
+}

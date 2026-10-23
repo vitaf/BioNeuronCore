@@ -1,0 +1,19 @@
+{
+  "type_id": 51,
+  "name": "TAAR1",
+  "version": "1.0.0",
+  "category": "Метаботропные Gs",
+  "mechanism_type": "Метаботропный (G-белок Gs/Gq-связанный)",
+  "signaling": "Следовые амины (β-PEA, тирамин, октопамин), метамфетамин → TAAR1 → Gs (↑cAMP) + Gq (↑IP3) + β-аррестин. Внутриклеточная локализация (не на мембране!). Необычный GPCR — активируется изнутри клетки.",
+  "inputs": "Следовые амины (trace amines), амфетамины, метамфетамин, тирамин",
+  "outputs": "↑cAMP (Gs), ↑IP3 (Gq). Модуляция дофаминового транспорта (DAT), серотонинового (SERT), норадреналинового (NET) — интернализация транспортеров.",
+  "neuron_types": "VTA (дофаминовые нейроны), substantia nigra, DRN (dorsal raphe nucleus — серотониновые нейроны), LC (locus coeruleus — норадренергические), префронтальная кора, amygdala, гиппокамп, стриатум.",
+  "subcellular": "Внутриклеточная (эндоплазматический ретикулум, цитоплазма). Не плазматическая мембрана! Агонисты должны проникать в клетку (transport-зависимый доступ).",
+  "kinetics": "EC50 β-PEA ≈ 0.1-1 μM, тирамин ≈ 1-10 μM. Уникальная внутриклеточная локализация. Агонисты: RO5256390 (селективный), улоторант (SEP-363856 — antipsychotic) — частичный агонист. Антагонист: EPPTB.",
+  "function": "Модуляция моноаминовой системы (DA, 5-HT, NE) через активацию TAAR1: ↓firing rate DA-нейронов VTA/SNc, ↓DAT активность, ↓D2 ауторецепторы. Шизофрения: TAAR1-агонисты — новый класс антипсихотиков (улоторант). Амфетаминовая зависимость: TAAR1-KO мыши гиперчувствительны к амфетамину.",
+  "references": "Lindemann L. et al. (2008) Trace amine-associated receptor 1 modulates dopaminergic activity. J Pharmacol Exp Ther 324:948-956. Gainetdinov R.R. et al. (2018) Trace amines and their receptors. Pharmacol Rev 70:549-620.",
+  "name_en": "TAAR1",
+  "name_zh": "TAAR1",
+  "description_en": "Trace amine-associated receptor 1, an intracellular Gs/Gq-coupled GPCR activated by trace amines (β-PEA, tyramine) and amphetamines. It raises cAMP and IP3 and modulates monoamine transporters (DAT, SERT, NET).",
+  "description_zh": "痕量胺相关受体 1，一种位于细胞内的 Gs/Gq 偶联 GPCR，被痕量胺（β-PEA、酪胺）和苯丙胺类激活。升高 cAMP 和 IP3，并调控单胺转运体（DAT、SERT、NET）。"
+}

@@ -1,0 +1,19 @@
+{
+  "type_id": 110,
+  "name": "GLIAL_NAK_PUMP — Глиальная Na⁺/K⁺-АТФаза",
+  "version": "1.0.0",
+  "category": "Глия",
+  "mechanism_type": "Активный транспорт (ATP-зависимый, электрогенный)",
+  "signaling": "3Na⁺ наружу : 2K⁺ внутрь за цикл. Электрогенный (1 положительный заряд наружу → гиперполяризующий). Высокая плотность в глии (×2-3 нейрональной). Кооперируется с Kir4.1 для K⁺-клиренса.",
+  "inputs": "intra_ions[Na⁺], extra_ions[K⁺], ATP_level",
+  "outputs": "I_pump_glia — гиперполяризующий ток (~5-10pA). Снижает intra_ions[Na⁺] и extra_ions[K⁺]. Потребляет ATP.",
+  "neuron_types": "ИСКЛЮЧИТЕЛЬНО глия: все типы астроцитов, радиальная глия, Müller-глия, Bergmann-глия, олигодендроциты, микроглия (низкая плотность).",
+  "subcellular": "Плазматическая мембрана глиальных клеток. Особенно высокая плотность в периваскулярных end-feet и перисинаптических отростках.",
+  "kinetics": "v_max=0.03 mM/ms (×3 нейрональной). K_m_Na_i=12mM. K_m_K_o=1.5mM. Hill_Na=3, Hill_K=2. ATP_factor: K_m_ATP=0.3mM (выше нейрональной, глия менее чувствительна к ATP).",
+  "function": "Совместно с Kir4.1 обеспечивает полный цикл K⁺-буферизации: Kir4.1 впускает K⁺ → Na⁺/K⁺-АТФаза выкачивает Na⁺ и закачивает K⁺ → [K⁺]o нормализуется. Без глиального насоса Kir4.1 насыщается и K⁺-буферизация прекращается.",
+  "references": "Pellerin L., Magistretti P.J. (1997) Glutamate uptake stimulates Na⁺,K⁺-ATPase activity in astrocytes via activation of a distinct subunit... Journal of Neurochemistry 69:2132-2137. Larsen B.R. et al. (2014) Contributions of the Na⁺/K⁺-ATPase, NKCC1, and Kir4.1 to hippocampal K⁺ clearance. J Neuroscience 34:3019-3028.",
+  "name_en": "GLIAL_NAK_PUMP — glial Na⁺/K⁺-ATPase",
+  "name_zh": "GLIAL_NAK_PUMP — 胶质Na⁺/K⁺-ATP酶",
+  "description_en": "Electrogenic glial Na⁺/K⁺-ATPase extruding 3Na⁺:2K⁺ per ATP cycle (v_max=0.03 mM/ms, K_m_Naᵢ=12 mM, K_m_Kₒ=1.5 mM, Hill_Na=3, Hill_K=2). Cooperates with Kir4.1 to complete K⁺ clearance: Kir4.1 takes up K⁺, the pump extrudes Na⁺ and re-imports K⁺, normalizing [K⁺]ₒ.",
+  "description_zh": "生电性胶质Na⁺/K⁺-ATP酶，每个ATP循环外排3Na⁺:2K⁺（v_max=0.03 mM/ms，K_m_Naᵢ=12 mM，K_m_Kₒ=1.5 mM，Hill_Na=3，Hill_K=2）。与Kir4.1协同完成K⁺清除：Kir4.1摄取K⁺，泵外排Na⁺并回摄K⁺，使[K⁺]ₒ正常化。"
+}

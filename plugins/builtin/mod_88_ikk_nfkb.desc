@@ -1,0 +1,15 @@
+{
+  "name": "IKK/NF-kB Pathway",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 88,
+  "modifiers": [
+    {
+      "id": 88,
+      "name": "IKK/NF-kB Pathway",
+      "category": "Consolidation/Reconsolidation",
+      "description": "IKK/NF-kB reconsolidation pathway: Ca2+->IKK->IkB degradation->NF-kB release->nuclear translocation. Adds to transcription_signal. Drives Zif268 expression for memory reconsolidation.",
+      "release": false
+    }
+  ]
+}

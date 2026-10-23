@@ -1,0 +1,10 @@
+{
+  "type_id": 193,
+  "name": "Nav1.2 developmental (Scn2a) — тадпольный аксональный Na⁺",
+  "name_en": "Nav1.2 developmental (Scn2a) — tadpole axonal Na⁺",
+  "name_zh": "Nav1.2发育型（Scn2a）— 蝌蚪轴突Na⁺",
+  "category": "Voltage-gated Na",
+  "description": "Nav1.2 developmental (Scn2a) — тадпольный аксональный Na⁺. Низкий порог активации (V½=−23) + деполяризованная инактивация (V½=−35) → доступен на покое −51 мВ. Для проведения ПД по немиелинизированному аксону.",
+  "description_en": "Nav1.2 developmental (Scn2a) tadpole axonal Na⁺. Low activation threshold (V½=−23) + depolarized inactivation (V½=−35) → available at −51 mV rest. For AP conduction along unmyelinated axon.",
+  "description_zh": "Nav1.2发育型（Scn2a）蝌蚪轴突Na⁺。低激活阈值（V½=−23）+去极化失活（V½=−35）→在−51 mV静息电位可用。用于无髓轴突的动作电位传导。"
+}

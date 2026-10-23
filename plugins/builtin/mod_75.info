@@ -1,0 +1,19 @@
+{
+  "type_id": 75,
+  "name": "NB_MsnNMDAR",
+  "version": "1.0.0",
+  "category": "NB_-Destexhe",
+  "mechanism_type": "Ионотропный (лиганд- и потенциал-зависимый, с D1-модуляцией)",
+  "signaling": "NMDA-рецептор на MSN (средние шипиковые нейроны стриатума): Moradi-кинетика (5 состояний A,B,C,g,z) + D1-модуляция. Сканирует сегмент на D1-модулятор для M_NMDA1.",
+  "inputs": "neurotransmitter[NT_GLUTAMATE], V_m, Mg²⁺, D1-модулятор (M_NMDA1 — множитель проводимости)",
+  "outputs": "I_NMDA_Msn → I_buffer. D1-потенцированный NMDA-ток. Без D1: M_NMDA1=1.0 (нет модуляции).",
+  "neuron_types": "Стриатальные MSN (D1-MSN direct pathway). Детектор дофаминовой модуляции NMDA-токов.",
+  "subcellular": "Постсинаптическая мембрана дендритных шипиков D1-MSN.",
+  "kinetics": "Аналогична NB_MoradiFullNMDAR: 5 состояний + Mg²⁺-блок + Q10.  + сканирование сегмента на M_NMDA1 (от NB_D1_Modulator): если D1-модулятор найден → множитель NMDA-проводимости на M_NMDA1. Позволяет DA динамически потенцировать NMDA-ток.",
+  "function": "Интеграция дофаминовой и глутаматной сигнализации в D1-MSN. Ключевой механизм LTP в direct pathway при rewarding/reinforcing stimuli. Моделирует дофамин-зависимую пластичность в базальных ганглиях.",
+  "references": "Адаптировано из Neuroblox.jl (MsnNMDAR).",
+  "name_en": "NB_MsnNMDAR",
+  "name_zh": "NB_MsnNMDAR",
+  "description_en": "NMDA receptor on striatal MSNs with Moradi kinetics plus D1 modulation (M_NMDA1 multiplier). Integrates dopamine and glutamate signaling for LTP in the direct pathway.",
+  "description_zh": "纹状体 MSN 上的 NMDA 受体，具有 Moradi 动力学和 D1 调制（M_NMDA1 乘数）。整合多巴胺和谷氨酸信号，用于直接通路的 LTP。"
+}

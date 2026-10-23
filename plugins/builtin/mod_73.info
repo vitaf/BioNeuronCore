@@ -1,0 +1,19 @@
+{
+  "type_id": 73,
+  "name": "NB_GABAA_Destexhe",
+  "version": "1.0.0",
+  "category": "NB_-Destexhe",
+  "mechanism_type": "Ионотропный (лиганд-зависимый анионный канал, damped oscillator)",
+  "signaling": "GABA → GABA-A-рецептор: damped oscillator Destexhe. Cl⁻-селективная пора, гиперполяризующий ток (E_Cl ≈ -75 mV).",
+  "inputs": "neurotransmitter[NT_GABA], V_pre (спайк-детектор), intra/extra Cl⁻",
+  "outputs": "I_GABAA_Destexhe → I_buffer. Быстрый тормозной ток (IPSC).",
+  "neuron_types": "Все GABA-ергические синапсы ЦНС (Destexhe-модель).",
+  "subcellular": "Постсинаптическая мембрана сомы и проксимальных дендритов.",
+  "kinetics": "Damped oscillator: tau1=0.5 ms (rise), tau2=10.0 ms (decay) — быстрее NMDA. G_syn=0.5. E_rev ≈ -75 mV (Cl⁻).",
+  "function": "Быстрое синаптическое торможение с точной кинетической формой по Destexhe. Важно для моделирования баланса возбуждение/торможение (E/I balance) и генерации гамма-осцилляций.",
+  "references": "Destexhe A. et al. (1998), см. NB_AMPA_Destexhe.",
+  "name_en": "NB_GABAA_Destexhe",
+  "name_zh": "NB_GABAA_Destexhe",
+  "description_en": "GABA-A receptor with Destexhe damped-oscillator kinetics; Cl⁻-selective fast inhibitory current (E_Cl ≈ −75 mV, τ_decay=10 ms) for E/I balance.",
+  "description_zh": "具有 Destexhe 阻尼振荡动力学的 GABA-A 受体；Cl⁻ 选择性快速抑制电流（E_Cl ≈ −75 mV，τ_decay=10 ms），用于兴奋/抑制平衡。"
+}

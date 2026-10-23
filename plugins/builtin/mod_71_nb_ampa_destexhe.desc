@@ -1,0 +1,15 @@
+{
+  "name": "NB_AMPA_Destexhe",
+  "version": "1.0.0",
+  "author": "BioNeuronCore (Destexhe 1998)",
+  "type_id": 71,
+  "modifiers": [
+    {
+      "id": 71,
+      "name": "NB_AMPA_Destexhe",
+      "category": "NB_-Destexhe",
+      "description": "AMPA-рецептор с damped oscillator кинетикой (Destexhe 1998): 2 состояния (G,z), τ₁=0.1, τ₂=5.0, G_syn=3.0, V_shift=10, V_range=35",
+      "release": false
+    }
+  ]
+}

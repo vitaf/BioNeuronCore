@@ -1,0 +1,19 @@
+{
+  "type_id": 26,
+  "name": "M4",
+  "version": "1.0.0",
+  "category": "Метаботропные Gi/o",
+  "mechanism_type": "Метаботропный (G-белок Gi/o-связанный)",
+  "signaling": "Ацетилхолин (ACh) → M4 → Gi/o → ↓cAMP, активация GIRK. Преимущественно ЦНС-локализованный. Модулирует дофаминовую передачу в стриатуме.",
+  "inputs": "neurotransmitter[NT_ACETYLCHOLINE]",
+  "outputs": "↓cAMP, ↑GIRK, модуляция D1-сигналинга (стриатум).",
+  "neuron_types": "Стриатум (MSN — наивысшая экспрессия), кора, гиппокамп, миндалина. Холинергические интернейроны стриатума — основной источник ACh для M4.",
+  "subcellular": "Постсинаптическая мембрана MSN (D1+ и D2+ субпопуляции). Пресинаптические гетерорецепторы на глутаматергических терминалях (кортикостриарных).",
+  "kinetics": "K_D ACh ≈ 0.1-1 μM. Gi/o-опосредованное ингибирование cAMP. Аллостерический агонист: LY-2033298. Антагонист: MT3 (мускариновый токсин 3).",
+  "function": "Контроль дофаминовой передачи в стриатуме (M4 блокирует D1-сигналинг). Мишень для антипсихотиков и терапии дистонии/паркинсонизма. Сенсомоторное гейтирование (преимпульсное ингибирование — PPI).",
+  "references": "Wess J. et al. (2007) Muscarinic acetylcholine receptors: mutant mice provide new insights for drug development. Nat Rev Drug Discov 6:721-733.",
+  "name_en": "M4",
+  "name_zh": "M4",
+  "description_en": "Controls dopaminergic transmission in the striatum (blocks D1 signaling). Target for antipsychotics and dystonia/parkinsonism therapy; modulates sensorimotor gating (PPI).",
+  "description_zh": "控制纹状体多巴胺能传递（阻断 D1 信号）。是抗精神病药和肌张力障碍/帕金森病治疗的靶点；调节感觉运动门控（PPI）。"
+}

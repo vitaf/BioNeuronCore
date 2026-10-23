@@ -1,0 +1,10 @@
+{
+  "type_id": 211,
+  "name": "TRPM7 — chanzyme (Mg²⁺/Ca²⁺)",
+  "name_en": "TRPM7 — chanzyme (Mg²⁺/Ca²⁺)",
+  "name_zh": "TRPM7 — 通道酶（Mg²⁺/Ca²⁺）",
+  "category": "Ионные каналы",
+  "description": "TRPM7 chanzyme (канал+киназа). γ=40 пС (вход)/105 (выход). P_Ca/P_Na=0.34, P_Mg>P_Ca. Ингибируется внутриклеточным Mg²⁺/Mg·ATP. NS8593 1.6 µM.",
+  "description_en": "TRPM7 chanzyme (channel+kinase). γ=40 pS (inward)/105 (outward). P_Ca/P_Na=0.34, P_Mg>P_Ca. Inhibited by intracellular Mg²⁺/Mg·ATP. NS8593 1.6 µM.",
+  "description_zh": "TRPM7通道酶（通道+激酶）。γ=40 pS（内向）/105（外向）。P_Ca/P_Na=0.34，P_Mg>P_Ca。被胞内Mg²⁺/Mg·ATP抑制。NS8593 1.6 µM。"
+}

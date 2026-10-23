@@ -1,0 +1,15 @@
+{
+  "name": "Kv3.4 A-type K⁺ канал",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 159,
+  "modifiers": [
+    {
+      "id": 159,
+      "name": "Kv3.4 A-type K⁺ канал",
+      "category": "Voltage-gated K",
+      "description": "Kv3.4 (KCNC4) A-type K⁺. m (V½ +19 мВ) + N-ball быстрая инактивация (V½ −15 мВ). PKC dis-inhibition (убирает N-ball). 4-AP/TEA. GHK K⁺ (z=1).",
+      "release": false
+    }
+  ]
+}

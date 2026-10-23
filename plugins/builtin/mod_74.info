@@ -1,0 +1,19 @@
+{
+  "type_id": 74,
+  "name": "NB_GABAB_Destexhe",
+  "version": "1.0.0",
+  "category": "NB_-Destexhe",
+  "mechanism_type": "Метаботропный (Gi/o, damped oscillator — самая медленная кинетика)",
+  "signaling": "GABA → GABA-B-рецептор: damped oscillator Destexhe. Самая медленная кинетика из всех: tau1=200.1 ms, tau2=200 ms.",
+  "inputs": "neurotransmitter[NT_GABA], V_pre",
+  "outputs": "I_GABAB_Destexhe → I_buffer. Очень медленный тормозной ток (медленный IPSP). GIRK-опосредованный (K+, E_rev ≈ -90 mV).",
+  "neuron_types": "Все GABA-ергические синапсы с медленной тормозной компонентой. Гиппокамп, кора, таламус — медленный IPSP.",
+  "subcellular": "Пре- и постсинаптические (GIRK-опосредованный).",
+  "kinetics": "Damped oscillator: tau1=200.1 ms, tau2=200 ms — уникально медленно. G_syn=0.007, V_shift=10, V_range=35. Steady-state: G_ss = tau1 * tau2 * G_syn * sigmoid ≈ 200*200*0.007 = 280. GIRK-опосредованный медленный K+-ток (не Cl⁻ как GABA-A!).",
+  "function": "Сверхмедленное синаптическое торможение. Временная суммация на временах 200-500 ms. Важно для генерации медленных ритмов (тета, дельта), регуляции возбудимости на длительных интервалах. Мишень баклофена (GABA-B агонист → спазмолитик).",
+  "references": "Destexhe A. et al. (1998), см. NB_AMPA_Destexhe.",
+  "name_en": "NB_GABAB_Destexhe",
+  "name_zh": "NB_GABAB_Destexhe",
+  "description_en": "GABA-B receptor (Gi/o) with Destexhe damped-oscillator kinetics; very slow GIRK-mediated K⁺ current (τ ≈ 200 ms) generating slow IPSPs.",
+  "description_zh": "GABA-B 受体（Gi/o），具有 Destexhe 阻尼振荡动力学；极慢的 GIRK 介导 K⁺ 电流（τ ≈ 200 ms），产生慢 IPSP。"
+}

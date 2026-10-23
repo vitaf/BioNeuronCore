@@ -1,0 +1,15 @@
+{
+  "name": "NB_GABAA_Destexhe",
+  "version": "1.0.0",
+  "author": "BioNeuronCore (Destexhe 1998)",
+  "type_id": 73,
+  "modifiers": [
+    {
+      "id": 73,
+      "name": "NB_GABAA_Destexhe",
+      "category": "NB_-Destexhe",
+      "description": "GABA-A-рецептор с damped oscillator кинетикой (Destexhe 1998): 2 состояния (G,z), τ₁=0.1, τ₂=5.0, G_syn=0.007, E=-75mV, V_shift=0, V_range=2",
+      "release": false
+    }
+  ]
+}

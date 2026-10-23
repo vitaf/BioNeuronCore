@@ -1,0 +1,19 @@
+{
+  "type_id": 84,
+  "name": "Cav1.x L-type Ca²⁺",
+  "version": "1.0.0",
+  "category": "STDP Cascade",
+  "mechanism_type": "",
+  "signaling": "",
+  "inputs": "",
+  "outputs": "",
+  "neuron_types": "",
+  "subcellular": "",
+  "kinetics": "",
+  "function": "Высокопороговый (HVA) Ca²⁺ канал L-типа (Cav1.2/Cav1.3). Активация >-25mV. Ca²⁺-зависимая инактивация (CDI). Дигидропиридин-чувствительный. Критичен для STDP: добавляет Ca²⁺ при постспайке.",
+  "references": "",
+  "name_en": "Cav1.x L-type Ca²⁺",
+  "name_zh": "Cav1.x L型 Ca²⁺",
+  "description_en": "High-voltage-activated L-type Ca²⁺ channel (Cav1.2/Cav1.3), activating above −25 mV with Ca²⁺-dependent inactivation and dihydropyridine sensitivity. Supplies Ca²⁺ during the postsynaptic spike for STDP.",
+  "description_zh": "高电压激活的 L 型 Ca²⁺ 通道（Cav1.2/Cav1.3），在 −25 mV 以上激活，具有 Ca²⁺ 依赖性失活和二氢吡啶敏感性。在突触后峰电位期间为 STDP 提供 Ca²⁺。"
+}

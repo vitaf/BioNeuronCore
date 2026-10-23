@@ -1,0 +1,15 @@
+{
+  "name": "Kv1.3 delayed-rectifier K⁺ канал",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 154,
+  "modifiers": [
+    {
+      "id": 154,
+      "name": "Kv1.3 delayed-rectifier K⁺ канал",
+      "category": "Voltage-gated K",
+      "description": "Kv1.3 (KCNA3) delayed-rectifier K⁺. Активация m⁴ (V½≈−30 мВ — типовое Kv1.x, точная Kv1.3 не найдена), без быстрой инактивации. γ=14–24 пС (Fadool 2011). GHK-флюкс K⁺ (z=1).",
+      "release": false
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+{"id":132,"name":"HCN4 — медленный Ih (τ~250ms)","category":"PIR","description":"Slow Ih. HCN4 изоформа. τ_open~250ms. Сильная cAMP-модуляция. Пейсмейкерная изоформа.","params":{"tau_open":250,"V_half":-82},"bio_ref":"Biel et al. 2009 — Physiol Rev 89:847","bio_role":"Пейсмейкерная изоформа. Слишком медленная для CPG головастика."}

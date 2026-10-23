@@ -1,0 +1,15 @@
+{
+  "name": "Kir4.1 глиальный",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 109,
+  "modifiers": [
+    {
+      "id": 109,
+      "name": "Kir4.1 глиальный",
+      "category": "Глия",
+      "description": "Kir4.1 глиальный: inward rectifier K⁺, [K]o-чувствительный, spatial buffering",
+      "release": false
+    }
+  ]
+}

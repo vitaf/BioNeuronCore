@@ -1,0 +1,19 @@
+{
+  "type_id": 85,
+  "name": "Kv4.2 A-type K⁺",
+  "version": "1.0.0",
+  "category": "STDP Cascade",
+  "mechanism_type": "",
+  "signaling": "",
+  "inputs": "",
+  "outputs": "",
+  "neuron_types": "",
+  "subcellular": "",
+  "kinetics": "Активация m³ (V½=−10 мВ, k=13.5, tau_m=1.5 мс), инактивация h (V½=−65 мВ, k=8, tau_h=15 мс). GHK для K⁺ (z=1), P=γ·RT/(F²·c_ref)=5 пС·2.77e-17. CaMKII фосфорил. → ↓γ 0-70%.",
+  "function": "A-type K⁺ (Kv4.2): снижает дендритную возбудимость, задерживает спайк. CaMKII → ↓ток → LTP-поддержка.",
+  "references": "Birnbaum 2004 Physiol Rev 84:803; Jerng 2004 Mol Cell Neurosci 27:343.",
+  "name_en": "Kv4.2 A-type K⁺",
+  "name_zh": "Kv4.2 A型 K⁺",
+  "description_en": "A-type K⁺ channel Kv4.2 with m³ activation (V½=−10 mV) and h inactivation (V½=−65 mV); GHK K⁺ flux. Reduces dendritic excitability and delays spikes; CaMKII phosphorylation lowers conductance.",
+  "description_zh": "A 型 K⁺ 通道 Kv4.2，具有 m³ 激活（V½=−10 mV）和 h 失活（V½=−65 mV）；GHK K⁺ 通量。降低树突兴奋性并延迟峰电位；CaMKII 磷酸化降低电导。"
+}

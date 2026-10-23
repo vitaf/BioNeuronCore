@@ -1,0 +1,19 @@
+{
+  "type_id": 77,
+  "name": "NB_SomaATP",
+  "version": "1.0.0",
+  "category": "Сома-модификаторы",
+  "mechanism_type": "Ферментативный (митохондриальный метаболизм: NADH → ATP синтез + тепло)",
+  "signaling": "Митохондриальный ATP-синтез в соме нейрона: NADH-пул + feedback-ингибирование ATP-уровнем (synth = max_rate * NADH * (1 - ATP/ATP_max)). Тепловыделение от метаболизма.",
+  "inputs": "NADH_level (s->NADH_level), текущий ATP_level, температура",
+  "outputs": "Delta ATP_level (+ATP_synth), Delta NADH_level (-NADH_consumed/10), Delta temperature (+heat_production), пишет s->ATP_level и s->NADH_level.",
+  "neuron_types": "Все нейроны. Сома — митохондриальный компартмент клетки.",
+  "subcellular": "Сома (митохондрии). Внутриклеточный компартмент.",
+  "kinetics": "ATP_synthesis = max_rate * NADH * (1.0 - ATP/ATP_max). max_rate = 5.0. NADH потребление = ATP_synth / 10 (примерно 10 ATP на 1 NADH). Тепловыделение = ATP_synth * heat_coeff (0.1). Feedback: при ATP ≈ ATP_max синтез останавливается (метаболический контроль).",
+  "function": "Обеспечение энергетического метаболизма нейрона: ATP как универсальная энергетическая валюта для Na/K-АТФазы, синтеза NT, транспорта. NADH-пул отражает метаболический статус (глюкоза → гликолиз → NADH). Feedback-ингибирование предотвращает избыточный ATP.",
+  "references": "BioNeuronCore: митохондриальный метаболизм нейрона. Nicholls D.G., Ferguson S.J. (2013) Bioenergetics 4. Academic Press.",
+  "name_en": "NB_SomaATP",
+  "name_zh": "NB_SomaATP",
+  "description_en": "Mitochondrial ATP synthesis in the soma from an NADH pool with feedback inhibition (synth = max_rate·NADH·(1−ATP/ATP_max)) and heat production. Supplies ATP for Na/K-ATPase and other processes.",
+  "description_zh": "体细胞线粒体由 NADH 池合成 ATP，具有反馈抑制（合成 = max_rate·NADH·(1−ATP/ATP_max)）和产热。为 Na/K-ATP 酶等过程提供 ATP。"
+}

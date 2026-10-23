@@ -1,0 +1,15 @@
+{
+  "name": "5-HT2B-рецептор",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 53,
+  "modifiers": [
+    {
+      "id": 53,
+      "name": "5-HT2B-рецептор",
+      "category": "Метаботропные Gq/11",
+      "description": "Метаботропный серотониновый рецептор 5-HT2B (Gq/11)",
+      "release": false
+    }
+  ]
+}

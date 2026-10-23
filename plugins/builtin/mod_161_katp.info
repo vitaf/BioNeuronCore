@@ -1,0 +1,29 @@
+{
+  "id": 161,
+  "name": "KATP (Kir6.2/SUR1) — ATP-чувствительный K⁺-канал",
+  "name_en": "KATP (Kir6.2/SUR1) — ATP-sensitive K⁺ channel",
+  "category": "Базовые модификаторы",
+  "category_en": "Basic Modifiers",
+  "family": "Kir6 (inward-rectifier, KCNJ) + SUR (ABCC)",
+  "isoforms": [
+    "Kir6.2",
+    "KCNJ11",
+    "SUR1",
+    "ABCC8"
+  ],
+  "gating": {
+    "atp_gate": "ATP-зависимый, IC50 15 µМ: Po = 1/(1 + [ATP]/15 µМ) — при [ATP]=0 Po≈1, при 150 µМ Po≈0.09",
+    "rectification": "слабое inward-выпрямление (Kir6.2-пора)"
+  },
+  "conductances": {
+    "gamma": "75 пС (70–80 пС)"
+  },
+  "ions": "K+",
+  "pharmacology": "глибенкламид 3 нМ (SUR1, IC50)",
+  "role": "Метаболический сенсор: связывает [ATP] с K⁺-проводимостью → гиперполяризация при энергодефиците (снижение возбудимости).",
+  "bio_ref": "PMID 9236207, 9932289, 12639916.",
+  "species": "позвоночные (β-клетки, нейроны, кардиомиоциты)",
+  "note": "⚠️ G (максимальная проводимость) в нативной ткани НЕ найдена → density плейсхолдер (калибровка на этапе 6).",  "name_zh": "KATP（Kir6.2/SUR1）— ATP敏感钾通道",
+  "description_en": "Metabolic sensor coupling [ATP] to K⁺ conductance (ATP IC50 15 µM) → hyperpolarization under energy deficit (reduced excitability). γ=75 pS; glibenclamide 3 nM.",
+  "description_zh": "代谢感受器，将[ATP]与K⁺电导偶联（ATP IC50 15 µM）→能量不足时超极化（降低兴奋性）。γ=75 pS；格列本脲3 nM。"
+}

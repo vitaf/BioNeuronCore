@@ -1,0 +1,15 @@
+{
+  "name": "Cav2.3 R-type Ca²⁺ канал",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 158,
+  "modifiers": [
+    {
+      "id": 158,
+      "name": "Cav2.3 R-type Ca²⁺ канал",
+      "category": "Voltage-gated Ca",
+      "description": "Cav2.3 (CACNA1E) R-type Ca²⁺. m² HVA (V½ −25 мВ) + медленная частичная инактивация. Слабая CDI. SNX-482 (сдвиг V½ +70 мВ). γ=14 пС. GHK Ca²⁺ (z=2).",
+      "release": false
+    }
+  ]
+}

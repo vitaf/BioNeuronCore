@@ -1,0 +1,19 @@
+{
+  "type_id": 135,
+  "name": "cAMP/PKA каскад — Gs/Gi→AC→cAMP→PKA",
+  "version": "1.0.0",
+  "category": "Сигнальные каскады",
+  "mechanism_type": "вторичный мессенджер (сигнальный, без тока)",
+  "signaling": "Gs→AC→cAMP→PKA; PDE-деградация; GRK/β-аррестин десенситизация",
+  "inputs": "Gαs-активация от Gs-рецепторов сегмента (D1/D5/β1/β2/5-HT4/6/7/A2A/A2B/H2/TAAR1); ATP (клеточный, мМ)",
+  "outputs": "[cAMP] µM (state[0]), PKA-активность (state[1])",
+  "neuron_types": "стриатум, кора, гиппокамп (дофаминовая/норадренергическая/серотониновая модуляция)",
+  "subcellular": "цитозоль (общий пул на сегмент)",
+  "kinetics": "AC: Михаэлис-Ментен по ATP (K_m=0.1 мМ); PDE: Михаэлис-Ментен по cAMP (K_m=2 µM); PKA: Hill(cAMP) n=1.7, EC50=0.15 µM; десенситизация τ~70с",
+  "function": "Общий пул cAMP/PKA. Gs→AC: ATP→cAMP (базальный ~0.1 µM, стимулированный до ~10 µM). PKA фосфорилирует Cav1.2 (Ser1928, буст до 2×) и DARPP-32/Inhibitor-1. HCN связывает cAMP напрямую (CNBD) → сдвиг V½ +15 мВ (EC50 0.5 µM).",
+  "references": "Alberts 2002 (basal cAMP 0.1 µM); Dessauer & Gilman 1996 (AC K_m ATP); Arch & Newsholme 1976 (PDE K_m); PubMed 2550452 (PKA Ka 40 nM, Hill 1.61); PNAS 2006 (Cav1.2 Ser1928); PMC6879346/Tibbs 2003 (HCN2 ΔV½ +14-20 мВ).",
+  "name_en": "cAMP/PKA cascade — Gs/Gi→AC→cAMP→PKA",
+  "name_zh": "cAMP/PKA级联 — Gs/Gi→AC→cAMP→PKA",
+  "description_en": "Shared cAMP/PKA cascade: Gs→AC converts ATP→cAMP (basal ~0.1 µM, stimulated to ~10 µM); PKA (Hill n=1.7, EC50=0.15 µM) phosphorylates Cav1.2 (Ser1928, up to 2× boost) and DARPP-32/Inhibitor-1; HCN binds cAMP (CNBD) shifting V½ by +15 mV.",
+  "description_zh": "共享cAMP/PKA级联：Gs→AC将ATP→cAMP（基础~0.1 µM，受刺激至~10 µM）；PKA（Hill n=1.7，EC50=0.15 µM）磷酸化Cav1.2（Ser1928，增强至2×）和DARPP-32/抑制蛋白-1；HCN结合cAMP（CNBD）使V½偏移+15 mV。"
+}

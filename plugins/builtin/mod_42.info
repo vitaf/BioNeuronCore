@@ -1,0 +1,19 @@
+{
+  "type_id": 42,
+  "name": "5-HT6",
+  "version": "1.0.0",
+  "category": "Метаботропные Gs",
+  "mechanism_type": "Метаботропный (G-белок Gs-связанный)",
+  "signaling": "Серотонин (5-HT) → 5-HT6 → Gs → ↑cAMP → PKA. Исключительно ЦНС-локализованный (не экспрессируется на периферии). Практически исключительно постсинаптический.",
+  "inputs": "neurotransmitter[NT_SEROTONIN]",
+  "outputs": "↑cAMP → PKA. Может также активировать Cdk5 (независимо от Gs).",
+  "neuron_types": "Стриатум (MSN — наивысшая экспрессия), обонятельный бугорок, кора, гиппокамп, nucleus accumbens, молекулярный слой мозжечка.",
+  "subcellular": "Постсинаптическая мембрана (преимущественно). Первичные реснички нейронов (primary cilia — уникальная сигнальная органелла).",
+  "kinetics": "K_D 5-HT ≈ 10-50 nM. Конститутивная активность (агонист-независимый ↑cAMP). Антагонисты: SB-271046, Lu AE58054 (идалопирдин — адъюнкт к антидепрессантам). Уникальный профиль: практически только в ЦНС.",
+  "function": "Когнитивные функции (антагонисты улучшают память). Адъюнктная терапия депрессии (идалопирдин + SSRI). Регуляция развития ЦНС (primary cilia → SHH/Wnt-сигналинг).",
+  "references": "Woolley M.L. et al. (2004) 5-HT6 receptors. Curr Drug Targets CNS Neurol Disord 3:59-79.",
+  "name_en": "5-HT6",
+  "name_zh": "5-HT6",
+  "description_en": "Cognitive function (antagonists improve memory). Adjunctive depression therapy (idalopirdine + SSRI); regulates CNS development (primary cilia signaling).",
+  "description_zh": "认知功能（拮抗剂改善记忆）。抑郁症辅助治疗（idalopirdine + SSRI）；调节中枢神经系统发育（初级纤毛信号）。"
+}

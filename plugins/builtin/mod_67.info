@@ -1,0 +1,19 @@
+{
+  "type_id": 67,
+  "name": "NB_Alpha7ER_nAChR",
+  "version": "1.0.0",
+  "category": "NB_-Рецепторы",
+  "mechanism_type": "Ионотропный (лиганд-зависимый) + внутриклеточный Ca²⁺-магазин (ER)",
+  "signaling": "Ацетилхолин → α7 nAChR (Cys-loop, гомопентамер α7) → Markov C<->O<->D. Сопряжён с ER Ca²⁺-динамикой: IP3R (Hill n=3, K=0.8muM), RyR, leak, SERCA V_max=25 muM/ms.",
+  "inputs": "neurotransmitter[NT_ACETYLCHOLINE], Ca²⁺ (ER), IP3",
+  "outputs": "I_Alpha7 → I_buffer (быстрый катионный ток, P_Ca/P_Na ~10). ER Ca²⁺: IP3R/RyR-выброс, SERCA-закачка, leak-поток. Ca_ER и Ca_cyto обновляются.",
+  "neuron_types": "Холинергические синапсы ЦНС (гиппокамп, кора, таламус). Модель для изучения Ca²⁺-динамики и ER-стресса в нейронах.",
+  "subcellular": "Постсинаптическая мембрана. ER-мембрана: IP3R, RyR, SERCA, leak-каналы.",
+  "kinetics": "6 состояний: C(closed), O(open), D(desensitized) — Markov-гейтинг. ER: dCa_ER/dt = leak_out + RyR_out + IP3R_out - SERCA_in. SERCA = V_max * Ca_cyto^2 / (Ca_cyto^2 + K_SERCA^2). IP3R: Hill n=3. PAM: PNU-120596 (положительный аллостерический модулятор).",
+  "function": "Быстрая холинергическая передача с детальной Ca²⁺-динамикой. Модель включает ER-кальциевый магазин — важен для изучения Ca²⁺-индуцированного Ca²⁺-выброса (CICR), ER-стресса, эксайтотоксичности. α7 nAChR — мишень для когнитивных препаратов (шизофрения, Alzheimer).",
+  "references": "Адаптировано из Neuroblox.jl (Alpha7ERnAChR).",
+  "name_en": "NB_Alpha7ER_nAChR",
+  "name_zh": "NB_Alpha7ER_nAChR",
+  "description_en": "α7 nicotinic acetylcholine receptor with Markov gating (C↔O↔D) coupled to ER Ca²⁺ dynamics (IP3R, RyR, SERCA, leak). Fast cation current with high Ca²⁺ permeability (P_Ca/P_Na ~10).",
+  "description_zh": "α7 烟碱型乙酰胆碱受体，具有 Markov 门控（C↔O↔D），偶联内质网 Ca²⁺ 动力学（IP3R、RyR、SERCA、泄漏）。快速阳离子电流，高 Ca²⁺ 通透性（P_Ca/P_Na ~10）。"
+}

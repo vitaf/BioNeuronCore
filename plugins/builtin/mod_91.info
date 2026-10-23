@@ -1,0 +1,19 @@
+{
+  "type_id": 91,
+  "name": "Cofilin Actin Remod.",
+  "version": "1.0.0",
+  "category": "Консолидация/Реконсолидация",
+  "mechanism_type": "Актиновое ремоделирование: ERK → LIMK → фосфорилирование Cofilin → инактивация. Активный Cofilin разрезает F-актин → G-актин, что позволяет перестраивать цитоскелет дендритных шипиков.",
+  "signaling": "Cofilin — главный инструмент ремоделинга цитоскелета. Активный Cofilin деполимеризует F-актин, разрушая старую форму шипика. LIMK фосфорилирует (инактивирует) Cofilin. Slingshot (фосфатаза) дефосфорилирует (активирует) Cofilin. Баланс определяет рост/сжатие шипика.",
+  "inputs": "ERK_active (от MOD_MAPK_ERK на том же сегменте, активирует LIMK)",
+  "outputs": "F_actin_density (относительная плотность филаментного актина). Используется потоком консолидации для изменения диаметра сегментов.",
+  "neuron_types": "Все нейроны. Актиновый цитоскелет — основа морфологии дендритных шипиков.",
+  "subcellular": "Дендритные шипики, цитоскелет. Локальная активация в активных шипиках через GluN3A-содержащие NMDA-рецепторы.",
+  "kinetics": "ERK→LIMK: tau=8000ms. LIMK→pCofilin: tau=5000ms. Cofilin_active = 1 - pCofilin_ratio. F_actin = polymerization(0.3) - severing(Cofilin×0.1), tau=30000ms.",
+  "function": "Физическая перестройка синапса. При LTP: LIMK↑ → pCofilin↑ → F-actin стабилен → шипик растёт. При LTD: Cofilin активен → F-actin разрушается → шипик сжимается.",
+  "references": "Bosch M. et al. (2014) Structural and molecular remodeling of dendritic spine substructures during long-term potentiation. Neuron 82:444-459. Rust M.B. et al. (2010) Learning, AMPA receptor mobility and synaptic plasticity depend on n-cofilin-mediated actin dynamics.",
+  "name_en": "Cofilin Actin Remod.",
+  "name_zh": "切丝蛋白肌动蛋白重塑",
+  "description_en": "Actin remodeling via ERK→LIMK→Cofilin phosphorylation. Active cofilin severs F-actin to reshape dendritic spines; the balance determines spine growth/shrinkage.",
+  "description_zh": "通过 ERK→LIMK→Cofilin 磷酸化进行肌动蛋白重塑。活性 cofilin 切割 F-肌动蛋白以重塑树突棘；平衡决定树突棘的生长/收缩。"
+}

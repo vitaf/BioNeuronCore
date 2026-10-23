@@ -1,0 +1,10 @@
+{
+  "type_id": 184,
+  "name": "GlyT2 (SLC6A5) глициновый транспортер",
+  "name_en": "GlyT2 (SLC6A5) glycine transporter",
+  "name_zh": "GlyT2 甘氨酸转运体",
+  "version": "1.0.0",
+  "category": "Транспортеры",  "description": "GlyT2 (SLC6A5) нейрональный транспортер глицина: 3Na⁺+1Cl⁻+Gly внутрь, net +2. Roux & Supplisson 2000.",
+  "description_en": "GlyT2 (SLC6A5) neuronal glycine transporter: 3Na⁺+1Cl⁻+Gly inward, net +2. Roux & Supplisson 2000.",
+  "description_zh": "GlyT2（SLC6A5）神经元甘氨酸转运体：3Na⁺+1Cl⁻+Gly向内，净+2。Roux & Supplisson 2000。"
+}

@@ -1,0 +1,15 @@
+{
+  "name": "NB_SomaATP",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 77,
+  "modifiers": [
+    {
+      "id": 77,
+      "name": "NB_SomaATP",
+      "category": "Сома-модификаторы",
+      "description": "Митохондриальный ATP-синтез в соме: NADH-пул, feedback-ингибирование (synth=max_rate*NADH*(1-ATP/ATP_max)), тепловыделение",
+      "release": false
+    }
+  ]
+}

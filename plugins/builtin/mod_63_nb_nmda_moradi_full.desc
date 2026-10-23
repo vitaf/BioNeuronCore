@@ -1,0 +1,15 @@
+{
+  "name": "NB_MoradiFullNMDAR",
+  "version": "1.0.0",
+  "author": "BioNeuronCore (Neuroblox.jl)",
+  "type_id": 63,
+  "modifiers": [
+    {
+      "id": 63,
+      "name": "NB_MoradiFullNMDAR",
+      "category": "NB_-Рецепторы",
+      "description": "NMDA-рецептор с полной кинетикой Moradi (5 состояний A,B,C,g,z), Mg²⁺-блок, Q10-температурная коррекция, 4 подшага Эйлера",
+      "release": false
+    }
+  ]
+}

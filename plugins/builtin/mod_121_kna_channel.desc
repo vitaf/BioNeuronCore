@@ -1,0 +1,15 @@
+{
+  "name": "KNa Slack/Slick",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 121,
+  "modifiers": [
+    {
+      "id": 121,
+      "name": "KNa Slack/Slick",
+      "category": "Na-activated K",
+      "description": "Slack/Slick KNa (KCNT1/KCNT2): Na⁺-активируемый K⁺ канал, slow AHP",
+      "release": false
+    }
+  ]
+}

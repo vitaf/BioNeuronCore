@@ -1,0 +1,17 @@
+{
+  "type_id": 134,
+  "name": "P2X2 — ATP-зависимый катионный канал (медленная десенситизация)",
+  "version": "1.0.0",
+  "category": "Ионотропные рецепторы",
+  "mechanism_type": "Ионотропный (ATP-активируемый катионный канал)",
+  "signaling": "ATP → P2X2 тример → открытие катион-селективной поры → Na⁺/K⁺/Ca²⁺ поток. Медленная десенситизация.",
+  "inputs": "neurotransmitter[NT_ATP], V_m, intra/extra Na⁺, K⁺, Ca²⁺",
+  "outputs": "I_P2X2 → I_buffer. Тонический ответ на длительный ATP.",
+  "kinetics": "P_Ca/P_Na≈2.5, P_K≈P_Na. tau_decay≈20мс (EPSC), tau_desens≈3-35с (медленная).",
+  "function": "Пуринергическая передача: медленный/тонический ответ на ATP (vs P2X3 — быстрый).",
+  "references": "North R.A. (2002) Molecular physiology of P2X receptors. Physiol Rev 82:1013-1067.",
+  "name_en": "P2X2 — ATP-gated cation channel (slow desensitization)",
+  "name_zh": "P2X2 — ATP门控阳离子通道（慢脱敏）",
+  "description_en": "ATP-gated cation channel (P2X2 trimer) with slow desensitization (τ_desens 3–35 s); opens a cation-selective pore (P_Ca/P_Na≈2.5, P_K≈P_Na, τ_decay≈20 ms). Mediates tonic purinergic responses to prolonged ATP.",
+  "description_zh": "ATP门控阳离子通道（P2X2三聚体），慢脱敏（τ_desens 3–35 s）；打开阳离子选择性孔（P_Ca/P_Na≈2.5，P_K≈P_Na，τ_decay≈20 ms）。介导对持续ATP的紧张性嘌呤能反应。"
+}

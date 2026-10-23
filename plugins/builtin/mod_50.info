@@ -1,0 +1,19 @@
+{
+  "type_id": 50,
+  "name": "H2",
+  "version": "1.0.0",
+  "category": "Метаботропные Gs",
+  "mechanism_type": "Метаботропный (G-белок Gs-связанный)",
+  "signaling": "Гистамин → H2 → Gs → ↑cAMP → PKA. Регуляция желудочной секреции и нейрональной возбудимости.",
+  "inputs": "neurotransmitter[NT_HISTAMINE]",
+  "outputs": "↑cAMP → PKA. Повышение возбудимости нейронов (блок Ca²⁺-зависимых K+ каналов). Периферия: ↑секреция HCl париетальными клетками.",
+  "neuron_types": "ЦНС: кора, гиппокамп (CA3 — наивысшая), стриатум, amygdala. Периферия: желудок (париетальные клетки — секреция HCl), сердце, гладкие мышцы.",
+  "subcellular": "Постсинаптические (пирамидные нейроны — повышение возбудимости). Париетальные клетки желудка (базолатеральная мембрана).",
+  "kinetics": "K_D гистамин ≈ 1-10 μM. Антагонисты: ранитидин, фамотидин, циметидин (H2-блокаторы — язвенная болезнь, ГЭРБ).",
+  "function": "ЦНС: повышение возбудимости (блок Ca²⁺-зависимых K+ каналов → уменьшение AHP → увеличение firing rate). Периферия: подавление желудочной кислотности (H2-блокаторы — до эры PPI).",
+  "references": "Haas H.L. et al. (2008) Histamine in the nervous system. Physiol Rev 88:1183-1241.",
+  "name_en": "H2",
+  "name_zh": "H2",
+  "description_en": "Histamine H2 receptor coupled to Gs, raising cAMP and activating PKA. In the CNS it increases neuronal excitability by blocking Ca²⁺-activated K⁺ channels (reduced AHP), while in the periphery it drives gastric HCl secretion.",
+  "description_zh": "组胺 H2 受体，偶联 Gs，升高 cAMP 并激活 PKA。在中枢神经系统通过阻断 Ca²⁺ 激活的 K⁺ 通道（减小 AHP）提高神经元兴奋性，在外周驱动胃酸分泌。"
+}

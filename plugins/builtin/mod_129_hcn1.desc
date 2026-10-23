@@ -1,0 +1,1 @@
+{"id":129,"name":"HCN1 — быстрый Ih (τ~25ms)","category":"PIR","description":"Fast Ih. HCN1 изоформа. τ_open~25ms. Неселективный катионный (Na⁺/K⁺). cAMP-модулируемый.","params":{"tau_open":25,"V_half":-82},"bio_ref":"Li, Roberts, Soffe 2010 — J. Neurosci 30:16609","bio_role":"PIR после glycinergic inhibition. Доминантная изоформа в dIN головастика."}

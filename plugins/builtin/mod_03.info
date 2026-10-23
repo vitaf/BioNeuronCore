@@ -1,0 +1,19 @@
+{
+  "type_id": 3,
+  "name": "Метаботропный",
+  "version": "1.0.0",
+  "category": "Базовые модификаторы",
+  "mechanism_type": "Метаботропный (G-белок-связанный, общего назначения)",
+  "signaling": "GPCR → G-белок (Gi/o, Gs, Gq/11) → вторичный мессенджер (cAMP, IP3/DAG, Ca²⁺).",
+  "inputs": "Нейромедиаторы во внеклеточной среде (s->neurotransmitter[])",
+  "outputs": "Модулирует внутриклеточные каскады (cAMP, IP3, Ca²⁺). Не генерирует прямой ионный ток.",
+  "neuron_types": "Все нейроны. GPCR составляют крупнейшее семейство рецепторов ЦНС (~800 генов).",
+  "subcellular": "Сома, дендриты, шипики, пресинаптические терминали, аксонные варикозы.",
+  "kinetics": "Суммарная активация всеми NT: total_nt = Σ neurotransmitter[n]. G-белок: state[0] += (activation - state[0]) × dt/tau, activation = total_nt/(total_nt+1). Effector: state[1] = coupling × state[0]. GIRK K⁺ ток: I = -g_GIRK × (V_m - E_K). Параметры: state[2]=coupling (1.0), state[3]=tau (100ms).",
+  "function": "Медленная синаптическая передача и нейромодуляция. Регуляция возбудимости, синаптической пластичности (LTP/LTD), экспрессии генов (через CREB).",
+  "references": "Pierce K.L. et al. (2002) Seven-transmembrane receptors. Nat Rev Mol Cell Biol 3:639-650.",
+  "name_en": "Metabotropic",
+  "name_zh": "代谢型",
+  "description_en": "Mediates slow synaptic transmission and neuromodulation. Regulates excitability, synaptic plasticity (LTP/LTD) and gene expression (via CREB).",
+  "description_zh": "介导慢速突触传递和神经调节。调节兴奋性、突触可塑性（LTP/LTD）和基因表达（通过 CREB）。"
+}

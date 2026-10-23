@@ -1,0 +1,19 @@
+{
+  "type_id": 15,
+  "name": "P2X",
+  "version": "1.0.0",
+  "category": "Ионотропные рецепторы",
+  "mechanism_type": "Ионотропный (лиганд-зависимый катионный канал)",
+  "signaling": "Внеклеточный ATP → P2X1-7 тример → Na⁺/Ca²⁺/K⁺ поток. Не-Cys-loop, уникальная структура (два трансмембранных домена на субъединицу).",
+  "inputs": "neurotransmitter[NT_ATP], V_m",
+  "outputs": "I_P2X → I_buffer. Возбуждающий ток с Ca²⁺-компонентом.",
+  "neuron_types": "P2X2, P2X4: нейроны ЦНС (гиппокамп, кора, мозжечок). P2X3: сенсорные нейроны DRG (ноцицепция). P2X7: микроглия, астроциты. P2X1: гладкие мышцы (vas deferens).",
+  "subcellular": "Постсинаптическая мембрана (ATP как котрансмиттер с GABA/глутаматом). Пресинаптические терминали. Глия (P2X7 — микроглия, нейровоспаление).",
+  "kinetics": "Тримерная структура (3 субъединицы). EC₅₀ ATP ≈ 1-10 μM. P2X7: уникально образует макропору (пропускает молекулы до 900 Da) при длительной активации, приводит к пироптозу.",
+  "function": "Синаптическая передача (ATP как котрансмиттер с норадреналином, ACh). Ноцепция и боль (P2X3 — мишень для анальгетиков). Нейровоспаление и нейродегенерация (P2X7 в микроглии). Вкус (P2X2/3).",
+  "references": "Khakh B.S., North R.A. (2006) P2X receptors as cell-surface ATP sensors in health and disease. Nature 442:527-532.",
+  "name_en": "P2X",
+  "name_zh": "P2X",
+  "description_en": "Mediates synaptic transmission with ATP as co-transmitter, nociception and pain (P2X3), neuroinflammation (P2X7) and taste (P2X2/3).",
+  "description_zh": "介导以 ATP 为共递质的突触传递、伤害感受和疼痛（P2X3）、神经炎症（P2X7）以及味觉（P2X2/3）。"
+}

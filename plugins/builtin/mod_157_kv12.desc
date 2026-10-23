@@ -1,0 +1,15 @@
+{
+  "name": "Kv1.2 delayed-rectifier K⁺ канал",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 157,
+  "modifiers": [
+    {
+      "id": 157,
+      "name": "Kv1.2 delayed-rectifier K⁺ канал",
+      "category": "Voltage-gated K",
+      "description": "Kv1.2 (KCNA2) delayed-rectifier K⁺. m⁴ (V½ −27 мВ) + C-type инактивация (τ~0.4 с). γ=14–18 пС. α-DTX/TEA + PKC (mGluR1→Gq) ингибиция. GHK K⁺ (z=1).",
+      "release": false
+    }
+  ]
+}

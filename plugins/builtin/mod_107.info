@@ -1,0 +1,19 @@
+{
+  "type_id": 107,
+  "name": "K2P-канал (TREK/TRAAK) — пассивная утечка K⁺",
+  "version": "1.0.0",
+  "category": "Ионные каналы ритмогенеза",
+  "mechanism_type": "Ионный канал (пассивный, GHK K⁺)",
+  "signaling": "Прямой GHK-поток K⁺. Конститутивно открыт (open_prob=1.0). Без гейтинга. Всегда проводит K⁺ по электрохимическому градиенту.",
+  "inputs": "intra_ions[K⁺], extra_ions[K⁺], V_m",
+  "outputs": "I_K (стабилизирующий RMP). При V>E_K — K⁺ выходит. При V<E_K — K⁺ входит.",
+  "neuron_types": "Все типы нейронов. Универсальный механизм фоновой K⁺ проводимости.",
+  "subcellular": "Плазматическая мембрана всех компартментов.",
+  "kinetics": "P_max=0.3 (безразмерная). Без гейтинга. GHK K⁺ (z=1).",
+  "function": "Фоновая K⁺ проводимость, стабилизация потенциала покоя. Ключевой механизм K⁺ гомеостаза: при высоком внутриклеточном K⁺ эффлюкс увеличивается автоматически (через GHK), возвращая K⁺ к норме. Без K2P нейрон не может сбросить избыточный K⁺ в покое.",
+  "references": "Enyedi P., Czirjak G. (2010) Molecular background of leak K⁺ currents: two-pore domain potassium channels. Physiol Rev 90:559-605. Goldstein S.A.N. et al. (2001) International Union of Pharmacology. LV. Nomenclature of two-P potassium channels. Pharmacol Rev 53:527-540.",
+  "name_en": "K2P Channel (TREK/TRAAK) — passive K⁺ leak",
+  "name_zh": "K2P 通道 (TREK/TRAAK) — 被动 K⁺ 泄漏",
+  "description_en": "Two-pore-domain K⁺ leak channel (TREK/TRAAK), constitutively open (P_max=0.3, no gating). Provides background K⁺ conductance that stabilizes resting potential and enables automatic K⁺ homeostasis via GHK flux.",
+  "description_zh": "双孔结构域K⁺泄漏通道（TREK/TRAAK），组成型开放（P_max=0.3，无门控）。提供背景K⁺电导，稳定静息电位并通过GHK通量实现自动K⁺稳态。"
+}

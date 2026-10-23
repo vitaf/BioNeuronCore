@@ -1,0 +1,18 @@
+{
+  "type_id": 189,
+  "name": "PIEZO2 (механочувствительный катионный)",
+  "version": "1.0.0",
+  "category": "Ионные каналы",
+  "mechanism_type": "Механочувствительный ионный канал (не вольт-зависимый первично)",
+  "signaling": "Механо-стимул (давление/натяжение) → конформация → Po = Hill(стимул, λ50=2 мН/м, k=2.3). GHK мультиионный: Ca²⁺>K⁺>Na⁺ (γ=16 пС).",
+  "inputs": "state[4] — механо-стимул (мН/м, из VirtualBody-моста). intra/extra_ions[Ca²⁺,K⁺,Na⁺].",
+  "outputs": "I_Ca + I_K + I_Na → I_buffer сегмента. Деполяризует (неселективный катионный вход).",
+  "neuron_types": "Сома DRG + периферические терминали (Меркель/Мейснер), мышечные веретена/сухожильные органы Гольджи (проприоцепция).",
+  "subcellular": "Сома DRG + периферическая терминаль.",
+  "kinetics": "Активация суб-мс, rapidly-adapting инактивация τ~6 мс (CED-домен). λ50=2 мН/м, k=2.3.",
+  "function": "Механотрансдукция: касание/проприоцепция → деполяризация сенсорного нейрона.",
+  "references": "Coste 2010 Science 330:55 (PMID 20813920); Woo 2014 Nature 509:622 (PMID 24805243); Murthy 2023 J Gen Physiol 155:e202213099 (PMID 37102984).",
+  "name_en": "PIEZO2 (mechanosensitive cation)",  "name_zh": "PIEZO2 (机械敏感阳离子通道)",
+  "description_en": "Mechanotransduction: touch/proprioception → sensory neuron depolarization. λ50=2 mN/m, k=2.3; γ=16 pS.",
+  "description_zh": "机械转导：触觉/本体感觉→感觉神经元去极化。λ50=2 mN/m，k=2.3；γ=16 pS。"
+}

@@ -1,0 +1,10 @@
+{
+  "type_id": 209,
+  "name": "KCa3.1 (KCNN4) — Ca²⁺-активируемый K⁺",
+  "name_en": "KCa3.1 (KCNN4) — Ca²⁺-activated K⁺",
+  "name_zh": "KCa3.1（KCNN4）— Ca²⁺激活K⁺",
+  "category": "Ионные каналы",
+  "description": "KCa3.1 (KCNN4/SK4/IK) Ca²⁺-активируемый K⁺. γ=25 пС (intermediate). Ca²⁺ EC50=188 нМ, voltage-independent. Ингибиция: TRAM-34 20 нМ, clotrimazole 70 нМ (apamin НЕ блокирует).",
+  "description_en": "KCa3.1 (KCNN4/SK4/IK) Ca²⁺-activated K⁺. γ=25 pS (intermediate). Ca²⁺ EC50=188 nM, voltage-independent. Pharmacology: TRAM-34 20 nM, clotrimazole 70 nM (apamin insensitive).",
+  "description_zh": "KCa3.1（KCNN4/SK4/IK）Ca²⁺激活K⁺。γ=25 pS（中等）。Ca²⁺ EC50=188 nM，电压无关。药理：TRAM-34 20 nM、克霉唑 70 nM（apamin不阻断）。"
+}

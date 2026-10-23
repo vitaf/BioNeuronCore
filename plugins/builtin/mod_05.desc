@@ -1,0 +1,15 @@
+{
+  "name": "SK Ca²⁺-активируемый K⁺",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 5,
+  "modifiers": [
+    {
+      "id": 5,
+      "name": "SK Ca²⁺-активируемый K⁺",
+      "category": "Базовые модификаторы",
+      "description": "Ca²⁺-активируемый K⁺ канал (SK/K_Ca2.x). Hill=2 сенсор Ca²⁺ (K_d=0.5μM). AHP-обратная связь: Ca²⁺ вход → K⁺ выход → гиперполяризация. Моделирует пресинаптический Ca²⁺-сенсор.",
+      "release": false
+    }
+  ]
+}

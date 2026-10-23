@@ -1,0 +1,19 @@
+{
+  "type_id": 61,
+  "name": "mGluR5",
+  "version": "1.0.0",
+  "category": "Метаботропные Gq/11",
+  "mechanism_type": "Метаботропный (G-белок Gq/11-связанный)",
+  "signaling": "Глутамат → mGluR5 (Group I) → Gq/11 → PLCβ → IP3/DAG → ↑Ca²⁺ + PKC. Широкая экспрессия в ЦНС. Ключевой для синаптической пластичности и фармакологии — мишень для ряда расстройств.",
+  "inputs": "neurotransmitter[NT_GLUTAMATE]",
+  "outputs": "PLCβ → ↑IP3 (Ca²⁺-мобилизация) + ↑DAG (PKC). Взаимодействие с NMDA-R: Ca²⁺ → ↑NMDA ток (PKC/Src).",
+  "neuron_types": "Гиппокамп (CA1, CA3), кора, стриатум (D1-MSN и D2-MSN), nucleus accumbens, обонятельная луковица. Широкая экспрессия в переднем мозге.",
+  "subcellular": "Постсинаптическая мембрана (перисинаптическая). Дендритные шипики. Глия (астроциты — Ca²⁺-осцилляции).",
+  "kinetics": "EC50 глутамат ≈ 10-100 μM. Физическое и функциональное взаимодействие с NMDA-R (через Shank/Homer/PSD-95 комплекс). NAM: MPEP, мавоглурант (AFQ056) — fragile X, депрессия. PAM: CDPPB, ADX47273 — когнитивное улучшение при шизофрении.",
+  "function": "Синаптическая пластичность (LTP/LTD в гиппокампе и стриатуме). Fragile X синдром: избыточный mGluR5-LTD → NAM-терапия. Шизофрения: PAM mGluR5 → когнитивное улучшение. Депрессия: NAM mGluR5 → быстрый антидепрессантный эффект. Аутизм, Parkinson's disease (mGluR5 в MSN).",
+  "references": "Niswender C.M., Conn P.J. (2010), см. mGluR2.",
+  "name_en": "mGluR5",
+  "name_zh": "mGluR5",
+  "description_en": "Group I metabotropic glutamate receptor mGluR5 coupled to Gq/11, activating PLCβ to raise Ca²⁺ and PKC. Widely expressed; regulates synaptic plasticity and is a target in fragile X, schizophrenia and depression.",
+  "description_zh": "I 组代谢型谷氨酸受体 mGluR5，偶联 Gq/11，激活 PLCβ 升高 Ca²⁺ 和 PKC。广泛表达，调节突触可塑性，是脆性 X、精神分裂症和抑郁症的靶点。"
+}

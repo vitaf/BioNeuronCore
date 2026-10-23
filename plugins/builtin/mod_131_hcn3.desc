@@ -1,0 +1,1 @@
+{"id":131,"name":"HCN3 — промежуточный Ih (τ~50ms)","category":"PIR","description":"Intermediate Ih. HCN3 изоформа. τ_open~50ms. Слабая cAMP-модуляция.","params":{"tau_open":50,"V_half":-82},"bio_ref":"Biel et al. 2009 — Physiol Rev 89:847","bio_role":"Промежуточный вариант между HCN1 и HCN2."}

@@ -1,0 +1,15 @@
+{
+  "name": "PKC киназа",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 137,
+  "modifiers": [
+    {
+      "id": 137,
+      "name": "PKC киназа",
+      "category": "Каскады",
+      "description": "PKC киназа: DAG+Ca²⁺ → активность → фосфорилирует мишени",
+      "release": false
+    }
+  ]
+}

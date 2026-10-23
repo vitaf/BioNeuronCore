@@ -1,0 +1,19 @@
+{
+  "type_id": 98,
+  "name": "PMCA — Ca²⁺-АТФаза плазмалеммы",
+  "version": "1.0.0",
+  "category": "Ca²⁺/K⁺/Cl⁻ гомеостаз",
+  "mechanism_type": "Активный транспорт (ATP-зависимый)",
+  "signaling": "Прямой транспорт Ca²⁺: 1 Ca²⁺ из цитозоля наружу за цикл гидролиза ATP. Электрогенный: удаление 2 положительных зарядов → слабый гиперполяризующий ток (~1-2 pA).",
+  "inputs": "intra_ions[Ca²⁺], ATP_level",
+  "outputs": "I_pump (гиперполяризующий). Уменьшает intra_ions[Ca²⁺], увеличивает extra_ions[Ca²⁺]. Потребляет ATP.",
+  "neuron_types": "Все типы нейронов. Универсальный механизм поддержания низкого базального [Ca²⁺]i.",
+  "subcellular": "Плазматическая мембрана сомы и дендритов. Исключён из пресинаптических терминалей (там Ca²⁺ должен накапливаться для выброса).",
+  "kinetics": "Hill n=2, K_m=300 nM (0.0003 mM). p_rate=0.015 pmol/cm²/s. ATP_factor: линейная зависимость от [ATP]. Ca_factor: Ca²/(Ca²+K_m²).",
+  "function": "Высокоаффинное удаление Ca²⁺ из цитозоля. Совместно с NCX (низкоаффинный, высокоёмкостный) поддерживает гомеостаз Ca²⁺. Предотвращает Ca²⁺-перегрузку при длительной активности CPG.",
+  "references": "Carafoli E. (1991) The calcium pumping ATPase of the plasma membrane. Annu Rev Physiol 53:531-547. Strehler E.E., Zacharias D.A. (2001) Role of alternative splicing in generating isoform diversity among plasma membrane calcium pumps. Physiol Rev 81:21-50.",
+  "name_en": "PMCA — Ca²⁺-ATPase plasmalemma",
+  "name_zh": "PMCA — 质膜 Ca²⁺-ATP酶",
+  "description_en": "Plasma membrane Ca²⁺-ATPase that extrudes one Ca²⁺ per ATP hydrolyzed (Hill n=2, K_m=300 nM), generating a weak hyperpolarizing current. High-affinity Ca²⁺ removal for homeostasis.",
+  "description_zh": "质膜 Ca²⁺-ATP 酶，每水解一个 ATP 泵出一个 Ca²⁺（Hill n=2，K_m=300 nM），产生微弱超极化电流。高亲和力清除 Ca²⁺ 以维持稳态。"
+}

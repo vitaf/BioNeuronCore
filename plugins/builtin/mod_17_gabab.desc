@@ -1,0 +1,15 @@
+{
+  "name": "GABA-B-рецептор",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 17,
+  "modifiers": [
+    {
+      "id": 17,
+      "name": "GABA-B-рецептор",
+      "category": "Метаботропные Gi/o",
+      "description": "Метаботропный GABA-B рецептор (Gi/o) — активация GIRK, ингибиторный",
+      "release": false
+    }
+  ]
+}

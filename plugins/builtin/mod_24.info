@@ -1,0 +1,19 @@
+{
+  "type_id": 24,
+  "name": "D4",
+  "version": "1.0.0",
+  "category": "Метаботропные Gi/o",
+  "mechanism_type": "Метаботропный (G-белок Gi/o-связанный)",
+  "signaling": "Дофамин (DA) → D4 → Gi/o → ↓cAMP. Широкий полиморфизм (VNTR в exon 3 — 2-11 повторов).",
+  "inputs": "neurotransmitter[NT_DOPAMINE]",
+  "outputs": "↓cAMP, модуляция Ca_v и GIRK.",
+  "neuron_types": "Prefrontal cortex (слои II-VI — пирамидные нейроны и GABA-интернейроны), гиппокамп, amygdala, retina, почки.",
+  "subcellular": "Постсинаптическая мембрана (PFC — пирамидные нейроны, интернейроны). Пресинаптические (гетерорецепторы на глутаматергических терминалях в NAc).",
+  "kinetics": "K_D DA ≈ 0.5-5 nM. Более низкая экспрессия vs D2. VNTR полиморфизм: аллель 7R ассоциирован с ADHD. Агонисты: PD-168077, A-412997. Антагонист: L-745870. Атипичный антипсихотик клозапин — высокий D4 affinity.",
+  "function": "Рабочая память, внимание (PFC). Когнитивный контроль. ADHD (D4.7 аллель). Шизофрения (клозапин). Рисковое поведение, novelty seeking.",
+  "references": "Oak J.N. et al. (2000) The dopamine D4 receptor: one decade of research. Eur J Pharmacol 405:303-327.",
+  "name_en": "D4",
+  "name_zh": "D4",
+  "description_en": "Underlies working memory, attention and cognitive control (PFC). Associated with ADHD (D4.7 allele), schizophrenia (clozapine) and novelty seeking.",
+  "description_zh": "构成工作记忆、注意力和认知控制（前额叶皮层）的基础。与 ADHD（D4.7 等位基因）、精神分裂症（氯氮平）和新奇寻求相关。"
+}

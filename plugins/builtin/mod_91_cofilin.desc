@@ -1,0 +1,15 @@
+{
+  "name": "Cofilin (Actin Remodeling)",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 91,
+  "modifiers": [
+    {
+      "id": 91,
+      "name": "Cofilin (Actin Remodeling)",
+      "category": "Consolidation/Reconsolidation",
+      "description": "Cofilin — actin cytoskeleton regulator. ERK->LIMK->phospho-Cofilin (inactive). Active cofilin severs F-actin->G-actin. Reads ERK from same segment. Controls spine morphology and structural plasticity.",
+      "release": false
+    }
+  ]
+}

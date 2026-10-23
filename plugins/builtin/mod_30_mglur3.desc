@@ -1,0 +1,15 @@
+{
+  "name": "mGluR3-рецептор",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 30,
+  "modifiers": [
+    {
+      "id": 30,
+      "name": "mGluR3-рецептор",
+      "category": "Метаботропные Gi/o",
+      "description": "Метаботропный глутаматный рецептор mGluR3 (Gi/o) — пресинаптический модулятор",
+      "release": true
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "type_id": 187,
+  "name": "CILIA цилиарный генератор CSF-потока",
+  "name_en": "CILIA ciliary CSF-flow generator",
+  "name_zh": "CILIA 纤毛脑脊液流发生器",
+  "version": "1.0.0",
+  "category": "Сенсоры",  "description": "Цилиарный генератор CSF-потока (эпендима): биение ресничек 5–20 Гц → скалярный поток 0..1. #32+#40.",
+  "description_en": "Ciliary CSF-flow generator (ependyma): ciliary beating 5–20 Hz → scalar flow 0..1. #32+#40.",
+  "description_zh": "纤毛脑脊液流发生器（室管膜）：纤毛摆动5–20 Hz→标量流量0..1。#32+#40。"
+}

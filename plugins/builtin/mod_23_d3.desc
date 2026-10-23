@@ -1,0 +1,15 @@
+{
+  "name": "D3-рецептор",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 23,
+  "modifiers": [
+    {
+      "id": 23,
+      "name": "D3-рецептор",
+      "category": "Метаботропные Gi/o",
+      "description": "Метаботропный дофаминовый рецептор D3 (Gi/o)",
+      "release": false
+    }
+  ]
+}

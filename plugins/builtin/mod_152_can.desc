@@ -1,0 +1,15 @@
+{
+  "name": "CAN Ca²⁺-активируемый неселективный канал",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 152,
+  "modifiers": [
+    {
+      "id": 152,
+      "name": "CAN Ca²⁺-активируемый неселективный канал",
+      "category": "Ca-activated nonselective",
+      "description": "CAN (TRPM4/5) Ca²⁺-активируемый неселективный Na⁺/K⁺ канал (не Ca-проводящий). γ=25–35 пС, Ca²⁺-зависимый Po (Kd 0.5 µM), десенситизация (d-гейт, τ~2 с).",
+      "release": false
+    }
+  ]
+}

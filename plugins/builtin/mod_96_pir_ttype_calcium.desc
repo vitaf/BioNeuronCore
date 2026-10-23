@@ -1,0 +1,15 @@
+{
+  "name": "T-type Ca²⁺ канал (Cav3) — фазический отскок",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 96,
+  "modifiers": [
+    {
+      "id": 96,
+      "name": "T-type Ca²⁺ (Cav3) — фазический отскок",
+      "category": "PIR",
+      "description": "Низкопороговый T-type Ca²⁺ канал (Cav3.1/3.2/3.3). GHK-поток Ca²⁺, m³h-гейтинг с окном деинактивации. Фазический rebound spike. 5-HT/DA-подавление.",
+      "release": false
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "id": 144,
+  "name": "Cav1.4 (L-type) — Ca²⁺-канал фоторецептора",
+  "name_en": "Cav1.4 (L-type) — photoreceptor Ca²⁺ channel",
+  "category": "Базовые модификаторы",
+  "category_en": "Basic Modifiers",
+  "family": "Cav1",
+  "isoforms": [
+    "Cav1.4",
+    "L-type",
+    "CACNA1F"
+  ],
+  "gating": {
+    "m_gate": "m², V½_bare=−15 мВ (Ca²⁺, полн.; ВНИМАНИЕ: −10…−17 в зав. от носителя/протокола/сплайса — НЕ чётко), k=7, τ_m=2 мс",
+    "h_gate": "отсутствует (h≡1): БЕЗ CDI (ICDI-домен), медленная VDI — sustained",
+    "cabp4_modulation": "CaBP4 (145) связывает IQ → снимает ингибицию ICDI/CTM → ΔV½=−10 мВ (Shaltiel 2012). Доп. эффект reduced VDI — вторичный, на потенциалах фоторецептора пренебрежим (Park 2014)."
+  },
+  "conductances": {
+    "gamma": "4 пС (1–4 пС, Doering 2005)"
+  },
+  "role": "Градуальный sustained Ca²⁺-вход фоторецептора → тонический выброс глутамата у ribbon-синапса.",
+  "bio_ref": "Doering CJ et al. (2005) Biophys J 89:3042 (γ=1–4 пС); McRory et al. (2004) J Neurosci 24:1707 (нет CDI, медленная VDI); Shaltiel et al. (2012) J Biol Chem 287:36312 (CaBP4 ΔV½=−10 мВ); Park et al. (2014) J Biol Chem 289:31262 (структура, IQ-ICDI разрыв).",
+  "species": "позвоночные (фоторецепторы сетчатки/пинеал)",
+  "note": "Отличие от Cav1.3/Cav1.2 — БЕЗ CDI (ICDI-домен) и малая γ=4 пС. V½_bare зависит от носителя заряда (Ca²⁺ vs Ba²⁺) и сплайс-варианта (экзон 47/CTM).",
+  "name_zh": "Cav1.4（L型）— 光感受器Ca²⁺通道",
+  "description_en": "Photoreceptor L-type Ca²⁺ channel (Cav1.4/CACNA1F): m² activation V½_bare=−15 mV (k=7, τ_m=2 ms), no h-gate (h≡1, no CDI via ICDI domain), single-channel γ=4 pS. CaBP4 binding relieves ICDI/CTM inhibition giving ΔV½=−10 mV. Sustained graded Ca²⁺ entry drives tonic glutamate release at the ribbon synapse.",
+  "description_zh": "光感受器L型Ca²⁺通道（Cav1.4/CACNA1F）：m²激活V½_bare=−15 mV（k=7，τ_m=2 ms），无h门（h≡1，经ICDI结构域无CDI），单通道γ=4 pS。CaBP4结合解除ICDI/CTM抑制，产生ΔV½=−10 mV。持续分级Ca²⁺内流驱动带状突触的紧张性谷氨酸释放。"
+}

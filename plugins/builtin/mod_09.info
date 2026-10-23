@@ -1,0 +1,19 @@
+{
+  "type_id": 9,
+  "name": "NMDA",
+  "version": "1.0.0",
+  "category": "Ионотропные рецепторы",
+  "mechanism_type": "Ионотропный (лиганд- и потенциал-зависимый катионный канал)",
+  "signaling": "Глутамат + глицин (коагонист) → GluN1/GluN2(A-D)/GluN3 гетеротетрамер → Mg²⁺-блок снимается деполяризацией → Na⁺/Ca²⁺/K⁺ поток. Высокая Ca²⁺-проводимость.",
+  "inputs": "neurotransmitter[NT_GLUTAMATE], V_m (снятие Mg²⁺-блока), extra_ions[Mg²⁺], intra/extra Ca²⁺, Na⁺",
+  "outputs": "I_NMDA → I_buffer. Медленный возбуждающий ток с большой Ca²⁺-компонентой (~10% тока).",
+  "neuron_types": "Все глутаматергические синапсы ЦНС. Особенно важен в гиппокампе (CA1, CA3), коре, стриатуме (MSN), мозжечке, amygdala. Развитие: преобладают GluN2B, взрослые: GluN2A.",
+  "subcellular": "Постсинаптическая мембрана дендритных шипиков. Ко-локализован с AMPA-рецепторами. Также присутствует экстрасинаптически (GluN2B-содержащие) и на пресинаптических терминалях.",
+  "kinetics": "Mg²⁺-блок: B(V)=1/(1+[Mg²⁺]₀*exp(−δ*z*F*V/(R*T))/K_D). δ=0.99, K_D=6.92 mM (GluN2A). Кинетика: τ_rise ≈ 5-10 ms (GluN2A) — 30-50 ms (GluN2B). τ_decay ≈ 50-500 ms. E_rev ≈ 0 mV. g_max ≈ 30-50 pS. Ca²⁺ фракция ≈ 8-12% тока.",
+  "function": "Молекулярный коинциденс-детектор: требуется одновременная пресинаптическая активность (глутамат) И постсинаптическая деполяризация. Индукция LTP/LTD через Ca²⁺-зависимые каскады (CaMKII, кальциневрин, PKC). Критичен для обучения, памяти, развития ЦНС, синаптического прунинга.",
+  "references": "Nowak L. et al. (1984) Magnesium gates glutamate-activated channels in mouse central neurones. Nature 307:462-465. Paoletti P. et al. (2013) NMDA receptor subunit diversity: impact on receptor properties, synaptic plasticity and disease. Nat Rev Neurosci 14:383-400.",
+  "name_en": "NMDA",
+  "name_zh": "NMDA",
+  "description_en": "Molecular coincidence detector requiring simultaneous presynaptic activity (glutamate) and postsynaptic depolarization. Induces LTP/LTD through Ca²⁺-dependent cascades (CaMKII, calcineurin, PKC).",
+  "description_zh": "分子符合检测器，需要突触前活动（谷氨酸）和突触后去极化同时发生。通过 Ca²⁺ 依赖性级联（CaMKII、钙调磷酸酶、PKC）诱导 LTP/LTD。"
+}

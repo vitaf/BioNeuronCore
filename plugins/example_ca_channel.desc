@@ -1,0 +1,15 @@
+{
+  "name": "Пример Ca-канала",
+  "version": "1.0.0",
+  "author": "BioNeuronSDK",
+  "type_id": 121,
+  "modifiers": [
+    {
+      "id": 121,
+      "name": "Ca-канал (пример)",
+      "category": "Ионотропные",
+      "description": "Потенциал-зависимый кальциевый канал. Пример плагина BioNeuronSDK.",
+      "release": false
+    }
+  ]
+}

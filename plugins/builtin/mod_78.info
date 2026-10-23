@@ -1,0 +1,19 @@
+{
+  "type_id": 78,
+  "name": "NB_SomaThermal",
+  "version": "1.0.0",
+  "category": "Сома-модификаторы",
+  "mechanism_type": "Физический (термодинамический: гомеостаз температуры 37C, тепловой стресс выше 39C)",
+  "signaling": "Термальный гомеостаз сомы: целевая температура 37C (target_temp), tau=5000ms нагрев/охлаждение. Накопление heat_stress при T > порога 39C (T_stress_threshold). При стрессе: ингибирование синтеза ATP, повышение проницаемости мембраны.",
+  "inputs": "Текущая температура (s->temperature), метаболическое тепло (от NB_SomaATP), окружающая температура (ambient 37C), порог стресса (39C)",
+  "outputs": "Delta температура -> target_temp (гомеостаз), накопление heat_stress при T > 39C. При стрессе: ↓ATP_synth, ↑мембранная проницаемость (leak).",
+  "neuron_types": "Все нейроны (каждый нейрон имеет собственную температуру в модели).",
+  "subcellular": "Сома (равномерное распределение температуры по сегменту).",
+  "kinetics": "dT/dt = -(T - target_temp) / tau + metabolic_heat. tau = 5000 ms. При T > T_stress_threshold (39C): heat_stress += (T - threshold) * dt / tau_stress. Heat_stress затухает с tau_recovery при T < threshold. Эффекты стресса: ATP_synth *= 1/(1+heat_stress), I_leak += heat_stress * leak_coeff.",
+  "function": "Термальная регуляция нейрона: поддержание физиологической температуры 37C. Моделирование гипертермии (heat stroke, fever) и её эффектов: денатурация белков, повышение мембранной проницаемости, подавление метаболизма. Важно для изучения фебрильных судорог, теплового шока, нейропротекции.",
+  "references": "BioNeuronCore: термальная модель нейрона. Kiyatkin E.A. (2010) Brain temperature homeostasis: physiological fluctuations and pathological shifts. Front Biosci 15:73-92.",
+  "name_en": "NB_SomaThermal",
+  "name_zh": "NB_SomaThermal",
+  "description_en": "Thermal homeostasis of the soma toward 37 °C with heat-stress accumulation above 39 °C. Stress inhibits ATP synthesis and increases membrane leak.",
+  "description_zh": "体细胞的热稳态，目标温度 37 °C，超过 39 °C 时积累热应激。应激抑制 ATP 合成并增加膜泄漏。"
+}

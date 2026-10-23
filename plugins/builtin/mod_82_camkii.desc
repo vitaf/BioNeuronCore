@@ -1,0 +1,15 @@
+{
+  "name": "CaMKII (Ca2+/calmodulin kinase II)",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 82,
+  "modifiers": [
+    {
+      "id": 82,
+      "name": "CaMKII (Ca2+/calmodulin kinase II)",
+      "category": "STDP Cascade",
+      "description": "Ca2+/calmodulin-dependent kinase II. Hill-4 activation by Ca2+. Autophosphorylation (Thr286) gives Ca2+-independent activity. Key LTP driver: phosphorylates AMPAR -> exocytosis.",
+      "release": false
+    }
+  ]
+}

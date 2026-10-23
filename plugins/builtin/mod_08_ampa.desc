@@ -1,0 +1,15 @@
+{
+  "name": "AMPA-рецептор",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 8,
+  "modifiers": [
+    {
+      "id": 8,
+      "name": "AMPA-рецептор",
+      "category": "Ионотропные рецепторы",
+      "description": "Ионотропный глутаматный рецептор AMPA — быстрая деполяризация",
+      "release": false
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "id": 123,
+  "name": "Kv DR — delayed rectifier K⁺",
+  "full_name": "Kv1.1 (KCNA1) Delayed Rectifier K+ Channel",
+  "category": "Ion channels / K+ channels",
+  "description": "Fast voltage-gated K+ channel without inactivation. Primary spike repolarization mechanism. Single m-gate, GHK K+ flux with full ion tracking. Replaces GENERIC_VOLTAGE_GATED workaround.",
+  "electrogenic": true,
+  "ions": [
+    "K+"
+  ],
+  "state_vars": [
+    {
+      "index": 0,
+      "name": "m",
+      "default": 0.0,
+      "description": "Activation gate (dynamic)"
+    },
+    {
+      "index": 1,
+      "name": "V_half",
+      "default": -30.0,
+      "unit": "mV",
+      "description": "Half-activation voltage"
+    },
+    {
+      "index": 2,
+      "name": "k",
+      "default": 10.0,
+      "unit": "mV",
+      "description": "Boltzmann slope"
+    },
+    {
+      "index": 3,
+      "name": "g_max",
+      "default": 2.0,
+      "unit": "nS",
+      "description": "Maximum conductance"
+    },
+    {
+      "index": 4,
+      "name": "tau",
+      "default": 2.0,
+      "unit": "ms",
+      "description": "Activation time constant"
+    }
+  ],
+  "name_en": "Kv DR — delayed rectifier K⁺",
+  "name_zh": "Kv DR — 延迟整流K⁺",
+  "description_en": "Fast voltage-gated K⁺ channel (Kv1.1/KCNA1) without inactivation; primary spike-repolarization mechanism with a single m-gate (V_half=−30 mV, k=10 mV, g_max=2.0 nS, τ=2 ms) and GHK K⁺ flux with full ion tracking.",
+  "description_zh": "无失活的快速电压门控K⁺通道（Kv1.1/KCNA1）；主要锋电位复极化机制，单m门（V_half=−30 mV，k=10 mV，g_max=2.0 nS，τ=2 ms），GHK K⁺通量并完整追踪离子。"
+}

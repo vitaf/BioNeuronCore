@@ -1,0 +1,15 @@
+{
+  "name": "Kir2.2 inward rectifier K",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 208,
+  "modifiers": [
+    {
+      "id": 208,
+      "name": "Kir2.2 (KCNJ12)",
+      "category": "Ионные каналы",
+      "description": "Kir2.2 inward rectifier K⁺ (γ=36 пС, конститутивный, Ba²⁺ 2.8 µM). GHK K⁺ + Woodhull rectification.",
+      "release": false
+    }
+  ]
+}

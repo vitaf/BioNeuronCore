@@ -1,0 +1,15 @@
+{
+  "name": "TRPV1-рецептор",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 16,
+  "modifiers": [
+    {
+      "id": 16,
+      "name": "TRPV1-рецептор",
+      "category": "Ионотропные рецепторы",
+      "description": "TRPV1 — ванилоидный рецептор, активируемый температурой и лигандами",
+      "release": false
+    }
+  ]
+}

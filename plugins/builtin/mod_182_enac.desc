@@ -1,0 +1,15 @@
+{
+  "name": "ENaC Na⁺-утечка",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 182,
+  "modifiers": [
+    {
+      "id": 182,
+      "name": "ENaC Na⁺-утечка",
+      "category": "Other",
+      "description": "ENaC — эпителиальный Na⁺-канал (солёный вкус тип I). Конститутивный Po≈0.5. Амилорид-ингибиция (state[5] нМ, IC50 100 нМ). γ=4.5 пС. GHK-флюкс Na⁺ (z=1). Kellenberger 2002.",
+      "release": false
+    }
+  ]
+}

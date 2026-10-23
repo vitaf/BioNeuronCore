@@ -1,0 +1,19 @@
+{
+  "type_id": 0,
+  "name": "Ионотропный Na/K",
+  "version": "1.0.0",
+  "category": "Базовые модификаторы",
+  "mechanism_type": "Ионотропный (потенциал-зависимый)",
+  "signaling": "Прямой ионный поток: Na⁺ входящий (деполяризация), K⁺ выходящий (реполяризация). Воротные переменные m (активация Na⁺), h (инактивация Na⁺), n (активация K⁺).",
+  "inputs": "V_m (мембранный потенциал), intra_ions[Na⁺], extra_ions[Na⁺], intra_ions[K⁺], extra_ions[K⁺]",
+  "outputs": "I_Na, I_K → I_buffer сегмента. Изменяет V_m через суммарный ток.",
+  "neuron_types": "Все типы нейронов ЦНС и ПНС. Универсальный механизм генерации потенциала действия.",
+  "subcellular": "Аксон (начальный сегмент, перехваты Ранвье), сома, дендриты (в меньшей плотности). Наибольшая плотность — в аксонном холмике (hillock).",
+  "kinetics": "3 состояния (m, h, n), 10 подшагов Эйлера на dt=1ms. α_m(V)=0.1*(V+40)/(1−exp(−(V+40)/10)), β_m(V)=4*exp(−(V+65)/18). α_h(V)=0.07*exp(−(V+65)/20), β_h(V)=1/(1+exp(−(V+35)/10)). α_n(V)=0.01*(V+55)/(1−exp(−(V+55)/10)), β_n(V)=0.125*exp(−(V+65)/80). g_Na=120 mS/cm², g_K=36 mS/cm², E_Na=+50 mV, E_K=−77 mV, C_m=1 μF/cm².",
+  "function": "Генерация и распространение потенциала действия. Быстрая деполяризация (Na⁺) и последующая реполяризация (K⁺). Лежит в основе возбудимости нейронов. Сальтаторная проводимость в миелинизированных аксонах.",
+  "references": "Hodgkin A.L., Huxley A.F. (1952) A quantitative description of membrane current and its application to conduction and excitation in nerve. J Physiol 117:500-544.",
+  "name_en": "Ionotropic Na/K",
+  "name_zh": "离子型 Na/K",
+  "description_en": "Generates and propagates the action potential via fast Na⁺-dependent depolarization followed by K⁺-dependent repolarization. Underlies neuronal excitability and saltatory conduction in myelinated axons (g_Na=120 mS/cm², g_K=36 mS/cm²).",
+  "description_zh": "通过 Na⁺ 依赖的快速去极化和随后的 K⁺ 依赖复极化产生并传导动作电位。构成神经元兴奋性以及有髓轴突跳跃式传导的基础（g_Na=120 mS/cm²，g_K=36 mS/cm²）。"
+}

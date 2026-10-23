@@ -1,0 +1,19 @@
+{
+  "type_id": 27,
+  "name": "A1",
+  "version": "1.0.0",
+  "category": "Метаботропные Gi/o",
+  "mechanism_type": "Метаботропный (G-белок Gi/o-связанный)",
+  "signaling": "Аденозин → A1 → Gi/o → ↓cAMP, активация GIRK, ингибирование Ca_v. Самый распространённый аденозиновый рецептор в ЦНС. Нейропротективный.",
+  "inputs": "neurotransmitter[NT_ADENOSINE]",
+  "outputs": "↓cAMP, ↑GIRK, ↓Ca_v (пресинаптически: ↓выброс глутамата). Гиперполяризация.",
+  "neuron_types": "Кора, гиппокамп (CA1, CA3), мозжечок, таламус, стриатум, спинной мозг. Убиквитарная экспрессия в ЦНС.",
+  "subcellular": "Пресинаптические терминали (ингибирование глутаматного выброса). Постсинаптические (GIRK-опосредованная гиперполяризация).",
+  "kinetics": "K_D аденозин ≈ 10-100 nM (high-affinity). Активируется при накоплении внеклеточного аденозина (метаболический стресс, ишемия, активность). Агонисты: CPA (CCPA), R-PIA. Антагонисты: DPCPX, кофеин (неселективный A1/A2A).",
+  "function": "Нейропротекция (ишемическое прекондиционирование). Ингибирование глутаматного выброса. Сон: аденозин накапливается во время бодрствования → A1-активация → сон. Кофеин: антагонист A1/A2A → бодрствование. Снижение судорожной активности.",
+  "references": "Fredholm B.B. et al. (2001) International Union of Pharmacology. XXV. Nomenclature and classification of adenosine receptors. Pharmacol Rev 53:527-552.",
+  "name_en": "A1",
+  "name_zh": "A1",
+  "description_en": "Neuroprotection (ischemic preconditioning) and inhibition of glutamate release. Promotes sleep; caffeine (A1/A2A antagonist) promotes wakefulness; reduces seizure activity.",
+  "description_zh": "神经保护（缺血预处理）和抑制谷氨酸释放。促进睡眠；咖啡因（A1/A2A 拮抗剂）促进觉醒；降低癫痫活动。"
+}

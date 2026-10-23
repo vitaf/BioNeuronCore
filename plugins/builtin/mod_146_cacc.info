@@ -1,0 +1,27 @@
+{
+  "id": 146,
+  "name": "CaCC/ANO2 (TMEM16B) — Ca²⁺-активируемый Cl⁻-канал",
+  "name_en": "CaCC/ANO2 (TMEM16B) — Ca²⁺-activated Cl⁻ channel",
+  "category": "Базовые модификаторы",
+  "category_en": "Basic Modifiers",
+  "family": "TMEM16 (anoctamin)",
+  "isoforms": [
+    "ANO2",
+    "TMEM16B",
+    "CaCC"
+  ],
+  "gating": {
+    "ca_gate": "Hill n=2, EC50=4 µM (Cenedese 2011: 4.6 µM @ −50 мВ, 2.8 µM @ +50 мВ) — Ca²⁺-зависимая активация",
+    "voltage": "Ca²⁺+V сопряжённые; V-зависимость НЕ моделируется (вторичная)"
+  },
+  "conductances": {
+    "gamma": "2 пС — СТРУКТУРНАЯ ОЦЕНКА (TMEM16B unitary в литературе не сообщается; гомолог TMEM16A ~8 пС)"
+  },
+  "role": "Cl⁻-эффлюкс (деполяризация при высоком [Cl⁻]ᵢ) → усиливает ответ обонятельного нейрона до ~80–90%.",
+  "bio_ref": "Cenedese et al. (2011) — Ca²⁺/V-зависимость, EC50, Hill; Stephan et al. (2009) PNAS 106:11776 (ANO2 = ciliary CaCC); Li & Lin (2018) PNAS (CaCC ~80% порога).",
+  "species": "позвоночные (реснички обонятельных нейронов, терминали фоторецепторов)",
+  "note": "γ=2 пС — структурная оценка: димерная scramblase-подобная пора (широкая, но слабо селективная) → малая γ.",
+  "name_zh": "CaCC/ANO2（TMEM16B）— 钙激活氯通道",
+  "description_en": "Ca²⁺-activated Cl⁻ channel (ANO2/TMEM16B) with Hill n=2, EC50=4 µM (Cenedese 2011: 4.6 µM at −50 mV, 2.8 µM at +50 mV), single-channel γ=2 pS (structural estimate). Cl⁻ efflux amplifies the olfactory neuron response to ~80–90%.",
+  "description_zh": "Ca²⁺激活的Cl⁻通道（ANO2/TMEM16B），Hill n=2，EC50=4 µM（Cenedese 2011：−50 mV时4.6 µM，+50 mV时2.8 µM），单通道γ=2 pS（结构估计）。Cl⁻外流将嗅觉神经元反应放大至~80–90%。"
+}

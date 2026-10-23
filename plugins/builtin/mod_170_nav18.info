@@ -1,0 +1,23 @@
+{
+  "type_id": 170,
+  "name": "Nav1.8 TTX-R Na⁺ канал (SCN10A)",
+  "version": "1.0.0",
+  "category": "Voltage-gated Na",
+  "mechanism_type": "Ионотропный (потенциал-зависимый)",
+  "signaling": "Прямой ионный поток Na⁺ внутрь клетки (GHK, z=1).",
+  "inputs": "V_m, intra_ions[Na⁺], extra_ions[Na⁺]",
+  "outputs": "I_Na → I_buffer. Повышает внутриклеточный Na⁺.",
+  "neuron_types": "Ноцицептивные C-волокна и DRG-нейроны.",
+  "subcellular": "Сома и аксон C-волокон (SCN10A).",
+  "gating": "Активация V½=−20 мВ, k=7–8; инактивация V½=−25…−35 мВ",
+  "ions": "Na+",
+  "gamma": "не найдено (whole-cell only)",
+  "pharmacology": "TTX-R (IC50 ~60 µM)",
+  "kinetics": "τ_акт ~1–2 мс (медленная); τ_инакт ~5–13 мс (13.5 мс @ −20 мВ).",
+  "function": "Медленный TTX-R Na⁺-канал; несёт 80–90% входящего тока ПД в C-волокнах, работает при деполяризации где Nav1.7 инактивирован.",
+  "references": "PMID 8710901, PMID 10448219, PMID 11495938, PMID 8632165",
+  "note": "γ не найдена (нужен Akopian 1996 полный текст).",
+  "name_en": "Nav1.8 TTX-R Na⁺ (SCN10A)",  "name_zh": "Nav1.8 TTX-R Na⁺通道",
+  "description_en": "Slow TTX-R Na⁺ channel; carries 80–90% of the action-potential inward current in C-fibers, active during depolarization where Nav1.7 is inactivated. Activation V½ −20 mV.",
+  "description_zh": "慢速TTX-R Na⁺通道；在C纤维中承载80–90%的动作电位内向电流，在Nav1.7失活的去极化状态下工作。激活V½ −20 mV。"
+}

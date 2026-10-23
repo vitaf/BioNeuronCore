@@ -1,0 +1,15 @@
+{
+  "name": "TRPM8 холод/ментол канал",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 173,
+  "modifiers": [
+    {
+      "id": 173,
+      "name": "TRPM8 холод/ментол канал",
+      "category": "TRP channel",
+      "description": "TRPM8 холодовой/ментоловый катионный канал. Лиганд state[4]=ментол µM (EC50 ~30 µM), Ca²⁺-десенситизация (Kd 0.5 µM, τ 200 мс). γ=63 пС. Ica=P·0.5 (z=2) + Ina=P·0.5 (z=1). GHK-флюкс. McKemy 2002.",
+      "release": false
+    }
+  ]
+}

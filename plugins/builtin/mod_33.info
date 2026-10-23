@@ -1,0 +1,19 @@
+{
+  "type_id": 33,
+  "name": "mGluR7",
+  "version": "1.0.0",
+  "category": "Метаботропные Gi/o",
+  "mechanism_type": "Метаботропный (G-белок Gi/o-связанный)",
+  "signaling": "Глутамат → mGluR7 (Group III) → Gi/o → ↓cAMP, ↓Ca_v. Самый низкоаффинный из Group III mGluR. Активируется только при высокочастотной стимуляции.",
+  "inputs": "neurotransmitter[NT_GLUTAMATE] (только высокие концентрации в АЗ)",
+  "outputs": "↓cAMP, ↓Ca_v → ↓выброс глутамата и GABA.",
+  "neuron_types": "Кора, гиппокамп (CA3 мшистые волокна → CA3 пирамидные), стриатум, amygdala, мозжечок, гипоталамус. Широкая экспрессия в ЦНС.",
+  "subcellular": "Пресинаптические терминали (преимущественно в активных зонах). Единственный из Group III mGluR, локализованный в АЗ (активная зона).",
+  "kinetics": "EC50 глутамат ≈ 0.5-1 mM (низкая аффинность — активируется только при burst firing). PAM: AMN082 (аллостерический агонист). NAM: ADX71743. Участвует в фильтрации низкочастотной передачи (high-pass filter).",
+  "function": "Высокочастотный фильтр: блокирует низкочастотную передачу, пропускает burst. Эпилепсия: mGluR7 KO → судорожная предрасположенность. Тревожность, депрессия, стресс-реакции (HPA axis).",
+  "references": "Niswender C.M., Conn P.J. (2010), см. mGluR2.",
+  "name_en": "mGluR7",
+  "name_zh": "mGluR7",
+  "description_en": "High-pass filter: blocks low-frequency transmission but passes bursts. Epilepsy (KO → seizure susceptibility), anxiety, depression and stress responses (HPA axis).",
+  "description_zh": "高通滤波器：阻断低频传递但允许爆发通过。与癫痫（敲除 → 癫痫易感性）、焦虑、抑郁和应激反应（HPA 轴）相关。"
+}

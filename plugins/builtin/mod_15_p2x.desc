@@ -1,0 +1,15 @@
+{
+  "name": "P2X-рецептор",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 15,
+  "modifiers": [
+    {
+      "id": 15,
+      "name": "P2X-рецептор",
+      "category": "Ионотропные рецепторы",
+      "description": "Ионотропный пуриновый рецептор P2X — АТФ-активируемый катионный канал",
+      "release": false
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "type_id": 86,
+  "name": "eCB Synthesis (2-AG)",
+  "version": "1.0.0",
+  "category": "STDP / Пластичность",
+  "mechanism_type": "Ферментативный синтез эндоканнабиноида",
+  "signaling": "Постсинаптическое повышение Ca²⁺ → PLCβ → DAG → DGLα → 2-AG. 2-AG диффундирует ретроградно через синаптическую щель → активирует пресинаптический CB1 (Gi/o) → подавление выброса нейромедиатора. Ключевой механизм eCB-LTD.",
+  "inputs": "intra_ions[Ca²⁺] (Ca²⁺-зависимая активация), mGluR1/5 (Gq → PLCβ)",
+  "outputs": "cleft_nt[2-AG] — ретроградный мессенджер. Активация MOD_NT_RECEPTOR_CB1 на пресинапсе.",
+  "neuron_types": "Кора (пирамидные нейроны L2/3, L5), гиппокамп (CA1), стриатум (MSN), мозжечок (клетки Пуркинье), миндалина.",
+  "subcellular": "Постсинаптическая плотность. DGLα — мембрано-ассоциированный фермент, активируется Ca²⁺/CaM. Локализован в дендритных шипиках.",
+  "kinetics": "Ca²⁺ EC₅₀ ≈ 0.5-1.0 µM. 2-AG синтез τ_rise ≈ 50-200ms, τ_decay ≈ 1-5s (MAGL гидролиз). CB1 активация: Kd ≈ 10-50 nM. Деполяризация-индуцированное подавление (DSI): длительность 10-60s.",
+  "function": "Ретроградный эндоканнабиноидный сигналинг. Деполяризация-индуцированное подавление торможения (DSI) и возбуждения (DSE). eCB-зависимая LTD (долговременная депрессия). Координация excitation/inhibition баланса.",
+  "references": "Alger B.E. (2002) Retrograde signaling in the regulation of synaptic transmission: focus on endocannabinoids. Prog Neurobiol 68:247-286. Kano M. et al. (2009) Endocannabinoid-mediated control of synaptic transmission. Physiol Rev 89:309-380.",
+  "name_en": "eCB Synthesis (2-AG)",
+  "name_zh": "eCB 合成 (2-AG)",
+  "description_en": "Postsynaptic Ca²⁺/PLCβ-dependent synthesis of the endocannabinoid 2-AG, which diffuses retrogradely to activate presynaptic CB1 (Gi/o). Key mechanism of eCB-LTD and DSI/DSE.",
+  "description_zh": "突触后 Ca²⁺/PLCβ 依赖性合成内源性大麻素 2-AG，逆行扩散激活突触前 CB1（Gi/o）。是 eCB-LTD 和 DSI/DSE 的关键机制。"
+}

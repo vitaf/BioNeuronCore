@@ -1,0 +1,15 @@
+{
+  "name": "KCa3.1 Ca-activated K",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 209,
+  "modifiers": [
+    {
+      "id": 209,
+      "name": "KCa3.1 (KCNN4)",
+      "category": "Ионные каналы",
+      "description": "KCa3.1 Ca²⁺-активируемый K⁺ (γ=25 пС, EC50=188 нМ, voltage-independent). GHK K⁺, TRAM-34 20 нМ.",
+      "release": false
+    }
+  ]
+}

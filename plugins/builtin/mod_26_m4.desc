@@ -1,0 +1,15 @@
+{
+  "name": "M4-рецептор",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 26,
+  "modifiers": [
+    {
+      "id": 26,
+      "name": "M4-рецептор",
+      "category": "Метаботропные Gi/o",
+      "description": "Метаботропный мускариновый рецептор M4 (Gi/o)",
+      "release": false
+    }
+  ]
+}

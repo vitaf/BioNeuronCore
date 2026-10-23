@@ -1,0 +1,15 @@
+{
+  "name": "TRPM4 Ca²⁺-активируемый неселективный катионный канал",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 164,
+  "modifiers": [
+    {
+      "id": 164,
+      "name": "TRPM4 Ca²⁺-активируемый неселективный катионный канал",
+      "category": "Ca-activated nonselective",
+      "description": "TRPM4 Ca²⁺-активируемый неселективный Na⁺/K⁺ канал (не Ca-проводящий). γ=25 пС, Ca²⁺-зависимый Po (EC50 0.4 µM). 9-phenanthrol блок (IC50 18 µM). GHK Na/K (z=1, одинаковый P_base).",
+      "release": false
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "name": "MT2-рецептор",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 40,
+  "modifiers": [
+    {
+      "id": 40,
+      "name": "MT2-рецептор",
+      "category": "Метаботропные Gi/o",
+      "description": "Метаботропный мелатониновый рецептор MT2 (Gi/o)",
+      "release": false
+    }
+  ]
+}

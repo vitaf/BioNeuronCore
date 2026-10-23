@@ -1,0 +1,15 @@
+{
+  "name": "5-HT1F-рецептор",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 21,
+  "modifiers": [
+    {
+      "id": 21,
+      "name": "5-HT1F-рецептор",
+      "category": "Метаботропные Gi/o",
+      "description": "Метаботропный серотониновый рецептор 5-HT1F (Gi/o)",
+      "release": false
+    }
+  ]
+}

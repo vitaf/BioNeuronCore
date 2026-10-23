@@ -1,0 +1,23 @@
+{
+  "type_id": 177,
+  "name": "Nav1.3 TTX-S Na⁺ канал (SCN3A)",
+  "version": "1.0.0",
+  "category": "Voltage-gated Na",
+  "mechanism_type": "Ионотропный (потенциал-зависимый)",
+  "signaling": "Прямой ионный поток Na⁺ внутрь клетки (GHK, z=1).",
+  "inputs": "V_m, intra_ions[Na⁺], extra_ions[Na⁺]",
+  "outputs": "I_Na → I_buffer. Повышает внутриклеточный Na⁺.",
+  "neuron_types": "Центральные нейроны (эмбриональные/регенерирующие), DRG.",
+  "subcellular": "Сома и аксон нейронов ЦНС (SCN3A).",
+  "gating": "Активация V½=−15.8±1.0 мВ, k=5.2; инактивация V½=−51.8±0.6 мВ, k=5.5 (с β1 −64 мВ)",
+  "ions": "Na+",
+  "gamma": "не найдено (по аналогии Nav-семейства ~15–20 пС)",
+  "pharmacology": "TTX-S, IC50 ~4 нМ",
+  "kinetics": "τ_инакт: τ_fast 0.65 мс (~76%), τ_slow 4.0 мс; rapid repriming (τ 1.86 мс).",
+  "function": "TTX-S Na⁺-канал с быстрым repriming и медленной closed-state инактивацией; важен при эмбриогенезе/регенерации.",
+  "references": "PMID 11487618",
+  "note": "⚠️ γ не определена экспериментально — по аналогии Nav-семейства ~15–20 пС (согласовать). V½ зависит от β-субъединиц.",
+  "name_en": "Nav1.3 TTX-S Na⁺ (SCN3A)",  "name_zh": "Nav1.3 TTX-S Na⁺通道",
+  "description_en": "TTX-S Na⁺ channel with fast repriming and slow closed-state inactivation; important during embryogenesis/regeneration. V½_act −15.8 mV; TTX IC50 ~4 nM.",
+  "description_zh": "具有快速再激活和缓慢关闭态失活的TTX-S Na⁺通道；在胚胎发生/再生中很重要。V½激活−15.8 mV；TTX IC50 ~4 nM。"
+}

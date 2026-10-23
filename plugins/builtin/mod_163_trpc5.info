@@ -1,0 +1,33 @@
+{
+  "id": 163,
+  "name": "TRPC5 — неселективный катионный канал (Gq+Ca²⁺-зависимый)",
+  "name_en": "TRPC5 — nonselective cation channel (Gq+Ca²⁺-dependent)",
+  "category": "Базовые модификаторы",
+  "category_en": "Basic Modifiers",
+  "family": "TRPC (canonical)",
+  "isoforms": [
+    "TRPC5"
+  ],
+  "gating": {
+    "mechanism": "Gq+Ca²⁺-зависимый",
+    "gq": "state[4] (0–1) — Gq/PLC-сопряжение",
+    "ca": "Ca²⁺-зависимая активация: ca_act = [Ca²⁺]ᵢ/([Ca²⁺]ᵢ + 0.5 µМ), EC50 0.5 µМ"
+  },
+  "conductances": {
+    "gamma": "50 пС (41–66 пС)"
+  },
+  "ions": [
+    "Na⁺",
+    "Ca²⁺"
+  ],
+  "permeability": "PCa/PNa ≈ 5",
+  "pharmacology": {
+    "HC-070": "IC50 9.3 нМ — селективный блокатор TRPC5 (state[5], нМ)"
+  },
+  "role": "Деполяризующий катионный вход (Na⁺/Ca²⁺), Gq/PLC-опосредованная возбуждающая модуляция.",
+  "bio_ref": "PMC2797210; PMID 29385160 (HC-070 IC50 9.3 нМ).",
+  "species": "позвоночные (нейроны, гладкие мышцы, подоциты)",
+  "note": "⚠️ G (макроскопическая проводимость) не найдена в литературе → density = плейсхолдер.",  "name_zh": "TRPC5 — 非选择性阳离子通道（Gq+Ca²⁺依赖）",
+  "description_en": "Depolarizing cation influx (Na⁺/Ca²⁺), Gq/PLC-mediated excitatory modulation. γ=50 pS; HC-070 IC50 9.3 nM; PCa/PNa≈5.",
+  "description_zh": "去极化阳离子内流（Na⁺/Ca²⁺），Gq/PLC介导的兴奋性调制。γ=50 pS；HC-070 IC50 9.3 nM；PCa/PNa≈5。"
+}

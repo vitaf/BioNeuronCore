@@ -1,0 +1,15 @@
+{
+  "name": "Тадпольный аксональный Na⁺ (Nav1.2 developmental/Scn2A)",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 193,
+  "modifiers": [
+    {
+      "id": 193,
+      "name": "Nav1.2 developmental (тадпольный аксональный Na⁺)",
+      "category": "Voltage-gated Na",
+      "description": "Nav1.2 developmental (Scn2a) — тадпольный аксональный Na⁺. m³h: активация V½=−23 мВ k=6, инактивация V½=−35 мВ k=6.2 (Ribera & Spitzer) → доступен на покое головастика −51 мВ (h_inf=0.94). Для проведения ПД по немиелинизированному аксону. TTX-S (IC50 10 нМ), γ=20 пС. GHK Na⁺ (z=1).",
+      "release": false
+    }
+  ]
+}

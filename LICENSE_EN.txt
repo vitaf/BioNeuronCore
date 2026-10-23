@@ -1,0 +1,145 @@
+LICENSE AGREEMENT
+────────────────────────────────────────────────────────────────────────
+
+Software Product: BioNeuronCore (part of MindCopy platform)
+Author and Owner: Vitaly Alexandrovich Feshin
+Contact Information:
+  E-mail: feshin2004@mail.ru, vfeshin@mindcopy.ru
+  Phone: +7(918)345-75-18
+  Russia, Krasnodar
+Year: 2024-2026
+
+                      ALL RIGHTS RESERVED. ВСЕ ПРАВА ЗАЩИЩЕНЫ.
+
+═══════════════════════════════════════════════════════════════════════════════
+
+1. GENERAL PROVISIONS
+
+This License Agreement (hereinafter — the "License") governs the use of
+the software product "BioNeuronCore" (hereinafter — the "Software") as
+part of the MindCopy platform. By installing, copying, or using the
+Software, you agree to the terms of this License. If you do not agree
+to the terms, you are not permitted to use the Software.
+
+All rights to the Software, including exclusive proprietary rights,
+belong to the Author — Vitaly Alexandrovich Feshin. The Software is
+protected by the copyright laws of the Russian Federation and
+international treaties.
+
+═══════════════════════════════════════════════════════════════════════════════
+
+2. FREE USE
+
+Free use of the Software (without payment of author's remuneration)
+is permitted exclusively for the following categories of users:
+
+  a) Scientific Institutions — public and private research organizations,
+     academic institutes, laboratories using the Software for
+     non-commercial scientific research purposes;
+
+  b) Medical Institutions — public and private medical organizations,
+     hospitals, clinics, diagnostic centers using the Software for
+     purposes of medical diagnosis, treatment, and patient rehabilitation;
+
+  c) Educational Institutions — public and private educational
+     institutions of all levels using the Software in the educational
+     process;
+
+  d) Private Use — individuals using the Software for personal,
+     non-profit purposes.
+
+═══════════════════════════════════════════════════════════════════════════════
+
+3. COMMERCIAL AND OTHER USE
+
+Any use of the Software not falling under the categories listed in
+Section 2 constitutes commercial or other use and requires a separate
+license agreement with the Author on a paid basis. To obtain a
+commercial license, please contact the Author.
+
+═══════════════════════════════════════════════════════════════════════════════
+
+4. COPYRIGHT AND RESTRICTIONS
+
+4.1. In all cases of use of the Software, compliance with copyright
+     is mandatory.
+
+4.2. THE FOLLOWING IS PROHIBITED:
+     a) Removing, modifying, or concealing information about the Author
+        and copyright;
+     b) Distributing the Software without the Author's written permission;
+     c) Presenting the Software as a product of another author or
+        organization;
+     d) Using the Software in weapons systems, autonomous combat systems,
+        mass surveillance systems, or other systems capable of causing
+        harm to people;
+     e) Using the Software to create or distribute malicious software;
+     f) Using the Software for purposes contrary to the legislation of
+        the Russian Federation and international law.
+
+4.3. When publishing scientific results obtained using the Software,
+     a reference to the Author and the product name must be included.
+
+═══════════════════════════════════════════════════════════════════════════════
+
+5. DISCLAIMER OF WARRANTY AND LIMITATION OF LIABILITY
+
+5.1. THE SOFTWARE IS PROVIDED "AS IS", WITHOUT ANY WARRANTIES, EXPRESS
+     OR IMPLIED, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF
+     MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND
+     NON-INFRINGEMENT.
+
+5.2. The Author does not guarantee that the Software will operate
+     uninterrupted or error-free, or that defects will be corrected.
+     The Author does not guarantee biological accuracy, scientific
+     validity, or fitness of simulation results for any purpose.
+     The Software is a research tool and is not intended for clinical
+     diagnosis, treatment, or medical decision-making.
+
+5.3. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,
+     INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+     (INCLUDING, BUT NOT LIMITED TO, DAMAGES FOR LOSS OF DATA, PROFITS,
+     BUSINESS REPUTATION, OR PRODUCTION INTERRUPTION) ARISING FROM THE
+     USE OR INABILITY TO USE THE SOFTWARE, EVEN IF THE AUTHOR HAS BEEN
+     ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+
+5.4. The User assumes ALL responsibility for results obtained using the
+     Software, their interpretation and application, and any decisions
+     made based on simulation results.
+
+5.5. The maximum liability of the Author for any claim is limited to
+     1 (one) Russian Ruble.
+
+═══════════════════════════════════════════════════════════════════════════════
+
+6. INTELLECTUAL PROPERTY
+
+All rights to the Software, including copyrights, patents, trade secrets,
+trademarks, and other intellectual property rights, belong exclusively to
+the Author. The Software contains trade secrets and confidential
+information. Algorithms, architecture, data formats, and methods
+implemented in the Software are the intellectual property of the Author.
+
+═══════════════════════════════════════════════════════════════════════════════
+
+7. TERMINATION
+
+This License is automatically terminated if the User violates any of its
+terms. Upon termination, the User must delete all copies of the Software
+and derivative works.
+
+═══════════════════════════════════════════════════════════════════════════════
+
+8. FINAL PROVISIONS
+
+8.1. This License is valid in all countries worldwide.
+8.2. The Author reserves the right to change the terms of the License.
+     The current version is published together with the Software.
+8.3. All disputes shall be resolved in accordance with the legislation
+     of the Russian Federation in the court at the Author's location
+     (Krasnodar, Russia).
+
+═══════════════════════════════════════════════════════════════════════════════
+
+Copyright (c) 2024-2026 Vitaly Alexandrovich Feshin. All rights reserved.
+See also DISCLAIMER.md — short disclaimer of liability.

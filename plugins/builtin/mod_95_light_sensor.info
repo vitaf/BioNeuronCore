@@ -1,0 +1,19 @@
+{
+  "type_id": 95,
+  "name": "Фоторецептор (pineal)",
+  "version": "1.0.0",
+  "category": "Сенсоры",
+  "mechanism_type": "Фоторецептор (GPCR-опсин → cGMP-каскад)",
+  "signaling": "Активируется внешней освещённостью (state[0]=lux). Преобразует световой поток в тонический деполяризующий ток через cGMP-gated каналы (state[1]=drive). Ускорение: state[2]=темновая адаптация, state[3]=порог обнаружения тени.",
+  "inputs": "state[0]=lux, state[1]=drive_ток, state[2]=темновая_адаптация, state[3]=порог_тени",
+  "outputs": "I_light — деполяризующий ток пропорционально освещённости. При резком падении освещённости (тень) ток прекращается → PINEAL/TECTUM замолкают → AVOID растормаживается.",
+  "neuron_types": "PINEAL (пинеальный фоторецептор, срединный). TECTUM (зрительный центр, парный). ipRGC (фоточувствительные ганглиозные клетки). Колбочки/палочки (человеческая сетчатка).",
+  "subcellular": "Апикальная мембрана фоторецепторных клеток. У PINEAL — сома.",
+  "kinetics": "Диапазон освещённости: 0.001-10000 lux. Ток насыщения: 0.1-0.3 pA. Время отклика: 50-100ms. Теневая чувствительность: Δlux > 50% за <200ms.",
+  "function": "Обеспечивает положительный фототаксис (свет → PINEAL → dIN → swimming к свету) и теневое избегание (тень → AVOID → C-поворот). Пинеальный путь — билатеральный (срединный орган). Тектальный — латерализованный.",
+  "references": "Roberts A. et al. (2010) How neurons generate behaviour in a hatchling amphibian tadpole. Frontiers in Behavioral Neuroscience 4:16. Jamieson D., Roberts A. (2000) Responses of young Xenopus laevis tadpoles to light dimming. Journal of Experimental Biology 203:603-614.",
+  "name_en": "Photoreceptor (pineal)",
+  "name_zh": "光感受器 (松果体)",
+  "description_en": "Pineal photoreceptor that converts light intensity (state[0]=lux) into a tonic depolarizing current via cGMP-gated channels. Supports phototaxis and shadow avoidance.",
+  "description_zh": "松果体光感受器，通过 cGMP 门控通道将光强（state[0]=lux）转化为紧张性去极化电流。支持趋光性和阴影躲避。"
+}

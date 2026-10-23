@@ -1,0 +1,15 @@
+{
+  "name": "Protein Synthesis (Translation)",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 90,
+  "modifiers": [
+    {
+      "id": 90,
+      "name": "Protein Synthesis (Translation)",
+      "category": "Consolidation/Reconsolidation",
+      "description": "Protein synthesis (translation). mTORC1->S6K1/S6 + mTORC1->4E-BP->eIF4E — two parallel initiation pathways. Reads mTORC1 from same segment. Consumes ATP. Produces proteins for synaptic plasticity.",
+      "release": false
+    }
+  ]
+}

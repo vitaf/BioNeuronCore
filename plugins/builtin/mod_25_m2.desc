@@ -1,0 +1,15 @@
+{
+  "name": "M2-рецептор",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 25,
+  "modifiers": [
+    {
+      "id": 25,
+      "name": "M2-рецептор",
+      "category": "Метаботропные Gi/o",
+      "description": "Метаботропный мускариновый рецептор M2 (Gi/o) — кардиальный, снижает cAMP",
+      "release": false
+    }
+  ]
+}

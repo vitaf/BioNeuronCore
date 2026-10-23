@@ -1,0 +1,38 @@
+[Unit]
+Description=BioNeuronCore Simulation Daemon
+Documentation=https://develop.mindcopy.ru/
+After=network.target
+
+[Service]
+Type=simple
+User=biocore
+Group=biocore
+ExecStart=/opt/mindcopy/bin/biocore-daemon --config /etc/biocore/biocore.conf
+Restart=on-failure
+RestartSec=5
+
+# Безопасность
+NoNewPrivileges=yes
+ProtectSystem=strict
+ProtectHome=yes
+ReadWritePaths=/var/lib/biocore /var/log /tmp
+ReadOnlyPaths=/opt/mindcopy/plugins/builtin
+PrivateTmp=yes
+PrivateDevices=yes
+ProtectKernelTunables=yes
+ProtectKernelModules=yes
+ProtectControlGroups=yes
+RestrictRealtime=yes
+
+# Ресурсы
+LimitNOFILE=4096
+MemoryHigh=2G
+MemoryMax=4G
+
+# Логи в journald
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=biocore-daemon
+
+[Install]
+WantedBy=multi-user.target

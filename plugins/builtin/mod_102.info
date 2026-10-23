@@ -1,0 +1,19 @@
+{
+  "type_id": 102,
+  "name": "Ca²⁺ буфер (парвальбумин)",
+  "version": "1.0.0",
+  "category": "Ca²⁺/K⁺/Cl⁻ гомеостаз",
+  "mechanism_type": "Буферизация (обратимое связывание)",
+  "signaling": "Обратимое связывание Ca²⁺: Ca²⁺ + B ⇌ CaB. Кинетика: k_on=0.1 mM⁻¹ms⁻¹, k_off=5×10⁻⁵ ms⁻¹, K_d=500 nM. Не создаёт тока.",
+  "inputs": "intra_ions[Ca²⁺] (свободный)",
+  "outputs": "I=0. Перераспределяет Ca²⁺ между свободным и связанным пулами (state[1] = Ca_bound).",
+  "neuron_types": "Все типы нейронов. Особенно важен в быстроспайковых нейронах (dIN, cIN) для сглаживания Ca²⁺-транзиентов.",
+  "subcellular": "Цитозоль сомы и дендритов.",
+  "kinetics": "B_total=150 µM (0.15 mM). K_d=500 nM (0.0005 mM). k_on=0.1 mM⁻¹ms⁻¹, k_off=5×10⁻⁵ ms⁻¹. Масштабируется на density.",
+  "function": "Снижает пиковые концентрации свободного Ca²⁺ при высокочастотной активности. Предотвращает Ca²⁺-зависимую инактивацию каналов (T-type Ca, L-type Ca). Ускоряет восстановление базального [Ca²⁺]i после серии спайков. Критичен для устойчивой осцилляции CPG.",
+  "references": "Schwaller B. (2010) Cytosolic Ca²⁺ buffers. Cold Spring Harb Perspect Biol 2:a004051. Baimbridge K.G. et al. (1992) Calcium-binding proteins in the nervous system. Trends Neurosci 15:303-308.",
+  "name_en": "Ca²⁺ Buffer (parvalbumin)",
+  "name_zh": "Ca²⁺ 缓冲 (小清蛋白)",
+  "description_en": "Reversible Ca²⁺ buffering (Ca²⁺ + B ⇌ CaB) with B_total=150 µM, K_d=500 nM, k_on=0.1 mM⁻¹ms⁻¹. Reduces peak free Ca²⁺ during high-frequency firing, preventing Ca²⁺-dependent channel inactivation and stabilizing CPG oscillation.",
+  "description_zh": "可逆Ca²⁺缓冲（Ca²⁺ + B ⇌ CaB），B_total=150 µM，K_d=500 nM，k_on=0.1 mM⁻¹ms⁻¹。降低高频放电时游离Ca²⁺的峰值，防止Ca²⁺依赖性通道失活并稳定CPG振荡。"
+}

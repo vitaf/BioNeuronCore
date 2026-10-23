@@ -1,0 +1,15 @@
+{
+  "name": "MAPK/ERK Cascade",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 87,
+  "modifiers": [
+    {
+      "id": 87,
+      "name": "MAPK/ERK Cascade",
+      "category": "Consolidation/Reconsolidation",
+      "description": "MAPK/ERK consolidation cascade: Ca2+->Ras->Raf->MEK->ERK->pCREB. ERK nuclear translocation. Cross-talk: pERK boosts CREB transcription on same segment.",
+      "release": false
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "name": "PP1/Inhibitor-1/DARPP-32",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 113,
+  "modifiers": [
+    {
+      "id": 113,
+      "name": "PP1/Inhibitor-1/DARPP-32",
+      "category": "Каскады",
+      "description": "PP1/Inhibitor-1/DARPP-32: D1→cAMP→PKA→p-DARPP32→inhibit PP1→facilitated LTP",
+      "release": false
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "type_id": 31,
+  "name": "mGluR4",
+  "version": "1.0.0",
+  "category": "Метаботропные Gi/o",
+  "mechanism_type": "Метаботропный (G-белок Gi/o-связанный)",
+  "signaling": "Глутамат → mGluR4 (Group III) → Gi/o → ↓cAMP, ↓Ca_v. Пресинаптический. Group III mGluRs — самые высокоаффинные (low-μM глутамат).",
+  "inputs": "neurotransmitter[NT_GLUTAMATE]",
+  "outputs": "↓cAMP, ↓Ca_v → ↓выброс нейромедиатора.",
+  "neuron_types": "Мозжечок (гранулярные клетки — параллельные волокна), стриатум, гиппокамп, таламус.",
+  "subcellular": "Пресинаптические терминали (активные зоны). Ауторецепторы мозжечковых параллельных волокон.",
+  "kinetics": "EC50 глутамат ≈ 0.5-5 μM (Group III — самая высокая аффинность). PAM: ADX88178, Lu AF21934. Ортостерический агонист: L-AP4 (L-2-amino-4-phosphonobutyrate).",
+  "function": "Паркинсонизм: mGluR4 PAM снижают глутаматный выброс в STN → GPi/SNr, нормализуют базальные ганглии. Нейропротекция.",
+  "references": "Conn P.J. et al. (2005) Metabotropic glutamate receptors in the basal ganglia circuit: implications for Parkinson's disease. Trends Pharmacol Sci 26:228-230.",
+  "name_en": "mGluR4",
+  "name_zh": "mGluR4",
+  "description_en": "Parkinsonism: mGluR4 PAMs reduce glutamate release in the STN→GPi/SNr pathway, normalizing basal ganglia function. Neuroprotective.",
+  "description_zh": "帕金森病：mGluR4 PAM 减少 STN→GPi/SNr 通路的谷氨酸释放，使基底神经节功能正常化。具有神经保护作用。"
+}

@@ -1,0 +1,15 @@
+{
+  "name": "Ca²⁺ утечка",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 101,
+  "modifiers": [
+    {
+      "id": 101,
+      "name": "Ca²⁺ утечка",
+      "category": "Гомеостаз Ca²⁺",
+      "description": "Ca²⁺ утечка: пассивный GHK-поток Ca²⁺ через неселективные каналы",
+      "release": false
+    }
+  ]
+}

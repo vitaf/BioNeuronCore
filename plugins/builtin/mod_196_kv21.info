@@ -1,0 +1,10 @@
+{
+  "type_id": 196,
+  "name": "Kv2.1 (KCNB1) медленный delayed rectifier K⁺",
+  "name_en": "Kv2.1 (KCNB1) slow delayed rectifier K⁺",
+  "name_zh": "Kv2.1（KCNB1）延迟整流钾通道",
+  "category": "Voltage-gated K",
+  "description": "Kv2.1 (KCNB1) медленный delayed rectifier K⁺ (I_Ks): V½_акт=0 мВ, U-type инактивация, TEA IC50=10 мМ, γ=8 пС. Обеспечивает реполяризацию single-spike dIN (головастик).",
+  "description_en": "Kv2.1 (KCNB1) slow delayed rectifier K⁺ (I_Ks): V½_act=0 mV, U-type inactivation, TEA IC50=10 mM, γ=8 pS. Mediates repolarization of single-spike dIN (tadpole).",
+  "description_zh": "Kv2.1（KCNB1）慢延迟整流K⁺（I_Ks）：激活V½=0 mV，U型失活，TEA IC50=10 mM，γ=8 pS。介导单脉冲dIN（蝌蚪）的复极化。"
+}

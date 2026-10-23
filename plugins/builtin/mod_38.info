@@ -1,0 +1,19 @@
+{
+  "type_id": 38,
+  "name": "H3",
+  "version": "1.0.0",
+  "category": "Метаботропные Gi/o",
+  "mechanism_type": "Метаботропный (G-белок Gi/o-связанный)",
+  "signaling": "Гистамин → H3 → Gi/o → ↓cAMP, ↓Ca_v. Пресинаптический ауторецептор гистаминергических нейронов (tuberomammillary nucleus) и гетерорецептор для других нейромедиаторов.",
+  "inputs": "neurotransmitter[NT_HISTAMINE]",
+  "outputs": "↓cAMP, ↓Ca_v → ↓выброс гистамина (ауто-) и других NT (DA, NA, 5-HT, ACh, глутамат).",
+  "neuron_types": "Кора (высокая плотность), гиппокамп, стриатум, гипоталамус (tuberomammillary nucleus — TMN), базальные ганглии.",
+  "subcellular": "Пресинаптические терминали: ауторецепторы TMN и гетерорецепторы. Соматодендритные (TMN).",
+  "kinetics": "K_D гистамин ≈ 5-10 nM (высокая аффинность). Конститутивная активность. Агонист: R-α-метилгистамин. Антагонисты/обратные агонисты: тиоперамид, питолизант (Wakix — терапия нарколепсии).",
+  "function": "Регуляция цикла сон-бодрствование (H3-блок → ↑гистамин → пробуждение). Нарколепсия: питолизант (H3-антагонист/обратный агонист). Когнитивные функции (H3-блок → ↑ACh, ↑гистамин в коре/гиппокампе). Аппетит (супрессия через H3).",
+  "references": "Arrang J.M. et al. (1983) Auto-inhibition of brain histamine release mediated by a novel class (H3) of histamine receptor. Nature 302:832-837.",
+  "name_en": "H3",
+  "name_zh": "H3",
+  "description_en": "Regulates the sleep–wake cycle (H3 block → ↑histamine → arousal). Narcolepsy: pitolisant; improves cognition; suppresses appetite.",
+  "description_zh": "调节睡眠-觉醒周期（阻断 H3 → 组胺升高 → 觉醒）。发作性睡病：匹托利生；改善认知；抑制食欲。"
+}

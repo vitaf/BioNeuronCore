@@ -1,0 +1,15 @@
+{
+  "name": "Cav2.2 N-type Ca²⁺ канал",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 168,
+  "modifiers": [
+    {
+      "id": 168,
+      "name": "Cav2.2 N-type Ca²⁺ канал",
+      "category": "Voltage-gated Ca",
+      "description": "Cav2.2 (CACNA1B) N-type Ca²⁺. m² HVA (V½ −20 мВ) + медленная β-зависимая h-инактивация. ω-conotoxin GVIA блок (IC50 0.5 нМ). γ=2.76 пС. GHK Ca²⁺ (z=2).",
+      "release": false
+    }
+  ]
+}

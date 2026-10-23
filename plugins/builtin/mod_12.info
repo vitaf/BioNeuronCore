@@ -1,0 +1,19 @@
+{
+  "type_id": 12,
+  "name": "Глициновый",
+  "version": "1.0.0",
+  "category": "Ионотропные рецепторы",
+  "mechanism_type": "Ионотропный (лиганд-зависимый анионный канал)",
+  "signaling": "Глицин → α(1-4)/β пентамер → Cl⁻ поток. Основной тормозной рецептор спинного мозга, ствола и сетчатки.",
+  "inputs": "neurotransmitter[NT_GLYCINE], V_m, intra/extra Cl⁻",
+  "outputs": "I_Glycine → I_buffer. Быстрый тормозной ток.",
+  "neuron_types": "Спинной мозг (мотонейроны, интернейроны Реншоу), ствол мозга (ядра черепных нервов, ретикулярная формация), сетчатка (амакриновые клетки), слуховые ядра.",
+  "subcellular": "Постсинаптическая мембрана. Высокая плотность в спинном мозге (lamina VII-IX) и стволе. В супратенториальных структурах экспрессия низкая.",
+  "kinetics": "τ_rise ≈ 0.1-0.3 ms, τ_decay ≈ 5-10 ms (самый быстрый из анионных каналов). E_rev ≈ −75 mV. Антагонист: стрихнин (конвульсант). Агонисты: глицин, таурин, β-аланин. Аллостерическая модуляция: Zn²⁺, этанол.",
+  "function": "Быстрое синаптическое торможение в спинном мозге и стволе. Рефлекторные дуги (реципрокное торможение), моторный контроль, сенсорная обработка (gate control theory of pain).",
+  "references": "Lynch J.W. (2004) Molecular structure and function of the glycine receptor chloride channel. Physiol Rev 84:1051-1095.",
+  "name_en": "Glycine",
+  "name_zh": "甘氨酸",
+  "description_en": "Fast synaptic inhibition in the spinal cord and brainstem. Underlies reflex arcs (reciprocal inhibition), motor control and sensory gating (gate control theory of pain).",
+  "description_zh": "脊髓和脑干中的快速突触抑制。构成反射弧（交互抑制）、运动控制和感觉门控（疼痛门控理论）的基础。"
+}

@@ -1,0 +1,15 @@
+{
+  "name": "TASK фоновая K⁺-утечка",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 151,
+  "modifiers": [
+    {
+      "id": 151,
+      "name": "TASK фоновая K⁺-утечка",
+      "category": "Leak K",
+      "description": "TASK (K2P3.1/9.1, KCNK3/9) фоновая K⁺-утечка. Voltage-independent, Po~0.3, γ≈14–38 пС. pH-ингибиция (кислый pH закрывает). GHK-флюкс K⁺ (z=1).",
+      "release": false
+    }
+  ]
+}

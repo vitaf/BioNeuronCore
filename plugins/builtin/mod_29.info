@@ -1,0 +1,19 @@
+{
+  "type_id": 29,
+  "name": "mGluR2",
+  "version": "1.0.0",
+  "category": "Метаботропные Gi/o",
+  "mechanism_type": "Метаботропный (G-белок Gi/o-связанный)",
+  "signaling": "Глутамат → mGluR2 (Group II) → Gi/o → ↓cAMP, ↓Ca_v. Пресинаптический ауторецептор глутаматергических нейронов.",
+  "inputs": "neurotransmitter[NT_GLUTAMATE]",
+  "outputs": "↓cAMP, ↓Ca_v → ↓выброс глутамата и других нейромедиаторов.",
+  "neuron_types": "Префронтальная кора, гиппокамп, amygdala, стриатум, мозжечок (Golgi-клетки).",
+  "subcellular": "Пресинаптические терминали (ауторецепторы — перисинаптические, вне АЗ). Постсинаптические (limited, кора, гиппокамп).",
+  "kinetics": "EC50 глутамат ≈ 10-100 μM. Group II mGluR (с mGluR3). Агонисты: LY354740, LY379268. Антагонисты: LY341495. Аллостерические модуляторы: PAM (BINA) и NAM (RO4491533).",
+  "function": "Пресинаптическое ингибирование глутаматного выброса (отрицательная обратная связь). Мишень для анксиолитиков (агонисты mGluR2/3) и антипсихотиков (агонист LY404039 — помаглуметад). Регуляция LTP/LTD.",
+  "references": "Niswender C.M., Conn P.J. (2010) Metabotropic glutamate receptors: physiology, pharmacology, and disease. Annu Rev Pharmacol Toxicol 50:295-322.",
+  "name_en": "mGluR2",
+  "name_zh": "mGluR2",
+  "description_en": "Presynaptically inhibits glutamate release (negative feedback). Target for anxiolytics and antipsychotics; regulates LTP/LTD.",
+  "description_zh": "在突触前抑制谷氨酸释放（负反馈）。是抗焦虑药和抗精神病药的靶点；调节 LTP/LTD。"
+}

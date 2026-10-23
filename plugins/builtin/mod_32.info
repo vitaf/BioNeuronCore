@@ -1,0 +1,19 @@
+{
+  "type_id": 32,
+  "name": "mGluR6",
+  "version": "1.0.0",
+  "category": "Метаботропные Gi/o",
+  "mechanism_type": "Метаботропный (G-белок Go-связанный)",
+  "signaling": "Глутамат → mGluR6 (Group III) → Go → закрытие TRPM1 канала (Gβγ-зависимое). Уникальная сигнализация: Gβγ (не Gα) — основной эффектор. Экспрессия только в ON-биполярных клетках сетчатки.",
+  "inputs": "neurotransmitter[NT_GLUTAMATE] (фоторецепторы → ON-биполярные клетки)",
+  "outputs": "Gβγ → закрытие TRPM1 канала → гиперполяризация ON-биполярных клеток.",
+  "neuron_types": "Сетчатка: ON-биполярные клетки (rod и cone bipolar). Единственное место экспрессии в организме.",
+  "subcellular": "Постсинаптическая мембрана ON-биполярных клеток (дендритные окончания в OPL). Локализация строго в области инвагинирующих синапсов фоторецепторов.",
+  "kinetics": "EC50 глутамат ≈ 1-10 μM. Эффектор: Gβγ → TRPM1 (не Gα). Нокаут mGluR6 → потеря ON-ответа (ночной слепоты модель). Агонист: L-AP4.",
+  "function": "Переключение знака синаптической передачи в сетчатке (sign inversion): глутамат от фоторецепторов закрывает TRPM1 → ON-биполярные клетки гиперполяризуются в темноте и деполяризуются на свету. Ночная слепота (CSNB — врождённая стационарная ночная слепота).",
+  "references": "Masu M. et al. (1995) Specific deficit of the ON response in visual transmission by targeted disruption of the mGluR6 gene. Cell 80:757-765.",
+  "name_en": "mGluR6",
+  "name_zh": "mGluR6",
+  "description_en": "Mediates sign inversion of synaptic transmission in the retina: glutamate from photoreceptors closes TRPM1, so ON-bipolar cells hyperpolarize in the dark. Implicated in congenital stationary night blindness (CSNB).",
+  "description_zh": "介导视网膜突触传递的符号反转：光感受器释放的谷氨酸关闭 TRPM1，因此 ON-双极细胞在黑暗中超极化。与先天性静止性夜盲症（CSNB）相关。"
+}

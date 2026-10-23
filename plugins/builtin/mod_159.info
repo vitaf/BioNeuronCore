@@ -1,0 +1,11 @@
+{
+  "type_id": 159,
+  "name": "Kv3.4 (KCNC4) A-type K⁺",
+  "name_en": "Kv3.4 (KCNC4) A-type K+",
+  "name_zh": "Kv3.4 A型钾通道",
+  "version": "1.0.0",
+  "category": "Ионные каналы",
+  "description": "Kv3.4 (KCNC4) A-type K⁺: V½_акт +19, V½_инакт −15, N-ball инактивация, PKC dis-inhibition, 4-AP/TEA.",
+  "description_en": "Kv3.4 (KCNC4) A-type K⁺ channel: V½_act +19, V½_inact −15, N-ball inactivation, PKC dis-inhibition, 4-AP/TEA.",
+  "description_zh": "Kv3.4（KCNC4）A型K⁺通道：V½激活 +19，V½失活 −15，N端球失活，PKC去抑制，4-AP/TEA。"
+}

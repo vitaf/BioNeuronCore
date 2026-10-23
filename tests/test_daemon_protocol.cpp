@@ -1,0 +1,315 @@
+// Copyright (c) 2026 Фешин Виталий Александрович / Vitaly Alexandrovich Feshin.
+// E-mail: feshin2004@mail.ru, vfeshin@mindcopy.ru. Тел.: +7(918)345-75-18.
+// Краснодар, Россия / Krasnodar, Russia. Все права защищены. All rights reserved.
+
+// test_daemon_protocol.cpp — тесты протокола Core Daemon (требует собранный biocore-daemon).
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
+#include <unistd.h>
+#include <signal.h>
+#include <sys/wait.h>
+#include <sys/socket.h>
+#include <sys/un.h>
+#include <sys/stat.h>
+#include <netinet/in.h>
+#include <arpa/inet.h>
+
+#define CATCH_CONFIG_RUNNER
+#include <catch2/catch.hpp>
+
+static const char* DAEMON_BIN = "./biocore-daemon";
+static const char* SOCK_PATH  = "/tmp/biocore.sock";
+static pid_t g_daemon_pid = 0;
+static int   g_ready_fd = -1;
+
+// ── Хелперы для соединения с демоном ──────────────────────────────────
+static int connectUnix() {
+    int fd = socket(AF_UNIX, SOCK_STREAM, 0);
+    if (fd < 0) return -1;
+    struct sockaddr_un addr;
+    memset(&addr, 0, sizeof(addr));
+    addr.sun_family = AF_UNIX;
+    strncpy(addr.sun_path, SOCK_PATH, sizeof(addr.sun_path) - 1);
+    if (::connect(fd, (struct sockaddr*)&addr, sizeof(addr)) < 0) {
+        close(fd); return -1;
+    }
+    return fd;
+}
+
+static void sendMsg(int fd, uint32_t type, const uint8_t* payload = nullptr, uint32_t len = 0) {
+    uint8_t hdr[8];
+    hdr[0] = type & 0xFF; hdr[1] = (type >> 8) & 0xFF;
+    hdr[2] = (type >> 16) & 0xFF; hdr[3] = (type >> 24) & 0xFF;
+    hdr[4] = len & 0xFF; hdr[5] = (len >> 8) & 0xFF;
+    hdr[6] = (len >> 16) & 0xFF; hdr[7] = (len >> 24) & 0xFF;
+    write(fd, hdr, 8);
+    if (len > 0) write(fd, payload, len);
+}
+
+static bool recvMsg(int fd, uint32_t& out_type, std::vector<uint8_t>& out_payload, int timeout_s = 10) {
+    fd_set fds; FD_ZERO(&fds); FD_SET(fd, &fds);
+    struct timeval tv = {timeout_s, 0};
+    if (select(fd + 1, &fds, nullptr, nullptr, &tv) <= 0) return false;
+
+    uint8_t hdr[8];
+    ssize_t n = read(fd, hdr, 8);
+    if (n != 8) return false;
+
+    out_type = (uint32_t)hdr[0] | ((uint32_t)hdr[1] << 8) |
+               ((uint32_t)hdr[2] << 16) | ((uint32_t)hdr[3] << 24);
+    uint32_t plen = (uint32_t)hdr[4] | ((uint32_t)hdr[5] << 8) |
+                    ((uint32_t)hdr[6] << 16) | ((uint32_t)hdr[7] << 24);
+    out_payload.resize(plen);
+    if (plen > 0) {
+        size_t off = 0;
+        while (off < plen) {
+            n = read(fd, out_payload.data() + off, plen - off);
+            if (n <= 0) return false;
+            off += n;
+        }
+    }
+    return true;
+}
+
+// ── Запуск/остановка демона ───────────────────────────────────────────
+static bool startDaemon() {
+    unlink(SOCK_PATH);
+    int pipefd[2];
+    if (pipe(pipefd) < 0) return false;
+
+    pid_t pid = fork();
+    if (pid < 0) return false;
+
+    if (pid == 0) {
+        close(pipefd[0]);
+        char ready_fd_str[16];
+        snprintf(ready_fd_str, sizeof(ready_fd_str), "%d", pipefd[1]);
+        execl(DAEMON_BIN, DAEMON_BIN, "--ready-fd", ready_fd_str,
+              "-p", "plugins/builtin/", nullptr);
+        _exit(1);
+    }
+
+    close(pipefd[1]);
+    // Ждём сигнала готовности (10 сек)
+    fd_set fds; FD_ZERO(&fds); FD_SET(pipefd[0], &fds);
+    struct timeval tv = {10, 0};
+    if (select(pipefd[0] + 1, &fds, nullptr, nullptr, &tv) <= 0) {
+        close(pipefd[0]);
+        kill(pid, SIGTERM); waitpid(pid, nullptr, 0);
+        return false;
+    }
+    char ready;
+    read(pipefd[0], &ready, 1);
+    close(pipefd[0]);
+
+    g_daemon_pid = pid;
+    return true;
+}
+
+static void stopDaemon() {
+    if (g_daemon_pid > 0) {
+        kill(g_daemon_pid, SIGTERM);
+        waitpid(g_daemon_pid, nullptr, 0);
+        g_daemon_pid = 0;
+        unlink(SOCK_PATH);
+    }
+}
+
+// ── Тесты ─────────────────────────────────────────────────────────────
+
+TEST_CASE("PING/PONG", "[protocol]") {
+    int fd = connectUnix();
+    REQUIRE(fd >= 0);
+
+    sendMsg(fd, 0x0000); // PING
+    uint32_t type;
+    std::vector<uint8_t> payload;
+    REQUIRE(recvMsg(fd, type, payload));
+    REQUIRE(type == 0x0001); // PONG
+    close(fd);
+}
+
+TEST_CASE("GET_VERSION", "[protocol]") {
+    int fd = connectUnix();
+    REQUIRE(fd >= 0);
+
+    sendMsg(fd, 0x0002); // GET_VERSION
+    uint32_t type;
+    std::vector<uint8_t> payload;
+    REQUIRE(recvMsg(fd, type, payload));
+    REQUIRE(type == 0x0003); // VERSION_INFO
+    REQUIRE(payload.size() >= 12);
+    // major:u32, minor:u32, patch:u32
+    close(fd);
+}
+
+TEST_CASE("LIST_PLUGINS returns plugins", "[protocol]") {
+    int fd = connectUnix();
+    REQUIRE(fd >= 0);
+
+    sendMsg(fd, 0x0504); // LIST_PLUGINS
+    uint32_t type;
+    std::vector<uint8_t> payload;
+    REQUIRE(recvMsg(fd, type, payload));
+    REQUIRE(type == 0x0505);
+
+    REQUIRE(payload.size() >= 4);
+    close(fd);
+}
+
+TEST_CASE("LOAD_BION + GET_NETWORK_INFO", "[protocol]") {
+    const char* test_bion = "../BioNeuronStudio/build/network.bion";
+    if (access(test_bion, R_OK) != 0) {
+        WARN("Test network not found, skipping LOAD_BION test");
+        return;
+    }
+
+    int fd = connectUnix();
+    REQUIRE(fd >= 0);
+
+    sendMsg(fd, 0x0100, (const uint8_t*)test_bion, strlen(test_bion));
+    uint32_t type;
+    std::vector<uint8_t> payload;
+    REQUIRE(recvMsg(fd, type, payload));
+    REQUIRE(type == 0x0101);
+    REQUIRE(!payload.empty());
+    REQUIRE(payload[0] == 1);
+
+    sendMsg(fd, 0x0106);
+    REQUIRE(recvMsg(fd, type, payload));
+    REQUIRE(type == 0x0107);
+
+    close(fd);
+}
+
+TEST_CASE("START_SIM + receive STATE_FRAME + STOP_SIM", "[protocol]") {
+    const char* test_bion = "../BioNeuronStudio/build/network.bion";
+    if (access(test_bion, R_OK) != 0) {
+        WARN("Test network not found, skipping");
+        return;
+    }
+
+    int fd = connectUnix();
+    REQUIRE(fd >= 0);
+
+    sendMsg(fd, 0x0100, (const uint8_t*)test_bion, strlen(test_bion));
+    uint32_t type; std::vector<uint8_t> payload;
+    recvMsg(fd, type, payload);
+
+    uint8_t sub[5] = {0, 0, 0, 0, 0};
+    sendMsg(fd, 0x0400, sub, 5);
+    recvMsg(fd, type, payload);
+    REQUIRE(type == 0x0401);
+
+    uint8_t start[8] = {0,0,0,0, 0,0,0,0};
+    sendMsg(fd, 0x0200, start, 8);
+    recvMsg(fd, type, payload);
+    REQUIRE(type == 0x0201);
+
+    int frames = 0;
+    for (int i = 0; i < 20 && frames < 2; i++) {
+        if (recvMsg(fd, type, payload)) {
+            if (type == 0x0480) {
+                frames++;
+                REQUIRE(payload.size() >= 16);
+            }
+        }
+    }
+    REQUIRE(frames >= 1);
+
+    sendMsg(fd, 0x0202);
+    recvMsg(fd, type, payload);
+    REQUIRE(type == 0x0203);
+
+    close(fd);
+}
+
+TEST_CASE("Error handling: load nonexistent file", "[protocol]") {
+    int fd = connectUnix();
+    REQUIRE(fd >= 0);
+
+    const char* bad = "/tmp/nonexistent_xyz123.bion";
+    sendMsg(fd, 0x0100, (const uint8_t*)bad, strlen(bad));
+    uint32_t type;
+    std::vector<uint8_t> payload;
+    REQUIRE(recvMsg(fd, type, payload));
+    REQUIRE(type == 0x0101);
+    REQUIRE(!payload.empty());
+    REQUIRE(payload[0] == 0);
+    close(fd);
+}
+
+TEST_CASE("SAVE_CHECKPOINT roundtrip", "[protocol]") {
+    const char* test_bion = "../BioNeuronStudio/build/network.bion";
+    if (access(test_bion, R_OK) != 0) {
+        WARN("Test network not found, skipping");
+        return;
+    }
+
+    int fd = connectUnix();
+    REQUIRE(fd >= 0);
+
+    sendMsg(fd, 0x0100, (const uint8_t*)test_bion, strlen(test_bion));
+    uint32_t type; std::vector<uint8_t> payload;
+    recvMsg(fd, type, payload);
+
+    const char* ckpt = "/tmp/test_daemon_ckpt.bion";
+    unlink(ckpt);
+    sendMsg(fd, 0x0800, (const uint8_t*)ckpt, strlen(ckpt));
+    REQUIRE(recvMsg(fd, type, payload));
+    REQUIRE(type == 0x0801);
+    REQUIRE(!payload.empty());
+    REQUIRE(payload[0] == 1);
+
+    struct stat st;
+    REQUIRE(stat(ckpt, &st) == 0);
+    unlink(ckpt);
+
+    close(fd);
+}
+
+TEST_CASE("GET_CONSOLIDATION_STATUS", "[protocol]") {
+    int fd = connectUnix();
+    REQUIRE(fd >= 0);
+
+    sendMsg(fd, 0x0602); // GET_CONSOLIDATION_STATUS
+    uint32_t type;
+    std::vector<uint8_t> payload;
+    REQUIRE(recvMsg(fd, type, payload));
+    REQUIRE(type == 0x0603);
+    REQUIRE(payload.size() >= 9);
+    close(fd);
+}
+
+TEST_CASE("GET_BACKEND_INFO", "[protocol]") {
+    int fd = connectUnix();
+    REQUIRE(fd >= 0);
+
+    sendMsg(fd, 0x0700); // GET_BACKEND_INFO
+    uint32_t type;
+    std::vector<uint8_t> payload;
+    REQUIRE(recvMsg(fd, type, payload));
+    REQUIRE(type == 0x0701);
+    REQUIRE(payload.size() >= 2);
+    // payload[0] = current backend (0=CPU)
+    // payload[1] = gpu_available
+    close(fd);
+}
+
+// ── Main с запуском демона ────────────────────────────────────────────
+int main(int argc, char* argv[]) {
+    // Пытаемся запустить демон
+    if (!startDaemon()) {
+        fprintf(stderr, "SKIP: Cannot start daemon (biocore-daemon not found or failed to start)\n");
+        return 77;
+    }
+
+    // Даём демону стабилизироваться после загрузки плагинов
+    usleep(500000);
+
+    int result = Catch::Session().run(argc, argv);
+
+    stopDaemon();
+    return result;
+}

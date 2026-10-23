@@ -1,0 +1,15 @@
+{
+  "name": "Ионотропный Cl⁻",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 2,
+  "modifiers": [
+    {
+      "id": 2,
+      "name": "Ионотропный Cl⁻",
+      "category": "Базовые модификаторы",
+      "description": "Ионотропный Cl⁻ канал (GABA-A-подобный)",
+      "release": false
+    }
+  ]
+}

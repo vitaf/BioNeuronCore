@@ -1,0 +1,15 @@
+{
+  "name": "mGluR4-рецептор",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 31,
+  "modifiers": [
+    {
+      "id": 31,
+      "name": "mGluR4-рецептор",
+      "category": "Метаботропные Gi/o",
+      "description": "Метаботропный глутаматный рецептор mGluR4 (Gi/o)",
+      "release": false
+    }
+  ]
+}

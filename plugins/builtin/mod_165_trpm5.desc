@@ -1,0 +1,15 @@
+{
+  "name": "TRPM5 Ca²⁺-активируемый неселективный катионный канал",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 165,
+  "modifiers": [
+    {
+      "id": 165,
+      "name": "TRPM5 Ca²⁺-активируемый неселективный катионный канал",
+      "category": "Ca-activated nonselective",
+      "description": "TRPM5 Ca²⁺-активируемый неселективный катионный канал (Na⁺/K⁺, не Ca²⁺-проводящий). γ=25 пС, Ca²⁺-зависимый Po (EC50 0.7 µМ, Hill 2.4). Фармы нет. GHK Na⁺/K⁺ (1:1).",
+      "release": false
+    }
+  ]
+}

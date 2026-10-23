@@ -1,0 +1,15 @@
+{
+  "name": "Глиальная Na/K-АТФаза",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 110,
+  "modifiers": [
+    {
+      "id": 110,
+      "name": "Глиальная Na/K-АТФаза",
+      "category": "Глия",
+      "description": "Глиальная Na/K-АТФаза (α2): низкая скорость, высокое сродство к K⁺_o",
+      "release": false
+    }
+  ]
+}

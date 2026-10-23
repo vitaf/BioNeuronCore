@@ -1,0 +1,15 @@
+{
+  "name": "NKCC1",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 122,
+  "modifiers": [
+    {
+      "id": 122,
+      "name": "NKCC1",
+      "category": "Транспортёры",
+      "description": "NKCC1 (SLC12A2): Na-K-2Cl котранспортер, импорт Cl⁻, деполяризующее торможение",
+      "release": false
+    }
+  ]
+}

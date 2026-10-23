@@ -1,0 +1,19 @@
+{
+  "type_id": 14,
+  "name": "5-HT3",
+  "version": "1.0.0",
+  "category": "Ионотропные рецепторы",
+  "mechanism_type": "Ионотропный (лиганд-зависимый катионный канал)",
+  "signaling": "Серотонин → 5-HT3A/B (пентамер Cys-loop family) → Na⁺/K⁺/Ca²⁺ поток. Единственный ионотропный серотониновый рецептор.",
+  "inputs": "neurotransmitter[NT_SEROTONIN], V_m",
+  "outputs": "I_5HT3 → I_buffer. Быстрый возбуждающий ток.",
+  "neuron_types": "ЦНС: кора, гиппокамп, amygdala, area postrema (рвотный центр), nucleus tractus solitarius, тригеминальное ядро. ПНС: энтеральная НС.",
+  "subcellular": "Постсинаптическая мембрана (интернейроны). Пресинаптические терминали (гетерорецепторы, модулируют выброс GABA, дофамина).",
+  "kinetics": "τ_rise ≈ 0.5-1 ms, τ_decay ≈ 2-10 ms. E_rev ≈ −10 mV. EC₅₀ 5-HT ≈ 2-5 μM. Антагонисты: ондансетрон, гранисетрон, палоносетрон.",
+  "function": "Быстрая серотонинергическая передача (в отличие от метаботропных 5-HT1/2/4-7). Рвотный рефлекс (антагонисты — мощные антиэметики при химиотерапии). Регуляция выброса GABA (интернейроны). Тревожность, боль.",
+  "references": "Barnes N.M. et al. (2009) The 5-HT3 receptor — the relationship between structure and function. Neuropharmacology 56:273-284.",
+  "name_en": "5-HT3",
+  "name_zh": "5-HT3",
+  "description_en": "Fast serotonergic transmission (the only ionotropic serotonin receptor). Mediates the emetic reflex and modulates GABA release; involved in anxiety and pain.",
+  "description_zh": "快速血清素能传递（唯一的离子型血清素受体）。介导呕吐反射并调节 GABA 释放；参与焦虑和疼痛。"
+}

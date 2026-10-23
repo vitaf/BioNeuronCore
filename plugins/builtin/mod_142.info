@@ -1,0 +1,10 @@
+{
+  "type_id": 142,
+  "name": "Nav1.2 (SCN2A) — аксональный transient Na⁺",
+  "name_en": "Nav1.2 (SCN2A) — axonal transient Na⁺",
+  "name_zh": "Nav1.2（SCN2A）— 轴突瞬时Na⁺",
+  "category": "Базовые модификаторы",
+  "description": "Nav1.2 (SCN2A) — аксональный transient Na⁺",
+  "description_en": "Nav1.2 (SCN2A) axonal transient Na⁺ channel.",
+  "description_zh": "Nav1.2（SCN2A）轴突瞬时Na⁺通道。"
+}

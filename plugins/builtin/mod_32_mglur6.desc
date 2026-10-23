@@ -1,0 +1,15 @@
+{
+  "name": "mGluR6-рецептор",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 32,
+  "modifiers": [
+    {
+      "id": 32,
+      "name": "mGluR6-рецептор",
+      "category": "Метаботропные Gi/o",
+      "description": "Метаботропный глутаматный рецептор mGluR6 (Gi/o)",
+      "release": false
+    }
+  ]
+}

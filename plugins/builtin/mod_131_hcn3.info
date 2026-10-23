@@ -1,0 +1,20 @@
+{
+  "id": 131,
+  "name": "HCN3 — промежуточный Ih (τ~50ms)",
+  "name_en": "HCN3 — medium Ih (τ~50ms)",
+  "category": "PIR (Постингибирующий отскок)",
+  "category_en": "PIR (Post-Inhibitory Rebound)",
+  "family": "HCN (Hyperpolarization-activated Cyclic Nucleotide-graded)",
+  "isoforms": [
+    "HCN3"
+  ],
+  "gating": "Промежуточная кинетика τ_open~50ms. Слабая cAMP-модуляция.",
+  "conductances": "Неселективный катионный: P_Na:P_K ≈ 0.4:0.6.",
+  "role_in_cpg": "Промежуточный вариант между HCN1 (быстрый) и HCN2 (медленный).",
+  "bio_ref": "Biel et al. (2009) Physiol Rev 89:847-885.",
+  "species": "Универсальная",
+  "neuron_type": "ЦНС, ПНС",
+  "name_zh": "HCN3 — 中等Ih (τ~50ms)",
+  "description_en": "Medium Ih (HCN3, τ_open~50 ms) with weak cAMP modulation; intermediate between fast HCN1 and slow HCN2 for PIR.",
+  "description_zh": "中等Ih（HCN3，τ_open~50 ms），cAMP调节较弱；介于快速HCN1和慢速HCN2之间，用于PIR。"
+}

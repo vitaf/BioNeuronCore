@@ -1,0 +1,15 @@
+{
+  "name": "NB_AMPA_STA",
+  "version": "1.0.0",
+  "author": "BioNeuronCore (Neuroblox.jl)",
+  "type_id": 64,
+  "modifiers": [
+    {
+      "id": 64,
+      "name": "NB_AMPA_STA",
+      "category": "NB_-Рецепторы",
+      "description": "AMPA-рецептор с кратковременной аугментацией (short-term augmentation, 2 состояния G_stp, z_stp), τ₃=2000ms, k_stp=0.5",
+      "release": false
+    }
+  ]
+}

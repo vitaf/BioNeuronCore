@@ -1,0 +1,15 @@
+{
+  "name": "Метаботропный Gi/o",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 3,
+  "modifiers": [
+    {
+      "id": 3,
+      "name": "Метаботропный Gi/o",
+      "category": "Базовые модификаторы",
+      "description": "Универсальный Gi/o-связанный GPCR. Суммарная активация нейромедиаторами → G-белок → GIRK K⁺ каналы → гиперполяризация. Параметры: coupling, tau.",
+      "release": false
+    }
+  ]
+}

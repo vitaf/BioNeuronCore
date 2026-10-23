@@ -1,0 +1,19 @@
+{
+  "type_id": 68,
+  "name": "NB_Beta2_nAChR",
+  "version": "1.0.0",
+  "category": "NB_-Рецепторы",
+  "mechanism_type": "Ионотропный (лиганд-зависимый, десенситизация никотином)",
+  "signaling": "Ацетилхолин → α4β2 nAChR → Markov-гейтинг (C<->O) + десенситизация (D). Никотин вызывает долговременную десенситизацию (функциональный антагонизм при хроническом воздействии).",
+  "inputs": "neurotransmitter[NT_ACETYLCHOLINE]",
+  "outputs": "I_Beta2 → I_buffer. High-affinity к никотину, медленная десенситизация.",
+  "neuron_types": "Холинергические синапсы ЦНС (VTA, стриатум, кора, таламус). Основной high-affinity никотиновый рецептор (α4β2 — 90% nAChR в ЦНС).",
+  "subcellular": "Постсинаптические (VTA DA-нейроны, GABA-интернейроны). Пресинаптические гетерорецепторы.",
+  "kinetics": "Markov C<->O с агонистом, десенситизация D при длительной экспозиции никотина. EC50 ACh ≈ 1-10 muM, никотин ≈ 0.1-1 muM. Upregulation при хроническом воздействии никотина (парадоксально — из-за десенситизации).",
+  "function": "Никотиновая зависимость: α4β2 — основной медиатор reward-эффекта никотина. Когнитивные функции (внимание, память). Мишень варениклина (частичный агонист — терапия курения).",
+  "references": "Адаптировано из Neuroblox.jl (Beta2nAChR).",
+  "name_en": "NB_Beta2_nAChR",
+  "name_zh": "NB_Beta2_nAChR",
+  "description_en": "α4β2 nicotinic acetylcholine receptor with Markov gating and desensitization; the main high-affinity nAChR (90% in CNS). Mediates nicotine reward and cognition; target of varenicline.",
+  "description_zh": "α4β2 烟碱型乙酰胆碱受体，具有 Markov 门控和脱敏；是主要的高亲和力 nAChR（中枢 90%）。介导尼古丁奖赏和认知；是伐尼克兰的靶点。"
+}

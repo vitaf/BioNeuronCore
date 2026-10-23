@@ -1,0 +1,19 @@
+{
+  "type_id": 111,
+  "name": "Термальный шум",
+  "version": "1.0.0",
+  "category": "Базовые модификаторы",
+  "mechanism_type": "Стохастический ток (термальные флуктуации проводимости)",
+  "signaling": "Добавляет стохастический ток σ=sqrt(4kTgΔf) в I_buffer сегмента. Имитирует тепловые флуктуации проводимости каналов (Johnson-Nyquist) и стохастическое открытие/закрытие ионных каналов. Амплитуда масштабируется с √(температуры) и √(проводимости).",
+  "inputs": "V_m, NB_SOMA_THERMAL (78) — температура, сегментная проводимость (сумма g_modifier), xorshift32_state",
+  "outputs": "I_noise — стохастический ток (гауссов шум). Среднее=0, дисперсия ∝ T × g_segment × bandwidth.",
+  "neuron_types": "Все нейроны (универсальный физический процесс). Особенно важен для малых сегментов (низкая C_m → большие V_m-флуктуации). Критичен для CPU/GPU-паритета (seed-детерминизм через xorshift32).",
+  "subcellular": "Все сегменты (флуктуации проводимости мембраны). Амплитуда обратно пропорциональна √C_m (малые сегменты шумят сильнее).",
+  "kinetics": "σ = sqrt(4 × k_B × T × g_seg × Δf). k_B=1.38e-23 J/K. T=310K. g_seg=Σg_modifier. Δf=1/dt. xorshift32(rng_state) → нормальное распределение (Box-Muller или Irwin-Hall).",
+  "function": "Обеспечивает физиологичный уровень V_m-флуктуаций (~0.1-0.5mV RMS). Предотвращает артефактную синхронизацию в детерминированных симуляциях. Ключевой источник биологической вариабельности спайков (jitter ~0.5-2ms).",
+  "references": "Faisal A.A., Selen L.P., Wolpert D.M. (2008) Noise in the nervous system. Nature Reviews Neuroscience 9:292-303. White J.A., Rubinstein J.T., Kay A.R. (2000) Channel noise in neurons. Trends in Neurosciences 23:131-137. Manwani A., Koch C. (1999) Detecting and estimating signals in noisy cable structure. Neural Computation 11:1797-1839.",
+  "name_en": "Thermal Noise",
+  "name_zh": "热噪声",
+  "description_en": "Stochastic current with σ=sqrt(4·k_B·T·g_seg·Δf) added to the segment I_buffer, modeling Johnson-Nyquist thermal fluctuations and stochastic channel gating. Provides physiological V_m fluctuations (~0.1–0.5 mV RMS) and spike jitter (~0.5–2 ms), with seed-deterministic xorshift32 for CPU/GPU parity.",
+  "description_zh": "向节段I_buffer加入σ=sqrt(4·k_B·T·g_seg·Δf)的随机电流，模拟Johnson-Nyquist热涨落和随机通道门控。提供生理性V_m波动（~0.1–0.5 mV RMS）和锋电位抖动（~0.5–2 ms），并通过xorshift32种子确定性实现CPU/GPU一致。"
+}

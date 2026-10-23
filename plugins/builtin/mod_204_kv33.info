@@ -1,0 +1,10 @@
+{
+  "type_id": 204,
+  "name": "Kv3.3 (KCNC3) — high-threshold K⁺",
+  "name_en": "Kv3.3 (KCNC3) — high-threshold K⁺",
+  "name_zh": "Kv3.3（KCNC3）— 高阈值K⁺",
+  "category": "Ионные каналы",
+  "description": "Kv3.3 (KCNC3) high-threshold K⁺. γ=35 пС. Активация V½=+1.5 мВ, инактивация V½=−27.9 мВ (A-type, ~200 мс). Ингибиция: TEA 67.5 µM, 4-AP <100 µM.",
+  "description_en": "Kv3.3 (KCNC3) high-threshold K⁺. γ=35 pS. Activation V½=+1.5 mV, inactivation V½=−27.9 mV (A-type, ~200 ms). Pharmacology: TEA 67.5 µM, 4-AP <100 µM.",
+  "description_zh": "Kv3.3（KCNC3）高阈值K⁺。γ=35 pS。激活V½=+1.5 mV，失活V½=−27.9 mV（A型，~200 ms）。药理：TEA 67.5 µM、4-AP <100 µM。"
+}

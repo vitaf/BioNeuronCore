@@ -1,0 +1,15 @@
+{
+  "name": "Nav1.9 (SCN11A) персистентный Na⁺ канал",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 171,
+  "modifiers": [
+    {
+      "id": 171,
+      "name": "Nav1.9 (SCN11A) персистентный TTX-R Na⁺",
+      "category": "Voltage-gated Na",
+      "description": "Nav1.9 (SCN11A) персистентный TTX-R ноцицепторный Na⁺ (окно-ток, почти без инактивации). Гейтинг m³h: m_inf V½=−47 мВ k=5.5 (τ_m=10 мс), h_inf V½=−44 мВ k=6 (τ_h=43 мс). TTX-R (state[5] нМ, Ki 39 µM). γ=16 пС. GHK-флюкс Na⁺ (z=1). Cummins 1999.",
+      "release": false
+    }
+  ]
+}

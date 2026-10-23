@@ -1,0 +1,19 @@
+{
+  "type_id": 39,
+  "name": "MT1",
+  "version": "1.0.0",
+  "category": "Метаботропные Gi/o",
+  "mechanism_type": "Метаботропный (G-белок Gi/o-связанный)",
+  "signaling": "Мелатонин → MT1 → Gi/o → ↓cAMP. Рецептор мелатонина — гормона шишковидной железы (pineal gland). Регуляция циркадных ритмов.",
+  "inputs": "Мелатонин (не классический NT — гормон эпифиза, циркулирует в крови и ликворе)",
+  "outputs": "↓cAMP, модуляция нейрональной активности (ингибиторная).",
+  "neuron_types": "Супрахиазматическое ядро (SCN — главные биологические часы), гипофиз (pars tuberalis), сетчатка, гиппокамп, мозжечок, сосуды.",
+  "subcellular": "SCN нейроны (снижение firing rate ночью). Pars tuberalis гипофиза. Сосуды (вазоконстрикция vs MT2-вазодилатация).",
+  "kinetics": "K_D мелатонин ≈ 0.1-1 nM (высокая аффинность). Агонисты: мелатонин (циркадин), рамелтеон (Rozerem), тасимелтеон. Антагонист: лузиндол.",
+  "function": "Регуляция циркадных ритмов (SCN: подавление firing ночью → снижение возбудимости → сон). Сезонные ритмы. Инсомния: агонисты MT1/MT2 (рамелтеон).",
+  "references": "Dubocovich M.L., Markowska M. (2005) Functional MT1 and MT2 melatonin receptors in mammals. Endocrine 27:101-110.",
+  "name_en": "MT1",
+  "name_zh": "MT1",
+  "description_en": "Regulates circadian rhythms (SCN: suppresses firing at night → sleep) and seasonal rhythms. Insomnia: MT1/MT2 agonists (ramelteon).",
+  "description_zh": "调节昼夜节律（视交叉上核：夜间抑制放电 → 睡眠）和季节性节律。失眠：MT1/MT2 激动剂（雷美替胺）。"
+}

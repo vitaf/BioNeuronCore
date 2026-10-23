@@ -1,0 +1,19 @@
+{
+  "type_id": 64,
+  "name": "NB_AMPA_STA",
+  "version": "1.0.0",
+  "category": "NB_-Рецепторы",
+  "mechanism_type": "Ионотропный (лиганд-зависимый, кратковременная аугментация)",
+  "signaling": "Глутамат → AMPA с механизмом кратковременной аугментации (STA): частота-зависимое усиление тока. 2 переменных состояния (g, z).",
+  "inputs": "neurotransmitter[NT_GLUTAMATE], спайковая частота пресинаптического нейрона",
+  "outputs": "I_AMPA_STA → I_buffer. Частота-зависимое усиление (augmentation) при burst firing.",
+  "neuron_types": "Глутаматергические синапсы с детальной кратковременной пластичностью.",
+  "subcellular": "Постсинаптическая мембрана дендритных шипиков.",
+  "kinetics": "STA-кинетика: частота-зависимое накопление augmentation. Быстрая активация (tau_rise ~0.2ms), затухание tau_decay ~2-5ms. Спайковый прокси (sigmoid): sigmoid((V_pre-10)/35) — детектор спайка.",
+  "function": "Детальная модель AMPA с кратковременной аугментацией для симуляции синаптической динамики при повторяющейся активации (burst, тетаническая стимуляция).",
+  "references": "Адаптировано из Neuroblox.jl (Glu_AMPA_STA_Synapse).",
+  "name_en": "NB_AMPA_STA",
+  "name_zh": "NB_AMPA_STA",
+  "description_en": "AMPA receptor with short-term augmentation (STA) kinetics; frequency-dependent current enhancement during burst firing. Fast activation (~0.2 ms rise, 2–5 ms decay).",
+  "description_zh": "具有短时程增强（STA）动力学的 AMPA 受体；在爆发发放中呈现频率依赖的电流增强。快速激活（上升约 0.2 ms，衰减 2–5 ms）。"
+}

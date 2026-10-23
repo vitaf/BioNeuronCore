@@ -1,0 +1,15 @@
+{
+  "name": "NB_MsnAMPAR",
+  "version": "1.0.0",
+  "author": "BioNeuronCore (Neuroblox.jl)",
+  "type_id": 76,
+  "modifiers": [
+    {
+      "id": 76,
+      "name": "NB_MsnAMPAR",
+      "category": "NB_-Destexhe",
+      "description": "MsnAMPAR: damped oscillator (2 состояния G,z) + сканирует сегмент на D2-модулятор для M_AMPA2. Без D2: M_AMPA2=1.0",
+      "release": false
+    }
+  ]
+}

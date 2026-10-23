@@ -1,0 +1,15 @@
+{
+  "name": "PKD2L1 Ca²⁺-предпочитающий механосенсор CSF",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 153,
+  "modifiers": [
+    {
+      "id": 153,
+      "name": "PKD2L1 Ca²⁺-предпочитающий механосенсор CSF",
+      "category": "Mechanosensor",
+      "description": "PKD2L1 (TRPP3) Ca²⁺-предпочитающий механосенсор CSF. γ=120–200 пС, PCa/PNa≈4–6, Po=state[4] (поток CSF). Механо-адаптация τ~1 с.",
+      "release": false
+    }
+  ]
+}

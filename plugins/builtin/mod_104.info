@@ -1,0 +1,19 @@
+{
+  "type_id": 104,
+  "name": "BK-канал (KCa1.1) — Ca²⁺+V-акт. K⁺ (fAHP)",
+  "version": "1.0.0",
+  "category": "Ионные каналы ритмогенеза",
+  "mechanism_type": "Ионный канал (Ca²⁺+V-зависимый, GHK K⁺)",
+  "signaling": "Прямой GHK-поток K⁺. Двойной гейтинг: V-зависимая активация Больцман + Ca²⁺-сдвиг V_half. ΔV = -30·log₁₀([Ca²⁺]/K_d). Быстрая кинетика.",
+  "inputs": "intra_ions[Ca²⁺], intra_ions[K⁺], extra_ions[K⁺], V_m",
+  "outputs": "I_K (гиперполяризующий). Уменьшает intra_ions[K⁺].",
+  "neuron_types": "mn (мотонейроны) — быстрая реполяризация для мышечного драйва.",
+  "subcellular": "Сома, аксонный начальный сегмент. Колокализация с Ca²⁺-каналами.",
+  "kinetics": "V_half_base=15mV, k_V=12mV, K_d_Ca=3µM, g_max=2.0nS, τ=1ms. GHK K⁺ (z=1). Ca²⁺-сдвиг: log10-зависимость.",
+  "function": "Быстрая реполяризация потенциала действия (fAHP). Ограничивает длительность спайка, ускоряет восстановление Na⁺-каналов от инактивации. Критичен для высокочастотной импульсации MN.",
+  "references": "Magleby K.L. (2003) Gating mechanism of BK (Slo1) channels: so near, yet so far. J Gen Physiol 121:81-96. Rothberg B.S., Magleby K.L. (2000) Voltage and Ca²⁺ sensing in single BK channels. J Gen Physiol 116:593-618.",
+  "name_en": "BK Channel (KCa1.1) — Ca²⁺+V-act. K⁺ (fAHP)",
+  "name_zh": "BK 通道 (KCa1.1) — Ca²⁺+V-激活 K⁺ (fAHP)",
+  "description_en": "Ca²⁺- and voltage-activated K⁺ channel (KCa1.1) with dual gating: Boltzmann V-activation plus Ca²⁺-shift of V_half (ΔV=−30·log₁₀([Ca²⁺]/K_d)), g_max=2.0 nS, τ=1 ms, V_half_base=15 mV, K_d_Ca=3 µM. Mediates fast spike repolarization (fAHP), critical for high-frequency MN firing.",
+  "description_zh": "Ca²⁺和电压激活的K⁺通道（KCa1.1），双重门控：Boltzmann电压激活加Ca²⁺对V_half的偏移（ΔV=−30·log₁₀([Ca²⁺]/K_d)），g_max=2.0 nS，τ=1 ms，V_half_base=15 mV，K_d_Ca=3 µM。介导快速锋电位复极化（fAHP），对MN高频放电至关重要。"
+}

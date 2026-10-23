@@ -1,0 +1,15 @@
+{
+  "name": "Nav1.1 (SCN1A) transient Na⁺",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 199,
+  "modifiers": [
+    {
+      "id": 199,
+      "name": "Nav1.1 (SCN1A) transient Na⁺",
+      "category": "Voltage-gated Na",
+      "description": "Nav1.1 (SCN1A) — млекопитающий transient Na⁺, repetitive (fast-spiking PV⁺-интернейроны, проприоцепторы-статика, тригеминальный ганглий, таламус). m³h: активация V½=−30 мВ k=6.5, инактивация V½=−65 мВ k=5.0. Однофазный быстрый recovery τ_rec≈7 мс (repetitive) — НЕ slow 500 мс (NAV12DEV single-spike). γ=17 пС (Vanoye 2006). TTX-S (IC50 10 нМ). GHK Na⁺ (z=1).",
+      "release": false
+    }
+  ]
+}

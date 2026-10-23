@@ -1,0 +1,19 @@
+{
+  "type_id": 19,
+  "name": "5-HT1B",
+  "version": "1.0.0",
+  "category": "Метаботропные Gi/o",
+  "mechanism_type": "Метаботропный (G-белок Gi/o-связанный)",
+  "signaling": "Серотонин (5-HT) → 5-HT1B → Gi/o → ↓cAMP, ингибирование Ca_v. Пресинаптический ауто- и гетерорецептор. Терминальный.",
+  "inputs": "neurotransmitter[NT_SEROTONIN]",
+  "outputs": "↓cAMP, ↓Ca_v → ↓выброс нейромедиатора.",
+  "neuron_types": "Стриатум, базальные ганглии (substantia nigra, globus pallidus), кора, гиппокамп, мозжечок, супрахиазматическое ядро (SCN).",
+  "subcellular": "Пресинаптические терминали: ауторецепторы (серотониновые) и гетерорецепторы (GABA, глутамат, дофамин, ацетилхолин).",
+  "kinetics": "K_D 5-HT ≈ 1-10 nM. Gi/o-опосредованное ингибирование аденилатциклазы. Агонисты: суматриптан, золмитриптан. Антагонист: SB-224289.",
+  "function": "Пресинаптическое ингибирование выброса нейромедиаторов. Мигрень: агонисты 5-HT1B/1D (триптаны) блокируют вазодилатацию и CGRP-выброс. Регуляция циркадных ритмов (SCN). Локомоторная активность, агрессия.",
+  "references": "Sari Y. (2004) Serotonin1B receptors: from protein to physiological function and behavior. Neurosci Biobehav Rev 28:565-582.",
+  "name_en": "5-HT1B",
+  "name_zh": "5-HT1B",
+  "description_en": "Presynaptically inhibits neurotransmitter release. In migraine, 5-HT1B/1D agonists (triptans) block vasodilation and CGRP release; regulates circadian rhythms.",
+  "description_zh": "在突触前抑制神经递质释放。在偏头痛中，5-HT1B/1D 激动剂（曲坦类）阻断血管扩张和 CGRP 释放；调节昼夜节律。"
+}

@@ -1,0 +1,19 @@
+{
+  "type_id": 34,
+  "name": "mGluR8",
+  "version": "1.0.0",
+  "category": "Метаботропные Gi/o",
+  "mechanism_type": "Метаботропный (G-белок Gi/o-связанный)",
+  "signaling": "Глутамат → mGluR8 (Group III) → Gi/o → ↓cAMP, ↓Ca_v. Пресинаптический. Экспрессируется в сетчатке, обонятельной луковице, таламусе.",
+  "inputs": "neurotransmitter[NT_GLUTAMATE]",
+  "outputs": "↓cAMP, ↓Ca_v → ↓выброс нейромедиатора.",
+  "neuron_types": "Сетчатка, обонятельная луковица, таламус (латеральное коленчатое тело), гиппокамп. Более ограниченная экспрессия vs mGluR7.",
+  "subcellular": "Пресинаптические терминали. Сетчатка: фоторецепторные терминали. Обонятельная луковица: обонятельные афференты.",
+  "kinetics": "EC50 глутамат ≈ 0.5-5 μM. Агонист: L-AP4, L-SOP. Сходен с mGluR4 по фармакологии.",
+  "function": "Регуляция сенсорной передачи (зрение, обоняние). Пресинаптическое ингибирование в таламусе (LGN).",
+  "references": "Niswender C.M., Conn P.J. (2010), см. mGluR2.",
+  "name_en": "mGluR8",
+  "name_zh": "mGluR8",
+  "description_en": "Regulates sensory transmission (vision, olfaction) and presynaptic inhibition in the thalamus (LGN).",
+  "description_zh": "调节感觉传递（视觉、嗅觉）和丘脑（外侧膝状体）中的突触前抑制。"
+}

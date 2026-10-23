@@ -1,0 +1,15 @@
+{
+  "name": "THIK-1 фоновая K⁺-утечка",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 166,
+  "modifiers": [
+    {
+      "id": 166,
+      "name": "THIK-1 фоновая K⁺-утечка",
+      "category": "Leak K",
+      "description": "THIK-1 (K2P13.1/KCNK13) фоновая K⁺-утечка. Voltage/time-independent. Po=0.5 (константа, ⚠️ не опубликована). γ≈5 пС. Галотан-блок (IC50 2.8 мМ). GHK-флюкс K⁺ (z=1).",
+      "release": false
+    }
+  ]
+}

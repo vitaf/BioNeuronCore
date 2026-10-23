@@ -1,0 +1,15 @@
+{
+  "name": "H3-рецептор",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 38,
+  "modifiers": [
+    {
+      "id": 38,
+      "name": "H3-рецептор",
+      "category": "Метаботропные Gi/o",
+      "description": "Метаботропный гистаминовый рецептор H3 (Gi/o) — пресинаптический ауторецептор",
+      "release": true
+    }
+  ]
+}

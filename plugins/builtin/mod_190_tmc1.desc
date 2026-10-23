@@ -1,0 +1,7 @@
+{
+  "id": 190,
+  "name": "TMC1/TMC2 (MET канал стереоцилий)",
+  "category": "Ионные каналы",
+  "description": "TMC1/TMC2 mechanoelectrical transduction канал волосковых клеток. γ 80 пС, P_Ca/P_Na≈3.8, базальная Po 10%, Ca²⁺-адаптация.",
+  "release": false
+}

@@ -1,0 +1,11 @@
+{
+  "type_id": 151,
+  "name": "TASK (K2P3.1/9.1) фоновая K⁺-утечка",
+  "name_en": "TASK (K2P3.1/9.1) background K+ leak",
+  "name_zh": "TASK 背景钾泄漏通道",
+  "version": "1.0.0",
+  "category": "Ионные каналы",
+  "description": "TASK (KCNK3/KCNK9) двухпоровая фоновая K⁺-утечка: γ≈14–38 пС, voltage-independent, Po~0.3. pH-ингибиция. Задаёт RMP.",
+  "description_en": "TASK (KCNK3/KCNK9) two-pore background K⁺ leak: γ≈14–38 pS, voltage-independent, Po~0.3. pH-inhibited. Sets the resting membrane potential.",
+  "description_zh": "TASK（KCNK3/KCNK9）双孔背景K⁺泄漏通道：γ≈14–38 pS，电压非依赖，Po~0.3。受pH抑制。设定静息膜电位。"
+}

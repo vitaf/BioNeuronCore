@@ -1,0 +1,19 @@
+{
+  "type_id": 2,
+  "name": "Ионотропный Cl",
+  "version": "1.0.0",
+  "category": "Базовые модификаторы",
+  "mechanism_type": "Ионотропный (потенциал-/лиганд-зависимый)",
+  "signaling": "Прямой ионный поток Cl⁻. В зрелых нейронах обычно входящий (гиперполяризующий).",
+  "inputs": "V_m, intra_ions[Cl⁻], extra_ions[Cl⁻]",
+  "outputs": "I_Cl → I_buffer. Шунтирует возбуждение (торможение).",
+  "neuron_types": "Все нейроны ЦНС. Особенно важен для GABA-ергических интернейронов.",
+  "subcellular": "Сома, дендриты, аксон (начальный сегмент — аксональные рецепторы).",
+  "kinetics": "Канал всегда открыт (state[0]=1). Проводимость gCl = state[1] × density × area (по умолчанию 0.3). E_Cl по Нернсту (z=-1). Ионный перенос: intra_ions[Cl⁻] += I_Cl × dt / (F × vol).",
+  "function": "Быстрое синаптическое торможение. Шунтирование деполяризации. Поддержание потенциала покоя (наряду с K⁺ каналами). Регуляция возбудимости.",
+  "references": "Bormann J. et al. (1987) Mechanism of anion permeation through channels gated by glycine and GABA in mouse cultured spinal neurones. J Physiol 385:243-286.",
+  "name_en": "Ionotropic Cl",
+  "name_zh": "离子型 Cl",
+  "description_en": "Mediates fast synaptic inhibition and shunting of depolarization. Maintains the resting potential (together with K⁺ channels) and regulates excitability via Cl⁻ flux.",
+  "description_zh": "介导快速突触抑制和去极化的分流。通过 Cl⁻ 通量维持静息电位（与 K⁺ 通道协同）并调节兴奋性。"
+}

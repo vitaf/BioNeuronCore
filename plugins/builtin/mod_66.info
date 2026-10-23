@@ -1,0 +1,19 @@
+{
+  "type_id": 66,
+  "name": "NB_D2_Modulator",
+  "version": "1.0.0",
+  "category": "NB_-Рецепторы",
+  "mechanism_type": "Метаботропный (дофаминовый D2-рецептор — модулятор проводимости AMPA)",
+  "signaling": "Дофамин → D2 на MSN → Gi/o → ↓cAMP → M_AMPA2 (множитель AMPA-проводимости). Hill occupancy: DA/(DA+K_D2). Ингибиторный (уменьшает или модулирует AMPA-ток).",
+  "inputs": "neurotransmitter[NT_DOPAMINE], D2_K_D (константа полуактивации)",
+  "outputs": "M_AMPA2 (множитель AMPA-проводимости, пишется в сегмент для NB_MsnAMPAR). Без D2: M_AMPA2 = 1.0.",
+  "neuron_types": "Стриатальные MSN (medium spiny neurons) — D2-MSN indirect pathway.",
+  "subcellular": "Постсинаптическая мембрана дендритных шипиков D2-MSN.",
+  "kinetics": "Hill occupancy: M_AMPA2 = 1.0 - amp * DA/(DA + K_D2) (или multiplicative). K_D2 зависит от D2-аффинности (D2: K_D ~10-100nM — high-affinity). Модулирует D2-MSN AMPA-ток (подавляет AMPA → снижает возбудимость indirect pathway).",
+  "function": "Кросс-модуляторная связь: дофамин (через D2) подавляет AMPA-токи в D2-MSN indirect pathway. Ключевой механизм синаптической пластичности в базальных ганглиях (LTD в indirect pathway).",
+  "references": "Адаптировано из Neuroblox.jl (MsnD2Receptor).",
+  "name_en": "NB_D2_Modulator",
+  "name_zh": "NB_D2_Modulator",
+  "description_en": "Dopamine D2 receptor on MSNs coupled to Gi/o, lowering cAMP to compute an AMPA conductance multiplier (Hill occupancy). Suppresses AMPA currents in the indirect pathway.",
+  "description_zh": "MSN 上的多巴胺 D2 受体，偶联 Gi/o，降低 cAMP，计算 AMPA 电导乘数（Hill 占据）。在间接通路中抑制 AMPA 电流。"
+}

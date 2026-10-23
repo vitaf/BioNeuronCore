@@ -1,0 +1,19 @@
+{
+  "type_id": 57,
+  "name": "M1",
+  "version": "1.0.0",
+  "category": "Метаботропные Gq/11",
+  "mechanism_type": "Метаботропный (G-белок Gq/11-связанный)",
+  "signaling": "Ацетилхолин (ACh) → M1 → Gq/11 → PLCβ → IP3/DAG → ↑Ca²⁺ + PKC. Основной постсинаптический мускариновый рецептор в коре и гиппокампе. Ключевой для когнитивных функций.",
+  "inputs": "neurotransmitter[NT_ACETYLCHOLINE]",
+  "outputs": "PLCβ → ↑IP3/DAG → ↑Ca²⁺ (IP3R), ↑PKC. Активация TRPC-каналов, ингибирование K_v (KCNQ/M-каналы → ↑возбудимость), K_v7.2/7.3.",
+  "neuron_types": "Кора (все слои — пирамидные нейроны), гиппокамп (CA1, CA3), стриатум (MSN), таламус, обонятельная система.",
+  "subcellular": "Постсинаптическая мембрана (дендриты и шипики). Наивысшая экспрессия среди мускариновых рецепторов в коре/гиппокампе.",
+  "kinetics": "K_D ACh ≈ 0.1-1 μM. Ингибирование M-каналов (KCNQ2/3) → ↑возбудимость. Аллостерический агонист: VU0364572 (M1 PAM — улучшает память). Антагонисты: пирензепин, телензепин.",
+  "function": "Ключевой рецептор холинергической когнитивной функции: ↑LTP в гиппокампе, ↑NMDA-ток (через PKC/Src-зависимое фосфорилирование GluN2B). Мишень для терапии болезни Альцгеймера (M1 PAM — когнитивное улучшение).",
+  "references": "Wess J. et al. (2007), см. M2.",
+  "name_en": "M1",
+  "name_zh": "M1",
+  "description_en": "Muscarinic M1 receptor coupled to Gq/11, activating PLCβ to raise Ca²⁺ and PKC. The main postsynaptic mAChR in cortex/hippocampus; inhibits M-channels (KCNQ) to increase excitability and supports LTP.",
+  "description_zh": "毒蕈碱 M1 受体，偶联 Gq/11，激活 PLCβ 升高 Ca²⁺ 和 PKC。是皮层/海马的主要突触后 mAChR；抑制 M 通道（KCNQ）提高兴奋性并支持 LTP。"
+}

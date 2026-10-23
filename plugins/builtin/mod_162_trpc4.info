@@ -1,0 +1,25 @@
+{
+  "id": 162,
+  "name": "TRPC4 — неселективный катионный канал (Gq/PLC-зависимый)",
+  "name_en": "TRPC4 — non-selective cation channel (Gq/PLC-dependent)",
+  "category": "TRP-каналы",
+  "category_en": "TRP Channels",
+  "family": "TRPC (canonical transient receptor potential)",
+  "isoforms": [
+    "TRPC4",
+    "TRPC4α",
+    "TRPC4β"
+  ],
+  "gating": "Gq/PLC-зависимый (state[4]=Gq 0–1 clamp)",
+  "conductances": {
+    "gamma": "40 пС",
+    "Po": "state[4] (Gq 0–1), ⚠️ G не найдена"
+  },
+  "ions": "Na+/Ca2+",
+  "pharmacology": "ML204 2 µМ (IC50)",
+  "role": "Неселективный катионный вход (Na⁺/Ca²⁺), PCa/PNa≈4. Деполяризует при Gq-активации.",
+  "bio_ref": "PMID 21795696, 29385160",
+  "note": "G (мС/см²) не найдена → density плейсхолдер (1.0). γ=40 пС.",  "name_zh": "TRPC4 — 非选择性阳离子通道 (Gq/PLC依赖性)",
+  "description_en": "Nonselective cation influx (Na⁺/Ca²⁺), PCa/PNa≈4; depolarizes on Gq activation. γ=40 pS; ML204 IC50 2 µM.",
+  "description_zh": "非选择性阳离子内流（Na⁺/Ca²⁺），PCa/PNa≈4；Gq激活时去极化。γ=40 pS；ML204 IC50 2 µM。"
+}

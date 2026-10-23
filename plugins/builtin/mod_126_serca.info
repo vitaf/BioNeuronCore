@@ -1,0 +1,20 @@
+{
+  "id": 126,
+  "name": "SERCA — Ca²⁺-АТФаза ЭПР, закачка Ca²⁺ в ER",
+  "name_en": "SERCA — ER Ca²⁺-ATPase, Ca²⁺ pump into ER",
+  "category": "Ca²⁺-гомеостаз",
+  "category_en": "Ca²⁺ Homeostasis",
+  "family": "P-type ATPase",
+  "isoforms": [
+    "SERCA2b"
+  ],
+  "function": "Закачивает Ca²⁺ из цитоплазмы в ЭПР против градиента. Потребляет 1 ATP на 2 Ca²⁺.",
+  "kinetics": "Высокий аффинитет (Kd~0.1μM), медленная кинетика (τ~100ms).",
+  "role_in_cpg": "Восстанавливает ER Ca²⁺ депо после выброса через IP3R/RyR. Ограничивает длительность Ca²⁺-транзиента.",
+  "bio_ref": "Verkhratsky (2005) Physiol Rev 85:201-279. 'The endoplasmic reticulum as an integrating signalling organelle.'",
+  "species": "Все эукариоты",
+  "neuron_type": "Все нейроны",
+  "name_zh": "SERCA — 内质网Ca²⁺-ATP酶，Ca²⁺泵入ER",
+  "description_en": "ER Ca²⁺-ATPase (SERCA2b) that pumps Ca²⁺ from cytosol into the ER against its gradient, consuming 1 ATP per 2 Ca²⁺ (high affinity Kd~0.1 µM, slow τ~100 ms). Refills ER Ca²⁺ stores after IP3R/RyR release and limits Ca²⁺-transient duration.",
+  "description_zh": "内质网Ca²⁺-ATP酶（SERCA2b），逆梯度将Ca²⁺从胞质泵入内质网，每2个Ca²⁺消耗1个ATP（高亲和力Kd~0.1 µM，慢τ~100 ms）。在IP3R/RyR释放后补充内质网Ca²⁺库并限制Ca²⁺瞬变持续时间。"
+}

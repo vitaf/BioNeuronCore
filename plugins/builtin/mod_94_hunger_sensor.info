@@ -1,0 +1,19 @@
+{
+  "type_id": 94,
+  "name": "Сенсор голода (ATP)",
+  "version": "1.0.0",
+  "category": "Сенсоры",
+  "mechanism_type": "Метаболический сенсор (ATP-зависимый)",
+  "signaling": "Детектирует падение ATP_level ниже порога (state[0]). При ATP < порога активирует тонический деполяризующий ток (state[1]), симулирующий orexigenic драйв. Модулируется гормонами голода (грелин, NPY) через state[2-3].",
+  "inputs": "ATP_level, state[0]=порог_ATP, state[1]=drive_ток, state[2]=грелин_модуляция, state[3]=NPY_модуляция",
+  "outputs": "I_hunger — тонический деполяризующий ток при голоде. Активирует пищепоисковое поведение (SER-нейроны → dIN → swimming).",
+  "neuron_types": "Гипоталамические нейроны (HYPOTHALAMIC). Orexin/Hcrt нейроны латерального гипоталамуса. AgRP/NPY нейроны аркуатного ядра. POMC нейроны (ингибируются голодом).",
+  "subcellular": "Сома гипоталамических нейронов.",
+  "kinetics": "ATP_порог (state[0]) = 0.3-0.5 (доля от максимума). Drive_ток (state[1]) = 0.05-0.15 pA. Грелин-модуляция: +30% при state[2]=1.0. NPY-модуляция: +20% при state[3]=1.0.",
+  "function": "Преобразует метаболическое состояние (ATP) в поведенческий драйв (плавание к пище). Ключевой элемент闭环а: голод → поиск → еда → насыщение → покой.",
+  "references": "Cone R.D. (2005) Anatomy and regulation of the central melanocortin system. Nature Neuroscience 8:571-578. Sternson S.M., Eiselt A.K. (2017) Three pillars for the neural control of appetite. Annual Review of Physiology 79:401-423.",
+  "name_en": "Hunger Sensor (ATP)",
+  "name_zh": "饥饿传感器 (ATP)",
+  "description_en": "Metabolic sensor that detects ATP_level below a threshold (state[0]) and drives a tonic depolarizing current modulated by ghrelin and NPY. Converts metabolic state into food-seeking behavior.",
+  "description_zh": "代谢传感器，检测 ATP_level 低于阈值（state[0]），驱动受饥饿素和 NPY 调制的紧张性去极化电流。将代谢状态转化为觅食行为。"
+}

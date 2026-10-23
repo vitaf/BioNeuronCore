@@ -1,0 +1,15 @@
+{
+  "name": "Kv3.3 high-threshold K",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 204,
+  "modifiers": [
+    {
+      "id": 204,
+      "name": "Kv3.3 (KCNC3)",
+      "category": "Ионные каналы",
+      "description": "Kv3.3 high-threshold K⁺ (γ=35 пС, V½_m=+1.5, V½_h=−27.9, A-type ~200 мс). GHK K⁺, m³h-гейтинг, TEA/4-AP.",
+      "release": false
+    }
+  ]
+}

@@ -1,0 +1,161 @@
+#include <sycl/sycl.hpp>
+#include "types.h"
+#include "kernel_dispatch.h"
+#include "run_tick_common.h"
+
+// Ядро 1: вычисление токов модификаторов + применение стимулов для каждого сегмента
+void compute_modifier_currents(sycl::queue& q, Segment* segs, uint32_t N,
+                                uint8_t mode, float dt,
+                                const GpuStimulusData* stim_data) {
+    if (N == 0 || N > 1000000 || segs == nullptr) return;
+    q.parallel_for(sycl::range<1>(N), [=](sycl::id<1> i) {
+        Segment* s = &segs[i];
+        uint32_t sid = s->id;
+        uint64_t tick = stim_data ? stim_data->current_tick : 0;
+
+        // ── Применение стимулов (CurrentStimulus, RampStimulus) ──────
+        // Биологически идентично CPU-пути core_run_tick_impl() строки 197-225.
+        if (stim_data) {
+            // CurrentStimulus: I_clamp в I_buffer
+            for (uint32_t st = 0; st < stim_data->current_stim_count; st++) {
+                const auto* cs = &stim_data->current_stim[st];
+                if (cs->segment_id != sid) continue;
+                uint64_t dur_ticks = (uint64_t)(cs->duration_ms / dt);
+                if (tick >= cs->start_tick && tick < cs->start_tick + dur_ticks)
+                    s->I_buffer += cs->amplitude_pA;  // pA, как CPU
+            }
+            // RampStimulus: линейная интерполяция тока
+            for (uint32_t r = 0; r < stim_data->ramp_count; r++) {
+                const auto* rs = &stim_data->ramps[r];
+                if (rs->segment_id != sid) continue;
+                if (tick >= rs->start_tick && tick < rs->end_tick) {
+                    float frac = (rs->end_tick > rs->start_tick)
+                        ? (float)(tick - rs->start_tick) / (float)(rs->end_tick - rs->start_tick)
+                        : 1.0f;
+                    s->I_buffer += (rs->start_pA + (rs->end_pA - rs->start_pA) * frac);
+                }
+            }
+            // IonInjection: одноразовое добавление в концентрации
+            for (uint32_t j = 0; j < stim_data->ion_inj_count; j++) {
+                const auto* io = &stim_data->ion_inj[j];
+                if (io->segment_id != sid || io->ion_idx < 0 || io->ion_idx >= ION_COUNT) continue;
+                double* ions = io->extracellular ? s->extra_ions : s->intra_ions;
+                ions[io->ion_idx] += io->amount_mM;
+            }
+            // LigandInjection: одноразовое добавление нейромедиатора
+            for (uint32_t l = 0; l < stim_data->lig_inj_count; l++) {
+                const auto* li = &stim_data->lig_inj[l];
+                if (li->segment_id != sid || li->nt_idx < 0 || li->nt_idx >= NT_COUNT) continue;
+                float* target = li->intracellular ? s->intra_nt : s->neurotransmitter;
+                target[li->nt_idx] += li->amount;
+            }
+        }
+
+        // ── Токи модификаторов ──────────────────────────────────────
+        uint8_t mc = s->modifier_count;
+        if (mc > MAX_MODIFIERS_PER_SEGMENT) mc = 0;
+        bool myelinated = segment_has_myelin(s);
+        double I_total = 0.0;
+        for (uint8_t j = 0; j < mc; j++) {
+            uint8_t type = s->modifiers[j].type;
+            if (myelinated && type != MOD_MYELIN && is_myelin_blocked(type))
+                continue;
+            s->modifiers[j].state[7] = (s->segment_type == 1)
+                ? 4.0f * PI * s->radius * s->radius
+                : 2.0f * PI * s->radius * s->length;
+            I_total += dispatch_modifier_current(mode, type,
+                                                  &s->modifiers[j], s, dt);
+            for (int k = 0; k < 8; k++)
+                if (s->modifiers[j].state[k] != s->modifiers[j].state[k])
+                    s->modifiers[j].state[k] = 0.0f;
+        }
+        if (I_total == I_total)
+            s->I_buffer += I_total;
+    });
+}
+
+// Ядро 3: обновление мембранного потенциала + VoltageClamp (после V_m)
+void update_membrane(sycl::queue& q, Segment* segs, uint32_t N, float dt, uint64_t tick,
+                     const GpuStimulusData* stim_data) {
+    q.parallel_for(sycl::range<1>(N), [=](sycl::id<1> i) {
+        Segment* s = &segs[i];
+        float area = (s->segment_type == 1)
+            ? 4.0f * PI * s->radius * s->radius
+            : 2.0f * PI * s->radius * s->length;
+
+        bool myelinated = false;
+        for (uint8_t j = 0; j < s->modifier_count; j++) {
+            if (s->modifiers[j].type == MOD_MYELIN) {
+                myelinated = true;
+                break;
+            }
+        }
+
+        float C_m = area * C_SPECIFIC_PF_PER_UM2;
+        if (C_m < 1e-4f) C_m = 1e-4f;
+        if (myelinated) C_m /= 100.0f;
+
+        if (!(s->I_buffer == s->I_buffer)) s->I_buffer = 0.0f;
+        if (s->I_buffer >  10000.0f) s->I_buffer =  10000.0f;
+        if (s->I_buffer < -10000.0f) s->I_buffer = -10000.0f;
+
+        s->V_m += s->I_buffer / C_m * dt;
+        s->I_buffer = 0.0f;  // сброс после обновления V_m (паритет с CPU)
+        if (!(s->V_m == s->V_m)) s->V_m = -65.0f;
+        if (s->V_m < VM_CLAMP_MIN) s->V_m = VM_CLAMP_MIN;
+        if (s->V_m > VM_CLAMP_MAX) s->V_m = VM_CLAMP_MAX;
+
+        // ── VoltageClamp ПОСЛЕ обновления V_m (биологично: зажим переопределяет динамику) ──
+        if (stim_data) {
+            for (uint32_t v = 0; v < stim_data->vclamp_count; v++) {
+                const auto* vc = &stim_data->vclamps[v];
+                if (vc->segment_id == s->id && tick >= vc->start_tick && tick < vc->end_tick)
+                    s->V_m = vc->target_mV;
+            }
+        }
+
+        s->I_buffer = 0.0f;
+
+        if (!(s->position.x == s->position.x)) s->position.x = 0.0f;
+        if (!(s->position.y == s->position.y)) s->position.y = 50.0f;
+        if (!(s->position.z == s->position.z)) s->position.z = 0.0f;
+        if (!(s->radius == s->radius)) s->radius = 5.0f;
+        if (!(s->length == s->length)) s->length = 10.0f;
+    });
+}
+
+// Ядро 4: clamp всех полей сегмента (NaN/overflow защита, паритет с CUDA kernel_clamp_segments)
+void compute_clamp_segments(sycl::queue& q, Segment* segs, uint32_t N) {
+    if (N == 0 || segs == nullptr) return;
+    q.parallel_for(sycl::range<1>(N), [=](sycl::id<1> i) {
+        Segment* s = &segs[i];
+
+        if (!(s->V_m == s->V_m)) s->V_m = -65.0f;
+        if (s->V_m < VM_CLAMP_MIN) s->V_m = VM_CLAMP_MIN;
+        if (s->V_m > VM_CLAMP_MAX) s->V_m = VM_CLAMP_MAX;
+
+        if (!(s->I_buffer == s->I_buffer)) s->I_buffer = 0.0f;
+
+        for (int j = 0; j < ION_COUNT; j++) {
+            if (!(s->intra_ions[j] == s->intra_ions[j]) || s->intra_ions[j] < 1e-12f) s->intra_ions[j] = 1e-6f;
+            if (!(s->extra_ions[j] == s->extra_ions[j]) || s->extra_ions[j] < 1e-12f) s->extra_ions[j] = 1e-6f;
+            // БЕЗ потолочного клампа: ионы в мМ (K=140 мМ, Na=15 мМ) — потолок 10 мМ обрезал физиологию (паритет с CPU clamp_ions, только нижний предел)
+        }
+
+        for (int j = 0; j < NT_COUNT; j++) {
+            if (!(s->neurotransmitter[j] == s->neurotransmitter[j]) || s->neurotransmitter[j] < 0.0f) s->neurotransmitter[j] = 0.0f;
+            if (!(s->intra_nt[j] == s->intra_nt[j]) || s->intra_nt[j] < 0.0f) s->intra_nt[j] = 0.0f;
+        }
+
+        if (!(s->ATP_level == s->ATP_level) || s->ATP_level < 0.0f) s->ATP_level = 1.0f;
+        if (!(s->temperature == s->temperature) || s->temperature < 10.0f || s->temperature > 50.0f) s->temperature = CELSIUS_37;
+        if (!(s->transcription_signal == s->transcription_signal) || s->transcription_signal < 0.0f) s->transcription_signal = 0.0f;
+
+        uint8_t mc = s->modifier_count;
+        if (mc > MAX_MODIFIERS_PER_SEGMENT) mc = 0;
+        for (uint8_t j = 0; j < mc; j++)
+            for (int k = 0; k < 8; k++)
+                if (!(s->modifiers[j].state[k] == s->modifiers[j].state[k]))
+                    s->modifiers[j].state[k] = 0.0f;
+    });
+}

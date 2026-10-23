@@ -1,0 +1,19 @@
+{
+  "type_id": 82,
+  "name": "CaMKII",
+  "version": "1.0.0",
+  "category": "STDP Cascade",
+  "mechanism_type": "",
+  "signaling": "",
+  "inputs": "",
+  "outputs": "",
+  "neuron_types": "",
+  "subcellular": "",
+  "kinetics": "",
+  "function": "Ca²⁺/кальмодулин-зависимая протеинкиназа II. Hill-активация Ca²⁺ (n=4). Автофосфорилирование Thr286 даёт Ca²⁺-независимую активность. Ключевой драйвер LTP: фосфорилирует AMPAR → exocytosis → syn.weight↑",
+  "references": "",
+  "name_en": "CaMKII",
+  "name_zh": "CaMKII",
+  "description_en": "Ca²⁺/calmodulin-dependent protein kinase II with Hill activation (n=4); Thr286 autophosphorylation gives Ca²⁺-independent activity. Drives LTP by phosphorylating AMPARs to increase synaptic weight.",
+  "description_zh": "Ca²⁺/钙调蛋白依赖性蛋白激酶 II，Hill 激活（n=4）；Thr286 自磷酸化产生 Ca²⁺ 非依赖性活性。通过磷酸化 AMPAR 增加突触权重，驱动 LTP。"
+}

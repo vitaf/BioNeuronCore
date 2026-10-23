@@ -1,0 +1,15 @@
+{
+  "name": "α1A-адренорецептор",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 55,
+  "modifiers": [
+    {
+      "id": 55,
+      "name": "α1A-адренорецептор",
+      "category": "Метаботропные Gq/11",
+      "description": "Метаботропный адренорецептор α1A (Gq/11) — IP3/DAG, вазоконстрикция",
+      "release": false
+    }
+  ]
+}

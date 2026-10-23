@@ -1,0 +1,27 @@
+{
+  "id": 140,
+  "name": "Cav2.1 (P/Q-type) — пресинаптический Ca²⁺-канал",
+  "name_en": "Cav2.1 (P/Q-type) — presynaptic Ca²⁺ channel",
+  "category": "Базовые модификаторы",
+  "category_en": "Basic Modifiers",
+  "family": "Cav2",
+  "isoforms": [
+    "Cav2.1",
+    "P/Q-type",
+    "CACNA1A"
+  ],
+  "gating": {
+    "m_gate": "m², V½_акт=−15 мВ (k=6), τ_m=1 мс — быстрая активация",
+    "h_gate": "VDI V½_инакт=−50 мВ (k=8), τ_h=300 мс — медленная инактивация; слабая CDI (Kd=3 µM)"
+  },
+  "conductances": {
+    "gamma": "15 пС (9–19 пС, P-type/α1A)"
+  },
+  "role": "Пресинаптический Ca²⁺-вход при спайке → поднимает [Ca²⁺]pre → синаптотагмин-1 → выброс нейромедиатора.",
+  "bio_ref": "Gambeta E et al. (2021) Mol Brain; Modal gating of human CaV2.1, J Gen Physiol 124:463 (2004); P-type токи Пуркинье (γ 9/14/19 пС).",
+  "species": "млекопитающие (консервативный пресинаптический канал)",
+  "note": "Отклонение от Sautois (у него нет Ca-каналов) — для биологической честности выброса (Ca²⁺-триггер вместо V_m-порога).",
+  "name_zh": "Cav2.1（P/Q型）— 突触前Ca²⁺通道",
+  "description_en": "Presynaptic P/Q-type Ca²⁺ channel (Cav2.1/CACNA1A): m² activation V½_act=−15 mV (k=6, τ_m=1 ms), slow VDI h-gate V½_inact=−50 mV (k=8, τ_h=300 ms), weak CDI (Kd=3 µM), single-channel γ=15 pS. Ca²⁺ influx triggers synaptotagmin-1-mediated neurotransmitter release.",
+  "description_zh": "突触前P/Q型Ca²⁺通道（Cav2.1/CACNA1A）：m²激活V½_act=−15 mV（k=6，τ_m=1 ms），慢VDI h门V½_inact=−50 mV（k=8，τ_h=300 ms），弱CDI（Kd=3 µM），单通道γ=15 pS。Ca²⁺内流触发突触结合蛋白-1介导的神经递质释放。"
+}

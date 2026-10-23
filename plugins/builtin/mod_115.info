@@ -1,0 +1,33 @@
+{
+  "id": 115,
+  "name": "Вибрационный сенсор — механотрансдукция (аудиотаксис)",
+  "category": "Сенсорные рецепторы",
+  "description": "Механотрансдуктор для аудиотаксиса. Детекция колебаний воды/звука через неселективный катионный канал (TRP-подобный: Na⁺ 60%, K⁺ 40%). Сигмоидная активация (mid=0.3) с адаптацией: habituation (τ=3s) + sensitization (τ=10s). Быстрый ответ (τ=30ms). GHK-поток.",
+  "mechanism": "Механотрансдукция: смещение стереоцилий → открытие MET-каналов → Na⁺/K⁺ входящий ток → деполяризация. Эволюционно консервативный механизм от рыбы (lateral line) до человека (волосковые клетки улитки).",
+  "parameters": [
+    {
+      "name": "state[0]",
+      "desc": "Open probability (динамическая)"
+    },
+    {
+      "name": "state[1]",
+      "desc": "Vibration intensity (0..1, выставляется средой)"
+    },
+    {
+      "name": "state[2]",
+      "desc": "Habituation level (0..1)"
+    },
+    {
+      "name": "state[3]",
+      "desc": "Sensitization level (0..1)"
+    }
+  ],
+  "references": [
+    "Corey & Hudspeth (1979) mechanoelectrical transduction",
+    "Gillespie & Walker (2001) hair cell adaptation"
+  ],
+  "name_en": "Vibration Sensor — mechanotransduction (audiotaxis)",
+  "name_zh": "振动传感器 — 机械转导 (听觉趋向性)",
+  "description_en": "Mechanotransducer for audiotaxis: detects water/sound vibration through a non-selective cation channel (TRP-like, Na⁺ 60%/K⁺ 40%) with sigmoidal activation (mid=0.3), habituation (τ=3 s) and sensitization (τ=10 s), fast response τ=30 ms, GHK flux.",
+  "description_zh": "听觉趋向性的机械转导器：通过非选择性阳离子通道（TRP样，Na⁺ 60%/K⁺ 40%）检测水/声振动，具有S形激活（mid=0.3）、习惯化（τ=3 s）和敏化（τ=10 s），快速响应τ=30 ms，GHK通量。"
+}

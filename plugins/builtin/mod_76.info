@@ -1,0 +1,19 @@
+{
+  "type_id": 76,
+  "name": "NB_MsnAMPAR",
+  "version": "1.0.0",
+  "category": "NB_-Destexhe",
+  "mechanism_type": "Ионотропный (лиганд-зависимый, с D2-модуляцией, damped oscillator)",
+  "signaling": "AMPA-рецептор на MSN: damped oscillator Destexhe (G, z) + D2-модуляция. Сканирует сегмент на D2-модулятор для M_AMPA2.",
+  "inputs": "neurotransmitter[NT_GLUTAMATE], V_pre, D2-модулятор (M_AMPA2 — множитель проводимости)",
+  "outputs": "I_AMPA_Msn → I_buffer. D2-модулированный AMPA-ток. Без D2: M_AMPA2=1.0 (нет модуляции).",
+  "neuron_types": "Стриатальные MSN (D2-MSN indirect pathway). Детектор дофаминовой модуляции AMPA-токов.",
+  "subcellular": "Постсинаптическая мембрана дендритных шипиков D2-MSN.",
+  "kinetics": "Damped oscillator: tau1, tau2 как в NB_AMPA_Destexhe.  + сканирование сегмента на M_AMPA2 (от NB_D2_Modulator): если D2-модулятор найден → модуляция AMPA-проводимости на M_AMPA2. DA через D2 подавляет AMPA-ток (снижая возбудимость indirect pathway).",
+  "function": "Интеграция дофаминовой и глутаматной сигнализации в D2-MSN. Ключевой механизм LTD в indirect pathway. Моделирует дофамин-зависимое подавление AMPA в D2-MSN.",
+  "references": "Адаптировано из Neuroblox.jl (MsnAMPAR).",
+  "name_en": "NB_MsnAMPAR",
+  "name_zh": "NB_MsnAMPAR",
+  "description_en": "AMPA receptor on striatal MSNs with Destexhe damped-oscillator kinetics plus D2 modulation (M_AMPA2 multiplier). Dopamine via D2 suppresses AMPA in the indirect pathway.",
+  "description_zh": "纹状体 MSN 上的 AMPA 受体，具有 Destexhe 阻尼振荡动力学和 D2 调制（M_AMPA2 乘数）。多巴胺经 D2 抑制间接通路的 AMPA。"
+}

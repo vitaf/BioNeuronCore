@@ -1,0 +1,15 @@
+{
+  "name": "BK Ca²⁺+V-активируемый K⁺",
+  "version": "1.0.0",
+  "author": "BioNeuronCore",
+  "type_id": 104,
+  "modifiers": [
+    {
+      "id": 104,
+      "name": "BK Ca²⁺+V-активируемый K⁺",
+      "category": "Ca-activated K",
+      "description": "BK (KCa1.1): Ca²⁺+V-активируемый K⁺, быстрая реполяризация, GHK",
+      "release": false
+    }
+  ]
+}

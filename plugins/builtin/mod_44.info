@@ -1,0 +1,19 @@
+{
+  "type_id": 44,
+  "name": "D1",
+  "version": "1.0.0",
+  "category": "Метаботропные Gs",
+  "mechanism_type": "Метаботропный (G-белок Gs/Golf-связанный)",
+  "signaling": "Дофамин (DA) → D1 (D1A) → Gs/Golf → ↑cAMP → PKA → фосфорилирование Ca_v, K_v, AMPA-R, NMDA-R, DARPP-32. Основной рецептор direct pathway базальных ганглиев.",
+  "inputs": "neurotransmitter[NT_DOPAMINE]",
+  "outputs": "↑cAMP → PKA → фосфорилирование множества мишеней: ↑Ca_v (L-тип), ↑NMDA-R (через DARPP-32), ↑AMPA-R trafficking. Повышение возбудимости D1-MSN.",
+  "neuron_types": "Стриатум (D1-MSN в direct pathway), prefrontal cortex (слои II-III, V-VI), nucleus accumbens, обонятельный бугорок, amygdala, гипоталамус.",
+  "subcellular": "Постсинаптическая мембрана дендритных шипиков (D1-MSN). Экстрасинаптические (volume transmission).",
+  "kinetics": "K_D DA ≈ 0.5-5 μM (low-affinity — phasic DA). D1-D2 гетеродимеры (PLC-сигналинг). Golf (не Gs) в стриатуме — основной G-белок. DARPP-32 — ключевой downstream effector: PKA → p-Thr34-DARPP-32 → ингибитор PP1 → ↑фосфорилирование. Агонист: SKF-38393. Антагонист: SCH-23390.",
+  "function": "Основной рецептор прямого пути (direct pathway) базальных ганглиев: D1-MSN → GPi/SNr (direct, облегчение движений). Рабочая память (PFC — inverted-U: оптимум D1-сигналинга для когнитивных функций). Вознаграждение и подкрепление (NAc). Паркинсонизм: потеря D1-сигналинга в striatum.",
+  "references": "Beaulieu J.M., Gainetdinov R.R. (2011), см. D2.",
+  "name_en": "D1",
+  "name_zh": "D1",
+  "description_en": "Primary receptor of the direct basal ganglia pathway (D1-MSN → GPi/SNr, facilitating movement). Underlies working memory (PFC), reward (NAc) and is lost in parkinsonism.",
+  "description_zh": "基底神经节直接通路的主要受体（D1-MSN → GPi/SNr，促进运动）。构成工作记忆（前额叶皮层）、奖赏（伏隔核）的基础，帕金森病中其信号丢失。"
+}

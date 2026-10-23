@@ -1,0 +1,19 @@
+{
+  "type_id": 6,
+  "name": "Физический сенсор",
+  "version": "1.0.0",
+  "category": "Базовые модификаторы",
+  "mechanism_type": "Сенсорный (трансдукция физических стимулов)",
+  "signaling": "Преобразует физический стимул (температура, давление, pH, свет) в ионный ток через специализированные каналы (TRP, Piezo, ENaC, родопсин).",
+  "inputs": "Температура (s->temperature), давление, pH, свет (зависит от конкретной реализации)",
+  "outputs": "Ионный ток (I_sensor) → I_buffer сегмента.",
+  "neuron_types": "Сенсорные нейроны: фоторецепторы (сетчатка), механорецепторы (кожа, проприоцепторы), терморецепторы (DRG), ноцицепторы (C-волокна, Aδ).",
+  "subcellular": "Периферические окончания сенсорных нейронов (кожа, мышцы, суставы, внутренние органы).",
+  "kinetics": "Три модальности: (1) Температура — TRPV1 >43°C: (T-37)/6, TRPM8 <33°C: (33-T)/8; (2) Механорастяжение — (L-50)/50 × 0.5; (3) pH — ASIC <6.8: (6.8-pH)/1.5. Суммарный stimulus × sensitivity. Гейтинг: state[0] += (stimulus - state[0]) × dt/10ms. Неселективный катионный ток: I = -g_sensor × V_m. Параметр: state[1]=sensitivity (1.0).",
+  "function": "Трансдукция физических стимулов в электрические сигналы — первый этап сенсорного восприятия. Преобразование энергии стимула в рецепторный потенциал.",
+  "references": "Julius D. (2013) TRP channels and pain. Annu Rev Cell Dev Biol 29:355-384.",
+  "name_en": "Physical Sensor",
+  "name_zh": "物理传感器",
+  "description_en": "Transduces physical stimuli into electrical signals — the first stage of sensory perception. Converts stimulus energy (temperature, stretch, pH) into a receptor potential.",
+  "description_zh": "将物理刺激转导为电信号——感觉感知的第一阶段。将刺激能量（温度、牵张、pH）转化为感受器电位。"
+}
